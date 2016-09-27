@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -103,3 +103,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/home');
 
 });
+
+.config(function(oauth1ClientProvider) {
+    oauth1ClientProvider.config({
+        consumerKey: 'BzWStDYk6Fj3',
+        consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
+        requestEndpoint: 'http://awape.com.br/oauth1/request',
+        authorizeEndpoint: 'http://awape.com.br/oauth1/authorize',
+        accessEndpoint: 'http://awape.com.br/oauth1/access',
+        oauthCallback: 'http://awape.com.br'
+    });
+})
