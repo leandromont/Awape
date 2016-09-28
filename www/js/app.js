@@ -23,7 +23,10 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, oauth1ClientProvider) {
+
+
+
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -102,10 +105,9 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
-});
 
-.config(function(oauth1ClientProvider) {
-    oauth1ClientProvider.config({
+ //=============== Oauth Client Provider =============================== 
+  oauth1ClientProvider.config({
         consumerKey: 'BzWStDYk6Fj3',
         consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
         requestEndpoint: 'http://awape.com.br/oauth1/request',
@@ -113,4 +115,6 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
         accessEndpoint: 'http://awape.com.br/oauth1/access',
         oauthCallback: 'http://awape.com.br'
     });
-})
+
+});
+

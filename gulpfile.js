@@ -14,7 +14,9 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  console.log('         ');
+  console.log('========================= Build Started ======================');
+  gulp.src(paths.sass)
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
@@ -24,10 +26,14 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+    console.log('         ');
 });
 
 gulp.task('watch', function() {
+  console.log('         ');
+  console.log('========================= Watch Started ======================');
   gulp.watch(paths.sass, ['sass']);
+  console.log('         ');
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -49,3 +55,4 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
