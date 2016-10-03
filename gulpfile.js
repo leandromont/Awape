@@ -1,58 +1,78 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var sh = require('shelljs');
 
-var paths = {
-  sass: ['./scss/**/*.scss']
-};
+// ===============
 
-gulp.task('default', ['sass']);
+var gulp    = require('gulp');
+var banner    = require('gulp-banner');
+var concat    = require('gulp-concat');
+var cleanCSS  = require('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
+var sass    = require('gulp-ruby-sass');
+var uglify    = require('gulp-uglify');
+var pkg     = require('./package.json');
+var pump    = require('pump');
+var webserver = require('gulp-webserver');
 
-gulp.task('sass', function(done) {
+
+// Default task
+// gulp.task('default', ['concat', 'sass', 'uglify', 'webserver', 'watch']);
+gulp.task('build', ['sass-app','build-app','minify-app']);
+
+
+// ========================================== SASS =============================================
+
+
+// Sass atendimento Task - Use to create sass task
+gulp.task('sass-app', function() {
+  console.log('         ');
   console.log('         ');
   console.log('========================= Build Started ======================');
-  gulp.src(paths.sass)
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
-    console.log('         ');
+    sass('**/*.scss')
+        .on('error', sass.logError)
+        .pipe(gulp.dest('www/css'));
 });
 
+
+// ========================================== CONCAT =============================================
+
+// Concat atendimento files and Clean task
+gulp.task('build-app',['sass-app'], function() {
+  return gulp.src('www/css/*.css')
+      .pipe(concat('app.css'))
+      .pipe(gulp.dest('www/css'));
+});
+
+// ========================================== MINIFY =============================================
+
+// Minify atendimento files and Clean task
+gulp.task('minify-app',['build-app'], function() {
+  return gulp.src('www/css/*.css')
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(concat('app.min.css'))
+      .pipe(cleanCSS({
+        keepSpecialComments: 0
+      }))
+      .pipe(sourcemaps.write('../maps'))
+      .pipe(gulp.dest('www/css'));
+});
+
+
+// Uglify Task - Use to minify js files
+// gulp.task('uglify', function() {
+//  gulp.src('assets/_js/**/*.js')
+//  .pipe(concat('app.min.js'))
+//  .pipe(uglify())
+//  .pipe(banner(comment, {
+//    pkg: pkg
+//  }))
+//  .pipe(gulp.dest('assets/js/'))
+// });
+
+
+// Watch task - Use to watch change in your files and execute other tasks
 gulp.task('watch', function() {
   console.log('         ');
   console.log('========================= Watch Started ======================');
-  gulp.watch(paths.sass, ['sass']);
+  // gulp.watch(['assets/_js/**/*.js'], ['uglify']);
+  gulp.watch(['**/*.scss'], ['build']);
   console.log('         ');
 });
-
-gulp.task('install', ['git-check'], function() {
-  return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
-});
-
-gulp.task('git-check', function(done) {
-  if (!sh.which('git')) {
-    console.log(
-      '  ' + gutil.colors.red('Git is not installed.'),
-      '\n  Git, the version control system, is required to download Ionic.',
-      '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
-      '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
-    process.exit(1);
-  }
-  done();
-});
-

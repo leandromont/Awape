@@ -1,1 +1,27 @@
-/* Empty. Add your own CSS if you like */
+/* ====================== Tools (classes úteis para o projeto) ===================*/
+
+.display-none{
+	display: none;
+}
+
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+/* =================== Tab (menu) ====================== */
+
+.tab-title{
+	display: none;
+}
+
+.tab-item .icon {
+    margin: 8px auto;
+}

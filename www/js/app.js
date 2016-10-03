@@ -23,9 +23,10 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, oauth1ClientProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, oauth1ClientProvider) {
 
 
+  
 
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -33,6 +34,7 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -62,15 +64,6 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
         }
       }
     })
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:chatId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
 
   .state('tab.list', {
     url: '/list',
@@ -78,6 +71,26 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
       'tab-list': {
         templateUrl: 'templates/tab-list.html',
         controller: 'ListCtrl'
+      }
+    }
+  })
+
+  .state('tab.list-edit-mode', {
+    url: '/list-edit-mode',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/list-edit-mode.html',
+        controller: 'ListEditModeCtrl'
+      }
+    }
+  })
+
+  .state('tab.product-detail', {
+    url: '/product-detail',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/product-detail.html',
+        controller: 'ProductDetailCtrl'
       }
     }
   })
@@ -92,6 +105,16 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
     }
   })
 
+   .state('tab.consumo-edit-mode', {
+    url: '/consumo-edit-mode',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/consumo-edit-mode.html',
+        controller: 'ConsumoEditModeCtrl'
+      }
+    }
+  })
+
   .state('tab.preferences', {
     url: '/preferences',
     views: {
@@ -101,6 +124,9 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
       }
     }
   });
+
+  $ionicConfigProvider.tabs.position('bottom');
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');

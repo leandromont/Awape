@@ -17,20 +17,29 @@ angular.module('starter.controllers', [])
   // };
 })
 
-// .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-//   $scope.chat = Chats.get($stateParams.chatId);
-// })
-
 .controller('ListCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+  // $scope.settings = {
+  //   enableFriends: true
+  // };
+})
+
+.controller('ListEditModeCtrl', function($scope) {
+  
+})
+
+.controller('ProductDetailCtrl', function($scope) {
+  
 })
 
 .controller('ConsumoCtrl', function($scope) {
 
 })
 
+.controller('ConsumoEditModeCtrl', function($scope) {
+
+})
+
 .controller('PreferencesCtrl', function($scope) {
 
-});
+})
+
