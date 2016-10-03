@@ -1,45 +1,109 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope) {})
 
+// ==================== Controller Home ==================================
+.controller('HomeCtrl', function($scope) {
+
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
+})
+
+// ==================== Controller History ==================================
 .controller('HistoryCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  // $scope.chats = Chats.all();
-  // $scope.remove = function(chat) {
-  //   Chats.remove(chat);
-  // };
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
 })
 
+// ==================== Controller List ==================================
 .controller('ListCtrl', function($scope) {
-  // $scope.settings = {
-  //   enableFriends: true
-  // };
+
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
 })
 
+// ==================== Controller List edit mode ===========================
 .controller('ListEditModeCtrl', function($scope) {
-  
+
+  $scope.$on('$ionicView.enter', function(){
+    
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
 })
 
+// ==================== Controller Product detail ==================================
 .controller('ProductDetailCtrl', function($scope) {
+
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
   
 })
 
+// ==================== Controller Consumo ==================================
 .controller('ConsumoCtrl', function($scope) {
 
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
 })
 
+// ==================== Controller Consumo edit mode =============================
 .controller('ConsumoEditModeCtrl', function($scope) {
 
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
+
 })
 
+// ==================== Controller Preferences ==================================
 .controller('PreferencesCtrl', function($scope) {
+
+  $scope.$on('$ionicView.enter', function(){
+     
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+   
+  });
 
 })
 
