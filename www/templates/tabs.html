@@ -6,28 +6,33 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-bottom tabs-color-active-positive">
 
   <!-- Home Tab -->
-  <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/tab/home">
+  <ion-tab title="Home" icon-off="ion-ios-home-outline" class="home-tab" icon-on="ion-ios-home" href="#/tab/home">
     <ion-nav-view name="tab-home"></ion-nav-view>
   </ion-tab>
 
   <!-- History Tab -->
-  <ion-tab title="Histórico" icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" href="#/tab/history">
+  <ion-tab title="Histórico" icon-off="ion-ios-clock-outline" class="history-tab" icon-on="ion-ios-clock" href="#/tab/history">
     <ion-nav-view name="tab-history"></ion-nav-view>
   </ion-tab>
 
   <!-- List Tab -->
-  <ion-tab title="Lista" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/list">
+  <ion-tab title="Lista" icon-off="ion-ios-list-outline" class="list-tab" icon-on="ion-ios-list" href="#/tab/list">
     <ion-nav-view name="tab-list"></ion-nav-view>
   </ion-tab>
 
   <!-- Meu consumo Tab -->
-  <ion-tab title="Meu consumo" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics" href="#/tab/consumo">
+  <ion-tab title="Meu consumo" icon-off="ion-ios-analytics-outline" class="consumo-tab" icon-on="ion-ios-analytics" href="#/tab/consumo">
     <ion-nav-view name="tab-consumo"></ion-nav-view>
   </ion-tab>
 
    <!-- Preferências Tab -->
-  <ion-tab title="Preferências" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/preferences">
+  <ion-tab title="Preferências" icon-off="ion-ios-gear-outline" class="preferences-tab" icon-on="ion-ios-gear" href="#/tab/preferences">
     <ion-nav-view name="tab-preferences"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Preferências Tab -->
+  <ion-tab title="Extra" href="#/tab/preferences" class="display-none" ng-disabled="true">
+    <ion-nav-view name="tab-extra"></ion-nav-view>
   </ion-tab>
 
 

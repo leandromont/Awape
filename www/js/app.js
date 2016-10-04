@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,13 +23,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, oauth1ClientProvider) {
+
+
+  
+
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -59,15 +64,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:chatId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
 
   .state('tab.list', {
     url: '/list',
@@ -75,6 +71,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-list': {
         templateUrl: 'templates/tab-list.html',
         controller: 'ListCtrl'
+      }
+    }
+  })
+
+  .state('tab.list-edit-mode', {
+    url: '/list-edit-mode',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/list-edit-mode.html',
+        controller: 'ListEditModeCtrl'
+      }
+    }
+  })
+
+  .state('tab.product-detail', {
+    url: '/product-detail',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/product-detail.html',
+        controller: 'ProductDetailCtrl'
       }
     }
   })
@@ -89,6 +105,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+   .state('tab.consumo-edit-mode', {
+    url: '/consumo-edit-mode',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/consumo-edit-mode.html',
+        controller: 'ConsumoEditModeCtrl'
+      }
+    }
+  })
+
   .state('tab.preferences', {
     url: '/preferences',
     views: {
@@ -99,7 +125,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 
+  $ionicConfigProvider.tabs.position('bottom');
+
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
+
+ //=============== Oauth Client Provider =============================== 
+  oauth1ClientProvider.config({
+        consumerKey: 'BzWStDYk6Fj3',
+        consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
+        requestEndpoint: 'http://awape.com.br/oauth1/request',
+        authorizeEndpoint: 'http://awape.com.br/oauth1/authorize',
+        accessEndpoint: 'http://awape.com.br/oauth1/access',
+        oauthCallback: 'http://awape.com.br'
+    });
+
 });
+
