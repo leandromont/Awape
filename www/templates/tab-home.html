@@ -3,9 +3,9 @@
 
 	<div class="saudacao">
 		<div class="fotoWrapper">
-			<div class="foto"></div>
+			<div class="fotoUsuario"></div>
 		</div>
-		<div class="nome">Olá, Silvianmamn!</div>
+		<div class="nome">Olá, <span id="nomeUsuario">Silvianmamn!</span></div>
 	</div>
 
 	<div class="titulo" id="tituloTotais">Totais do mês</div>
@@ -14,14 +14,14 @@
 			<li class="icon"></li>
 			<li class="dados">
 				<div class="titulo">Água virtual de suas compras:</div>
-				<div class="valor">1200 l</div>
+				<div class="valor"><span id="litros">1200</span> litros</div>
 			</li>
 		</ul>
 		<ul class="total" id="totalPHP">
 			<li class="icon"></li>
 			<li class="dados">
 				<div class="titulo">Sua pegada hídrica pessoal:</div>
-				<div class="valor">15203 l</div>
+				<div class="valor"><span id="litros">15203</span> litros</div>
 			</li>
 		</ul>
 	</div>
@@ -30,13 +30,13 @@
 	<div class="dicasWrapper box">
 		<ul class="dica">
 			<li class="dicaTexto">Que tal trocar
-				<span id="item">café</span>
+				<span class="produto" id="itemTrocado">café</span>
 				 por 
-				<span id="item">chá</span>? Assim você 
-				<span id="economia">economiza 1000 l</span>
-				de água.
+				<span class="produto" id="itemRecomendado">chá</span>? Assim você 
+				<span id="economia">economiza <span id="litros">1000</span> litros</span>
+				de água em um ano.
 			</li>
-			<li class="imagens">
+			<li class="imagens clearfix">
 				<div class="imgDicas" id="img01"></div>
 				<div class="icon" id="troca"></div>
 				<div class="imgDicas" id="img02"></div>
