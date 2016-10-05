@@ -29,7 +29,28 @@ angular.module('starter.controllers', [])
 
 // ==================== Controller List ==================================
 .controller('ListCtrl', function($scope) {
+  //drag n drop
 
+    $( "#listaBox" ).sortable({
+      placeholder: "ui-state-highlight",
+      axis: "y"
+    });
+    $( "#listaBox" ).disableSelection();
+
+
+    $('.checkbox-awape').click(function(){
+
+      var thisInput = $(this).find('input');
+
+      if($(thisInput)){
+
+      } else{
+
+      }
+      
+    });
+
+  //
   $scope.$on('$ionicView.enter', function(){
      
   });

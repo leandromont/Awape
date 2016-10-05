@@ -13,6 +13,10 @@
     height: 0;
 }
 
+.display-none{
+    display: none !important;
+}
+
 /*Background Gradient*/
 .pane, .view{
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%);
@@ -167,6 +171,79 @@
 }
 
 /* --------    Lista    -------- */
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 23px;
+  height: 23px;
+  border: 2px solid #5dcadc;
+  border-radius: 4px;
+  margin: 0px 0 -6px 0px;
+  background: white;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: 'o';
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 20px;
+  line-height: 0;
+  color: #5dcadc;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px solid #5dcadc;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #348a98 !important;
+}
+
+
 .paginaLista{
     color: #545454;
 }
@@ -204,6 +281,7 @@ ul.lista li.produto{
     font-size: 1.2em;
     padding: 10px 0;
     border-bottom: 1px solid #efefef;
+    background: rgba(255, 255, 255, 0.7);
 }
 
 ul.lista li.produto ul.pecasLista{
@@ -214,13 +292,11 @@ ul.lista li.produto ul.pecasLista li{
     display: inline-block;
 }
 
-ul.lista li.produto ul.pecasLista li.check{
-    width: 23px;
-    height: 23px;
-    border: 2px solid #5dcadc;
-    border-radius: 4px;
-    margin: 0px 0 -6px 0px;
+ul.lista li.produto ul.pecasLista li.ordem{
+
 }
+
+ul.lista li.produto ul.pecasLista .check{}
 
 ul.lista li.produto ul.pecasLista li.nomeProduto{
     padding: 0 0 0 3%;
@@ -245,4 +321,13 @@ ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{
 ul.lista li.produto ul.pecasLista  li.gastoProduto{
     float: right;
     margin: 1px 0 0 0;
+}
+
+.ui-state-highlight{
+    height: 3em !important;
+    background:#e8e8e8 !important;
+    border:1px solid #e8e8e8 !important;
+    padding: 0 10%;
+    width: 105%;
+    margin: 0 0 0 -1.5%;
 }
