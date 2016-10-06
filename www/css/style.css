@@ -1,21 +1,10 @@
 /* =============================== Home ================================== */
 /*Clear floats --- Apply on Father*/
-.clearfix{
-    display: inline-block;
-}
+.clearfix{display: inline-block;}
 
-.clearfix:after{
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-}
+.clearfix:after{visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
 
-.display-none{
-    display: none !important;
-}
+.display-none{display: none !important;}
 
 /*Background Gradient*/
 .pane, .view{
@@ -88,11 +77,11 @@
 }
 
 .totais .total#totalLista .icon{
-    background: url(../img/sprite_layout.png) no-repeat -138px -54px;
+    background: url(../img/sprite_layout.png) no-repeat -134px -56px;
 }
 
 .totais .total#totalPHP .icon{
-    background: url(../img/sprite_layout.png) no-repeat -48px -54px;
+    background: url(../img/sprite_layout.png) no-repeat -38px -56px;
 }
 
 .totais .total .dados{
@@ -161,7 +150,7 @@
 }
 .dicasWrapper .dica .imagens .icon{
     float: left;
-    margin: 19px 0 0 7.5%;
+    margin: 19px 0 0 5%;
 }
 
 .dicasWrapper .dica .imagens .icon#troca{
@@ -190,25 +179,26 @@
 [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
-  left:0; top: 2px;
+  left:0;
+  top: 2px;
   width: 23px;
   height: 23px;
   border: 2px solid #5dcadc;
   border-radius: 4px;
   margin: 0px 0 -6px 0px;
-  background: white;
 }
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
-  content: 'o';
+  content: '';
   position: absolute;
-  top: 10px;
-  left: 5px;
-  font-size: 20px;
-  line-height: 0;
-  color: #5dcadc;
-  transition: all .2s;
+  top: 2px;
+  left: 0px;
+  width: 23px;
+  height: 23px;
+  background: url(../img/sprite_layout.png) no-repeat -345px -77px;
+  border-radius: 4px;
+  transition: all .5s;
 }
 /* checked mark aspect changes */
 [type="checkbox"]:not(:checked) + label:after {
@@ -238,11 +228,6 @@
   border: 2px solid #5dcadc;
 }
 
-/* hover style just for information */
-label:hover:before {
-  border: 2px solid #348a98 !important;
-}
-
 
 .paginaLista{
     color: #545454;
@@ -267,43 +252,55 @@ label:hover:before {
 
 }
 
+
+
 ul.lista{
     width: 95%;
     margin: 0 auto;
     background: white;
-    border-bottom: 2px solid #d2d2d2;
+    /* border-bottom: 2px solid #d2d2d2; */
     border-right: 1px solid #d2d2d2;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     padding: 0 10px;
 }
 
 ul.lista li.produto{
     font-size: 1.2em;
-    padding: 10px 0;
+    padding: 13px 0;
     border-bottom: 1px solid #efefef;
     background: rgba(255, 255, 255, 0.7);
 }
 
-ul.lista li.produto ul.pecasLista{
+ul.lista li.produto:last-child{border-bottom:0;}
 
+ul.lista li.produto ul.pecasLista{
+display: table;
+width: 100%;
 }
 
 ul.lista li.produto ul.pecasLista li{
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-ul.lista li.produto ul.pecasLista li.ordem{
+ul.lista li.produto ul.pecasLista .checkWrapper{}
 
+ul.lista li.produto ul.pecasLista .checkWrapper .check{}
+
+ul.lista li.produto ul.pecasLista .checkWrapper label{
+    font-size: 100%;
 }
-
-ul.lista li.produto ul.pecasLista .check{}
 
 ul.lista li.produto ul.pecasLista li.nomeProduto{
     padding: 0 0 0 3%;
     width: 46%;
 }
 
-ul.lista li.produto ul.pecasLista li.qntd{
+ul.lista li.produto ul.pecasLista li.qntdWrapper{
+
+}
+
+ul.lista li.produto ul.pecasLista li.qntdWrapper span{
     padding: 1px 9px 3px 10px;
     border-radius: 20px 20px 5px 20px;
     border: 1px solid #39acbf;
@@ -319,15 +316,48 @@ ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{
 }
 
 ul.lista li.produto ul.pecasLista  li.gastoProduto{
-    float: right;
+    /* float: right; */
     margin: 1px 0 0 0;
+    text-align: right;
 }
 
 .ui-state-highlight{
     height: 3em !important;
-    background:#e8e8e8 !important;
-    border:1px solid #e8e8e8 !important;
-    padding: 0 10%;
-    width: 105%;
-    margin: 0 0 0 -1.5%;
+    background:rgba(245, 245, 245, 0.72) !important;
+    width: 107%;
+    margin: 0 0 0 -3.5%;
+    border-radius: 10px;
+    border: 2px solid #e8e8e8 !important;
+    border-color:#e8e8e8; 
+}
+
+ul.listaChecked{
+    border-radius: 0 0 10px 10px;
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d2d2d2;
+    background: rgba(234, 234, 234, 0.04);
+}
+
+ul.listaChecked li.produto{
+    background: transparent;
+}
+
+ul.listaChecked li.produto ul.pecasLista li.nomeProduto{
+    color: #9a9a9a;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+ul.listaChecked li.produto ul.pecasLista li.qntdWrapper span.qntd{
+    border-color: #bdbdbd;
+    color: #bdbdbd;
+}
+
+ul.listaChecked li.produto ul.pecasLista li.unid{
+    color: #bdbdbd;
+}
+
+ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{
+    font-weight: 500;
+    color: #b1b1b1;
 }

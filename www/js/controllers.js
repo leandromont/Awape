@@ -30,27 +30,44 @@ angular.module('starter.controllers', [])
 // ==================== Controller List ==================================
 .controller('ListCtrl', function($scope) {
   //drag n drop
-
     $( "#listaBox" ).sortable({
       placeholder: "ui-state-highlight",
       axis: "y"
     });
     $( "#listaBox" ).disableSelection();
-
-
-    $('.checkbox-awape').click(function(){
-
-      var thisInput = $(this).find('input');
-
-      if($(thisInput)){
-
-      } else{
-
-      }
-      
-    });
-
   //
+
+  // id dos checkbox
+      var produtosLista = $('.produto').length;
+      var produto = $('.produto');
+      var i = 1;
+      produto.each(function(){
+        $('.check', this).attr('id', 'check'+i);
+        $("label", this).attr('for', 'check'+i);
+        i++;
+      });
+  //
+
+  // checked or not checked - Change parent Div and add class
+    $(".produto").each(function(){
+      var checks = $("input:checkbox", this);
+      checks.click(function() {
+        if (checks.is(':checked')){ 
+            $(this).closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show(200);
+        } else {
+            $(this).closest('.produto').detach().hide().prependTo('.listaNotChecked').removeClass('produtoChecked').show(200);
+        }
+        // Esconder listaChecked se não tiver item nela
+        if($('.listaChecked .produto').length === 0){
+          $('.listaChecked').hide();
+        } else {
+          $('.listaChecked').show();
+        }
+        //
+      });
+    });
+  //
+
   $scope.$on('$ionicView.enter', function(){
      
   });
