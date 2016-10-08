@@ -17,7 +17,7 @@
     background: white;
     width: 98%;
     height: 101px;
-    margin: 6% auto;
+    margin: 2% auto 6%;
     border-radius: 50px;
     border-bottom: 3px solid #d2d2d2;
 }
@@ -235,24 +235,45 @@
 
 .paginaLista .topo{
 
+height: 90px;
+
+width: 100%;
+
+display: table;
 }
 
 .paginaLista .topo h1{
     color: #545454;
     font-size: 2em;
-    padding: 10px 0 10px 5%;
-    display: inline-block;
+    padding: 0 0 0 5%;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-.paginaLista .fixed{
+.paginaLista .fixed{/* position: fixed; */top: 0;}
 
+a.editarBotao{
+    width: 82px;
+    height: 82px;
+    padding-right: 3%;
+    position: fixed;
+    top: 1%;
+    right: 2%;
+    z-index: 999;
 }
 
-.paginaLista .topo .iconEditar{
-
+a.editarBotao .icon{
+    width: 82px;
+    height: 82px;
 }
 
+a.editarBotao .icon#editarLista{
+    background: url('../img/sprite_layout.png') no-repeat -40px -171px;
+}
 
+ul.listaNotChecked{
+    /* margin-top: 100px !important; */
+}
 
 ul.lista{
     width: 95%;
@@ -321,6 +342,13 @@ ul.lista li.produto ul.pecasLista  li.gastoProduto{
     text-align: right;
 }
 
+ul.lista li.produto ul.pecasLista  li.gastoProduto::after{
+    content: ">";
+    color:#5dcadc;
+    font-size: 1.2em;
+    margin: 0 0 0 2px;
+}
+
 .ui-state-highlight{
     height: 3em !important;
     background:rgba(245, 245, 245, 0.72) !important;
@@ -360,4 +388,37 @@ ul.listaChecked li.produto ul.pecasLista li.unid{
 ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{
     font-weight: 500;
     color: #b1b1b1;
+}
+
+.totalLista{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    background: #5dcadc;
+    display: table;
+    margin-bottom: 49px;
+}
+
+.totalLista .titulo{
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-weight: 300;
+    padding: 0 0 0 6%;
+}
+
+.totalLista .litrosTotal{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.4em;
+    color: white;
+    font-weight: 300;
+    text-align: right;
+    padding-right: 6%;
+}
+
+.totalLista .litrosTotal span#litrosTotal{
+    font-size: 1.2em;
+    font-weight: 400;
 }

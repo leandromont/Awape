@@ -30,11 +30,12 @@ angular.module('starter.controllers', [])
 // ==================== Controller List ==================================
 .controller('ListCtrl', function($scope) {
   //drag n drop
-    $( "#listaBox" ).sortable({
-      placeholder: "ui-state-highlight",
-      axis: "y"
-    });
-    $( "#listaBox" ).disableSelection();
+    // $( "#listaBox" ).sortable({
+    //   delay: 250,
+    //   placeholder: "ui-state-highlight",
+    //   axis: "y"
+    // });
+    // $( "#listaBox" ).disableSelection();
   //
 
   // id dos checkbox
@@ -68,6 +69,11 @@ angular.module('starter.controllers', [])
     });
   //
 
+  // flip no ícone de editar
+    $('#icons').click(function() {
+      $(this).toggleClass('flipped');
+    });
+  //
   $scope.$on('$ionicView.enter', function(){
      
   });

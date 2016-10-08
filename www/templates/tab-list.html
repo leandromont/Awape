@@ -1,15 +1,44 @@
 
-<ion-view view-title="Lista">
+<ion-view hide-nav-bar="true" view-title="Lista">
+	<a href="#/tab/list-edit-mode" class="editarBotao">
+	<div class="icon" id="editarLista"></div>
+  </a>
   <ion-content class="paginaLista">
-
-  <a href="#/tab/list-edit-mode">List Edit mode</a>
-  <a href="#/tab/product-detail">Product Detail</a>
+  
 
   <div class="topo fixed">
   	<h1>Lista de compras</h1>
-  	<div class="iconEditar"></div>
   </div>
+  
   <ul class="lista listaNotChecked" id="listaBox">
+	  <li class="produto">
+	  		<ul class="pecasLista">
+	  			<li class="checkWrapper">
+	  				<input type="checkbox" class="check"/>
+	  				<label></label>
+	  			</li>
+	  			<li class="nomeProduto">Cerveja 600mlas dasdas dasdaas das sd</li>
+	  			<li class="qntdWrapper">
+	  				<span class="qntd">6</span>
+	  			</li>
+	  			<li class="unid"><span id="unidPadrao">un</span></li>
+	  			<li class="gastoProduto">1200 lts</li>
+	  		</ul>
+	  	</li>
+	  	<li class="produto">
+	  		<ul class="pecasLista">
+	  			<li class="checkWrapper">
+	  				<input type="checkbox" class="check"/>
+	  				<label></label>
+	  			</li>
+	  			<li class="nomeProduto">Cerveja 600mlas dasdas dasdaas das sd</li>
+	  			<li class="qntdWrapper">
+	  				<span class="qntd">6</span>
+	  			</li>
+	  			<li class="unid"><span id="unidPadrao">un</span></li>
+	  			<li class="gastoProduto">1200 lts</li>
+	  		</ul>
+	  	</li>
   	<li class="produto">
   		<ul class="pecasLista">
   			<li class="checkWrapper">
@@ -83,6 +112,58 @@
   			<li class="gastoProduto">1200 lts</li>
   		</ul>
   	</li>
+  	<li class="produto">
+  		<ul class="pecasLista">
+  			<li class="checkWrapper">
+  				<input type="checkbox" class="check" checked="checked"/>
+  				<label></label>
+  			</li>
+  			<li class="nomeProduto">Cerveja 600ml</li>
+  			<li class="qntdWrapper">
+  				<span class="qntd">6</span>
+  			</li>
+  			<li class="unid"><span id="unidPadrao">un</span></li>
+  			<li class="gastoProduto">1200 lts</li>
+  		</ul>
+  	</li>
+  	<li class="produto">
+  		<ul class="pecasLista">
+  			<li class="checkWrapper">
+  				<input type="checkbox" class="check" checked="checked"/>
+  				<label></label>
+  			</li>
+  			<li class="nomeProduto">Cerveja 600ml</li>
+  			<li class="qntdWrapper">
+  				<span class="qntd">6</span>
+  			</li>
+  			<li class="unid"><span id="unidPadrao">un</span></li>
+  			<li class="gastoProduto">1200 lts</li>
+  		</ul>
+  	</li>
+  	<li class="produto">
+  		<ul class="pecasLista">
+  			<li class="checkWrapper">
+  				<input type="checkbox" class="check" checked="checked"/>
+  				<label></label>
+  			</li>
+  			<li class="nomeProduto">Cerveja 600ml</li>
+  			<li class="qntdWrapper">
+  				<span class="qntd">6</span>
+  			</li>
+  			<li class="unid"><span id="unidPadrao">un</span></li>
+  			<li class="gastoProduto">1200 lts</li>
+  		</ul>
+  	</li>
   </ul>
+
+  
+
   </ion-content>
+  <div class="totalLista">
+  	<div class="titulo">Total da Lista:</div>
+  	<div class="litrosTotal">
+  	<span id="litrosTotal">5340</span>
+  	litros
+  	</div>
+  </div>
 </ion-view>
