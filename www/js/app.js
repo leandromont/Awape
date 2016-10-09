@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.controllers', 'starter.services'])
+
+angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controllers', 'starter.services','firebase', 'pascalprecht.translate','ngMessages'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,10 +21,18 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, oauth1ClientProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $translateProvider, $translateStaticFilesLoaderProvider) {
 
 
   
@@ -123,24 +132,55 @@ angular.module('starter', ['ionic', 'ngCordova','oauth1Client', 'starter.control
         controller: 'PreferencesCtrl'
       }
     }
-  });
+  })
+
+  .state('login', {
+      url: '/login',
+      templateUrl: 'views/login/login.html',
+      controller:'loginController'
+    })
+    .state('forgot', {
+      url: '/forgot',
+      templateUrl: 'views/forgot/forgot.html',
+      controller:'forgotController'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'views/register/register.html',
+      controller:'registerController'
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'views/home/home.html',
+      controller:'homeController'
+    })
+    ;
 
   $ionicConfigProvider.tabs.position('bottom');
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+ $urlRouterProvider.otherwise("/login");
 
+// ========== firebase app
+ 
 
- //=============== Oauth Client Provider =============================== 
-  oauth1ClientProvider.config({
-        consumerKey: 'BzWStDYk6Fj3',
-        consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
-        requestEndpoint: 'http://awape.com.br/oauth1/request',
-        authorizeEndpoint: 'http://awape.com.br/oauth1/authorize',
-        accessEndpoint: 'http://awape.com.br/oauth1/access',
-        oauthCallback: 'http://awape.com.br'
-    });
+ // //=============== Oauth Client Provider =============================== 
+ //  oauth1ClientProvider.config({
+ //        consumerKey: 'BzWStDYk6Fj3',
+ //        consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
+ //        requestEndpoint: 'http://awape.com.br/oauth1/request',
+ //        authorizeEndpoint: 'http://awape.com.br/oauth1/authorize',
+ //        accessEndpoint: 'http://awape.com.br/oauth1/access',
+ //        oauthCallback: 'http://awape.com.br'
+ //    });
 
-});
+}).constant('FURL', {
+    apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
+    authDomain: "awape-2d96e.firebaseapp.com",
+    databaseURL: "https://awape-2d96e.firebaseio.com",
+    storageBucket: "awape-2d96e.appspot.com",
+    messagingSenderId: "923520319461"
+  })
+;
 
