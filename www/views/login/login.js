@@ -12,7 +12,7 @@ angular.module('starter').controller('loginController', function ($scope, $state
       
       $log.log("id del usuario:" + authData);
       Utils.hide();
-      $state.go('home');
+      $state.go('tab.home');
       $log.log("Starter page","Home");
 
       }, function(err) {
@@ -28,7 +28,7 @@ angular.module('starter').controller('loginController', function ($scope, $state
     auth.$signInAnonymously().then(function(firebaseUser) {
      console.log("Signed in as:", firebaseUser.uid);
      Utils.hide();
-     $location.path("/home");
+     $location.path("/tabs/tab-home.html");
     }).catch(function(error) {
       console.error("Authentication failed:", error);
     });
@@ -40,7 +40,7 @@ angular.module('starter').controller('loginController', function ($scope, $state
 
     if (firebaseUser) {
     $log.log("Signed in as:", firebaseUser.uid);
-    $location.path("/home");
+    $location.path("/tabs/tab-home.html");
     } else {
     $log.log("Signed out");
     $location.path("/login");
