@@ -112,7 +112,13 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller Consumo ==================================
-.controller('ConsumoCtrl', function($scope) {
+.controller('ConsumoCtrl', function($scope, $ionicSlideBoxDelegate) {
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    }
+    $scope.prevSlide = function() {
+      $ionicSlideBoxDelegate.previous();
+    }
 
   $scope.$on('$ionicView.enter', function(){
      

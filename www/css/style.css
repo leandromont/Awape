@@ -306,9 +306,7 @@ label.item.valid-lr {
         margin: 30px auto 0;
         box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
       }
-=======
-    width: 10%;
-}
+
 ul.lista li.produto ul.pecasLista li.qntdWrapper span{padding: 1px 9px 3px 10px; border-radius: 20px 20px 5px 20px; border: 1px solid #39acbf; color: #39acbf;}
 ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
 ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{}
@@ -359,7 +357,6 @@ ul.adicProdutos li:after{clear:both;}
 /* --------    Histórico    -------- */
 
 li.historyWrapper:first-child .gambs{width: 9px;height: 25px;position: absolute;background: #fdfdfd;top: 0;left: -6px;}
-
 ul.historyContainer{width: 100%; height: auto;}
 ul.historyContainer li.historyWrapper{width: 96%;margin: 0 0 0 5%;border-left: 4px solid #2badca;padding: 0 0 35px 0;position: relative;}
 ul.historyContainer li.historyWrapper ul.lista{width: 92%;margin-left: 4%;border-radius: 10px;padding: 15px 8px;border-bottom: 3px solid #d2d2d2;margin: 0 auto;}
@@ -380,4 +377,16 @@ ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.i
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.infoTexto span#mudancaNegativa{color: #f3989f;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.infoTexto span#litros{}
 ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;position: absolute;background: #2badca;top: 20px;left: -8.5px;border-radius: 10px;}
->>>>>>> origin/master
+
+
+
+/* --------    Pegada Hídrica    -------- */
+
+.pageWrapper{width: 100vw;height: auto;/* background-color: white; */text-align: center;padding: 0 5%;/* background-image: url("../img/calculo-pegada-hidrica/pegada-01.png"); *//* background-size: contain; *//* background-repeat: no-repeat; */background-position: 0 89%;}
+.pageWrapper .tituloCategoria{font-size: 2em;color: #40ce8d;padding: 11px;margin: 10px 12%;border-bottom: 2px solid #40ce8d;}
+.pageWrapper .perguntaWrapper{/* margin: 10px 0 20px; */padding: 10px 0 20px;border-bottom: 1px solid #eaeaea;}
+.pageWrapper .perguntaWrapper .pergunta{ font-size: 1.2em; padding: 15px 0;}
+.pageWrapper .perguntaWrapper .pergunta span.produto{color: #40ce8d;font-weight: 600;letter-spacing: 0.75px;}
+.pageWrapper .perguntaWrapper .pergunta span.unidade{display: block;font-style: italic;font-size: 0.85em;}
+.pageWrapper .perguntaWrapper form{height: 60px;}
+.pageWrapper .perguntaWrapper form input.resposta{width: 100%; height: 100%; border: 1px solid #d2d2d2; border-radius: 5px; padding: 5px 5%;}
