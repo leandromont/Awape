@@ -112,13 +112,60 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller Consumo ==================================
-.controller('ConsumoCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('ConsumoCtrl', function($scope, $ionicSlideBoxDelegate, $ionicScrollDelegate, $state) {
+
+    // scroll to top every time it changes the slide
+    $scope.slideChanged = function(index) {
+      $ionicScrollDelegate.scrollTop();
+      $scope.slideIndex = index;
+
+    };
+      $scope.slideIndex = 0;
+    // disable swipe to change slide-box
+    $scope.disableSwipe = function() {
+      $ionicSlideBoxDelegate.enableSlide(false);
+    };
+
+    // next slide-box + slide-box height
     $scope.nextSlide = function() {
       $ionicSlideBoxDelegate.next();
+      var slider = $('.slider');
+      var actualSlide;
+      var actualSlideHeight;
+      if (slider.hasClass('slide-0')){
+        actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight();
+        slider.height(actualSlideHeight);
+      } else if (slider.hasClass('slide-1')){
+        actualSlideHeight = $('.slidebox2').find('.pageWrapper').outerHeight();
+        slider.height(actualSlideHeight);
+      } else {
+      }
     }
+
+    // previous slide-box + slide-box height
     $scope.prevSlide = function() {
       $ionicSlideBoxDelegate.previous();
+      var slider = $('.slider');
+      var actualSlide;
+      if (slider.hasClass('slide-0')){
+      } else if (slider.hasClass('slide-1')){
+        actualSlideHeight = $('.slidebox0').find('.pageWrapper').outerHeight();
+        slider.height(actualSlideHeight);
+      } else {
+          actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight();
+        slider.height(actualSlideHeight);
+      }
     }
+
+    // finish slide-box --- SUBMIT ALL FORMS
+    $scope.submitAll = function() {
+      console.log("submit");
+    };
+
+
+
+
+    
 
   $scope.$on('$ionicView.enter', function(){
      

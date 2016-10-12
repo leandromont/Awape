@@ -3,8 +3,8 @@
 .clearfix:after{visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
 .display-none{display: none !important;}
 /*Background Gradient*/
-.pane, .view{background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%); color: #545454;}
-
+.pane, .view{background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%);color: #545454;}
+body{font-family: "Segoe UI";}
 
 
 /* --------    Menu    -------- */
@@ -388,5 +388,25 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 .pageWrapper .perguntaWrapper .pergunta{ font-size: 1.2em; padding: 15px 0;}
 .pageWrapper .perguntaWrapper .pergunta span.produto{color: #40ce8d;font-weight: 600;letter-spacing: 0.75px;}
 .pageWrapper .perguntaWrapper .pergunta span.unidade{display: block;font-style: italic;font-size: 0.85em;}
-.pageWrapper .perguntaWrapper form{height: 60px;}
+.pageWrapper .perguntaWrapper form{height: 60px;position: relative;}
 .pageWrapper .perguntaWrapper form input.resposta{width: 100%; height: 100%; border: 1px solid #d2d2d2; border-radius: 5px; padding: 5px 5%;}
+.pageWrapper .perguntaWrapper form .resultadoItem{position: absolute; top: 0; right: 0; width: 40%; border: 1px solid #5ecbdb; border-left-width: 3px; height: 100%; border-radius: 0 5px 5px 0; text-align: center; color: #5ecbdb;}
+.pageWrapper .perguntaWrapper form .resultadoItem #litrosItem{display: block; line-height: 10px; margin-top: 15px; font-size: 1.3em;}
+
+.minhaPegada .ion-navicon.centerButton{margin: 20px 25% 40px;width: 50%;padding: 0;}
+.minhaPegada .ion-navicon.leftButton{/* width: 29%; */display: inline-block;margin-top: 20px;margin-left: 3%;}
+.minhaPegada .ion-navicon.rightButton{width: 35%; float: right; margin-top: 20px; margin-right: 10%;}
+.minhaPegada .ion-navicon.hasLeft{display: inline-block; margin-left: 5%; margin-right: 0;}
+.minhaPegada .ion-navicon:before{background: #51e4b4;font-family: 'Open Sans';color: white;font-size: 1.5em;border-radius: 50px;width: 100%;padding: 3px 0;}
+.minhaPegada .ion-navicon.leftButton:before{background: transparent;color: #8a8a8a;font-size: 0.9em;font-style: italic;border-bottom: 1px solid #d6d6d6;border-radius: 0;padding-top: 15px;line-height: 14px;}
+.minhaPegada .ion-navicon.next:before{content: 'Avançar';}
+.minhaPegada .ion-navicon.previous:before{content: 'Voltar';}
+.minhaPegada .ion-navicon.finish:before{content: 'Concluir';}
+
+.slidebox0 .pageWrapper .tituloCategoria{color:#5ecbdb; border-bottom: 2px solid #5ecbdb;}
+.slidebox0 .pageWrapper .perguntaWrapper .pergunta span.produto{color: #5ecbdb;}
+.minhaPegada .slidebox0 .ion-navicon:before{background: #5ecbdb;}
+
+.slidebox1 .pageWrapper .tituloCategoria{color:#5ceacf; border-bottom: 2px solid #5ceacf;}
+.slidebox1 .pageWrapper .perguntaWrapper .pergunta span.produto{color: #5ceacf;}
+.minhaPegada .slidebox1 .ion-navicon.next:before{background: #5ceacf;}
