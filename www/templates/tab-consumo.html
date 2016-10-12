@@ -1,6 +1,6 @@
 <ion-view hide-nav-bar="true" hide-back-button="true" view-title="Consumo">
   <ion-content class="minhaPegada" >
-	<ion-slide-box show-pager="false" ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" ng-class="'slide-'+slideIndex" style="height:485px;">
+	<ion-slide-box show-pager="false" ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" ng-class="'slide-'+slideIndex" style="height:550px;">
 
 		<ion-slide class="slidebox0">
 			<div class="pageWrapper">
@@ -10,7 +10,7 @@
 						<span class="unidade">minutos / dia (somando todos os banhos do dia)</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="banho">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -19,9 +19,12 @@
 						<span class="unidade">vezes / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="dente">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
+				
+				<div class="resultadoCategoria">Total de higiene: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon next centerButton" ng-click="nextSlide()"></button>
 			</div>
@@ -35,7 +38,8 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="roupa">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -43,7 +47,8 @@
 						<span class="unidade">vezes / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="louca">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -51,7 +56,8 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="carro">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -59,7 +65,8 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="jardim">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -67,9 +74,12 @@
 						<span class="unidade">minutos / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="calcada">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
+
+				<div class="resultadoCategoria">Total de limpeza: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon previous leftButton" ng-click="prevSlide()"></button>
 				<button class="button button-icon icon ion-navicon next centerButton hasLeft" ng-click="nextSlide()"></button>
@@ -84,7 +94,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="cereal">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -92,7 +103,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="carne">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -100,7 +112,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="laticineo">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -108,7 +121,8 @@
 						<span class="unidade">unidades / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="ovo">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -116,7 +130,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="vegetais">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -124,7 +139,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="fruta">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -132,7 +148,8 @@
 						<span class="unidade">kgs / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="raiz">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -140,7 +157,8 @@
 						<span class="unidade">xícaras / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="cafe">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -148,9 +166,12 @@
 						<span class="unidade">xícaras / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" value="">
+						<input type="text" class="resposta" name="resposta" id="cha">
+						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
+
+				<div class="resultadoCategoria">Total de alimentos: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon previous leftButton" ng-click="prevSlide()"></button>
 				<button class="button button-icon icon ion-navicon finish centerButton hasLeft " ng-click="submitAll()"></button>
