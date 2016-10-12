@@ -395,7 +395,7 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 .slidebox1 .pageWrapper .perguntaWrapper form .resultadoItem{color: #5ceacf; border-color: #5ceacf;}
 .slidebox2 .pageWrapper .perguntaWrapper form .resultadoItem{color: #40ce8d; border-color: #40ce8d;}
 
-.pageWrapper .resultadoCategoria{width: 100%;/* border-bottom: 1px solid #5ecbdb; */height: 100%;text-align: center;color: #545454;font-style: italic;font-size: 1.3em;margin: 15px 0;/* padding: 10px 0; */}
+.pageWrapper .resultadoCategoria{display:none;width: 100%;/* border-bottom: 1px solid #5ecbdb; */height: 100%;text-align: center;color: #545454;font-style: italic;font-size: 1.3em;margin: 15px 0;/* padding: 10px 0; */}
 .pageWrapper .resultadoCategoria #litrosCategoria{/* display: block; */line-height: 25px;font-size: 1.4em;font-style: normal;/* color: #40ce8d; */}
 
 .minhaPegada .ion-navicon.centerButton{margin: 10px 25% 40px;width: 50%;padding: 0;}

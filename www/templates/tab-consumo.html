@@ -7,10 +7,10 @@
 				<div class="tituloCategoria">Higiene</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">Quanto tempo você gasta no <span class="produto">banho</span>?
-						<span class="unidade">minutos / dia (somando todos os banhos do dia)</span>
+						<span class="unidade">minutos / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="banho">
+						<input type="number" class="resposta" name="resposta[]" id="banho" placeholder="Ex: 2 banhos de 15min = 30">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -19,12 +19,12 @@
 						<span class="unidade">vezes / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="dente">
+						<input type="number" class="resposta" name="resposta[]" id="dente">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				
-				<div class="resultadoCategoria">Total de higiene: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
+				<div class="resultadoCategoria" id="totalHigiene">Total de higiene: <br/><span id="litrosCategoria"></span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon next centerButton" ng-click="nextSlide()"></button>
 			</div>
@@ -38,7 +38,7 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="roupa">
+						<input type="number" class="resposta" name="resposta[]" id="roupa">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -47,7 +47,7 @@
 						<span class="unidade">vezes / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="louca">
+						<input type="number" class="resposta" name="resposta[]" id="louca">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -56,7 +56,7 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="carro">
+						<input type="number" class="resposta" name="resposta[]" id="carro">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -65,7 +65,7 @@
 						<span class="unidade">vezes / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="jardim">
+						<input type="number" class="resposta" name="resposta[]" id="jardim">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -74,12 +74,12 @@
 						<span class="unidade">minutos / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="calcada">
+						<input type="number" class="resposta" name="resposta[]" id="calcada">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 
-				<div class="resultadoCategoria">Total de limpeza: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
+				<div class="resultadoCategoria" id="totalLimpeza">Total de limpeza: <br/><span id="litrosCategoria"></span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon previous leftButton" ng-click="prevSlide()"></button>
 				<button class="button button-icon icon ion-navicon next centerButton hasLeft" ng-click="nextSlide()"></button>
@@ -91,28 +91,28 @@
 				<div class="tituloCategoria">Alimentos</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">cereal</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="cereal">
+						<input type="number" class="resposta" name="resposta[]" id="cereal" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">carne</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="carne">
+						<input type="number" class="resposta" name="resposta[]" id="carne" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">laticíneos</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="laticineo">
+						<input type="number" class="resposta" name="resposta[]" id="laticineo" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -121,34 +121,34 @@
 						<span class="unidade">unidades / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="ovo">
+						<input type="number" class="resposta" name="resposta[]" id="ovo">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">vegetais</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="vegetais">
+						<input type="number" class="resposta" name="resposta[]" id="vegetais" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">frutas</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="fruta">
+						<input type="number" class="resposta" name="resposta[]" id="fruta" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
 					<div class="pergunta">O quanto você consome de <span class="produto">raízes (batata / mandioca)</span>?
-						<span class="unidade">kgs / semana</span>
+						<span class="unidade">gramas / semana</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="raiz">
+						<input type="number" class="resposta" name="resposta[]" id="raiz" placeholder="Ex: Meio quilo = 500">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -157,7 +157,7 @@
 						<span class="unidade">xícaras / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="cafe">
+						<input type="number" class="resposta" name="resposta[]" id="cafe">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
@@ -166,12 +166,12 @@
 						<span class="unidade">xícaras / dia</span>
 					</div>
 					<form action="">
-						<input type="text" class="resposta" name="resposta" id="cha">
+						<input type="number" class="resposta" name="resposta[]" id="cha">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>
 
-				<div class="resultadoCategoria">Total de alimentos: <br/><span id="litrosCategoria">50000</span> litros/ano</div>
+				<div class="resultadoCategoria" id="totalAlimento">Total de alimentos: <br/><span id="litrosCategoria"></span> litros/ano</div>
 
 				<button class="button button-icon icon ion-navicon previous leftButton" ng-click="prevSlide()"></button>
 				<button class="button button-icon icon ion-navicon finish centerButton hasLeft " ng-click="submitAll()"></button>
