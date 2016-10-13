@@ -75,8 +75,10 @@ angular.module('starter.controllers', [])
         // Esconder listaChecked se não tiver item nela
         if($('.listaChecked .produto').length === 0){
           $('.listaChecked').hide();
+          $('.listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
         } else {
           $('.listaChecked').show();
+          $('.listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
         }
         //
       });
