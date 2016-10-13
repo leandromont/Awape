@@ -12,6 +12,11 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
+    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 100);
+
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);

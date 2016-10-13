@@ -99,7 +99,17 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller List edit mode ===========================
-.controller('ListEditModeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('ListEditModeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
+
+  $scope.scanBarcode = function() {
+      $cordovaBarcodeScanner.scan().then(function(imageData) {
+          alert(imageData.text);
+          console.log("Barcode Format -> " + imageData.format);
+          console.log("Cancelled -> " + imageData.cancelled);
+      }, function(error) {
+          alert("An error happened -> " + error);
+      });
+  };
 
   $scope.$on('$ionicView.enter', function(){
     
@@ -126,7 +136,7 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller Consumo (Pegada Hídrica Pessoal) ==================================
-.controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
     // scroll to top every time it changes the slide
     $scope.slideChanged = function(index) {
