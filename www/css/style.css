@@ -7,6 +7,13 @@
 body{font-family: "Segoe UI";}
 
 
+
+/* --------    Login    -------- */
+
+
+
+
+
 /* --------    Menu    -------- */
 
 ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated{ border:0; height: 110%;}
@@ -283,79 +290,62 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 /* --------    Produto    -------- */
 
 .produto{}
-.produto a.voltarLink{}
-.produto a.voltarLink .voltarLista{}
-.produto .fotoWrapper{}
-.produto .fotoWrapper .fotoProduto{}
+.produto a.voltarLink{color: #585858; text-decoration: none;}
+.produto a.voltarLink .voltarLista{width: 100%;background: #e4e4e4;padding: 7px 3%;text-align: center;}
+.produto .produtoWrapper{width: 95%;margin: 20px auto;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
+.produto .fotoWrapper{width: 100%;height: 180px;}
+.produto .fotoWrapper .fotoProduto{background: url(../img/produtos/pizza.jpg) no-repeat;background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
 .produto .infosProduto{}
-.produto .infosProduto .nomeProduto{}
-.produto .infosProduto .gastoProduto{}
+.produto .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
+.produto .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
 .produto .infosProduto .gastoProduto span#litrosGastos{}
-.produto .infosProduto .tiposAgua{}
-.produto .infosProduto .tiposAgua .aguaIndividual{}
-.produto .infosProduto .tiposAgua .aguaIndividual .icon{}
-.produto .infosProduto .tiposAgua .aguaIndividual .bgIcon{}
-.produto .infosProduto .tiposAgua .aguaIndividual .valor{}
-.produto .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{}
-.produto .recomendacao{}
-.produto .recomendacao .titulo{}
-.produto .recomendacao .produtoRecom{}
-.produto .recomendacao .produtoRecom .fotoWrapper{}
-.produto .recomendacao .produtoRecom .fotoWrapper.fotoProduto{}
-.produto .recomendacao .produtoRecom .infosProduto{}
-.produto .recomendacao .produtoRecom .infosProduto .gastoProduto{}
+.produto .infosProduto .tiposAgua{margin: 25px auto;}
+.produto .infosProduto .tiposAgua .aguaIndividual{display: inline-block;width: 29.5%;margin-right: 3%;position: relative;}
+.produto .infosProduto .tiposAgua .aguaIndividual:last-child{margin-right: 0}
+.produto .infosProduto .tiposAgua .aguaIndividual .icon{background: url(../img/produtos/aguaIcon.png) no-repeat;background-size: contain;height: 70px;width: 70px;display: inline-block;margin: 0 17%;z-index: 9999;position: relative;}
+.produto .infosProduto .tiposAgua .aguaIndividual .bgIcon{width: 65px;left: 20px;bottom: 50px;position: absolute;z-index: 9;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaAzul .bgIcon{background-color:#5dcadc;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaVerde .bgIcon{background-color:#40ce8d;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
+.produto .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
+.produto .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
+.produto .recomendacao{width: 90%; margin: 0 auto; padding: 5px 0 0 0; border-top: 1px solid #d2d2d2;}
+.produto .recomendacao .titulo{text-align: center;padding: 5px 0 0;}
+.produto .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 20px;}
+.produto .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}
+.produto .recomendacao .produtoRecom .fotoWrapper .fotoProduto{border-radius: 30px; opacity: 0.9;}
+.produto .recomendacao .produtoRecom .infosProduto{text-align: center;}
+.produto .recomendacao .produtoRecom .infosProduto .gastoProduto{font-size: 0.9em;}
 .produto .recomendacao .produtoRecom .infosProduto .gastoProduto span#litrosGastos{}
-.produto .recomendacao .produtoRecom .infosProduto .diferencaProds{}
+.produto .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
 .produto .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
-.produto .recomendacao .produtoRecom .infosProduto .nomeProduto{}
+.produto .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
 
+.produto .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 38%;padding: 10px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
+.produto .infoAgua .titulo{padding: 0 0 10px;}
+.produto .infoAgua#infoVerde .titulo{color:#40ce8d;}
+.produto .infoAgua#infoCinza .titulo{color:#727272;}
+.produto .infoAgua .texto{}
 
 
 
 /* ====================================== Firebase pages ============== */
 
-.larger {
-    font-size: 120px;
-}
-
-.medium {
-    font-size: 30px;
-}
-
+.larger {font-size: 120px;}
+.medium {font-size: 30px;}
 
 /** Error Messages **/
 
 /** Styling for the username field **/
-label.item.has-error {
-  border-bottom: 2px solid red;
-}
+label.item.has-error {border-bottom: 2px solid red;}
 
 /** Styling for the password field when an error exists**/
-label.item.has-error-lr {
-  border-bottom: 2px solid red;
-}
+label.item.has-error-lr {border-bottom: 2px solid red;}
 
 /** Styling for the password field when an error has been resolved**/
-label.item.valid-lr {
-  border-left: 2px solid green;
-  border-right: 2px solid green;
-}
+label.item.valid-lr {border-left: 2px solid green;border-right: 2px solid green;}
 
 /** Styling for the error text and container **/
-.form-errors {
-  margin: 5px 0
-}
-.form-error {
-  padding: 2px 0 2px 16px;
-  color: red;
-}
-
- #profile-image {
-        display: block;
-        border-radius: 100px;
-        border: 1px solid #fff;
-        width: 128px;
-        height: 128px;
-        margin: 30px auto 0;
-        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
-      }
+.form-errors {margin: 5px 0}
+.form-error {padding: 2px 0 2px 16px; color: red;}
+ #profile-image {display: block;border-radius: 100px;border: 1px solid #fff;width: 128px;height: 128px;margin: 30px auto 0;box-shadow: 0px 0px 4px rgba(0,0,0,0.7);}

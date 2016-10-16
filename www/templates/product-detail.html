@@ -2,60 +2,106 @@
   <ion-content class="produto">
 
   	<a href="#/tab/list" class="voltarLink">
-		<div class="voltarLista">
+		<div class="voltarLista">< Voltar para a Lista
 	   	</div>
 	</a>
-
-	<div class="fotoWrapper">
-		<div class="fotoProduto"></div>
-	</div>
-	<div class="infosProduto">
-		<div class="nomeProduto"></div>
-		<div class="gastoProduto">
-			<span id="litrosGastos"></span>
+	<div class="produtoWrapper">
+		<div class="fotoWrapper">
+			<div class="fotoProduto"></div>
 		</div>
-		<div class="tiposAgua">
-			<div class="aguaIndividual" id="aguaAzul">
-				<div class="icon"></div>
-				<div class="bgIcon"></div>
-				<div class="valor">
-					<span id="porcentagemAgua"></span>
-				</div>
+		<div class="infosProduto">
+			<div class="nomeProduto">Pizza</div>
+			<div class="gastoProduto">
+				<span id="litrosGastos">1250</span> litros/ano
 			</div>
-			<div class="aguaIndividual" id="aguaVerde">
-				<div class="icon"></div>
-				<div class="bgIcon"></div>
-				<div class="valor">
-					<span id="porcentagemAgua"></span>
+			<div class="tiposAgua">
+				<div class="aguaIndividual" id="aguaAzul">
+					<div class="icon"></div>
+					<div class="bgIcon"></div>
+					<div class="valor">
+					<div class="tipoAgua">Água Azul</div>
+						<span id="porcentagemAgua">15</span>%
+					</div>
 				</div>
-			</div>
-			<div class="aguaIndividual" id="aguaCinza">
-				<div class="icon"></div>
-				<div class="bgIcon"></div>
-				<div class="valor">
-					<span id="porcentagemAgua"></span>
+				<div class="aguaIndividual" id="aguaVerde">
+					<div class="icon"></div>
+					<div class="bgIcon"></div>
+					<div class="valor">
+					<div class="tipoAgua">Água Verde</div>
+						<span id="porcentagemAgua">50</span>%
+					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="recomendacao">
-		<div class="titulo"></div>
-		<div class="produtoRecom">
-			<div class="fotoWrapper">
-				<div class="fotoProduto"></div>
-			</div>
-			<div class="infosProduto">
-				<div class="gastoProduto">
-					<span id="litrosGastos"></span>
+				<div class="aguaIndividual" id="aguaCinza">
+					<div class="icon"></div>
+					<div class="bgIcon"></div>
+					<div class="valor">
+					<div class="tipoAgua">Água Cinza</div>
+						<span id="porcentagemAgua">35</span>%
+					</div>
 				</div>
-				<div class="diferencaProds">
-					<span id="litrosDiferenca"></span>
+				<div class="infoAgua" id="infoAzul">
+					<div class="titulo">Água Azul</div>
+					<div class="texto">Esse número indica o quanto dessa água é gasta bibibi...</div>
 				</div>
-				<div class="nomeProduto"></div>
+				<div class="infoAgua" id="infoVerde">
+					<div class="titulo">Água Verde</div>
+					<div class="texto">Esse número indica o quanto dessa água é gasta bibibi...</div>
+				</div>
+				<div class="infoAgua" id="infoCinza">
+					<div class="titulo">Água Cinza</div>
+					<div class="texto">Esse número indica o quanto dessa água é gasta bibibi...</div>
+				</div>
 			</div>
 		</div>
-	</div>
 
+		<div class="recomendacao">
+			<div class="titulo">Recomendações</div>
+			<div class="produtoRecom">
+				<div class="fotoWrapper">
+					<div class="fotoProduto"></div>
+				</div>
+				<div class="infosProduto">
+					<div class="nomeProduto">Hamburguer</div>
+					<div class="gastoProduto">
+						<span id="litrosGastos">2000</span>
+						 litros/ano
+					</div>
+					<div class="diferencaProds">menos 
+						<span id="litrosDiferenca">800</span> litros
+					</div>
+				</div>
+			</div>
+			<div class="produtoRecom">
+				<div class="fotoWrapper">
+					<div class="fotoProduto"></div>
+				</div>
+				<div class="infosProduto">
+					<div class="nomeProduto">Frango</div>
+					<div class="gastoProduto">
+						<span id="litrosGastos">1500</span>
+						 litros/ano
+					</div>
+					<div class="diferencaProds">menos 
+						<span id="litrosDiferenca">800</span> litros
+					</div>
+				</div>
+			</div>
+			<div class="produtoRecom">
+				<div class="fotoWrapper">
+					<div class="fotoProduto"></div>
+				</div>
+				<div class="infosProduto">
+					<div class="nomeProduto">Frango</div>
+					<div class="gastoProduto">
+						<span id="litrosGastos">1500</span>
+						 litros/ano
+					</div>
+					<div class="diferencaProds">menos 
+						<span id="litrosDiferenca">800</span> litros
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
   </ion-content>
 </ion-view>

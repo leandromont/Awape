@@ -127,7 +127,36 @@ angular.module('starter.controllers', [])
 .controller('ProductDetailCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
   $scope.$on('$ionicView.enter', function(){
-     
+
+
+    // pegar a porcentagem de cada tipo de água e encher a gota com esse valor
+    $('.aguaIndividual').each(function(){
+      var qntdAgua = $('#porcentagemAgua', this).text();
+      var iconHeight = $('.icon', this).outerHeight();
+      var bgHeight = iconHeight * (qntdAgua/100);
+      $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
+    });
+    //
+
+    // aparecer e desaparecer as informações dos tipos de água
+    $('#aguaAzul').click(function(){
+      $('#infoVerde').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).hide(120);
+      $('#infoAzul').stop(false,true).toggle(120);
+    });
+    $('#aguaVerde').click(function(){
+      $('#infoAzul').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).hide(120);
+      $('#infoVerde').stop(false,true).toggle(120);
+    });
+    $('#aguaCinza').click(function(){
+      $('#infoAzul').stop(false,true).hide(120);
+      $('#infoVerde').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).toggle(120);
+    });
+    //
+
+
   });
 
   $scope.$on('$ionicView.leave', function(){
