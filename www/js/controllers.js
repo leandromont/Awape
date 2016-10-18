@@ -1,25 +1,29 @@
 angular.module('starter.controllers', [])
-
-
 // ==================== Controller Home ==================================
 .controller('HomeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
-  var ref = firebase.database().ref();
-  $scope.authObj = $firebaseAuth();
 
-  $scope.checkUser = function () {
-    var firebaseUser = $scope.authObj.$getAuth();
 
-    if (firebaseUser) {
-    $log.log("Signed in as:", firebaseUser.uid);
-    } else {
-    $log.log("Signed out");
-    $location.path("/login");
-    }
-
-  }
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userId = Auth.get.user.id()
+  });
 
   $scope.$on('$ionicView.enter', function(){
-     
+      $scope.database = Auth.get.data();
+
+      $scope.userId = Auth.get.user.id();
+
+      // $scope.sendName = Auth.send.user.name($scope.userId,'Leandro');
+
+      setTimeout(function(){
+
+        Auth.get.user.name($scope.userId).then(function(nomeUsuario) {
+          $scope.getName = nomeUsuario;
+        });
+        Auth.get.user.amigos($scope.userId).then(function(resposta) {
+          $scope.amigos = resposta;
+        });
+        
+      }, 500);
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -29,10 +33,16 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller History ==================================
-.controller('HistoryCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('HistoryCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, userData) {
+
+
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+
 
   $scope.$on('$ionicView.enter', function(){
-     
+    $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -88,8 +98,14 @@ angular.module('starter.controllers', [])
       $(this).toggleClass('flipped');
     });
   //
+
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+
+
   $scope.$on('$ionicView.enter', function(){
-     
+    $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -111,8 +127,13 @@ angular.module('starter.controllers', [])
       });
   };
 
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+
+
   $scope.$on('$ionicView.enter', function(){
-    
+    $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -124,8 +145,32 @@ angular.module('starter.controllers', [])
 // ==================== Controller Product detail ==================================
 .controller('ProductDetailCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+
+
   $scope.$on('$ionicView.enter', function(){
-     
+    $scope.userData = Auth.get.user.id()
+  });
+
+  $scope.$on('$ionicView.leave', function(){
+    
+  });
+
+  
+})
+
+// ==================== Controller Search ==================================
+.controller('SearchCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+
+
+  $scope.$on('$ionicView.enter', function(){
+    $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -186,8 +231,15 @@ angular.module('starter.controllers', [])
       console.log("submit");
     };
 
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
 
   $scope.$on('$ionicView.enter', function(){
+
+    $scope.userData = Auth.get.user.id()
+
+
     var banhoVal = 0;
     var denteVal = 0;
     var roupaVal = 0;
@@ -341,9 +393,13 @@ angular.module('starter.controllers', [])
 
 // ==================== Controller Consumo edit mode =============================
 .controller('ConsumoEditModeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+  
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
 
   $scope.$on('$ionicView.enter', function(){
-     
+     $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -356,8 +412,12 @@ angular.module('starter.controllers', [])
 // ==================== Controller Preferences ==================================
 .controller('PreferencesCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
+  $scope.$on('$ionicView.loaded', function(){
+      $scope.userData = Auth.get.user.id()
+  });
+  
   $scope.$on('$ionicView.enter', function(){
-     
+     $scope.userData = Auth.get.user.id()
   });
 
   $scope.$on('$ionicView.leave', function(){

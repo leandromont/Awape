@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-
+'Use Strict';
 angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controllers', 'starter.services','firebase', 'pascalprecht.translate','ngMessages'])
 
 .run(function($ionicPlatform) {
@@ -13,9 +13,11 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
 
-    setTimeout(function() {
-        navigator.splashscreen.hide();
-    }, 100);
+    // setTimeout(function() {
+    //     navigator.splashscreen.hide();
+    // }, 100);
+
+
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -109,6 +111,16 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
     }
   })
 
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-extra': {
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
+      }
+    }
+  })
+
    .state('tab.consumo', {
     url: '/consumo',
     views: {
@@ -168,17 +180,6 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
  $urlRouterProvider.otherwise("/login");
 
 // ========== firebase app
- 
-
- // //=============== Oauth Client Provider =============================== 
- //  oauth1ClientProvider.config({
- //        consumerKey: 'BzWStDYk6Fj3',
- //        consumerSecret: 'q9pl0oBdGdbq6K3fFqxarmoWWyJHtElyKrcW3jAbSvZrV3mt',
- //        requestEndpoint: 'http://awape.com.br/oauth1/request',
- //        authorizeEndpoint: 'http://awape.com.br/oauth1/authorize',
- //        accessEndpoint: 'http://awape.com.br/oauth1/access',
- //        oauthCallback: 'http://awape.com.br'
- //    });
 
 }).constant('FURL', {
     apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
