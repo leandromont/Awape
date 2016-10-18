@@ -201,14 +201,17 @@ a.editarBotao .icon#editarSalvar{background: url('../img/sprite_layout.png') no-
 ul.lista li.produto ul.pecasLista  li.alterarQntd{
     width: 23%;
 }
-ul.lista li.produto ul.pecasLista  li.alterarQntd ul{}
-ul.lista li.produto ul.pecasLista  li.alterarQntd ul li{width: 27px;height: 27px;}
-ul.lista li.produto ul.pecasLista  li.alterarQntd ul li#mais{background: url('../img/sprite_layout.png') no-repeat -153px -158px;width: 45px;}
+ul.lista li.produto ul.pecasLista  li.alterarQntd ul{
+    display: block;
+}
+ul.lista li.produto ul.pecasLista  li.alterarQntd ul li{width: 27px;height: 27px;display: inline-block;}
+ul.lista li.produto ul.pecasLista  li.alterarQntd ul li#mais{background: url('../img/sprite_layout.png') no-repeat -153px -158px;margin-right: 12px;}
 ul.lista li.produto ul.pecasLista  li.alterarQntd ul li#menos{background: url('../img/sprite_layout.png') no-repeat -206px -158px}
 
 .paginaListaEdit ul.lista{border-radius: 10px;border-bottom: 3px solid #d2d2d2;margin-bottom: 75px;margin-top: 20px;}
-.paginaListaEdit ul.lista li.produto ul.pecasLista li.nomeProduto{width: 55%;}
-
+.paginaListaEdit ul.lista li.produto ul.pecasLista li.nomeProduto{width: 59%;}
+.paginaListaEdit ul.lista li.produto ul.pecasLista li.qntdWrapper{width: 10%;padding-left: 5%;}
+.paginaListaEdit ul.lista li.produto ul.pecasLista a{display: table-cell; width: 52%; margin-right: 5%;}
 ul.adicProdutos{height: 50px;width: 93%;margin: 10px auto;display: block;}
 ul.adicProdutos li{display: table;width: 47%;height: 100%;background: #5dcadc;border-radius: 15px;float: left;border-bottom: 2px solid #53a0ad;border-right: 1px solid #53a0ad;}
 ul.adicProdutos li+li{margin-left: 6.2%;}
@@ -220,6 +223,8 @@ ul.adicProdutos .iconAdic{display: inline-block;margin: 14px 0 0 12px;}
 ul.adicProdutos li.codBarras .iconAdic{background: url('../img/sprite_layout.png') no-repeat -150px -246px;width: 33px;height: 24px;}
 ul.adicProdutos li.busca .iconAdic{background: url('../img/sprite_layout.png') no-repeat -208px -248px;width: 22px;height: 22px;margin-left: 15px;}
 ul.adicProdutos li:after{clear:both;}
+
+
 
 
 
@@ -320,13 +325,25 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 .produto .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
 .produto .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
 .produto .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
-
-.produto .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 38%;padding: 10px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
+.produto .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 20%;padding: 10px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
 .produto .infoAgua .titulo{padding: 0 0 10px;}
 .produto .infoAgua#infoVerde .titulo{color:#40ce8d;}
 .produto .infoAgua#infoCinza .titulo{color:#727272;}
 .produto .infoAgua .texto{}
 
+.produto .trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: 0;left: 0;z-index: 99999;}
+.produto .trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 105%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
+.produto .trocaProdutoWrapper .trocaProduto .titulo{padding: 0 0 10px;}
+.produto .trocaProdutoWrapper .trocaProduto .texto{font-size: 1.2em;}
+.produto .trocaProdutoWrapper .trocaProduto .texto span{font-weight: 600;}
+.produto .trocaProdutoWrapper .trocaProduto .botoes{width: 100%;}
+.produto .trocaProdutoWrapper .trocaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
+.produto .trocaProdutoWrapper .trocaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
+.produto .trocaProdutoWrapper .trocaProduto .botoes .botao#sim{
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(93,214,216,1)), color-stop(51%, rgba(92,232,209,1)), color-stop(100%, rgba(85,233,189,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(93,214,216,1) 0%, rgba(92,232,209,1) 51%, rgba(85,233,189,1) 100%);
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(93,202,220,1);
+}
 
 
 /* ====================================== Firebase pages ============== */

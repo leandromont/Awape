@@ -91,11 +91,11 @@ angular.module('starter.controllers', [])
     });
   //
   $scope.$on('$ionicView.enter', function(){
-     
+
   });
 
   $scope.$on('$ionicView.leave', function(){
-    
+
   });
 
 })
@@ -104,27 +104,77 @@ angular.module('starter.controllers', [])
 .controller('ListEditModeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
 
   $scope.scanBarcode = function() {
-      $cordovaBarcodeScanner.scan().then(function(imageData) {
-          alert(imageData.text);
-          console.log("Barcode Format -> " + imageData.format);
-          console.log("Cancelled -> " + imageData.cancelled);
-      }, function(error) {
-          alert("An error happened -> " + error);
-      });
+    $cordovaBarcodeScanner.scan().then(function(imageData) {
+      alert(imageData.text);
+      console.log("Barcode Format -> " + imageData.format);
+      console.log("Cancelled -> " + imageData.cancelled);
+    }, function(error) {
+      alert("An error happened -> " + error);
+    });
   };
 
+  // alterar a qntd ao clicar nos botões
+  $('.produto').each(function(){
+    var qntdDiv = $('span.qntd', this);
+    var qntdProduto = qntdDiv.text();
+    //botao mais
+    $('#mais', this).click(function(){
+      qntdProduto++;
+      qntdDiv.text(qntdProduto);
+    });
+    //botao menos
+    $('#menos', this).click(function(){
+      qntdProduto--;
+      qntdDiv.text(qntdProduto);
+      // esconder o produto se chegar a 0
+      if(qntdProduto === 0){
+        $(this).closest('.produto').hide(300);
+        console.log('saiu, fdp');
+      }
+    });
+  });
+  //
+
   $scope.$on('$ionicView.enter', function(){
-    
+
   });
 
   $scope.$on('$ionicView.leave', function(){
-    
+
   });
 
 })
 
 // ==================== Controller Product detail ==================================
 .controller('ProductDetailCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+
+  // aparecer e desaparecer as informações dos tipos de água
+  $('#aguaAzul').click(function(){
+    $('#infoVerde').stop(false,true).hide(120);
+    $('#infoCinza').stop(false,true).hide(120);
+    $('#infoAzul').stop(false,true).toggle(120);
+  });
+  $('#aguaVerde').click(function(){
+    $('#infoAzul').stop(false,true).hide(120);
+    $('#infoCinza').stop(false,true).hide(120);
+    $('#infoVerde').stop(false,true).toggle(120);
+  });
+  $('#aguaCinza').click(function(){
+    $('#infoAzul').stop(false,true).hide(120);
+    $('#infoVerde').stop(false,true).hide(120);
+    $('#infoCinza').stop(false,true).toggle(120);
+  });
+  //
+
+  // aparecer e desaparecer a troca de produto
+  $('.produtoRecom').click(function(){
+    $('.trocaProdutoWrapper').stop(false,true).show(50);
+  });
+   $('.trocaProduto .botao').click(function(){
+    $('.trocaProdutoWrapper').stop(false,true).hide(50);
+  });
+  //
+
 
   $scope.$on('$ionicView.enter', function(){
 
@@ -138,29 +188,14 @@ angular.module('starter.controllers', [])
     });
     //
 
-    // aparecer e desaparecer as informações dos tipos de água
-    $('#aguaAzul').click(function(){
-      $('#infoVerde').stop(false,true).hide(120);
-      $('#infoCinza').stop(false,true).hide(120);
-      $('#infoAzul').stop(false,true).toggle(120);
-    });
-    $('#aguaVerde').click(function(){
-      $('#infoAzul').stop(false,true).hide(120);
-      $('#infoCinza').stop(false,true).hide(120);
-      $('#infoVerde').stop(false,true).toggle(120);
-    });
-    $('#aguaCinza').click(function(){
-      $('#infoAzul').stop(false,true).hide(120);
-      $('#infoVerde').stop(false,true).hide(120);
-      $('#infoCinza').stop(false,true).toggle(120);
-    });
-    //
-
-
   });
 
   $scope.$on('$ionicView.leave', function(){
-    
+
+    // zerar a altura para animar novamente na entrada
+    $('.bgIcon').animate({'height': 0},20);
+    //
+
   });
 
   
@@ -173,13 +208,16 @@ angular.module('starter.controllers', [])
     $scope.slideChanged = function(index) {
       $ionicScrollDelegate.scrollTop();
       $scope.slideIndex = index;
-
     };
-      $scope.slideIndex = 0;
+    //
+
+    $scope.slideIndex = 0;
+    
     // disable swipe to change slide-box
     $scope.disableSwipe = function() {
       $ionicSlideBoxDelegate.enableSlide(false);
     };
+    //
 
     // next slide-box + slide-box height
     $scope.nextSlide = function() {
@@ -196,6 +234,7 @@ angular.module('starter.controllers', [])
       } else {
       }
     }
+    //
 
     // previous slide-box + slide-box height
     $scope.prevSlide = function() {
@@ -211,12 +250,13 @@ angular.module('starter.controllers', [])
         slider.height(actualSlideHeight);
       }
     }
+    //
 
     // finish slide-box --- SUBMIT ALL FORMS
     $scope.submitAll = function() {
       console.log("submit");
     };
-
+    //
 
   $scope.$on('$ionicView.enter', function(){
     var banhoVal = 0;
