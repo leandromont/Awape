@@ -5,9 +5,12 @@
 		<div class="fotoWrapper">
 			<div class="fotoUsuario"></div>
 		</div>
-		<div class="nome">Olá, <span id="nomeUsuario">Silvianmamn!</span></div>
+		<div class="nome">Olá, <span id="nomeUsuario">{{getName}}</span>
+		</div>
 	</div>
-
+	<div ng-repeat="item in amigos">
+	{{item.nome}} <span>{{item.idade}}</span>
+	</div>
 	<div class="titulo" id="tituloTotais">Totais do mês</div>
 	<div class="totais box">
 		<ul class="total" id="totalLista">

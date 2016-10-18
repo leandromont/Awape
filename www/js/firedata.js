@@ -1,4 +1,4 @@
-angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, Utils) {
+angular.module('starter').factory('firedata', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, Utils) {
 
 	//var ref = new Firebase(FURL);
 
@@ -10,7 +10,6 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
 
 	var Auth = {
 		user: {},
-
 
     login: function(user) {
       return auth.$signInWithEmailAndPassword(
@@ -77,53 +76,7 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
 
     signInWithProvider: function(provider) {
       return Auth.signInWithPopup('google');
-    },
-
-    get:{
-
-      user:{
-        currentUser: function(){
-          return firebase.auth().currentUser
-        },
-        id: function(){
-          return firebase.auth().currentUser.uid
-        },
-        name: function(userId){
-           return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-                    return snapshot.val().username;
-                    // ...
-                  });
-        },
-        amigos: function(userId) {
-          return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-            return snapshot.val().amigos;
-            // ...
-          });
-        }
-      },
-
-      data: function(){
-        return firebase.database().ref()
-      }
-    },
-
-    send:{
-        user:{
-          name:function(userId, name){
-            firebase.database().ref('users/' + userId).set({
-              username: name,
-              amigos : [
-                { nome: "Leandro", idade: 21 },
-                { nome: "Shiroma", idade: 30 },
-                { nome: "Érika", idade: 30 }
-              ]
-            });
-          }
-        }      
     }
-
-    
-
 	};
 	return Auth;
 
