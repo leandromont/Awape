@@ -171,7 +171,7 @@ angular.module('starter.controllers', [])
 })
 
 // ==================== Controller Product detail ==================================
-.controller('ProductDetailCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('ProductDetailCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicScrollDelegate) {
 
 
   // aparecer e desaparecer as informações dos tipos de água
@@ -202,14 +202,18 @@ angular.module('starter.controllers', [])
   //
 
   $scope.$on('$ionicView.loaded', function(){
-      $scope.userData = Auth.get.user.id()
+      // $scope.userData = Auth.get.user.id()
   });
 
 
 
   $scope.$on('$ionicView.enter', function(){
 
-    $scope.userData = Auth.get.user.id()
+    // $scope.userData = Auth.get.user.id()
+
+    // scroll to top on enter
+    $ionicScrollDelegate.scrollTop();
+    //
 
     // pegar a porcentagem de cada tipo de água e encher a gota com esse valor
     $('.aguaIndividual').each(function(){
@@ -242,7 +246,11 @@ angular.module('starter.controllers', [])
   });
 
   $scope.$on('$ionicView.leave', function(){
-    
+
+    // voltar a altura para 0 para fazer a animação toda vez que entrar
+    $('.bgIcon').animate({'height': 0},10);
+    //
+
   });
 
   
