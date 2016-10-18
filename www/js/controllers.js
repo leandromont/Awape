@@ -153,8 +153,6 @@ angular.module('starter.controllers', [])
   });
   //
 
-  $scope.$on('$ionicView.enter', function(){
-
 
   $scope.$on('$ionicView.loaded', function(){
       $scope.userData = Auth.get.user.id()
@@ -261,8 +259,6 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function(){
     $scope.userData = Auth.get.user.id()
 
-
-
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -308,7 +304,7 @@ angular.module('starter.controllers', [])
         slider.height(actualSlideHeight);
       } else {
       }
-    }
+    };
     //
 
     // previous slide-box + slide-box height
@@ -324,21 +320,20 @@ angular.module('starter.controllers', [])
           actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight();
         slider.height(actualSlideHeight);
       }
-    }
+    };
     //
 
     // finish slide-box --- SUBMIT ALL FORMS
     $scope.submitAll = function() {
       console.log("submit");
     };
-
     //
 
 
   $scope.$on('$ionicView.loaded', function(){
       $scope.userData = Auth.get.user.id()
   });
->>>>>>> origin/master
+
 
   $scope.$on('$ionicView.enter', function(){
 
@@ -473,7 +468,7 @@ angular.module('starter.controllers', [])
             break
           default:
             console.log("fudeu");
-        }
+        };
 
         // add totals and than show them
         var totalHigiene = banhoTotal+denteTotal;
@@ -587,6 +582,6 @@ angular.module('starter').controller('loginController', function ($scope, $state
     $location.path("/login");
     }
 
-  }
+  };
 
 });
