@@ -7,6 +7,13 @@
 body{font-family: "Segoe UI";}
 
 
+
+/* --------    Login    -------- */
+
+
+
+
+
 /* --------    Menu    -------- */
 
 ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated{ border:0; height: 110%;}
@@ -143,175 +150,36 @@ a.editarBotao .icon{width: 82px; height: 82px;}
 a.editarBotao .icon#editarLista{background: url('../img/sprite_layout.png') no-repeat -40px -171px;}
 ul.listaNotChecked{}
 ul.lista{width: 95%;margin: 10px auto 0;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px 10px 0 0;padding: 0 10px;}
-ul.lista li.produto{font-size: 1.1em;padding: 13px 0;border-bottom: 1px solid #efefef;background: rgba(255, 255, 255, 0.7);}
+
+ul.lista li.produto{font-size: 1.1em;padding: 16px 0;background: rgba(255, 255, 255, 0.7);border-bottom: 1px solid #efefef;}
 ul.lista li.produto:last-child{border-bottom:0;}
 ul.lista li.produto ul.pecasLista{display: table; width: 100%;}
 ul.lista li.produto ul.pecasLista li{display: table-cell;vertical-align: middle;}
-ul.lista li.produto ul.pecasLista .checkWrapper{}
+ul.lista li.produto ul.pecasLista .checkWrapper{width: 27px;}
 ul.lista li.produto ul.pecasLista .checkWrapper .check{}
 ul.lista li.produto ul.pecasLista .checkWrapper label{ font-size: 100%;}
+ul.lista li.produto ul.pecasLista a{display: table;width: 100%;color: #545454;text-decoration: none;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */}
 ul.lista li.produto ul.pecasLista li.nomeProduto{padding: 0 3%;width: 50%;}
-ul.lista li.produto ul.pecasLista li.qntdWrapper{
-<<<<<<< HEAD
-
-}
-
-ul.lista li.produto ul.pecasLista li.qntdWrapper span{
-    padding: 1px 9px 3px 10px;
-    border-radius: 20px 20px 5px 20px;
-    border: 1px solid #39acbf;
-    color: #39acbf;
-}
-
-ul.lista li.produto ul.pecasLista li.unid{
-    margin: 0 0 0 -2px;
-    color: #39acbf;
-}
-
-ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{
-}
-
-ul.lista li.produto ul.pecasLista  li.gastoProduto{
-    /* float: right; */
-    margin: 1px 0 0 0;
-    text-align: right;
-}
-
-ul.lista li.produto ul.pecasLista  li.gastoProduto::after{
-    content: ">";
-    color:#5dcadc;
-    font-size: 1.2em;
-    margin: 0 0 0 2px;
-}
-
-.ui-state-highlight{
-    height: 3em !important;
-    background:rgba(245, 245, 245, 0.72) !important;
-    width: 107%;
-    margin: 0 0 0 -3.5%;
-    border-radius: 10px;
-    border: 2px solid #e8e8e8 !important;
-    border-color:#e8e8e8; 
-}
-
-ul.listaChecked{
-    border-radius: 0 0 10px 10px;
-    border-top: 2px solid #d4d4d4;
-    border-bottom: 2px solid #d2d2d2;
-    background: rgba(234, 234, 234, 0.04);
-}
-
-ul.listaChecked li.produto{
-    background: transparent;
-}
-
-ul.listaChecked li.produto ul.pecasLista li.nomeProduto{
-    color: #9a9a9a;
-    font-weight: 300;
-    text-decoration: line-through;
-}
-
-ul.listaChecked li.produto ul.pecasLista li.qntdWrapper span.qntd{
-    border-color: #bdbdbd;
-    color: #bdbdbd;
-}
-
-ul.listaChecked li.produto ul.pecasLista li.unid{
-    color: #bdbdbd;
-}
-
-ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{
-    font-weight: 500;
-    color: #b1b1b1;
-}
-
-.totalLista{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 50px;
-    background: #5dcadc;
-    display: table;
-    margin-bottom: 49px;
-}
-
-.totalLista .titulo{
-    display: table-cell;
-    vertical-align: middle;
-    color: white;
-    font-weight: 300;
-    padding: 0 0 0 6%;
-}
-
-.totalLista .litrosTotal{
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 1.4em;
-    color: white;
-    font-weight: 300;
-    text-align: right;
-    padding-right: 6%;
-}
-
-.totalLista .litrosTotal span#litrosTotal{
-    font-size: 1.2em;
-    font-weight: 400;
-}
-
-
-/* ====================================== Firebase pages ============== */
-
-.larger {
-    font-size: 120px;
-}
-
-.medium {
-    font-size: 30px;
-}
-
-
-/** Error Messages **/
-
-/** Styling for the username field **/
-label.item.has-error {
-  border-bottom: 2px solid red;
-}
-
-/** Styling for the password field when an error exists**/
-label.item.has-error-lr {
-  border-bottom: 2px solid red;
-}
-
-/** Styling for the password field when an error has been resolved**/
-label.item.valid-lr {
-  border-left: 2px solid green;
-  border-right: 2px solid green;
-}
-
-/** Styling for the error text and container **/
-.form-errors {
-  margin: 5px 0
-}
-.form-error {
-  padding: 2px 0 2px 16px;
-  color: red;
-}
-
- #profile-image {
-        display: block;
-        border-radius: 100px;
-        border: 1px solid #fff;
-        width: 128px;
-        height: 128px;
-        margin: 30px auto 0;
-        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
-      }
-
+ul.lista li.produto ul.pecasLista li.qntdWrapper span{padding: 1px 9px 3px 10px; border-radius: 20px 20px 5px 20px; border: 1px solid #39acbf; color: #39acbf;}
+ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
+ul.lista li.produto ul.pecasLista  li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
+ul.lista li.produto ul.pecasLista  li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
+.ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
+ul.listaChecked{border-radius: 0 0 10px 10px; border-top: 2px solid #d4d4d4; border-bottom: 2px solid #d2d2d2; background: rgba(234, 234, 234, 0.04);}
+ul.listaChecked li.produto{background: transparent;}
+ul.listaChecked li.produto ul.pecasLista li.nomeProduto{color: #9a9a9a; font-weight: 300; text-decoration: line-through;}
+ul.listaChecked li.produto ul.pecasLista li.qntdWrapper span.qntd{border-color: #bdbdbd; color: #bdbdbd;}
+ul.listaChecked li.produto ul.pecasLista li.unid{color: #bdbdbd;}
+ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; color: #b1b1b1;}
+.totalLista{width: 100%; position: fixed; bottom: 0; height: 50px; background: #5dcadc; display: table; margin-bottom: 49px;}
+.totalLista .titulo{display: table-cell; vertical-align: middle; color: white;  font-weight: 300; padding: 0 0 0 6%;}
+.totalLista .litrosTotal{display: table-cell; vertical-align: middle; font-size: 1.4em; color: white; font-weight: 300; text-align: right; padding-right: 6%;}
+.totalLista .litrosTotal span#litrosTotal{font-size: 1.2em; font-weight: 400;}
 ul.lista li.produto ul.pecasLista li.qntdWrapper span{padding: 1px 9px 3px 10px; border-radius: 20px 20px 5px 20px; border: 1px solid #39acbf; color: #39acbf;}
 ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
 ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{}
-ul.lista li.produto ul.pecasLista  li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
-ul.lista li.produto ul.pecasLista  li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
+ul.lista li.produto ul.pecasLista li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
+ul.lista li.produto ul.pecasLista li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 ul.listaChecked{border-radius: 0 0 10px 10px;border-top: 2px solid #d4d4d4;border-bottom: 2px solid #d2d2d2;margin-bottom: 80px;margin-top: 0;}
 ul.listaChecked li.produto{background: transparent;opacity: 0.5;}
@@ -351,8 +219,9 @@ ul.adicProdutos li.busca span{width: 67%;}
 ul.adicProdutos .iconAdic{display: inline-block;margin: 14px 0 0 12px;}
 ul.adicProdutos li.codBarras .iconAdic{background: url('../img/sprite_layout.png') no-repeat -150px -246px;width: 33px;height: 24px;}
 ul.adicProdutos li.busca .iconAdic{background: url('../img/sprite_layout.png') no-repeat -208px -248px;width: 22px;height: 22px;margin-left: 15px;}
-
 ul.adicProdutos li:after{clear:both;}
+
+
 
 /* --------    Histórico    -------- */
 
@@ -415,3 +284,68 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 .slidebox1 .pageWrapper .tituloCategoria{color:#5ceacf; border-bottom: 2px solid #5ceacf;}
 .slidebox1 .pageWrapper .perguntaWrapper .pergunta span.produto{color: #5ceacf;}
 .minhaPegada .slidebox1 .ion-navicon.next:before{background: #5ceacf;}
+
+
+
+/* --------    Produto    -------- */
+
+.produto{}
+.produto a.voltarLink{color: #585858; text-decoration: none;}
+.produto a.voltarLink .voltarLista{width: 100%;background: #e4e4e4;padding: 7px 3%;text-align: center;}
+.produto .produtoWrapper{width: 95%;margin: 20px auto;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
+.produto .fotoWrapper{width: 100%;height: 180px;}
+.produto .fotoWrapper .fotoProduto{background: url(../img/produtos/pizza.jpg) no-repeat;background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
+.produto .infosProduto{}
+.produto .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
+.produto .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
+.produto .infosProduto .gastoProduto span#litrosGastos{}
+.produto .infosProduto .tiposAgua{margin: 25px auto;}
+.produto .infosProduto .tiposAgua .aguaIndividual{display: inline-block;width: 29.5%;margin-right: 3%;position: relative;}
+.produto .infosProduto .tiposAgua .aguaIndividual:last-child{margin-right: 0}
+.produto .infosProduto .tiposAgua .aguaIndividual .icon{background: url(../img/produtos/aguaIcon.png) no-repeat;background-size: contain;height: 70px;width: 70px;display: inline-block;margin: 0 17%;z-index: 9999;position: relative;}
+.produto .infosProduto .tiposAgua .aguaIndividual .bgIcon{width: 65px;left: 20px;bottom: 50px;position: absolute;z-index: 9;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaAzul .bgIcon{background-color:#5dcadc;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaVerde .bgIcon{background-color:#40ce8d;}
+.produto .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
+.produto .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
+.produto .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
+.produto .recomendacao{width: 90%; margin: 0 auto; padding: 5px 0 0 0; border-top: 1px solid #d2d2d2;}
+.produto .recomendacao .titulo{text-align: center;padding: 5px 0 0;}
+.produto .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 20px;}
+.produto .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}
+.produto .recomendacao .produtoRecom .fotoWrapper .fotoProduto{border-radius: 30px; opacity: 0.9;}
+.produto .recomendacao .produtoRecom .infosProduto{text-align: center;}
+.produto .recomendacao .produtoRecom .infosProduto .gastoProduto{font-size: 0.9em;}
+.produto .recomendacao .produtoRecom .infosProduto .gastoProduto span#litrosGastos{}
+.produto .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
+.produto .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
+.produto .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
+
+.produto .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 38%;padding: 10px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
+.produto .infoAgua .titulo{padding: 0 0 10px;}
+.produto .infoAgua#infoVerde .titulo{color:#40ce8d;}
+.produto .infoAgua#infoCinza .titulo{color:#727272;}
+.produto .infoAgua .texto{}
+
+
+
+/* ====================================== Firebase pages ============== */
+
+.larger {font-size: 120px;}
+.medium {font-size: 30px;}
+
+/** Error Messages **/
+
+/** Styling for the username field **/
+label.item.has-error {border-bottom: 2px solid red;}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {border-bottom: 2px solid red;}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {border-left: 2px solid green;border-right: 2px solid green;}
+
+/** Styling for the error text and container **/
+.form-errors {margin: 5px 0}
+.form-error {padding: 2px 0 2px 16px; color: red;}
+ #profile-image {display: block;border-radius: 100px;border: 1px solid #fff;width: 128px;height: 128px;margin: 30px auto 0;box-shadow: 0px 0px 4px rgba(0,0,0,0.7);}

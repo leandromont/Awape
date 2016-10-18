@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 // ==================== Controller Home ==================================
 .controller('HomeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
-
   $scope.$on('$ionicView.loaded', function(){
       $scope.userId = Auth.get.user.id()
   });
@@ -85,8 +84,10 @@ angular.module('starter.controllers', [])
         // Esconder listaChecked se não tiver item nela
         if($('.listaChecked .produto').length === 0){
           $('.listaChecked').hide();
+          $('.listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
         } else {
           $('.listaChecked').show();
+          $('.listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
         }
         //
       });
@@ -151,7 +152,36 @@ angular.module('starter.controllers', [])
 
 
   $scope.$on('$ionicView.enter', function(){
+
     $scope.userData = Auth.get.user.id()
+
+    // pegar a porcentagem de cada tipo de água e encher a gota com esse valor
+    $('.aguaIndividual').each(function(){
+      var qntdAgua = $('#porcentagemAgua', this).text();
+      var iconHeight = $('.icon', this).outerHeight();
+      var bgHeight = iconHeight * (qntdAgua/100);
+      $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
+    });
+    //
+
+    // aparecer e desaparecer as informações dos tipos de água
+    $('#aguaAzul').click(function(){
+      $('#infoVerde').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).hide(120);
+      $('#infoAzul').stop(false,true).toggle(120);
+    });
+    $('#aguaVerde').click(function(){
+      $('#infoAzul').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).hide(120);
+      $('#infoVerde').stop(false,true).toggle(120);
+    });
+    $('#aguaCinza').click(function(){
+      $('#infoAzul').stop(false,true).hide(120);
+      $('#infoVerde').stop(false,true).hide(120);
+      $('#infoCinza').stop(false,true).toggle(120);
+    });
+    //
+
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -171,6 +201,8 @@ angular.module('starter.controllers', [])
 
   $scope.$on('$ionicView.enter', function(){
     $scope.userData = Auth.get.user.id()
+
+
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -381,8 +413,6 @@ angular.module('starter.controllers', [])
       });
 
 
-
-
   });
 
   $scope.$on('$ionicView.leave', function(){
@@ -432,8 +462,6 @@ angular.module('starter.controllers', [])
       console.error('Sign Out Error', error);
     });
   }
- 
-
 
 
 })
