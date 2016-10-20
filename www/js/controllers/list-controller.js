@@ -81,10 +81,8 @@ $scope.waterFootprint = function(productId){
       checks.click(function() {
         if (checks.is(':checked')){ 
             $(this).closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show(200);
-            $('.listaChecked .qntdInput').attr('disabled', 'disabled');
         } else {
             $(this).closest('.produto').detach().hide().prependTo('.listaNotChecked').removeClass('produtoChecked').show(200);
-            $('.listaNotChecked .qntdInput').removeAttr('disabled');
         }
         // Esconder listaChecked se não tiver item nela
         if($('.listaChecked .produto').length === 0){
@@ -104,22 +102,6 @@ $scope.waterFootprint = function(productId){
       $(this).toggleClass('flipped');
     });
   //
-
-  // evitar inserir texto no input
-  $('.qntdInput').keypress(function(event) {
-    if(event.which < 44
-    || event.which > 59) {
-        event.preventDefault();
-    } // prevent if not number/dot
-
-    if(event.which == 44
-    && $(this).val().indexOf(',') != -1) {
-        event.preventDefault();
-    } // prevent if already dot
-  });
-  //
-
-
 
   
 
