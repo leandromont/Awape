@@ -98,7 +98,7 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
   height: 23px;
   border: 2px solid #5dcadc;
   border-radius: 4px;
-  margin: 0px 0 -6px 0px;
+  /* margin: 0px 0 -6px 0px; */
 }
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
@@ -158,11 +158,13 @@ ul.lista li.produto ul.pecasLista li{display: table-cell;vertical-align: middle;
 ul.lista li.produto ul.pecasLista .checkWrapper{width: 27px;}
 ul.lista li.produto ul.pecasLista .checkWrapper .check{}
 ul.lista li.produto ul.pecasLista .checkWrapper label{ font-size: 100%;}
-ul.lista li.produto ul.pecasLista a{display: table;width: 100%;color: #545454;text-decoration: none;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */}
+ul.lista li.produto ul.pecasLista a{display: table-cell;vertical-align: middle;color: #545454;text-decoration: none;text-align: right;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */}
 ul.lista li.produto ul.pecasLista li.nomeProduto{padding: 0 3%;width: 50%;}
-ul.lista li.produto ul.pecasLista li.qntdWrapper span{padding: 1px 9px 3px 10px; border-radius: 20px 20px 5px 20px; border: 1px solid #39acbf; color: #39acbf;}
-ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
-ul.lista li.produto ul.pecasLista  li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
+ul.lista li.produto ul.pecasLista li.qntdWrapper form{display: block;/* vertical-align: middle; */}
+ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput{width: 40px;text-align: center;color: #4ca6b5;border: 1px solid #5dcadc;border-radius: 12px 12px 3px 12px;font-size: 1.05em;}
+ul.lista li.produto ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10px; *//* border-radius: 20px 20px 5px 20px; *//* border: 1px solid #39acbf; *//* color: #39acbf; */}
+ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; */color: #39acbf;}
+ul.lista li.produto ul.pecasLista  li.gastoProduto{/* margin: 1px 0 0 0; *//* text-align: right; */}
 ul.lista li.produto ul.pecasLista  li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 ul.listaChecked{border-radius: 0 0 10px 10px; border-top: 2px solid #d4d4d4; border-bottom: 2px solid #d2d2d2; background:#fff;}
@@ -175,11 +177,11 @@ ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; colo
 .totalLista .titulo{display: table-cell; vertical-align: middle; color: white;  font-weight: 300; padding: 0 0 0 6%;}
 .totalLista .litrosTotal{display: table-cell; vertical-align: middle; font-size: 1.4em; color: white; font-weight: 300; text-align: right; padding-right: 6%;}
 .totalLista .litrosTotal span#litrosTotal{font-size: 1.2em; font-weight: 400;}
-ul.lista li.produto ul.pecasLista li.qntdWrapper span{padding: 1px 9px 3px 10px; border-radius: 20px 20px 5px 20px; border: 1px solid #39acbf; color: #39acbf;}
-ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
+
+ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; *//* color: #39acbf; */}
 ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{}
-ul.lista li.produto ul.pecasLista li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
-ul.lista li.produto ul.pecasLista li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
+ul.lista li.produto ul.pecasLista li.gastoProduto{/* margin: 1px 0 0 0; */text-align: right;display: block;}
+ul.lista li.produto ul.pecasLista li.gastoProduto::after{content: ">";color:#5dcadc;font-size: 1.3em;margin: 0 0 0 2px;}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 ul.listaChecked{border-radius: 0 0 10px 10px;border-top: 2px solid #d4d4d4;border-bottom: 2px solid #d2d2d2;margin-bottom: 80px;margin-top: 0;}
 ul.listaChecked li.produto{background: transparent;opacity: 0.5;}
