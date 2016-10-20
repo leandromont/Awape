@@ -45,7 +45,7 @@ $scope.productName = function(productId){
 
 // ======================= get waterFootprint =======================================
 
-$scope.waterFootprint = function(productId){
+$scope.waterFootprint = function(productId,quantidade){
 
     var result = $.grep($scope.listItens, function(e){ 
       return e.id == productId  ; 
@@ -55,7 +55,14 @@ $scope.waterFootprint = function(productId){
     if (result.length == 0) {
       retorno = 'nao achei';
     } else if (result.length > 0) {
-      retorno = result[0].produto;
+
+      var conteudo = result[0].conteudo;
+      var pegada = result[0].pegada;
+
+      console.log(quantidade);
+      console.log(conteudo);
+      console.log(pegada);
+      retorno = quantidade * conteudo * pegada;
     }
     
     return retorno;

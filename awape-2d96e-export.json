@@ -1,58 +1,63 @@
 {
   "users" : {
-
-      "itens" : [
-          {
-            "id": 1,
-            "categoria": "Bebida Alcoólica",
-            "produto": "Cerveja 600ml",
-            "parceiro": false,
-            "embalagem": ["vidro","10.5"],
-            "quantidade": "0,6",
-            "tags": ["bebidas", "bebida", "gelada"],
-            "pegada": "Hídrica (Litros por Quantidade)",
-            "aguaAzul": "15",
-            "aguaVerde": "70",
-            "aguaCinza": "15",
-            "descricao":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non, eveniet accusamus obcaecati id illum quaerat iusto, omnis incidunt dicta.",
-            "imagem":"../img/produtos/cerveja-de-garrafa.jpg",
-            "unidade": "un"
-          },
-          {
-            "id": 2,
-            "categoria": "carne",
-            "produto": "Carne de Vaca",
-            "parceiro": true,
-            "embalagem": ["plástico","5"],
-            "quantidade": "1",
-            "tags": "(Bebidas, bebida gelada)",
-            "pegada": "Hídrica (Litros por Quantidade)",
-            "aguaAzul": "15",
-            "aguaVerde": "70",
-            "aguaCinza": "15",
-            "descricao":"",
-            "imagem":"../img/produtos/carne-de-vaca.jpg",
-            "unidade": "kg"
-          }
-        ] ,
-
-
-      "r5N6mneY1khE4f9ubUTdWLf9fuL2" : {
-        "minhaLista": [
-          {
-            "idProduto":1,
-            "quantidade": 6,
-            "checked":true,
-            "data":"18/10/2016"
-          },
-          {
-            "idProduto":2,
-            "quantidade": 3,
-            "checked":true,
-            "data":"18/10/2016"
-          }
-        ],
-        "username" : "Leandro"
-      }
+    "JPL32UMjsRR69jjugWZaXRMk08k1" : {
+       "minhaLista" : [ {
+        "checked" : true,
+        "data" : "18/10/2016",
+        "idProduto" : 1,
+        "quantidade" : 6
+      }, {
+        "checked" : true,
+        "data" : "18/10/2016",
+        "idProduto" : 2,
+        "quantidade" : 3
+      } ],
+      "username" : "Brunones"
+    },
+    "itens" : [ {
+      "aguaAzul" : "15",
+      "aguaCinza" : "15",
+      "aguaVerde" : "70",
+      "categoria" : "Bebida Alcoólica",
+      "descricao" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non, eveniet accusamus obcaecati id illum quaerat iusto, omnis incidunt dicta.",
+      "embalagem" : [ "vidro", "10.5" ],
+      "id" : 1,
+      "imagem" : "../img/produtos/cerveja-de-garrafa.jpg",
+      "parceiro" : false,
+      "pegada" : "308.5",
+      "produto" : "Cerveja 600ml",
+      "conteudo" : "0.6",
+      "tags" : [ "bebidas", "bebida", "gelada" ],
+      "unidade" : "un"
+    }, {
+      "aguaAzul" : "15",
+      "aguaCinza" : "15",
+      "aguaVerde" : "70",
+      "categoria" : "carne",
+      "descricao" : "",
+      "embalagem" : [ "plástico", "5" ],
+      "id" : 2,
+      "imagem" : "../img/produtos/carne-de-vaca.jpg",
+      "parceiro" : true,
+      "pegada" : "5521",
+      "produto" : "Carne de Vaca",
+      "conteudo" : "1",
+      "tags" : "(Bebidas, bebida gelada)",
+      "unidade" : "kg"
+    } ],
+    "r5N6mneY1khE4f9ubUTdWLf9fuL2" : {
+      "minhaLista" : [ {
+        "checked" : true,
+        "data" : "18/10/2016",
+        "idProduto" : 1,
+        "quantidade" : 6
+      }, {
+        "checked" : true,
+        "data" : "18/10/2016",
+        "idProduto" : 2,
+        "quantidade" : 3
+      } ],
+      "username" : "Leandro"
+    }
   }
 }
