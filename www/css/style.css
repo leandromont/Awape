@@ -4,8 +4,8 @@
 .display-none{display: none !important;}
 /*Background Gradient*/
 .pane, .view{background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%);color: #545454;}
-body{font-family: "Segoe UI";}
-
+body{font-family: "Open Sans" !important;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: "Open Sans" !important;}
 
 
 /* --------    Login    -------- */
@@ -56,11 +56,11 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 .totais .total#totalLista .icon{background: url(../img/sprite_layout.png) no-repeat -134px -56px;}
 .totais .total#totalPHP .icon{background: url(../img/sprite_layout.png) no-repeat -38px -56px;}
 .totais .total .dados{width: 100%; padding: 8px 0 0 26%;}
-.totais .total .dados .titulo{color: #545454; font-weight: 400; font-size: 1.1em; padding: 0 0 5px 0;}
-.totais .total .dados .valor{font-size: 2em;}
+.totais .total .dados .titulo{color: #545454;font-weight: 400;font-size: 1em;padding: 0 0 5px 0;}
+.totais .total .dados .valor{font-size: 1.8em;}
 .dicasWrapper{padding-top: 5px;}
 .dicasWrapper .dica{margin: 10px 0;}
-.dicasWrapper .dica .dicaTexto{font-size: 1.05em; text-align: center; margin: 0 0 10px 0;}
+.dicasWrapper .dica .dicaTexto{font-size: 1em;text-align: center;margin: 0 0 10px 0;}
 .dicasWrapper .dica .dicaTexto span.produto{font-weight: 600;}
 .dicasWrapper .dica .dicaTexto span#economia{color: #40ce8d; font-weight: 600; font-size: 1.1em;}
 .dicasWrapper .dica .imagens{width: 100%; height: auto; margin-top: 17px;}
@@ -151,21 +151,26 @@ a.editarBotao .icon#editarLista{background: url('../img/sprite_layout.png') no-r
 ul.listaNotChecked{}
 ul.lista{width: 95%;margin: 10px auto 0;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px 10px 0 0;padding: 0 10px;}
 
-ul.lista li.produto{font-size: 1.1em;padding: 16px 0;background: rgba(255, 255, 255, 0.7);border-bottom: 1px solid #efefef;}
+ul.lista li.produto{font-size: 1em;padding: 16px 0;background: rgba(255, 255, 255, 0.7);border-bottom: 1px solid #efefef;}
 ul.lista li.produto:last-child{border-bottom:0;}
 ul.lista li.produto ul.pecasLista{display: table; width: 100%;}
 ul.lista li.produto ul.pecasLista li{display: table-cell;vertical-align: middle;}
 ul.lista li.produto ul.pecasLista .checkWrapper{width: 27px;}
 ul.lista li.produto ul.pecasLista .checkWrapper .check{}
 ul.lista li.produto ul.pecasLista .checkWrapper label{ font-size: 100%;}
-ul.lista li.produto ul.pecasLista a{display: table-cell;vertical-align: middle;color: #545454;text-decoration: none;text-align: right;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */}
-ul.lista li.produto ul.pecasLista li.nomeProduto{padding: 0 3%;width: 50%;}
+ul.lista li.produto ul.pecasLista a{display: table-cell;vertical-align: middle;color: #545454;text-decoration: none;text-align: right;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */width: 31%;}
+ul.lista li.produto ul.pecasLista li.nomeProduto{padding: 0 3%;width: 42%;}
 ul.lista li.produto ul.pecasLista li.qntdWrapper form{display: block;/* vertical-align: middle; */}
-ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput{width: 40px;text-align: center;color: #4ca6b5;border: 1px solid #5dcadc;border-radius: 12px 12px 3px 12px;font-size: 1.05em;}
+ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput{width: 40px;text-align: center;color: #4ca6b5;border: 1px solid #5dcadc;border-radius: 12px 12px 3px 12px;font-size: 1.05em; transition: 1s all;}
+ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput:focus{
+    color: #307f8c;
+    border-color: #307f8c;
+    font-weight: 600;
+}
 ul.lista li.produto ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10px; *//* border-radius: 20px 20px 5px 20px; *//* border: 1px solid #39acbf; *//* color: #39acbf; */}
 ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; */color: #39acbf;}
 ul.lista li.produto ul.pecasLista  li.gastoProduto{/* margin: 1px 0 0 0; *//* text-align: right; */}
-ul.lista li.produto ul.pecasLista  li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
+ul.lista li.produto ul.pecasLista  li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 ul.listaChecked{border-radius: 0 0 10px 10px; border-top: 2px solid #d4d4d4; border-bottom: 2px solid #d2d2d2; background:#fff;}
 ul.listaChecked li.produto{background: transparent;}
@@ -178,10 +183,10 @@ ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; colo
 .totalLista .litrosTotal{display: table-cell; vertical-align: middle; font-size: 1.4em; color: white; font-weight: 300; text-align: right; padding-right: 6%;}
 .totalLista .litrosTotal span#litrosTotal{font-size: 1.2em; font-weight: 400;}
 
-ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; *//* color: #39acbf; */}
+ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; *//* color: #39acbf; */width: 5%;}
 ul.lista li.produto ul.pecasLista li.unid span#unidPadrao{}
 ul.lista li.produto ul.pecasLista li.gastoProduto{/* margin: 1px 0 0 0; */text-align: right;display: block;}
-ul.lista li.produto ul.pecasLista li.gastoProduto::after{content: ">";color:#5dcadc;font-size: 1.3em;margin: 0 0 0 2px;}
+ul.lista li.produto ul.pecasLista li.gastoProduto::after{content: ">";color:#5dcadc;font-size: 1.3em;margin: 0 0 0 3px;}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 ul.listaChecked{border-radius: 0 0 10px 10px;border-top: 2px solid #d4d4d4;border-bottom: 2px solid #d2d2d2;margin-bottom: 80px;margin-top: 0;}
 ul.listaChecked li.produto{background: transparent;opacity: 0.5;}
@@ -239,7 +244,7 @@ ul.historyContainer li.historyWrapper ul.lista{width: 92%;margin-left: 4%;border
 ul.historyContainer li.historyWrapper ul.lista li.tituloMes{font-size: 1.2em; color: #2badca;}
 ul.historyContainer li.historyWrapper ul.lista li.dados{padding: 13px 0 5px 3%;}
 ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalCompra{width: 53%;display: inline-block;margin-right: 2%;border-right: 1px solid #e4e4e4;}
-ul.historyContainer li.historyWrapper ul.lista li.dados .titulo{font-size: 1em;color: #545454;padding: 0;letter-spacing: -0.3px;}
+ul.historyContainer li.historyWrapper ul.lista li.dados .titulo{font-size: 0.95em;color: #545454;padding: 0;letter-spacing: -0.3px;}
 ul.historyContainer li.historyWrapper ul.lista li.dados .valor{}
 ul.historyContainer li.historyWrapper ul.lista li.dados .valor span#litros{}
 ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalPegada{width: 43%; display: inline-block;}

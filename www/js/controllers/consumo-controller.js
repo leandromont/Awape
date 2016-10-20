@@ -3,7 +3,25 @@ angular.module('starter.controllers')
 // ==================== Controller Consumo (Pegada Hídrica Pessoal) ==================================
 .controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
+
+
+
   $scope.$on('$ionicView.enter', function(){
+
+    // evitar inserir texto no input
+    $('.resposta').keypress(function(event) {
+      console.log("teste");
+      if(event.which < 44
+      || event.which > 59) {
+          event.preventDefault();
+      } // prevent if not number/dot
+
+      if(event.which == 44
+      && $(this).val().indexOf(',') != -1) {
+          event.preventDefault();
+      } // prevent if already dot
+    });
+    //
 
     var banhoVal = 0;
     var denteVal = 0;
@@ -39,7 +57,7 @@ angular.module('starter.controllers')
     var chaTotal = 0;
 
     // conta e exibição do total a partir dos inputs do usuário
-    var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84, 404, 52, 540, 13, 34, 20, 41000, 9000];
+    var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84000, 404000, 52000, 540, 13000, 34000, 20000, 41000, 9000];
 
       // onchange get id and value from input
       $('input').change(function(){
@@ -87,17 +105,17 @@ angular.module('starter.controllers')
             break
           // alimentos
           case "cereal":
-            cerealVal = inputUser;
+            cerealVal = inputUser.toString().replace(/\,/g, '.');
             cerealTotal = cerealVal*multips[7];
             $(this).next('.resultadoItem').show().find('span').text(cerealTotal);
             break
           case "carne":
-            carneVal = inputUser;
+            carneVal = inputUser.toString().replace(/\,/g, '.');
             carneTotal = carneVal*multips[8];
             $(this).next('.resultadoItem').show().find('span').text(carneTotal);
             break
           case "laticineo":
-            laticineoVal = inputUser;
+            laticineoVal = inputUser.toString().replace(/\,/g, '.');
             laticineoTotal = laticineoVal*multips[9];
             $(this).next('.resultadoItem').show().find('span').text(laticineoTotal);
             break
@@ -107,17 +125,17 @@ angular.module('starter.controllers')
             $(this).next('.resultadoItem').show().find('span').text(ovoTotal);
             break
           case "vegetais":
-            vegetaisVal = inputUser;
+            vegetaisVal = inputUser.toString().replace(/\,/g, '.');
             vegetaisTotal = vegetaisVal*multips[11];
             $(this).next('.resultadoItem').show().find('span').text(vegetaisTotal);
             break
           case "fruta":
-            frutaVal = inputUser;
+            frutaVal = inputUser.toString().replace(/\,/g, '.');
             frutaTotal = frutaVal*multips[12];
             $(this).next('.resultadoItem').show().find('span').text(frutaTotal);
             break
           case "raiz":
-            raizVal = inputUser;
+            raizVal = inputUser.toString().replace(/\,/g, '.');
             raizTotal = raizVal*multips[13];
             $(this).next('.resultadoItem').show().find('span').text(raizTotal);
             break
@@ -201,5 +219,7 @@ angular.module('starter.controllers')
       console.log("submit");
     };
     //
+
+   
 
 })
