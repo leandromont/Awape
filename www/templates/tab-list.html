@@ -12,16 +12,16 @@
   
   <ul class="lista listaNotChecked" id="listaBox">
   
-    <li class="produto">
+    <li class="produto" ng-repeat="item in userList">
   		<ul class="pecasLista">
   			<li class="checkWrapper">
   				<input type="checkbox" class="check"/>
   				<label></label>
   			</li>
         <a href="#/tab/product-detail" class="produtoLink">
-	  			<li class="nomeProduto">Cerveja 600mlas dasdas dasdaas das sd</li>
+	  			<li class="nomeProduto">{{productName(item.idProduto)}}</li>
 	  			<li class="qntdWrapper">
-	  				<span class="qntd">6</span>
+	  				<span class="qntd">{{item.quantidade}}</span>
 	  			</li>
 	  			<li class="unid"><span id="unidPadrao">un</span></li>
           <li class="gastoProduto">1200 lts</li>
@@ -29,7 +29,7 @@
   		</ul>
   	</li>
   	
-    <li class="produto">
+ <!--    <li class="produto">
   		<ul class="pecasLista">
   			<li class="checkWrapper">
   				<input type="checkbox" class="check"/>
@@ -44,63 +44,11 @@
           <li class="gastoProduto">1200 lts</li>
         </a>
   		</ul>
-  	</li>
-  	
-    <li class="produto">
-  		<ul class="pecasLista">
-  			<li class="checkWrapper">
-  				<input type="checkbox" class="check"/>
-  				<label></label>
-  			</li>
-        <a href="#/tab/product-detail" class="produtoLink">
-    			<li class="nomeProduto">Cerveja</li>
-    			<li class="qntdWrapper">
-    				<span class="qntd">6</span>
-    			</li>
-    			<li class="unid"><span id="unidPadrao">un</span></li>
-          <li class="gastoProduto">1200 lts</li>
-        </a>
-  			
-  		</ul>
-  	</li>
-  	
-    <li class="produto">
-  		<ul class="pecasLista">
-  			<li class="checkWrapper">
-  				<input type="checkbox" class="check"/>
-  				<label></label>
-  			</li>
-        <a href="#/tab/product-detail" class="produtoLink">
-    			<li class="nomeProduto">Cerveja 600ml</li>
-    			<li class="qntdWrapper">
-    				<span class="qntd">6</span>
-    			</li>
-    			<li class="unid"><span id="unidPadrao">un</span></li>
-    			<li class="gastoProduto">1200 lts</li>
-        </a>
-  		</ul>
-  	</li>
-
+  	</li> -->
+ 
   </ul>
 
   <ul class="lista listaChecked">
-  	
-    <li class="produto">
-  		<ul class="pecasLista">
-  			<li class="checkWrapper">
-  				<input type="checkbox" class="check" checked="checked"/>
-  				<label></label>
-  			</li>
-        <a href="#/tab/product-detail" class="produtoLink">
-    			<li class="nomeProduto">Cerveja 600ml</li>
-    			<li class="qntdWrapper">
-    				<span class="qntd">6</span>
-    			</li>
-    			<li class="unid"><span id="unidPadrao">un</span></li>
-          <li class="gastoProduto">1200 lts</li>
-        </a>
-  		</ul>
-  	</li>
 
     <li class="produto">
   		<ul class="pecasLista">
@@ -119,7 +67,7 @@
   		</ul>
   	</li>
 
-    <li class="produto">
+    <!-- <li class="produto">
   		<ul class="pecasLista">
   			<li class="checkWrapper">
   				<input type="checkbox" class="check" checked="checked"/>
@@ -134,7 +82,7 @@
           <li class="gastoProduto">1200 lts</li>
         </a>
   		</ul>
-  	</li>
+  	</li> -->
 
   </ul>
 

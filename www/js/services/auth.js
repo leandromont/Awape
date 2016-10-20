@@ -82,25 +82,34 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
     get:{
 
       user:{
+
         currentUser: function(){
           return firebase.auth().currentUser
         },
+
         id: function(){
           return firebase.auth().currentUser.uid
         },
+
         name: function(userId){
            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
                     return snapshot.val().username;
-                    // ...
                   });
         },
-        amigos: function(userId) {
-          return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-            return snapshot.val().amigos;
-            // ...
-          });
+
+        list:function(userId){
+           return firebase.database().ref('/users/' + userId + '/minhaLista').once('value').then(function(snapshot) {
+                    return snapshot.val();
+                    console.log(snapshot.val())
+                  });
         }
       },
+
+      listItens: function(){
+            return firebase.database().ref('/users/itens').once('value').then(function(snapshot) {
+                    return snapshot.val();
+                  });
+        },
 
       data: function(){
         return firebase.database().ref()
@@ -111,12 +120,12 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
         user:{
           name:function(userId, name){
             firebase.database().ref('users/' + userId).set({
-              username: name,
-              amigos : [
-                { nome: "Leandro", idade: 21 },
-                { nome: "Shiroma", idade: 30 },
-                { nome: "Érika", idade: 30 }
-              ]
+              username: name
+              // amigos : [
+              //   { nome: "Leandro", idade: 21 },
+              //   { nome: "Shiroma", idade: 30 },
+              //   { nome: "Érika", idade: 30 }
+              // ]
             });
           }
         }      

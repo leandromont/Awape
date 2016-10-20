@@ -26,16 +26,30 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    
+
+    <!-- controllers -->
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/home-controller.js"></script>
+    <script src="js/controllers/history-controller.js"></script>
+    <script src="js/controllers/list-controller.js"></script>
+    <script src="js/controllers/list-edit-mode-controller.js"></script>
+    <script src="js/controllers/product-detail-controller.js"></script>
+    <script src="js/controllers/search-controller.js"></script>
+    <script src="js/controllers/consumo-controller.js"></script>
+    <script src="js/controllers/consumo-edit-mode-controller.js"></script>
+    <script src="js/controllers/preferences-controller.js"></script>
+
+    <!-- services -->
     <script src="js/services.js"></script>
+    <script src="js/services/auth.js"></script>
+    <script src="js/services/utils.js"></script>
 
-
+    <!-- login -->
     <script src="views/login/login.js"></script>
     <script src="views/forgot/forgot.js"></script>
     <script src="views/home/home.js"></script>
     <script src="views/register/register.js"></script>
-    <script src="js/services/auth.js"></script>
-    <script src="js/services/utils.js"></script>
 
     <!-- libraries -->
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
@@ -51,13 +65,12 @@
     <script src="lib/jquery/js/jquery-ui.min.js"></script>
     <script src="lib/jquery/js/jquery.ui.touch-punch.min.js"></script>
 
-    <!-- Oauth libs -->
-    <script src="lib/cryptojslib/rollups/hmac-sha1.js"></script>
-    <script src="lib/cryptojslib/components/enc-base64-min.js"></script>
-    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
-    <script src="lib/angular-oauth1-client/dist/angular-oauth1-client.min.js"></script>
-
+    <!-- custom functions -->
     <script src="js/functions.js"></script>
+
+    <!-- Local Storage -->
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
 
     
 
@@ -76,5 +89,8 @@
       have templates inline in this html file if you'd like).
     -->
     <ion-nav-view></ion-nav-view>
+    <div class="loader">
+        
+    </div>
   </body>
 </html>

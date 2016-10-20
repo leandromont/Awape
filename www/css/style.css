@@ -165,7 +165,7 @@ ul.lista li.produto ul.pecasLista li.unid{margin: 0 0 0 -2px; color: #39acbf;}
 ul.lista li.produto ul.pecasLista  li.gastoProduto{margin: 1px 0 0 0; text-align: right;}
 ul.lista li.produto ul.pecasLista  li.gastoProduto::after{content: ">"; color:#5dcadc; font-size: 1.2em; margin: 0 0 0 2px;}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
-ul.listaChecked{border-radius: 0 0 10px 10px; border-top: 2px solid #d4d4d4; border-bottom: 2px solid #d2d2d2; background: rgba(234, 234, 234, 0.04);}
+ul.listaChecked{border-radius: 0 0 10px 10px; border-top: 2px solid #d4d4d4; border-bottom: 2px solid #d2d2d2; background:#fff;}
 ul.listaChecked li.produto{background: transparent;}
 ul.listaChecked li.produto ul.pecasLista li.nomeProduto{color: #9a9a9a; font-weight: 300; text-decoration: line-through;}
 ul.listaChecked li.produto ul.pecasLista li.qntdWrapper span.qntd{border-color: #bdbdbd; color: #bdbdbd;}
