@@ -23,7 +23,15 @@ angular.module('starter.controllers')
           
         }, 500);
 
+      
+
     });
+
+    $scope.$on('onRepeatLast', function(){
+        $('input:checkbox:checked').closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show();
+            $('.listaChecked .qntdInput').attr('disabled', 'disabled');
+             $('.listaNotChecked .qntdInput').removeAttr('disabled');
+      });
 
 // ======================= get product name =======================================
 
@@ -59,15 +67,31 @@ $scope.waterFootprint = function(productId,quantidade){
       var conteudo = result[0].conteudo;
       var pegada = result[0].pegada;
 
-      console.log(quantidade);
-      console.log(conteudo);
-      console.log(pegada);
       retorno = quantidade * conteudo * pegada;
     }
     
     return retorno;
 }
 
+// ======================= get checkbox =======================================
+
+$scope.getCheckbox = function(checked){
+
+      retorno = checked;
+    
+    return retorno;
+}
+
+// ======================= get Product ID for detail =======================================
+
+$scope.getProductDetailId = function(productId){
+
+    $scope.productDetailId = productId;
+
+     retorno = $scope.productDetailId;
+    
+    return retorno;
+}
 
 // =============================== funções da lista ===========================================
 
@@ -89,9 +113,11 @@ $scope.waterFootprint = function(productId,quantidade){
         if (checks.is(':checked')){ 
             $(this).closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show(200);
             $('.listaChecked .qntdInput').attr('disabled', 'disabled');
+             $('.listaNotChecked .qntdInput').removeAttr('disabled');
         } else {
             $(this).closest('.produto').detach().hide().prependTo('.listaNotChecked').removeClass('produtoChecked').show(200);
             $('.listaNotChecked .qntdInput').removeAttr('disabled');
+             $('.listaNotChecked .qntdInput').removeAttr('disabled');
         }
         // Esconder listaChecked se não tiver item nela
         if($('.listaChecked .produto').length === 0){
@@ -126,8 +152,11 @@ $scope.waterFootprint = function(productId,quantidade){
   });
   //
 
-
-
-  
-
-});
+})
+.directive('onLastRepeat', function() {
+    return function(scope, element, attrs) {
+        if (scope.$last) setTimeout(function(){
+            scope.$emit('onRepeatLast', element, attrs);
+        }, 1);
+    };
+})

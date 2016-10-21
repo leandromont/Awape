@@ -7,7 +7,7 @@
         "idProduto" : 1,
         "quantidade" : 6
       }, {
-        "checked" : true,
+        "checked" : false,
         "data" : "18/10/2016",
         "idProduto" : 2,
         "quantidade" : 3
@@ -15,33 +15,33 @@
       "username" : "Brunones"
     },
     "itens" : [ {
-      "aguaAzul" : "15",
-      "aguaCinza" : "15",
-      "aguaVerde" : "70",
+      "aguaAzul" : 15,
+      "aguaCinza" : 15,
+      "aguaVerde" : 70,
       "categoria" : "Bebida Alcoólica",
       "descricao" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non, eveniet accusamus obcaecati id illum quaerat iusto, omnis incidunt dicta.",
       "embalagem" : [ "vidro", "10.5" ],
       "id" : 1,
       "imagem" : "../img/produtos/cerveja-de-garrafa.jpg",
       "parceiro" : false,
-      "pegada" : "308.5",
+      "pegada" : 308.5,
       "produto" : "Cerveja 600ml",
-      "conteudo" : "0.6",
+      "conteudo" : 0.6,
       "tags" : [ "bebidas", "bebida", "gelada" ],
       "unidade" : "un"
     }, {
-      "aguaAzul" : "15",
-      "aguaCinza" : "15",
-      "aguaVerde" : "70",
+      "aguaAzul" : 15,
+      "aguaCinza" : 15,
+      "aguaVerde" : 70,
       "categoria" : "carne",
       "descricao" : "",
       "embalagem" : [ "plástico", "5" ],
       "id" : 2,
       "imagem" : "../img/produtos/carne-de-vaca.jpg",
       "parceiro" : true,
-      "pegada" : "5521",
+      "pegada" : 5521,
       "produto" : "Carne de Vaca",
-      "conteudo" : "1",
+      "conteudo" : 1,
       "tags" : "(Bebidas, bebida gelada)",
       "unidade" : "kg"
     } ],
@@ -52,7 +52,7 @@
         "idProduto" : 1,
         "quantidade" : 6
       }, {
-        "checked" : true,
+        "checked" : false,
         "data" : "18/10/2016",
         "idProduto" : 2,
         "quantidade" : 3

@@ -3,15 +3,12 @@ angular.module('starter.controllers')
 // ==================== Controller Home ==================================
 .controller('HomeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
-  $scope.$on('$ionicView.loaded', function(){
-      
-  });
+  
 
   $scope.$on('$ionicView.enter', function(){
      
       
-
-      setTimeout(function(){
+    setTimeout(function(){
 
         // buscar ID do usuário
         $scope.userId = Auth.get.user.id();
@@ -34,6 +31,7 @@ angular.module('starter.controllers')
         });
         
       }, 500);
+      
 
   });
 

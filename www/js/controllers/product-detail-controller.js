@@ -31,15 +31,9 @@ angular.module('starter.controllers')
   });
   //
 
-  $scope.$on('$ionicView.loaded', function(){
-
-  });
-
-
-
   $scope.$on('$ionicView.enter', function(){
 
-    // $scope.userData = Auth.get.user.id()
+    console.log($scope.productDetailId)
 
     // scroll to top on enter
     $ionicScrollDelegate.scrollTop();

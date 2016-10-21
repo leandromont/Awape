@@ -134,6 +134,8 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
     
 
 	};
+
+
 	return Auth;
 
 });

@@ -12,10 +12,10 @@
   
   <ul class="lista listaNotChecked" id="listaBox">
   
-    <li class="produto" ng-repeat="item in userList">
+    <li class="produto" ng-repeat="item in userList" on-last-repeat>
       <ul class="pecasLista">
         <li class="checkWrapper">
-          <input type="checkbox" class="check"/>
+          <input type="checkbox" class="check" ng-checked="getCheckbox(item.checked)"/>
           <label></label>
         </li>
           <li class="nomeProduto">{{productName(item.idProduto)}}</li>
@@ -26,7 +26,7 @@
             <span class="qntd"></span>
           </li>
           <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
-        <a href="#/tab/product-detail" class="produtoLink">
+        <a href="#/tab/product-detail" class="produtoLink" ng-click="getProductDetailId(item.idProduto)">
           <li class="gastoProduto">{{waterFootprint(item.idProduto,item.quantidade)}}</li>
         </a>
       </ul>
@@ -53,7 +53,7 @@
 
   <ul class="lista listaChecked">
 
-    <li class="produto">
+   <!--  <li class="produto">
       <ul class="pecasLista">
         <li class="checkWrapper">
           <input type="checkbox" class="check" checked="checked"/>
@@ -71,24 +71,7 @@
           <li class="gastoProduto">1200 lts</li>
         </a>
       </ul>
-    </li>
-
-    <!-- <li class="produto">
-  		<ul class="pecasLista">
-  			<li class="checkWrapper">
-  				<input type="checkbox" class="check" checked="checked"/>
-  				<label></label>
-  			</li>
-        <a href="#/tab/product-detail" class="produtoLink">
-    			<li class="nomeProduto">Cerveja 600ml</li>
-    			<li class="qntdWrapper">
-    				<span class="qntd">6</span>
-    			</li>
-    			<li class="unid"><span id="unidPadrao">un</span></li>
-          <li class="gastoProduto">1200 lts</li>
-        </a>
-  		</ul>
-  	</li> -->
+    </li> -->
 
   </ul>
 
