@@ -27,6 +27,11 @@ angular.module('starter.controllers')
 
     });
 
+    $scope.$on('$ionicView.loaded', function(){
+      
+
+    });
+
     $scope.$on('onRepeatLast', function(){
         $('input:checkbox:checked').closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show();
             $('.listaChecked .qntdInput').attr('disabled', 'disabled');
@@ -95,6 +100,8 @@ $scope.getProductDetailId = function(productId){
 
 // =============================== funções da lista ===========================================
 
+// tirar esse settimeout no final... só pra teste
+setTimeout(function(){
   // id dos checkbox
       var produtosLista = $('.produto').length;
       var produto = $('.produto');
@@ -113,11 +120,12 @@ $scope.getProductDetailId = function(productId){
         if (checks.is(':checked')){ 
             $(this).closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show(200);
             $('.listaChecked .qntdInput').attr('disabled', 'disabled');
-             $('.listaNotChecked .qntdInput').removeAttr('disabled');
+            $('.listaNotChecked .qntdInput').removeAttr('disabled');
+
         } else {
             $(this).closest('.produto').detach().hide().prependTo('.listaNotChecked').removeClass('produtoChecked').show(200);
             $('.listaNotChecked .qntdInput').removeAttr('disabled');
-             $('.listaNotChecked .qntdInput').removeAttr('disabled');
+            $('.listaNotChecked .qntdInput').removeAttr('disabled');
         }
         // Esconder listaChecked se não tiver item nela
         if($('.listaChecked .produto').length === 0){
@@ -129,12 +137,6 @@ $scope.getProductDetailId = function(productId){
         }
         //
       });
-    });
-  //
-
-  // flip no ícone de editar
-    $('#icons').click(function() {
-      $(this).toggleClass('flipped');
     });
   //
 
@@ -152,6 +154,36 @@ $scope.getProductDetailId = function(productId){
   });
   //
 
+  // flip no ícone de editar
+    $('input.qntdInput').focusin(function() {
+      console.log('teste');
+      $('.iconsHolder').addClass('flipped');
+      $('.iconSmallHolder').hide();
+    });
+    $('input.qntdInput').focusout(function() {
+      console.log('teste');
+      $('.iconsHolder').removeClass('flipped');
+    });
+  //
+
+  // aparecer os subIcones ao clicar no +
+  $('.icon#addItem').click(function(){
+    $('.iconSmallHolder').show();
+    $('.linkSmall').toggleClass('Active');
+  });
+  //
+
+  // desaparecer os subIcones ao clicar fora
+  $('.paginaLista').click(function(){
+    $('.linkSmall').removeClass('Active');
+  });
+  //
+
+  console.log('liberado');
+
+}, 5000);
+//
+
 })
 .directive('onLastRepeat', function() {
     return function(scope, element, attrs) {
@@ -159,4 +191,5 @@ $scope.getProductDetailId = function(productId){
             scope.$emit('onRepeatLast', element, attrs);
         }, 1);
     };
+    
 })

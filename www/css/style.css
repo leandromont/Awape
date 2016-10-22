@@ -145,9 +145,27 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 .topo{height: 90px; width: 100%; display: table;}
 .topo h1{color: #545454;font-size: 1.7em;padding: 0 0 0 5%;display: table-cell;vertical-align: middle;}
 .paginaLista .fixed{top: 0;}
-a.editarBotao{width: 82px; height: 82px; padding-right: 3%; position: fixed; top: 1%; right: 2%; z-index: 999;}
-a.editarBotao .icon{width: 82px; height: 82px;}
-a.editarBotao .icon#editarLista{background: url('../img/sprite_layout.png') no-repeat -40px -171px;}
+
+.iconsWrapper{width: 82px;height: 82px;perspective: 800px;position: fixed;top: 1%;right: 3%;z-index: 999;}
+.iconsWrapper .iconsHolder{transition: transform 0.5s;transform-style: preserve-3d;width: 100%;height: 100%;position: absolute;z-index: 99;}
+.iconsWrapper .iconsHolder .icon{display: block;height: 100%;width: 100%;backface-visibility: hidden;position: absolute;}
+.iconsWrapper .iconsHolder .icon#addItem{background: url('../img/sprite_layout.png') no-repeat -161px -335px;}
+.iconsWrapper .iconsHolder .icon#save{background: url('../img/sprite_layout.png') no-repeat -40px -278px; -webkit-transform: rotateY( 180deg );}
+.iconsWrapper .iconsHolder.flipped{transform: rotateY( 180deg );}
+.iconsWrapper .iconSmallHolder{width: 100%; height: 100%; position: absolute;}
+.iconsWrapper .iconSmallHolder .linkSmall{position: absolute; color: white; top: 19%; left: 19%; width: 50px; height: 50px;transition: 0.15s all ease-in;}
+.iconsWrapper .iconSmallHolder .textSmall{background: rgba(93, 202, 220, 0.81);padding: 2px 0;border-radius: 20px;position: absolute;color: white;top: 25%;right: 12%;transition: 0.15s all ease-in;/* transition-delay: 0.1s; */opacity: 0;}
+.iconsWrapper .iconSmallHolder .linkSmall#linkLeitor .textSmall{right: 0%;top: 43%;padding: 0;/* background: white; */width: 150px;opacity: 0;}
+.iconsWrapper .iconSmallHolder .iconSmall{width: 50px;height: 50px;position: absolute;top: 19%;left: 19%;transition: 0.15s all ease-in}
+.iconsWrapper .iconSmallHolder .iconSmall#busca{background: url('../img/sprite_layout.png') no-repeat -176px -456px;top: 0;left: 0;}
+.iconsWrapper .iconSmallHolder .iconSmall#leitor{background: url('../img/sprite_layout.png') no-repeat -176px -547px;left: 0;}
+
+.iconsWrapper .iconSmallHolder .linkSmall.Active#linkBusca{top: 110%;}
+.iconsWrapper .iconSmallHolder .linkSmall.Active#linkLeitor{top: 170%;}
+.iconsWrapper .iconSmallHolder .linkSmall.Active#linkBusca .textSmall{padding: 2px 25px 2px 13px;right: 57%;opacity: 1;}
+.iconsWrapper .iconSmallHolder .linkSmall.Active#linkLeitor .textSmall{padding: 2px 25px 2px 13px;right: 49%;background: rgba(93, 202, 220, 0.81);width: 189px;top: 43%;opacity: 1;}
+
+
 ul.listaNotChecked{}
 ul.lista{width: 95%;margin: 10px auto 0;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px 10px 0 0;padding: 0 10px;}
 
@@ -162,11 +180,7 @@ ul.lista li.produto ul.pecasLista a{display: table-cell;vertical-align: middle;c
 ul.lista li.produto ul.pecasLista li.nomeProduto{padding: 0 3%;width: 42%;}
 ul.lista li.produto ul.pecasLista li.qntdWrapper form{display: block;/* vertical-align: middle; */}
 ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput{width: 40px;text-align: center;color: #4ca6b5;border: 1px solid #5dcadc;border-radius: 12px 12px 3px 12px;font-size: 1.05em; transition: 1s all;}
-ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput:focus{
-    color: #307f8c;
-    border-color: #307f8c;
-    font-weight: 600;
-}
+ul.lista li.produto ul.pecasLista li.qntdWrapper input.qntdInput:focus{ color: #307f8c; border-color: #307f8c; font-weight: 600;}
 ul.lista li.produto ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10px; *//* border-radius: 20px 20px 5px 20px; *//* border: 1px solid #39acbf; *//* color: #39acbf; */}
 ul.lista li.produto ul.pecasLista li.unid{/* margin: 0 0 0 -2px; */color: #39acbf;}
 ul.lista li.produto ul.pecasLista  li.gastoProduto{/* margin: 1px 0 0 0; *//* text-align: right; */}

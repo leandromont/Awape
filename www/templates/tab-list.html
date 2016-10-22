@@ -1,11 +1,24 @@
 
 <ion-view hide-nav-bar="true" view-title="Lista">
-	<a href="#/tab/list-edit-mode" class="editarBotao">
-	<div class="icon" id="editarLista"></div>
-  </a>
+	<div class="iconsWrapper">
+    <div class="iconsHolder">
+      <div class="icon" id="addItem"></div>
+      <div class="icon" id="save"></div>
+    </div>
+    <div class="iconSmallHolder">
+      <a href="#/tab/search" class="linkSmall" id="linkBusca">
+        <div class="textSmall">Busca</div>
+        <div class="iconSmall" id="busca"></div>
+      </a>
+      <div class="linkSmall" id="linkLeitor">
+        <div class="textSmall">Leitor Código de Barra</div>
+        <div class="iconSmall" id="leitor" ng-click="scanBarcode()"></div>
+      </div>
+    </div>
+  </div>
+
   <ion-content class="paginaLista">
   
-
   <div class="topo fixed">
   	<h1>Lista de compras</h1>
   </div>
@@ -27,7 +40,7 @@
           </li>
           <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
         <a href="#/tab/product-detail" class="produtoLink" ng-click="getProductDetailId(item.idProduto)">
-          <li class="gastoProduto">{{waterFootprint(item.idProduto,item.quantidade)}}</li>
+          <li class="gastoProduto"><span>{{waterFootprint(item.idProduto,item.quantidade)}}</span> lts</li>
         </a>
       </ul>
     </li>
