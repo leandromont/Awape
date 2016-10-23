@@ -15,11 +15,19 @@ angular.module('starter.controllers')
 
   $scope.$on('$ionicView.leave', function(){
 
-    // zerar a altura para animar novamente na entrada
-    $('.bgIcon').animate({'height': 0},20);
-    //
-
   });
 
   
+  // id dos checkbox
+      var produtosLista = $('.buscaPage .produto').length;
+      var produto = $('.buscaPage .produto');
+      var i = 1;
+      produto.each(function(){
+        $('.check', this).attr('id', 'check'+i);
+        $("label", this).attr('for', 'check'+i);
+        i++;
+      });
+  //
+
+
 })

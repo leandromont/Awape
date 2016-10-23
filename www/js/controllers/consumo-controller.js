@@ -161,12 +161,13 @@ angular.module('starter.controllers')
         $('.resultadoCategoria#totalHigiene').show().find('span').text(totalHigiene);
         $('.resultadoCategoria#totalLimpeza').show().find('span').text(totalLimpeza);
         $('.resultadoCategoria#totalAlimento').show().find('span').text(totalAlimento);
+        $('.resultadoTotal').find('span').text(totalPegadaPessoal);
       });
 
 
-  });
+    });
 
-  // scroll to top every time it changes the slide
+    // scroll to top every time it changes the slide
     $scope.slideChanged = function(index) {
       $ionicScrollDelegate.scrollTop();
       $scope.slideIndex = index;
@@ -188,10 +189,10 @@ angular.module('starter.controllers')
       var actualSlide;
       var actualSlideHeight;
       if (slider.hasClass('slide-0')){
-        actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight();
+        actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else if (slider.hasClass('slide-1')){
-        actualSlideHeight = $('.slidebox2').find('.pageWrapper').outerHeight();
+        actualSlideHeight = $('.slidebox2').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else {
       }
@@ -205,21 +206,33 @@ angular.module('starter.controllers')
       var actualSlide;
       if (slider.hasClass('slide-0')){
       } else if (slider.hasClass('slide-1')){
-        actualSlideHeight = $('.slidebox0').find('.pageWrapper').outerHeight();
+        actualSlideHeight = $('.slidebox0').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else {
-          actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight();
+          actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       }
     };
     //
 
     // finish slide-box --- SUBMIT ALL FORMS
+    // mostrar o total da pegada hídrica e redirecionar para a home
     $scope.submitAll = function() {
+
       console.log("submit");
+      $('.resultadoTotalWrapper').show(150).delay(2500).queue(function() {
+           $state.go('tab.home');
+        });
+      
     };
     //
 
-   
+  $scope.$on('$ionicView.leave', function(){
+
+    // voltar a altura para 0 para fazer a animação toda vez que entrar
+    $('.resultadoTotalWrapper').hide();
+    //
+
+  });
 
 })

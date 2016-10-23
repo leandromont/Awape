@@ -32,6 +32,16 @@ angular.module('starter.controllers')
 
     });
 
+
+    $scope.$on('$ionicView.leave', function(){
+      // hide small Icons if aren't
+      $('.iconSmallHolder').hide();
+      $('.linkSmall').removeClass('Active');
+
+    });
+
+
+
     $scope.$on('onRepeatLast', function(){
         $('input:checkbox:checked').closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show();
             $('.listaChecked .qntdInput').attr('disabled', 'disabled');
@@ -103,8 +113,8 @@ $scope.getProductDetailId = function(productId){
 // tirar esse settimeout no final... só pra teste
 setTimeout(function(){
   // id dos checkbox
-      var produtosLista = $('.produto').length;
-      var produto = $('.produto');
+      var produtosLista = $('.paginaLista .produto').length;
+      var produto = $('.paginaLista .produto');
       var i = 1;
       produto.each(function(){
         $('.check', this).attr('id', 'check'+i);
@@ -114,7 +124,7 @@ setTimeout(function(){
   //
 
   // checked or not checked - Change parent Div and add class
-    $(".produto").each(function(){
+    $(".paginaLista .produto").each(function(){
       var checks = $("input:checkbox", this);
       checks.click(function() {
         if (checks.is(':checked')){ 
@@ -192,4 +202,8 @@ setTimeout(function(){
         }, 1);
     };
     
+
+
+
+
 })

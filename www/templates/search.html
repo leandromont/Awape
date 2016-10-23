@@ -1,9 +1,37 @@
 <ion-view hide-nav-bar="true" hide-back-button="true" view-title="search">
-  <ion-content>
-    <h2>Busca</h2>
+  <ion-content class="buscaPage">
+  	<form action="" class="buscaForm">
+		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?">
+		<div class="iconsWrapper">
+      		<div class="icon" id="buscaIcon"></div>
+      	</div>
+	</form>
+
+	<ul class="lista listaNotChecked" id="listaBox">
+
+       <li class="produto">
+	      <ul class="pecasLista">
+	        <li class="checkWrapper">
+	          <input type="checkbox" class="check" ng-checked="getCheckbox(item.checked)"/>
+	          <label></label>
+	        </li>
+	          <li class="nomeProduto">Cerveja 600ml</li>
+	          <li class="qntdWrapper">
+	            <form action="">
+	              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="7">
+	            </form>
+	          </li>
+	          <li class="unid"><span id="unidPadrao">un</span></li>
+	        <a href="#/tab/product-detail" class="produtoLink" ng-click="getProductDetailId(item.idProduto)">
+	          <li class="gastoProduto"><span>2322345</span> lts</li>
+	        </a>
+	      </ul>
+	    </li>
+ 
+  </ul>
 
 	<br><br> 
-   	<a href="#/tab/list-edit-mode">voltar para lista(modo de edição)</a>
+   	<a href="#/tab/list">voltar para lista</a>
 
   </ion-content>
 </ion-view>
