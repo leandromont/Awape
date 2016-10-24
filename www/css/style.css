@@ -123,7 +123,7 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 [type="checkbox"]:checked + label:after {
   content: '';
   position: absolute;
-  top: 2px;
+  top: 0;
   left: 0px;
   width: 23px;
   height: 23px;
@@ -396,12 +396,32 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage form input.buscaField{width: 80%;}
 .buscaPage form .iconsWrapper{top: -0.3%;right: 0;}
 .buscaPage form .iconsWrapper .icon#buscaIcon{background: url('../img/sprite_layout.png') no-repeat -297px -335px; width: 82px; height: 82px;}
-.buscaPage .lista.listaNotChecked{border-radius: 10px; border-bottom: 2px solid #d2d2d2;}
-.buscaPage [type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before{background: url(../img/sprite_layout.png) no-repeat -386px -77px; border: 0;}
-.buscaPage [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after{border: 0; top: 0; background: url(../img/sprite_layout.png) no-repeat -427px -77px;}
-.buscaPage [type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {border:0;}
 
+.buscaPage ul.listaBusca [type="checkbox"]:not(:checked) + label:before, .buscaPage ul.listaBusca [type="checkbox"]:checked + label:before{background: url(../img/sprite_layout.png) no-repeat -386px -77px; border: 0;}
+.buscaPage ul.listaBusca [type="checkbox"]:not(:checked) + label:after, .buscaPage ul.listaBusca [type="checkbox"]:checked + label:after{border: 0; top: 0; background: url(../img/sprite_layout.png) no-repeat -427px -77px;}
+.buscaPage ul.listaBusca [type="checkbox"]:checked:focus + label:before,
+.buscaPage ul.listaBusca [type="checkbox"]:not(:checked):focus + label:before {border:0;}
+
+.buscaPage ul.listaNotChecked{border-radius: 10px; border-bottom: 2px solid #d2d2d2;}
+.buscaPage ul.listaBusca{width: 95%;margin: 10px auto 0;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px 10px 0 0;padding: 0 10px;}
+
+.buscaPage ul.listaBusca li.produtoBusca{font-size: 1em;padding: 16px 0;background: rgba(255, 255, 255, 0.7);border-bottom: 1px solid #efefef;}
+.buscaPage ul.listaBusca li.produtoBusca:last-child{border-bottom:0;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista{display: table; width: 100%;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li{display: table-cell;vertical-align: middle;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista .checkWrapper{width: 27px;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista .checkWrapper .check{}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista .checkWrapper label{ font-size: 100%;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista a{display: table-cell;vertical-align: middle;color: #545454;text-decoration: none;text-align: right;/* border-bottom: 1px solid #efefef; *//* padding: 10px 0; */width: 31%;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.nomeProduto{padding: 0 3%;width: 42%;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper form{display: block;/* vertical-align: middle; */}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper input.qntdInput{width: 40px;text-align: center;color: #4ca6b5;border: 1px solid #5dcadc;border-radius: 12px 12px 3px 12px;font-size: 1.05em; transition: 1s all;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper input.qntdInput:focus{ color: #307f8c; border-color: #307f8c; font-weight: 600;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10px; *//* border-radius: 20px 20px 5px 20px; *//* border: 1px solid #39acbf; *//* color: #39acbf; */}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.unid{/* margin: 0 0 0 -2px; */color: #39acbf;}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto{/* margin: 1px 0 0 0; *//* text-align: right; */}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
+.buscaPage .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 
 
 

@@ -19,8 +19,8 @@ angular.module('starter.controllers')
 
   
   // id dos checkbox
-      var produtosLista = $('.buscaPage .produto').length;
-      var produto = $('.buscaPage .produto');
+      var produtosLista = $('.buscaPage .produtoBusca').length;
+      var produto = $('.buscaPage .produtoBusca');
       var i = 1;
       produto.each(function(){
         $('.check', this).attr('id', 'check'+i);
