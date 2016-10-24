@@ -1,9 +1,9 @@
 <ion-view  hide-nav-bar="true" ng-init="checkUser()">
-        <ion-content class="padding-top">
+        <ion-content class="padding-top loginPage">
           <div class="list text-center padding">
             <i class="icon ion-ios-game-controller-b larger positive"></i>
           </div>
-          <form novalidate name="loginForm" ng-submit="loginForm.$valid && signIn(user)">
+          <form novalidate name="loginForm" ng-submit="loginForm.$valid && signIn(user)" class="formLogin">
           <div class="list">
             <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.txtemail.$invalid && loginForm.$submitted }">
               <span class="input-label">E-mail</span>

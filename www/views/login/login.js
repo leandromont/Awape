@@ -4,6 +4,11 @@ angular.module('starter').controller('loginController', function ($scope, $state
   var auth = $firebaseAuth();
   var ref = firebase.database().ref();
   var userkey = "";
+
+  // aparecer a página de login
+  $('.loginPage .scroll').slideDown(400).show(800);
+  //
+
   $scope.signIn = function (user) {
     if(angular.isDefined(user)){
     Utils.show();
@@ -48,3 +53,4 @@ angular.module('starter').controller('loginController', function ($scope, $state
   }
   
 });
+
