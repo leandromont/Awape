@@ -185,14 +185,14 @@ angular.module('starter.controllers')
     // next slide-box + slide-box height
     $scope.nextSlide = function() {
       $ionicSlideBoxDelegate.next();
-      var slider = $('.slider');
+      var slider = $('.minhaPegada .slider');
       var actualSlide;
       var actualSlideHeight;
       if (slider.hasClass('slide-0')){
-        actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight()+115;
+        actualSlideHeight = $('.minhaPegada .slidebox1').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else if (slider.hasClass('slide-1')){
-        actualSlideHeight = $('.slidebox2').find('.pageWrapper').outerHeight()+115;
+        actualSlideHeight = $('.minhaPegada .slidebox2').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else {
       }
@@ -202,14 +202,14 @@ angular.module('starter.controllers')
     // previous slide-box + slide-box height
     $scope.prevSlide = function() {
       $ionicSlideBoxDelegate.previous();
-      var slider = $('.slider');
+      var slider = $('.minhaPegada .slider');
       var actualSlide;
       if (slider.hasClass('slide-0')){
       } else if (slider.hasClass('slide-1')){
-        actualSlideHeight = $('.slidebox0').find('.pageWrapper').outerHeight()+115;
+        actualSlideHeight = $('.minhaPegada .slidebox0').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       } else {
-          actualSlideHeight = $('.slidebox1').find('.pageWrapper').outerHeight()+115;
+          actualSlideHeight = $('.minhaPegada .slidebox1').find('.pageWrapper').outerHeight()+115;
         slider.height(actualSlideHeight);
       }
     };
