@@ -1,6 +1,6 @@
 // ==================== Controller List ==================================
 angular.module('starter.controllers')
-.controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
   
 // =============================== View enter ===========================================
     $scope.$on('$ionicView.enter', function(){
@@ -22,8 +22,6 @@ angular.module('starter.controllers')
             });
           
         }, 500);
-
-      
 
     });
 
@@ -47,6 +45,18 @@ angular.module('starter.controllers')
             $('.listaChecked .qntdInput').attr('disabled', 'disabled');
              $('.listaNotChecked .qntdInput').removeAttr('disabled');
       });
+
+// ======================= Código de barras =======================================
+
+  $scope.scanBarcode = function() {
+    $cordovaBarcodeScanner.scan().then(function(imageData) {
+      alert(imageData.text);
+      console.log("Barcode Format -> " + imageData.format);
+      console.log("Cancelled -> " + imageData.cancelled);
+    }, function(error) {
+      alert("An error happened -> " + error);
+    });
+  };
 
 // ======================= get product name =======================================
 
@@ -75,6 +85,9 @@ $scope.waterFootprint = function(productId,quantidade){
     });
 
     var retorno='';
+
+    
+
     if (result.length == 0) {
       retorno = 'nao achei';
     } else if (result.length > 0) {
@@ -82,30 +95,70 @@ $scope.waterFootprint = function(productId,quantidade){
       var conteudo = result[0].conteudo;
       var pegada = result[0].pegada;
 
+
       retorno = quantidade * conteudo * pegada;
+
+      $scope.listTotal += retorno;
+
     }
     
     return retorno;
 }
 
-// ======================= get checkbox =======================================
+// ======================= get waterFootprint Total =======================================
 
-$scope.getCheckbox = function(checked){
+$scope.getListTotal = function(){
 
-      retorno = checked;
+    retorno = $scope.listTotal;
+
+    $scope.listTotal = 0;
+    
+    return retorno;
+}
+
+// ======================= get Unit =======================================
+
+$scope.getUnit = function(productId){
+
+    var result = $.grep($scope.listItens, function(e){ 
+      return e.id == productId  ; 
+    });
+
+    var retorno='';
+    if (result.length == 0) {
+      retorno = 'nao achei';
+    } else if (result.length > 0) {
+
+      var unidade = result[0].unidade;
+
+      retorno = unidade;
+    }
+    
+    return retorno;
+}
+
+// ======================= Click checkbox =======================================
+
+$scope.checkboxClick = function(checked, productId){
+      
+      if(checked){
+        alert("checked")
+        retorno = checked;
+
+      } else {
+        alert("not checked")
+        retorno = checked;
+      }
     
     return retorno;
 }
 
 // ======================= get Product ID for detail =======================================
 
-$scope.getProductDetailId = function(productId){
+$scope.setProductDetailId = function(productId){
 
-    $scope.productDetailId = productId;
+  Auth.set.productId(productId)
 
-     retorno = $scope.productDetailId;
-    
-    return retorno;
 }
 
 // =============================== funções da lista ===========================================

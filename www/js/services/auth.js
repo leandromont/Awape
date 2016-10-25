@@ -1,4 +1,4 @@
-angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, Utils) {
+angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, $state, Utils, $location) {
 
 	//var ref = new Firebase(FURL);
 
@@ -10,6 +10,7 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
 
 	var Auth = {
 		user: {},
+    productDetail:{},
 
 
     login: function(user) {
@@ -100,16 +101,19 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
         list:function(userId){
            return firebase.database().ref('/users/' + userId + '/minhaLista').once('value').then(function(snapshot) {
                     return snapshot.val();
-                    console.log(snapshot.val())
                   });
         }
       },
 
       listItens: function(){
-            return firebase.database().ref('/users/itens').once('value').then(function(snapshot) {
-                    return snapshot.val();
-                  });
-        },
+        return firebase.database().ref('/users/itens').once('value').then(function(snapshot) {
+          return snapshot.val();
+        });
+      },
+
+      productId: function(){
+        return Auth.productDetail.id;
+      },
 
       data: function(){
         return firebase.database().ref()
@@ -129,6 +133,14 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
             });
           }
         }      
+    },
+
+    set:{
+      productId: function(id){
+        Auth.productDetail.id = id;
+        // $location.path("/tabs/product-detail");
+        $state.go('tab.product-detail');
+      } 
     }
 
     

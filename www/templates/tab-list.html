@@ -11,7 +11,7 @@
         <div class="iconSmall" id="busca"></div>
       </a>
       <div class="linkSmall" id="linkLeitor">
-        <div class="textSmall">Leitor Código de Barra</div>
+        <div class="textSmall">Leitor Código de Barras</div>
         <div class="iconSmall" id="leitor" ng-click="scanBarcode()"></div>
       </div>
     </div>
@@ -28,18 +28,18 @@
     <li class="produto" ng-repeat="item in userList" on-last-repeat>
       <ul class="pecasLista">
         <li class="checkWrapper">
-          <input type="checkbox" class="check" ng-checked="getCheckbox(item.checked)"/>
+          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto)"/>
           <label></label>
         </li>
-          <li class="nomeProduto">{{productName(item.idProduto)}}</li>
+          <li class="nomeProduto" ng-bind="productName(item.idProduto)"></li>
           <li class="qntdWrapper">
             <form action="">
               <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="{{item.quantidade}}">
             </form>
           </li>
-          <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
-        <a href="#/tab/product-detail" class="produtoLink" ng-click="getProductDetailId(item.idProduto)">
-          <li class="gastoProduto"><span>{{waterFootprint(item.idProduto,item.quantidade)}}</span> lts</li>
+          <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
+        <a class="produtoLink" ng-click="setProductDetailId(item.idProduto)">
+          <li class="gastoProduto"><span ng-bind="waterFootprint(item.idProduto,item.quantidade)"></span> lts</li>
         </a>
       </ul>
     </li>
@@ -93,7 +93,7 @@
   <div class="totalLista">
   	<div class="titulo">Total da Lista:</div>
   	<div class="litrosTotal">
-  	<span id="litrosTotal">5340</span>
+  	<span id="litrosTotal" ng-bind="getListTotal()"></span>
   	litros
   	</div>
   </div>

@@ -9,9 +9,9 @@
 			<div class="fotoProduto"></div>
 		</div>
 		<div class="infosProduto">
-			<div class="nomeProduto">Pizza</div>
+			<div class="nomeProduto">{{getProductName(productId)}}</div>
 			<div class="gastoProduto">
-				<span id="litrosGastos">1250</span> litros/ano
+				<span id="litrosGastos">{{getProductFootprint(productId)}}</span> litros/ano
 			</div>
 			<div class="tiposAgua">
 				<div class="aguaIndividual" id="aguaAzul">
@@ -19,7 +19,7 @@
 					<div class="bgIcon"></div>
 					<div class="valor">
 					<div class="tipoAgua">Água Azul</div>
-						<span id="porcentagemAgua">15</span>%
+						<span id="porcentagemAgua">{{getBlueWater(productId)}}</span>%
 					</div>
 				</div>
 				<div class="aguaIndividual" id="aguaVerde">
@@ -27,7 +27,7 @@
 					<div class="bgIcon"></div>
 					<div class="valor">
 					<div class="tipoAgua">Água Verde</div>
-						<span id="porcentagemAgua">50</span>%
+						<span id="porcentagemAgua">{{getGreenWater(productId)}}</span>%
 					</div>
 				</div>
 				<div class="aguaIndividual" id="aguaCinza">
@@ -35,7 +35,7 @@
 					<div class="bgIcon"></div>
 					<div class="valor">
 					<div class="tipoAgua">Água Cinza</div>
-						<span id="porcentagemAgua">35</span>%
+						<span id="porcentagemAgua">{{getGreyWater(productId)}}</span>%
 					</div>
 				</div>
 				<div class="infoAgua" id="infoAzul">

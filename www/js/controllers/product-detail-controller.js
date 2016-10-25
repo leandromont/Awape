@@ -33,7 +33,108 @@ angular.module('starter.controllers')
 
   $scope.$on('$ionicView.enter', function(){
 
-    console.log($scope.productDetailId)
+    // ============== pegar ID do produto =========================
+    $scope.productId = Auth.get.productId();
+    
+    // ============== Pegar nome do produto =========================
+    $scope.getProductName = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var nome = result[0].produto;
+
+          retorno = nome;
+        }
+        
+        return retorno;
+    }
+
+    // ============== Pegar pegada hídrica =========================
+    $scope.getProductFootprint = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var pegada = result[0].pegada;
+
+          retorno = pegada;
+        }
+        
+        return retorno;
+    }
+
+    // ============== Pegar Água azul =========================
+    $scope.getBlueWater = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var blueWater = result[0].aguaAzul;
+
+          retorno = blueWater;
+        }
+        
+        return retorno;
+    }
+
+    // ============== Pegar Água verde =========================
+    $scope.getGreenWater = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var greenWater = result[0].aguaVerde;
+
+          retorno = greenWater;
+        }
+        
+        return retorno;
+    }
+
+    // ============== Pegar Água cinza =========================
+    $scope.getGreyWater = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var greyWater = result[0].aguaCinza;
+
+          retorno = greyWater;
+        }
+        
+        return retorno;
+    }
 
     // scroll to top on enter
     $ionicScrollDelegate.scrollTop();
