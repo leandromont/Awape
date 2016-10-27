@@ -37,6 +37,37 @@ background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50
 /* --------    Tutorial    -------- */
 
 .tutorial .slider{height: 100%}
+.tutorial .slideBoxes{background: rgba(94,202,219,1);background: -moz-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(94,202,219,1)), color-stop(50%, rgba(92,231,210,1)), color-stop(100%, rgba(64,206,142,1)));background: -webkit-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);background: -o-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);background: -ms-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);}
+
+.tutorial .slidebox1{background-image: url('../img/tutorial/pegada-hidrica.png');background-image: url(../img/tutorial/pegada-hidrica.png), linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);background-repeat: no-repeat;width: 100%;height: 100%;background-size: contain;background-position: center;}
+
+.tutorial .tutorialWrapper{width: 100%;height: 100%;text-align: center;background: rgba(255, 255, 255, 0.61);}
+
+.tutorial .slidebox0 .tutorialWrapper{height: 100vh;color: white;text-align: center;padding: 7%;width: 100%;background: transparent;margin: 0;}
+
+.tutorial .tutorialWrapper .logo{}
+.tutorial .tutorialWrapper .titulo{color: white;font-weight: 100;text-align: center;margin: 11vh 0 7vh;font-size: 1.5em;line-height: 23px;}
+.tutorial .tutorialWrapper .titulo span{font-size: 3em;display: block;margin: 0 0 50px;}
+.tutorial .tutorialWrapper .textoHolder{background: white;position: absolute;bottom: 33%;left: 5%;width: 90%;padding: 8% 5%;border-radius: 12px;border: 1px solid #5e5e5e;border-bottom: 4px solid #5e5e5e;color: #5bc3d2;/* -webkit-box-shadow: -9px -8px 18px -10px rgba(0,0,0,0.75); */}
+.tutorial .slidebox0 .tutorialWrapper .textoHolder{font-size: 1.1em;font-weight: 100;padding: 5vh 0;border-top: 1px solid rgba(255, 255, 255, 0.5);background: transparent;border: 0;box-shadow: none;color: white;position: relative;bottom: initial;left: initial;width: 100%;}
+.tutorial .tutorialWrapper .textoHolder p{margin: 0 0 5px;}
+.tutorial .tutorialWrapper .textoHolder p span{font-weight: 600; font-style: italic; font-size: 0.95em;}
+.tutorial .slidebox0 .tutorialWrapper .textoHolder .botao{width: 50%;margin: 10vh 25% 0;padding: 10px;border: 1px solid white;border-radius: 50px;background: rgba(255, 255, 255, 0.1);}
+.tutorial .tutorialWrapper .botao{
+    width: 50%;
+    margin: 10vh 25% 0;
+    padding: 10px;
+    border: 2px solid #3fc88e;
+    border-radius: 50px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 8%;
+    color: #3fc88e;
+}
+.tutorial .slidebox1 .tutorialWrapper .textoHolder p:last-child{font-size: 1.4em;}
+
+
+
 
     /*degrade no texto*/
     /*background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);

@@ -23,8 +23,8 @@ angular.module('starter.controllers')
       var produto = $('.buscaPage .produtoBusca');
       var i = 1;
       produto.each(function(){
-        $('.check', this).attr('id', 'check'+i);
-        $("label", this).attr('for', 'check'+i);
+        $('.check', this).attr('id', 'checkBusca'+i);
+        $("label", this).attr('for', 'checkBusca'+i);
         i++;
       });
   //
