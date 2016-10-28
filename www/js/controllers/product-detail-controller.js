@@ -29,13 +29,62 @@ angular.module('starter.controllers')
    $('.trocaProduto .botao').click(function(){
     $('.trocaProdutoWrapper').stop(false,true).hide(50);
   });
+
+   $scope.$on('$ionicView.loaded', function(){
+
+       // buscas no banco de dados
+      setTimeout(function(){
+          // buscar ID do usuário
+          $scope.userId = Auth.get.user.id();
+
+          // buscar itens da lista
+          Auth.get.listItens().then(function(resposta) {
+            $scope.listItens = resposta;
+
+          });
+        
+      }, 800);
+      
+
+    });
   //
 
   $scope.$on('$ionicView.enter', function(){
 
     // ============== pegar ID do produto =========================
+
     $scope.productId = Auth.get.productId();
-    
+
+
+
+    $scope.userId = Auth.get.user.id();
+
+    // buscar itens da lista
+    Auth.get.listItens().then(function(resposta) {
+      $scope.listItens = resposta;
+
+    });
+
+    // ============== Pegar imagem do produto =========================
+    $scope.getProductImage = function(productId){
+
+        var result = $.grep($scope.listItens, function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = 'nao achei';
+        } else if (result.length > 0) {
+
+          var image = result[0].imagem;
+
+          retorno = image;
+        }
+        
+        return retorno;
+    }
+  
     // ============== Pegar nome do produto =========================
     $scope.getProductName = function(productId){
 
