@@ -1,7 +1,7 @@
 <ion-view hide-nav-bar="true" hide-back-button="true" view-title="lista edit mode">
-
+	
   <ion-content class="tutorial">
-  	<ion-slide-box show-pager="true" ng-init="" on-slide-changed="" ng-class="'slide-'+slideIndex">
+  	<ion-slide-box show-pager="true" ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" ng-class="'slide-'+slideIndex">
 
 		<ion-slide class="slideBoxes slidebox0">
 
@@ -9,49 +9,49 @@
 				<div class="logo"></div>
 				<div class="titulo">
 					<span id="ola">Olá,</span>
-					sou seu assistente virtual Awapé!
+					<p>sou seu assistente virtual Awapé!</p>
 				</div>
 				<div class="textoHolder">
 					<p>Obrigado por se interessar em entender um pouco mais sobre seu <span>rastro no planeta.</span></p>
 					<p>Vou passar rapidinho pelas coisas que posso te apresentar.</p>
-					<div class="botao">Vamos lá ></div>
+					<button class="botao" ng-click="nextSlide()">Vamos lá ></button>
 				</div>
 			</div>
 
 		</ion-slide>
 
 		<ion-slide class="slideBoxes slidebox1">
-
+			<div class="phoneImage"></div>
 			<div class="tutorialWrapper">
 				<div class="textoHolder">
 					<p>Aqui é onde vamos começar a calcular sua pegada.</p>
 					<p>É só me dizer um pouco mais sobre seu estilo de vida.</p>
 					<p>É rapidinho, prometo! ;)</p>
 				</div>
-				<div class="botao">Próximo ></div>
+				<button class="botao" ng-click="nextSlide()">Próximo ></button>
 			</div>
 
 		</ion-slide>
 
 		<ion-slide class="slideBoxes slidebox2">
-
+			<div class="phoneImage"></div>
 			<div class="tutorialWrapper">
 				<div class="textoHolder">
 					<p>Depois de calcular sua pegada, vamos editar sua lista de compras pra deixar do seu jeitinho...</p>
 					<p>Só disponibilizei alimentos nessa lista por enquanto, já que o que você come reflete a maior porcentagem do seu rastro, ok?</p>
 				</div>
-				<div class="botao">Próximo ></div>
+				<button class="botao" ng-click="nextSlide()">Próximo ></button>
 			</div>
 
 		</ion-slide>
 
 		<ion-slide class="slideBoxes slidebox3">
-
+			<div class="phoneImage"></div>
 			<div class="tutorialWrapper">
 				<div class="textoHolder">
 					<p>Com isso, já mostro na sua tela principal sua pegada hidríca e o total da lista!</p>
 				</div>
-				<div class="botao">Próximo ></div>
+				<button class="botao" ng-click="nextSlide()">Próximo ></button>
 			</div>
 
 		</ion-slide>
@@ -65,20 +65,20 @@
 					<p>Assim consigo passar certinho pra você o que cada item que você consumiu gasta de água em sua produção.</p>
 					
 				</div>
-				<div class="botao">Próximo ></div>
+				<button class="botao" ng-click="nextSlide()">Próximo ></button>
 			</div>
 
 		</ion-slide>
 
 		<ion-slide class="slideBoxes slidebox5">
-
+			<div class="phoneImage"></div>
 			<div class="tutorialWrapper">
 				<div class="textoHolder">
-					<p>Assim que incluir um item na lista por um desses botões</p>
-					<p>Irei analisá-lo e, se tiver algum outro produto parecido que tenha uma pegada menor, eu te indico desse jeito aqui</p>
+					<p>Assim que incluir um item na lista por um desses botões acima.</p>
+					<p>Irei analisá-lo e, se tiver algum outro produto parecido que tenha uma pegada menor, eu te indico ao lado dele.</p>
 					<p>Ai é só clicar na setinha que te mostro tudo sobre esse produto que você escolheu e minhas recomendações também! ;)</p>
 				</div>
-				<div class="botao">Iniciar o App</div>
+				<button class="botao" ng-click="goToHome()">Iniciar o App</button>
 			</div>
 
 		</ion-slide>
