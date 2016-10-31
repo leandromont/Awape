@@ -13,7 +13,11 @@ button{font-family: "Open Sans";}
 
 
 
+
+
 /* --------    Login    -------- */
+
+.loading-container .loading{display: none;}
 
 .loginPage{background: rgba(94,202,219,1);
 background: -moz-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
@@ -468,6 +472,19 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
 .buscaPage .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 
+
+
+
+
+/* --------    Settings    -------- */
+
+.logOutPage h1{color: #545454;font-size: 1.7em;padding: 8% 0 0 5%;margin: 0 0 30%;}
+.logOutPage button.botao.logOut{background: transparent;border: 1px solid #4dacbb;color: #4dacbb;width: 80%;margin: 10px 10%;font-weight: 600;border-radius: 10px;padding: 10px;}
+.toggle-small .track{background: #d5d5d5; border: 1px solid #cccccc;}
+.toggle-small input:checked + .track{background: #4adba7; border: 1px solid #4fd09f;}
+.toggle-small input:checked + .track .handle{background: #38c891;}
+.logOutPage .item{border:0;margin: 10% auto;background: transparent;border-bottom: 1px solid #53aebc;width: 80%;}
+.logOutPage .item div span{color: #545454;}
 
 
 

@@ -239,6 +239,10 @@ angular.module('starter.controllers')
     $('.bgIcon').animate({'height': 0},10);
     //
 
+    //tirar a imagem do produto ao sair da página
+    $('.produto .fotoWrapper .fotoProduto').css("background-image", "");
+    //
+    
   });
 
   

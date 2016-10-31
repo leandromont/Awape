@@ -1,7 +1,8 @@
 <ion-view hide-nav-bar="true" hide-back-button="true" view-title="Preferências">
-  <ion-content>
-    <h2>Preferências</h2>
-	<br><br><br><br>
-    <button ng-click="logOut()" class="button button-full button-positive">Logout</button>
+  <ion-content class="logOutPage">
+    <h1>Preferências</h1>
+    <ion-toggle ng-model="pushNotification.checked" toggle-class="">Notificações Push</ion-toggle>
+    <ion-toggle ng-model="aviate" toggle-class="">Som</ion-toggle>
+    <button ng-click="logOut()" class="botao logOut">Fazer Logout</button>
   </ion-content>
 </ion-view>
