@@ -10,16 +10,15 @@ angular.module('starter.controllers')
 
     // evitar inserir texto no input
     $('.resposta').keypress(function(event) {
-      console.log("teste");
       if(event.which < 44
       || event.which > 59) {
           event.preventDefault();
-      } // prevent if not number/dot
+      } // prevent if not number/coma
 
       if(event.which == 44
       && $(this).val().indexOf(',') != -1) {
           event.preventDefault();
-      } // prevent if already dot
+      } // prevent if already coma
     });
     //
 
@@ -60,7 +59,7 @@ angular.module('starter.controllers')
     var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84000, 404000, 52000, 540, 13000, 34000, 20000, 41000, 9000];
 
       // onchange get id and value from input
-      $('input').change(function(){
+      $('input.resposta').change(function(){
         var inputUser = $(this).val();
         var idElem = $(this).attr('id');
 

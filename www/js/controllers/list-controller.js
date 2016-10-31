@@ -32,14 +32,28 @@ angular.module('starter.controllers')
 
         // aparecer os subIcones ao clicar no +
         $('.icon#addItem').click(function(){
+
           $('.iconSmallHolder').show();
           $('.linkSmall').toggleClass('Active');
+          if($('.linkSmall').hasClass('Active')){
+            $('.paginaLista .scroll').animate({opacity: 0.25},200);
+            $('.totalLista').animate({opacity: 0.25},200);
+            $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
+            
+          }else{
+            $('.paginaLista .scroll').animate({opacity: 1},200);
+            $('.totalLista').animate({opacity: 1},200);
+            $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+          }
         });
         //
 
         // desaparecer os subIcones ao clicar fora
         $('.paginaLista').click(function(){
+          $('.paginaLista .scroll').animate({opacity: 1},200);
+          $('.totalLista').animate({opacity: 1},200);
           $('.linkSmall').removeClass('Active');
+          $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
         });
         //
 
@@ -50,18 +64,19 @@ angular.module('starter.controllers')
 
       // hide small Icons if aren't
       $('.iconSmallHolder').hide();
+      $('.paginaLista .scroll').animate({opacity: 1},200);
+      $('.totalLista').animate({opacity: 1},200);
       $('.linkSmall').removeClass('Active');
+      $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
 
     });
 
 
 
     $scope.$on('onRepeatLast', function(){
-        $('input:checkbox:checked').closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show();
-            $('.listaChecked .qntdInput').attr('disabled', 'disabled');
-             $('.listaNotChecked .qntdInput').removeAttr('disabled');
-
-
+        $('.pecasLista input:checkbox:checked').closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show();
+            $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
+             $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
               var produtosLista = $('.paginaLista .produto').length;
               var produto = $('.paginaLista .produto');
               var i = 1;
@@ -77,26 +92,25 @@ angular.module('starter.controllers')
               var checks = $("input:checkbox", this);
               checks.click(function() {
                 if (checks.is(':checked')){ 
-                    $(this).closest('.produto').detach().hide().prependTo('.listaChecked').addClass('produtoChecked').show(200);
-                    $('.listaChecked .qntdInput').attr('disabled', 'disabled');
-                    $('.listaNotChecked .qntdInput').removeAttr('disabled');
-
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show(200);
+                    $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
+                    $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 } else {
-                    $(this).closest('.produto').detach().hide().prependTo('.listaNotChecked').removeClass('produtoChecked').show(200);
-                    $('.listaNotChecked .qntdInput').removeAttr('disabled');
-                    $('.listaNotChecked .qntdInput').removeAttr('disabled');
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('produtoChecked').show(200);
+                    $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 }
-                // Esconder listaChecked se não tiver item nela
-                if($('.listaChecked .produto').length === 0){
-                  $('.listaChecked').hide();
-                  $('.listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
-                } else {
-                  $('.listaChecked').show();
-                  $('.listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
-                }
-                //
               });
             });
+          //
+
+          // Esconder listaChecked se não tiver item nela
+          if($('.paginaLista .listaChecked .produto').length === 0){
+            $('.paginaLista .listaChecked').hide();
+            $('.paginaLista .listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
+          } else {
+            $('.paginaLista .listaChecked').show();
+            $('.paginaLista .listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
+          }
           //
 
           // evitar inserir texto no input
@@ -104,12 +118,12 @@ angular.module('starter.controllers')
             if(event.which < 44
             || event.which > 59) {
                 event.preventDefault();
-            } // prevent if not number/dot
+            } // prevent if not number/coma
 
             if(event.which == 44
             && $(this).val().indexOf(',') != -1) {
                 event.preventDefault();
-            } // prevent if already dot
+            } // prevent if already coma
           });
 
           // flip no ícone de editar
