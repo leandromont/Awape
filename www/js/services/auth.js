@@ -1,4 +1,4 @@
-angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, $state, Utils, $location) {
+angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, $state, Utils, $location, $q) {
 
 	//var ref = new Firebase(FURL);
 
@@ -90,24 +90,37 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
 
         id: function(){
           return firebase.auth().currentUser.uid
+            
         },
 
         name: function(userId){
-           return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-                    return snapshot.val().username;
-                  });
+           return firebase.database().ref('/users/' + userId).once('value')
+           .then(function(snapshot) {
+              return snapshot.val().username;
+            })
+           .catch(function(error) {
+              $log.log(error);
+            });
         },
 
         list:function(userId){
-           return firebase.database().ref('/users/' + userId + '/minhaLista').once('value').then(function(snapshot) {
-                    return snapshot.val();
-                  });
+           return firebase.database().ref('/users/' + userId + '/minhaLista').once('value')
+           .then(function(snapshot) {
+              return snapshot.val();
+            })
+           .catch(function(error) {
+              $log.log(error);
+            });
         }
       },
 
       listItens: function(){
-        return firebase.database().ref('/users/itens').once('value').then(function(snapshot) {
+        return firebase.database().ref('/users/itens').once('value')
+        .then(function(snapshot) {
           return snapshot.val();
+        })
+        .catch(function(error) {
+          $log.log(error);
         });
       },
 
@@ -116,7 +129,13 @@ angular.module('starter').factory('Auth', function(FURL, $log, $firebaseAuth, $f
       },
 
       data: function(){
-        return firebase.database().ref()
+        return firebase.database().ref().once('value')
+        .then(function(snapshot) {
+          return snapshot;
+        })
+        .catch(function(error) {
+          $log.log(error);
+        });
       }
     },
 

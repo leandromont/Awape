@@ -41,10 +41,6 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $translateProvider, $translateStaticFilesLoaderProvider) {
 
-
-  
-
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -62,13 +58,13 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
   // Each tab has its own nav history stack:
 
   .state('tab.home', {
-    url: '/home',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/tab-home.html',
-        controller: 'HomeCtrl'
+      url: '/home',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/tab-home.html',
+          controller: 'HomeCtrl',
+        }
       }
-    }
   })
 
   .state('tab.history', {

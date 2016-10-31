@@ -4,20 +4,21 @@ angular.module('starter.controllers')
 .controller('HomeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
   
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
 
-  $scope.$on('$ionicView.enter', function(){
-     
-      
-    setTimeout(function(){
+        // User is signed in and currentUser will no longer return null.
 
-        // buscar ID do usuário
+         // buscar ID do usuário
         $scope.userId = Auth.get.user.id();
 
         // $scope.sendName = Auth.send.user.name($scope.userId,'Seygi');
 
         // buscar nome do usuário
         Auth.get.user.name($scope.userId).then(function(nomeUsuario) {
-          $scope.getName = nomeUsuario;
+          $scope.$apply(function() {
+            $scope.getName = nomeUsuario;
+          });
         });
 
         // buscar minha Lista
@@ -28,10 +29,19 @@ angular.module('starter.controllers')
         // buscar itens da lista
         Auth.get.listItens().then(function(resposta) {
           $scope.listItens = resposta;
-        });
-        
-      }, 500);
-      
+      });
+
+      } else {
+        // No user is signed in.
+        $location.path("/login");
+      }
+  });
+
+  $scope.$on('$ionicView.enter', function(){
+         
+  });
+
+  $scope.$on('$ionicView.loaded', function(){
 
   });
 

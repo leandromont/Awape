@@ -4,7 +4,15 @@ angular.module('starter.controllers')
 .controller('PreferencesCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
   $scope.$on('$ionicView.loaded', function(){
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in and currentUser will no longer return null.
 
+        } else {
+          // No user is signed in.
+          $location.path("/login");
+        }
+      });
   });
   
   $scope.$on('$ionicView.enter', function(){

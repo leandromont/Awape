@@ -32,18 +32,31 @@ angular.module('starter.controllers')
 
    $scope.$on('$ionicView.loaded', function(){
 
-       // buscas no banco de dados
-      setTimeout(function(){
-          // buscar ID do usuário
-          $scope.userId = Auth.get.user.id();
+      firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in and currentUser will no longer return null.
 
-          // buscar itens da lista
-          Auth.get.listItens().then(function(resposta) {
-            $scope.listItens = resposta;
+              // buscar ID do usuário
+              $scope.userId = Auth.get.user.id();
 
-          });
+              // buscar itens da lista
+              Auth.get.listItens().then(function(resposta) {
+                $scope.$apply(function() {
+                  $scope.listItens = resposta;
+                });
+
+              });
+              
+
+            } else {
+              // No user is signed in.
+              $location.path("/login");
+            }
+      });
+
+          
         
-      }, 800);
+
       
 
     });
@@ -66,6 +79,7 @@ angular.module('starter.controllers')
     });
 
     // ============== Pegar imagem do produto =========================
+
     $scope.getProductImage = function(productId){
 
         var result = $.grep($scope.listItens, function(e){ 
@@ -88,7 +102,7 @@ angular.module('starter.controllers')
     // ============== Pegar nome do produto =========================
     $scope.getProductName = function(productId){
 
-        var result = $.grep($scope.listItens, function(e){ 
+        var result = $.grep($scope.listItens || [], function(e){ 
           return e.id == productId  ; 
         });
 

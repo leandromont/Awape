@@ -3,6 +3,32 @@ angular.module('starter.controllers')
 .controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
   
 // =============================== View enter ===========================================
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in and currentUser will no longer return null.
+        // buscar ID do usuário
+        $scope.userId = Auth.get.user.id();
+
+        // buscar minha Lista
+        Auth.get.user.list($scope.userId).then(function(data) {
+          $scope.$apply(function() {
+            $scope.userList = data;
+          });
+        });
+
+        // buscar itens da lista
+        Auth.get.listItens().then(function(resposta) {
+          $scope.$apply(function() {
+            $scope.listItens = resposta;
+          });
+        });
+
+      } else {
+        // No user is signed in.
+        $location.path("/login");
+      }
+    });
+
     $scope.$on('$ionicView.enter', function(){
 
      console.log('NICE TO HAVE: ARRUMAR BUG DOS VÁRIOS CLIQUES NO CHECKBOX');
@@ -10,26 +36,6 @@ angular.module('starter.controllers')
     });
 
     $scope.$on('$ionicView.loaded', function(){
-
-       // buscas no banco de dados
-      setTimeout(function(){
-          // buscar ID do usuário
-          $scope.userId = Auth.get.user.id();
-
-          // buscar minha Lista
-          Auth.get.user.list($scope.userId).then(function(data) {
-            $scope.userList = data;
-          });
-
-          // buscar itens da lista
-          Auth.get.listItens().then(function(resposta) {
-            $scope.listItens = resposta;
-
-          });
-        
-      }, 800);
-      
-
         // aparecer os subIcones ao clicar no +
         $('.icon#addItem').click(function(){
 
