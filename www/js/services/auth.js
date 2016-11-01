@@ -111,6 +111,16 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
            .catch(function(error) {
               $log.log(error);
             });
+        },
+
+        waterFootprint:function(userId){
+          return firebase.database().ref('/users/' + userId + '/minhaPegada').once('value')
+          .then(function(snapshot) {
+              return snapshot.val();
+          })
+          .catch(function(error) {
+              $log.log(error);
+          });
         }
       },
 

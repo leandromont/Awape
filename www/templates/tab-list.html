@@ -37,7 +37,7 @@
           <li class="nomeProduto" ng-bind="productName(item.idProduto)"></li>
           <li class="qntdWrapper">
             <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="{{item.quantidade}}">
+              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" ng-model="item.quantidade">
             </form>
           </li>
           <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>

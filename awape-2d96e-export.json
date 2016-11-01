@@ -1,8 +1,8 @@
 {
   "users" : {
     "JPL32UMjsRR69jjugWZaXRMk08k1" : {
-       "minhaLista" : [ {
-        "checked" : true,
+      "minhaLista" : [ {
+        "checked" : false,
         "data" : "18/10/2016",
         "idProduto" : 1,
         "quantidade" : 6
@@ -12,39 +12,27 @@
         "idProduto" : 2,
         "quantidade" : 3
       } ],
+      "minhaPegada":{
+        "banho":30,
+        "dentes":3,
+        "roupa":3,
+        "louca":3,
+        "carro":1,
+        "jardim":5,
+        "calcada":1,
+        "cereal":1.5,
+        "carne":2.5,
+        "laticineos":0.5,
+        "ovos":3,
+        "vegetais":1,
+        "frutas":0.5,
+        "raizes":0.3,
+        "cafe":0,
+        "cha":0
+      },
       "username" : "Brunones"
     },
-    "itens" : [ {
-      "aguaAzul" : 15,
-      "aguaCinza" : 15,
-      "aguaVerde" : 70,
-      "categoria" : "Bebida Alcoólica",
-      "descricao" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non, eveniet accusamus obcaecati id illum quaerat iusto, omnis incidunt dicta.",
-      "embalagem" : [ "vidro", "10.5" ],
-      "id" : 1,
-      "imagem" : "../img/produtos/cerveja-de-garrafa.jpg",
-      "parceiro" : false,
-      "pegada" : 308.5,
-      "produto" : "Cerveja 600ml",
-      "conteudo" : 0.6,
-      "tags" : [ "bebidas", "bebida", "gelada" ],
-      "unidade" : "un"
-    }, {
-      "aguaAzul" : 15,
-      "aguaCinza" : 15,
-      "aguaVerde" : 70,
-      "categoria" : "carne",
-      "descricao" : "",
-      "embalagem" : [ "plástico", "5" ],
-      "id" : 2,
-      "imagem" : "../img/produtos/carne-de-vaca.jpg",
-      "parceiro" : true,
-      "pegada" : 5521,
-      "produto" : "Carne de Vaca",
-      "conteudo" : 1,
-      "tags" : "(Bebidas, bebida gelada)",
-      "unidade" : "kg"
-    } ],
+
     "r5N6mneY1khE4f9ubUTdWLf9fuL2" : {
       "minhaLista" : [ {
         "checked" : true,
@@ -52,12 +40,63 @@
         "idProduto" : 1,
         "quantidade" : 6
       }, {
-        "checked" : false,
+        "checked" : true,
         "data" : "18/10/2016",
         "idProduto" : 2,
         "quantidade" : 3
       } ],
+      "minhaPegada":{
+        "banho":30,
+        "dentes":3,
+        "roupa":3,
+        "louca":3,
+        "carro":1,
+        "jardim":5,
+        "calcada":1,
+        "cereal":1.5,
+        "carne":2.5,
+        "laticineos":0.5,
+        "ovos":3,
+        "vegetais":1,
+        "frutas":0.5,
+        "raizes":0.3,
+        "cafe":0,
+        "cha":0
+      },
       "username" : "Leandro"
-    }
+    },
+    "itens" : [ 
+      {
+        "aguaAzul" : 15,
+        "aguaCinza" : 15,
+        "aguaVerde" : 70,
+        "categoria" : "Bebida Alcoólica",
+        "conteudo" : 0.6,
+        "descricao" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non, eveniet accusamus obcaecati id illum quaerat iusto, omnis incidunt dicta.",
+        "embalagem" : [ "vidro", "10.5" ],
+        "id" : 1,
+        "imagem" : "../img/produtos/cerveja-de-garrafa.jpg",
+        "parceiro" : false,
+        "pegada" : 308.5,
+        "produto" : "Cerveja 600ml",
+        "tags" : [ "bebidas", "bebida", "gelada" ],
+        "unidade" : "un"
+      }, {
+        "aguaAzul" : 15,
+        "aguaCinza" : 15,
+        "aguaVerde" : 70,
+        "categoria" : "carne",
+        "conteudo" : 1,
+        "descricao" : "",
+        "embalagem" : [ "plástico", "5" ],
+        "id" : 2,
+        "imagem" : "../img/produtos/carne-de-vaca.jpg",
+        "parceiro" : true,
+        "pegada" : 5521,
+        "produto" : "Carne de Vaca",
+        "tags" : "(Bebidas, bebida gelada)",
+        "unidade" : "kg"
+      } 
+    ]
   }
 }

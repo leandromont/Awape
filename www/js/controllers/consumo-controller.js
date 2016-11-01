@@ -11,6 +11,17 @@ angular.module('starter.controllers')
         // buscar ID do usuário
         $scope.userId = Auth.get.user.id();
 
+        // 
+        Auth.get.user.waterFootprint($scope.userId).then(function(data) {
+          $scope.$apply(function() {
+            
+            $scope.userWaterFootprint = data;
+            
+          });
+        });
+
+
+
       } else {
         // No user is signed in.
         $location.path("/login");
