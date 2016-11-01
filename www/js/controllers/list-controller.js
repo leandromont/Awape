@@ -2,38 +2,45 @@
 angular.module('starter.controllers')
 .controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
   
-// =============================== View enter ===========================================
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in and currentUser will no longer return null.
-        // buscar ID do usuário
-        $scope.userId = Auth.get.user.id();
 
-        // buscar minha Lista
-        Auth.get.user.list($scope.userId).then(function(data) {
-          $scope.$apply(function() {
-            $scope.userList = data;
-          });
+// ******************************************** LOAD DATA *************************************************************************
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in and currentUser will no longer return null.
+      // buscar ID do usuário
+      $scope.userId = Auth.get.user.id();
+
+      // buscar minha Lista
+      Auth.get.user.list($scope.userId).then(function(data) {
+        $scope.$apply(function() {
+          $scope.userList = data;
         });
+      });
 
-        // buscar itens da lista
-        Auth.get.listItens().then(function(resposta) {
-          $scope.$apply(function() {
-            $scope.listItens = resposta;
-          });
+      // buscar itens da lista
+      Auth.get.listItens().then(function(resposta) {
+        $scope.$apply(function() {
+          $scope.listItens = resposta;
         });
+      });
 
-      } else {
-        // No user is signed in.
-        $location.path("/login");
-      }
-    });
+    } else {
+      // No user is signed in.
+      $location.path("/login");
+    }
+  });
+
+
+// ******************************************** ENTER ON VIEW *********************************************************************
 
     $scope.$on('$ionicView.enter', function(){
 
      console.log('NICE TO HAVE: ARRUMAR BUG DOS VÁRIOS CLIQUES NO CHECKBOX');
 
     });
+
+// ******************************************** VIEW LOADED ***********************************************************************
 
     $scope.$on('$ionicView.loaded', function(){
         // aparecer os subIcones ao clicar no +
@@ -65,6 +72,7 @@ angular.module('starter.controllers')
 
     });
 
+// ******************************************** lEAVE VIEW ************************************************************************
 
     $scope.$on('$ionicView.leave', function(){
 
@@ -78,6 +86,7 @@ angular.module('starter.controllers')
     });
 
 
+// ******************************************** LAST REPEAT ************************************************************************
 
     $scope.$on('onRepeatLast', function(){
         $('.pecasLista input:checkbox:checked').closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show();
@@ -146,7 +155,7 @@ angular.module('starter.controllers')
   //
       });
 
-// ======================= Código de barras =======================================
+// ******************************************** CÓDIGO DE BARRAS ********************************************************************
 
   $scope.scanBarcode = function() {
     $cordovaBarcodeScanner.scan().then(function(imageData) {
@@ -158,11 +167,14 @@ angular.module('starter.controllers')
     });
   };
 
+
+// ******************************************** GET DATA ************************************************************************
+
 // ======================= get product name =======================================
 
 $scope.productName = function(productId){
 
-    var result = $.grep($scope.listItens, function(e){ 
+    var result = $.grep($scope.listItens || [], function(e){ 
       return e.id == productId  ; 
     });
 
@@ -178,9 +190,9 @@ $scope.productName = function(productId){
 
 // ======================= get waterFootprint =======================================
 
-$scope.waterFootprint = function(productId,quantidade){
+$scope.waterFootprint = function(productId,quantidade,checked){
 
-    var result = $.grep($scope.listItens, function(e){ 
+    var result = $.grep($scope.listItens || [], function(e){ 
       return e.id == productId  ; 
     });
 
@@ -197,6 +209,11 @@ $scope.waterFootprint = function(productId,quantidade){
 
 
       retorno = quantidade * conteudo * pegada;
+
+      if(checked){
+        
+
+      }
 
       $scope.listTotal += retorno;
 
@@ -220,7 +237,7 @@ $scope.getListTotal = function(){
 
 $scope.getUnit = function(productId){
 
-    var result = $.grep($scope.listItens, function(e){ 
+    var result = $.grep($scope.listItens || [], function(e){ 
       return e.id == productId  ; 
     });
 
@@ -261,10 +278,9 @@ $scope.setProductDetailId = function(productId){
 
 }
 
-// =============================== funções da lista ===========================================
-
 
 })
+
 .directive('onLastRepeat', function() {
     return function(scope, element, attrs) {
         if (scope.$last) setTimeout(function(){
