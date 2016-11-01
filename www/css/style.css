@@ -387,51 +387,51 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 /* --------    Produto    -------- */
 
 a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: url('../img/sprite_layout.png') no-repeat -55px -504px;width: 50px;height: 50px;z-index: 9;bottom: 12%;left: 43%;}
-.produto{}
-.produto a.voltarLink .voltarLista{width: 100%;background: #e4e4e4;padding: 7px 3%;text-align: center;}
-.produto .produtoWrapper{width: 95%;margin: 20px auto;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
-.produto .fotoWrapper{width: 100%;height: 180px;}
-.produto .fotoWrapper .fotoProduto{/* background: url(../img/produtos/pizza.jpg) no-repeat; */background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
-.produto .infosProduto{}
-.produto .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
-.produto .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
-.produto .infosProduto .gastoProduto span#litrosGastos{}
-.produto .infosProduto .tiposAgua{margin: 25px auto;}
-.produto .infosProduto .tiposAgua .aguaIndividual{display: inline-block;width: 29.5%;margin-right: 3%;position: relative;}
-.produto .infosProduto .tiposAgua .aguaIndividual:last-child{margin-right: 0}
-.produto .infosProduto .tiposAgua .aguaIndividual .icon{background: url(../img/produtos/aguaIcon.png) no-repeat;background-size: contain;height: 70px;width: 70px;display: inline-block;margin: 0 17%;z-index: 9999;position: relative;}
-.produto .infosProduto .tiposAgua .aguaIndividual .bgIcon{width: 65px;left: 20px;bottom: 50px;position: absolute;z-index: 9;}
-.produto .infosProduto .tiposAgua .aguaIndividual#aguaAzul .bgIcon{background-color:#5dcadc;}
-.produto .infosProduto .tiposAgua .aguaIndividual#aguaVerde .bgIcon{background-color:#40ce8d;}
-.produto .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
-.produto .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
-.produto .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
-.produto .recomendacao{width: 90%; margin: 0 auto; padding: 5px 0 0 0; border-top: 1px solid #d2d2d2;}
-.produto .recomendacao .titulo{text-align: center;padding: 5px 0 0;}
-.produto .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 20px;}
-.produto .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}
-.produto .recomendacao .produtoRecom .fotoWrapper .fotoProduto{border-radius: 30px; opacity: 0.9;}
-.produto .recomendacao .produtoRecom .infosProduto{text-align: center;}
-.produto .recomendacao .produtoRecom .infosProduto .gastoProduto{font-size: 0.9em;}
-.produto .recomendacao .produtoRecom .infosProduto .gastoProduto span#litrosGastos{}
-.produto .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
-.produto .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
-.produto .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
-.produto .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 20%;padding: 10px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
-.produto .infoAgua .titulo{padding: 0 0 10px;}
-.produto .infoAgua#infoVerde .titulo{color:#40ce8d;}
-.produto .infoAgua#infoCinza .titulo{color:#727272;}
-.produto .infoAgua .texto{}
+.produtoPage{}
+.produtoPage a.voltarLink .voltarLista{width: 100%;background: #e4e4e4;padding: 7px 3%;text-align: center;}
+.produtoPage .produtoWrapper{width: 95%;margin: 20px auto;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
+.produtoPage .fotoWrapper{width: 100%;height: 180px;}
+.produtoPage .fotoWrapper .fotoProduto{/* background: url(../img/produtos/pizza.jpg) no-repeat; */background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
+.produtoPage .infosProduto{}
+.produtoPage .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
+.produtoPage .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
+.produtoPage .infosProduto .gastoProduto span#litrosGastos{}
+.produtoPage .infosProduto .tiposAgua{margin: 25px auto;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual{display: inline-block;width: 29.5%;margin-right: 3%;position: relative;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual:last-child{margin-right: 0}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual .icon{background: url(../img/produtos/aguaIcon.png) no-repeat;background-size: contain;height: 70px;width: 70px;display: inline-block;margin: 0 17%;z-index: 9999;position: relative;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual .bgIcon{width: 65px;left: 20px;bottom: 50px;position: absolute;z-index: 9;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual#aguaAzul .bgIcon{background-color:#5dcadc;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual#aguaVerde .bgIcon{background-color:#40ce8d;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
+.produtoPage .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
+.produtoPage .recomendacao{width: 90%; margin: 0 auto; padding: 5px 0 0 0; border-top: 1px solid #d2d2d2;}
+.produtoPage .recomendacao .titulo{text-align: center;padding: 5px 0 0;margin-bottom: 10vh;}
+.produtoPage .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 3vh;}
+.produtoPage .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}
+.produtoPage .recomendacao .produtoRecom .fotoWrapper .fotoProduto{border-radius: 30px; opacity: 0.9;}
+.produtoPage .recomendacao .produtoRecom .infosProduto{text-align: center;}
+.produtoPage .recomendacao .produtoRecom .infosProduto .gastoProduto{font-size: 0.9em;}
+.produtoPage .recomendacao .produtoRecom .infosProduto .gastoProduto span#litrosGastos{}
+.produtoPage .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
+.produtoPage .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
+.produtoPage .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
+.produtoPage .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 5%;padding: 15px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
+.produtoPage .infoAgua .titulo{padding: 0 0 10px;}
+.produtoPage .infoAgua#infoVerde .titulo{color:#40ce8d;}
+.produtoPage .infoAgua#infoCinza .titulo{color:#727272;}
+.produtoPage .infoAgua .texto{}
 
-.produto .trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: 0;left: 0;z-index: 99999;}
-.produto .trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 105%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
-.produto .trocaProdutoWrapper .trocaProduto .titulo{padding: 0 0 10px;}
-.produto .trocaProdutoWrapper .trocaProduto .texto{font-size: 1.2em;}
-.produto .trocaProdutoWrapper .trocaProduto .texto span{font-weight: 600;}
-.produto .trocaProdutoWrapper .trocaProduto .botoes{width: 100%;}
-.produto .trocaProdutoWrapper .trocaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
-.produto .trocaProdutoWrapper .trocaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
-.produto .trocaProdutoWrapper .trocaProduto .botoes .botao#sim{
+.produtoPage .trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: 0;left: 0;z-index: 99999;}
+.produtoPage .trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 105%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .titulo{padding: 0 0 10px;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .texto{font-size: 1.2em;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .texto span{font-weight: 600;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .botoes{width: 100%;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
+.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao#sim{
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(93,214,216,1)), color-stop(51%, rgba(92,232,209,1)), color-stop(100%, rgba(85,233,189,1)));
   background: -webkit-linear-gradient(-45deg, rgba(93,214,216,1) 0%, rgba(92,232,209,1) 51%, rgba(85,233,189,1) 100%);
   -webkit-box-shadow: 2px 2px 3px 0px rgba(93,202,220,1);

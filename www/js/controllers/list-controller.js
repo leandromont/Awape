@@ -41,39 +41,14 @@ angular.module('starter.controllers')
 
     $scope.$on('$ionicView.enter', function(){
 
-     console.log('NICE TO HAVE: ARRUMAR BUG DOS VÁRIOS CLIQUES NO CHECKBOX');
+
 
     });
 
 // ******************************************** VIEW LOADED ***********************************************************************
 
     $scope.$on('$ionicView.loaded', function(){
-        // aparecer os subIcones ao clicar no +
-        $('.icon#addItem').click(function(){
-
-          $('.iconSmallHolder').show();
-          $('.linkSmall').toggleClass('Active');
-          if($('.linkSmall').hasClass('Active')){
-            $('.paginaLista .scroll').animate({opacity: 0.25},200);
-            $('.totalLista').animate({opacity: 0.25},200);
-            $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
-            
-          }else{
-            $('.paginaLista .scroll').animate({opacity: 1},200);
-            $('.totalLista').animate({opacity: 1},200);
-            $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
-          }
-        });
-        //
-
-        // desaparecer os subIcones ao clicar fora
-        $('.paginaLista').click(function(){
-          $('.paginaLista .scroll').animate({opacity: 1},200);
-          $('.totalLista').animate({opacity: 1},200);
-          $('.linkSmall').removeClass('Active');
-          $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
-        });
-        //
+        
 
     });
 
@@ -94,6 +69,8 @@ angular.module('starter.controllers')
 // ******************************************** LAST REPEAT ************************************************************************
 
     $scope.$on('onRepeatLast', function(){
+
+      // Fazer o básico da lista funcionar
         $('.pecasLista input:checkbox:checked').closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show();
             $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
              $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
@@ -105,6 +82,16 @@ angular.module('starter.controllers')
                 $("label", this).attr('for', 'check'+i);
                 i++;
               });
+          //
+
+          // Esconder listaChecked se não tiver item nela no ínicio de tudo
+          if($('.paginaLista .listaChecked .produto').length === 0){
+            $('.paginaLista .listaChecked').hide();
+            $('.paginaLista .listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
+          } else {
+            $('.paginaLista .listaChecked').show();
+            $('.paginaLista .listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
+          }
           //
 
           // checked or not checked - Change parent Div and add class
@@ -119,18 +106,17 @@ angular.module('starter.controllers')
                     $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('produtoChecked').show(200);
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 }
+                // Esconder listaChecked se não tiver item nela a cada clique
+                if($('.paginaLista .listaChecked .produto').length === 0){
+                  $('.paginaLista .listaChecked').hide();
+                  $('.paginaLista .listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
+                } else {
+                  $('.paginaLista .listaChecked').show();
+                  $('.paginaLista .listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
+                }
+                //
               });
             });
-          //
-
-          // Esconder listaChecked se não tiver item nela
-          if($('.paginaLista .listaChecked .produto').length === 0){
-            $('.paginaLista .listaChecked').hide();
-            $('.paginaLista .listaNotChecked').css({"margin-bottom": "80px", "border-bottom": "2px solid #d2d2d2", "border-radius": "10px"});
-          } else {
-            $('.paginaLista .listaChecked').show();
-            $('.paginaLista .listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
-          }
           //
 
           // evitar inserir texto no input
@@ -148,16 +134,48 @@ angular.module('starter.controllers')
 
           // flip no ícone de editar
           $('input.qntdInput').focusin(function() {
-            console.log('teste');
             $('.iconsHolder').addClass('flipped');
             $('.iconSmallHolder').hide();
           });
           $('input.qntdInput').focusout(function() {
-            console.log('teste');
             $('.iconsHolder').removeClass('flipped');
           });
         //
-  //
+
+        // aparecer os subIcones ao clicar no +
+        $('.icon#addItem').click(function(){
+          // somente se não tiver a classe flipped no iconsHolder
+          if($('.iconsHolder').hasClass('flipped')){
+          }else{
+            $('.iconSmallHolder').show();
+            $('.linkSmall').toggleClass('Active');
+            // animacoes ao clicar - ativo
+            if($('.linkSmall').hasClass('Active')){
+              $('.paginaLista .scroll').animate({opacity: 0.25},200);
+              $('.totalLista').animate({opacity: 0.25},200);
+              $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
+            //
+            }else{
+              // animacoes ao clicar - desativo
+              $('.paginaLista .scroll').animate({opacity: 1},200);
+              $('.totalLista').animate({opacity: 1},200);
+              $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+              //
+            }
+          }
+          //
+        });
+        //
+
+        // desaparecer os subIcones ao clicar fora
+        $('.paginaLista').click(function(){
+          $('.paginaLista .scroll').animate({opacity: 1},200);
+          $('.totalLista').animate({opacity: 1},200);
+          $('.linkSmall').removeClass('Active');
+          $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+        });
+        //
+
       });
 
 // ******************************************** CÓDIGO DE BARRAS ********************************************************************
@@ -211,9 +229,10 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 
       var conteudo = result[0].conteudo;
       var pegada = result[0].pegada;
-
-
-      retorno = quantidade * conteudo * pegada;
+      var totalGasto = quantidade * conteudo * pegada;
+      var totalZerado = totalGasto.toFixed(0);
+      var totalNumeroZerado = parseInt(totalZerado);
+      retorno = totalNumeroZerado;
 
       if(checked){
         

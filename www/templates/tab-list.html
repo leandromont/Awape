@@ -42,7 +42,7 @@
           </li>
           <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
         <a class="produtoLink" ng-click="setProductDetailId(item.idProduto)">
-          <li class="gastoProduto"><span ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
+          <li class="gastoProduto"><span id="litrosTotalProduto"ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
         </a>
       </ul>
     </li>

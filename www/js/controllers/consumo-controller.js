@@ -2,6 +2,7 @@ angular.module('starter.controllers')
 
 .controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
+console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
 
 
 
@@ -279,4 +280,24 @@ angular.module('starter.controllers')
 
   });
 
-})
+
+
+// ******************************************** LOADED VIEW ********************************************************************
+
+  $scope.$on('$ionicView.loaded', function(){
+      
+      setTimeout(function(){
+        $('input.resposta').each(function(){
+        
+          console.log('liberado');
+          var inputUser = $(this).val();
+          
+          if (inputUser > 0){
+            $(this).next('.resultadoItem').show();
+          }
+        });
+    }, 3000);
+
+  })
+
+});

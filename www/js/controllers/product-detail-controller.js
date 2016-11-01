@@ -21,7 +21,7 @@ angular.module('starter.controllers')
     // esperar para carregar os dados
     setTimeout(function(){ 
       
-      // animação das ggotas de água
+      // animação das gotas de água
       $('.aguaIndividual').each(function(){
         var qntdAgua = $('#porcentagemAgua', this).text();
         var iconHeight = $('.icon', this).outerHeight();
@@ -205,6 +205,7 @@ angular.module('starter.controllers')
         //
 
 
+
         // aparecer e desaparecer a troca de produto
         $('.produtoRecom').click(function(){
           $('.trocaProdutoWrapper').stop(false,true).show(50);
@@ -225,7 +226,7 @@ angular.module('starter.controllers')
     //
 
     //tirar a imagem do produto ao sair da página
-    $('.produto .fotoWrapper .fotoProduto').css("background-image", "");
+    $('.produtoPage .fotoWrapper .fotoProduto').css("background-image", "");
     //
     
   });
