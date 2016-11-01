@@ -265,8 +265,8 @@ $scope.checkboxClick = function(checked, productId){
       
       if(checked){
 
-        var result = $.grep($scope.listItens || [], function(e){ 
-          return e.id == productId  ; 
+        var result = $.grep($scope.userList || [], function(e){ 
+          return e.idProduto == productId  ; 
         });
 
         var retorno='';
@@ -276,26 +276,47 @@ $scope.checkboxClick = function(checked, productId){
 
         } else if (result.length > 0) {
 
-          var checkArray = result[0];
+          var objRetornado = result[0];
 
-        }
+          for(var index in $scope.userList){
+               if($scope.userList[index].idProduto == objRetornado.idProduto){
 
-        var userList = firebase.database().ref('/users/' + $scope.userId + '/minhaLista');
+                 firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"checked": true});
 
-        userList.once('value').then(function(snapshot) {
+               }
+          }
 
-
-           if( snapshot.val() === null ) {
-                /* does not exist */
-            } else {
-                // snapshot.ref().update({"postID": postID});
-            }
-        });
+        }  
 
         retorno = checked;
 
       } else {
-        console.log("not checked");
+
+        var result = $.grep($scope.userList || [], function(e){ 
+          return e.idProduto == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+
+          console.log("não achei");
+
+        } else if (result.length > 0) {
+
+          var objRetornado = result[0];
+
+          for(var index in $scope.userList){
+               if($scope.userList[index].idProduto == objRetornado.idProduto){
+
+                console.log("gogo")
+                 
+                  firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"checked": false});
+
+               }
+          }
+
+        }  
+
         retorno = checked;
       }
     

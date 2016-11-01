@@ -14,7 +14,7 @@
 						<span class="unidade">minutos / dia</span>
 					</div>
 					<form action="">
-						<input type="number" class="resposta" name="resposta[]" id="banho" placeholder="Ex: 2 banhos de 15min = 30" ng-model="userWaterFootprint.banho">
+						<input type="number" class="resposta" name="resposta[]" id="banho" placeholder="Ex: 2 banhos de 15min = 30" ng-change="changeWaterFootprint()" ng-model="userWaterFootprint.banho">
 						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
 					</form>
 				</div>

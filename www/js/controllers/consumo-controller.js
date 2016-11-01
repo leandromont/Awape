@@ -3,6 +3,8 @@ angular.module('starter.controllers')
 .controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
 
+
+
 // ******************************************** GET DATA ********************************************************************
 
  firebase.auth().onAuthStateChanged(function(user) {
@@ -29,24 +31,7 @@ angular.module('starter.controllers')
   });
 
 
-// ******************************************** ENTER VIEW ********************************************************************
-
-  $scope.$on('$ionicView.enter', function(){
-
-    // evitar inserir texto no input
-    $('.resposta').keypress(function(event) {
-      if(event.which < 44
-      || event.which > 59) {
-          event.preventDefault();
-      } // prevent if not number/coma
-
-      if(event.which == 44
-      && $(this).val().indexOf(',') != -1) {
-          event.preventDefault();
-      } // prevent if already coma
-    });
-    //
-
+ // ============================================== Calcular Pegada Hídrica Pessoal ==============================
     var banhoVal = 0;
     var denteVal = 0;
     var roupaVal = 0;
@@ -83,10 +68,10 @@ angular.module('starter.controllers')
     // conta e exibição do total a partir dos inputs do usuário
     var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84000, 404000, 52000, 540, 13000, 34000, 20000, 41000, 9000];
 
-      // onchange get id and value from input
-      $('input.resposta').change(function(){
-        var inputUser = $(this).val();
-        var idElem = $(this).attr('id');
+
+    function calcWaterFootprint(element){
+        var inputUser = $(element).val();
+        var idElem = $(element).attr('id');
 
         //check the id and than add the results
         switch (idElem) {
@@ -94,84 +79,84 @@ angular.module('starter.controllers')
           case "banho":
             banhoVal = inputUser;
             banhoTotal = banhoVal*multips[0];
-            $(this).next('.resultadoItem').show().find('span').text(banhoTotal);
+            $(element).next('.resultadoItem').show().find('span').text(banhoTotal);
             break
           case "dente":
             denteVal = inputUser;
             denteTotal = denteVal*multips[1];
-            $(this).next('.resultadoItem').show().find('span').text(denteTotal);
+            $(element).next('.resultadoItem').show().find('span').text(denteTotal);
             break
           // limpeza
           case "roupa":
             roupaVal = inputUser;
             roupaTotal = roupaVal*multips[2];
-            $(this).next('.resultadoItem').show().find('span').text(roupaTotal);
+            $(element).next('.resultadoItem').show().find('span').text(roupaTotal);
             break
           case "louca":
             loucaVal = inputUser;
             loucaTotal = loucaVal*multips[3];
-            $(this).next('.resultadoItem').show().find('span').text(loucaTotal);
+            $(element).next('.resultadoItem').show().find('span').text(loucaTotal);
             break
           case "carro":
             carroVal = inputUser;
             carroTotal = carroVal*multips[4];
-            $(this).next('.resultadoItem').show().find('span').text(carroTotal);
+            $(element).next('.resultadoItem').show().find('span').text(carroTotal);
             break
           case "jardim":
             jardimVal = inputUser;
             jardimTotal = jardimVal*multips[5];
-            $(this).next('.resultadoItem').show().find('span').text(jardimTotal);
+            $(element).next('.resultadoItem').show().find('span').text(jardimTotal);
             break
           case "calcada":
             calcadaVal = inputUser;
             calcadaTotal = calcadaVal*multips[6];
-            $(this).next('.resultadoItem').show().find('span').text(calcadaTotal);
+            $(element).next('.resultadoItem').show().find('span').text(calcadaTotal);
             break
           // alimentos
           case "cereal":
             cerealVal = inputUser.toString().replace(/\,/g, '.');
             cerealTotal = cerealVal*multips[7];
-            $(this).next('.resultadoItem').show().find('span').text(cerealTotal);
+            $(element).next('.resultadoItem').show().find('span').text(cerealTotal);
             break
           case "carne":
             carneVal = inputUser.toString().replace(/\,/g, '.');
             carneTotal = carneVal*multips[8];
-            $(this).next('.resultadoItem').show().find('span').text(carneTotal);
+            $(element).next('.resultadoItem').show().find('span').text(carneTotal);
             break
           case "laticineo":
             laticineoVal = inputUser.toString().replace(/\,/g, '.');
             laticineoTotal = laticineoVal*multips[9];
-            $(this).next('.resultadoItem').show().find('span').text(laticineoTotal);
+            $(element).next('.resultadoItem').show().find('span').text(laticineoTotal);
             break
           case "ovo":
             ovoVal = inputUser;
             ovoTotal = ovoVal*multips[10];
-            $(this).next('.resultadoItem').show().find('span').text(ovoTotal);
+            $(element).next('.resultadoItem').show().find('span').text(ovoTotal);
             break
           case "vegetais":
             vegetaisVal = inputUser.toString().replace(/\,/g, '.');
             vegetaisTotal = vegetaisVal*multips[11];
-            $(this).next('.resultadoItem').show().find('span').text(vegetaisTotal);
+            $(element).next('.resultadoItem').show().find('span').text(vegetaisTotal);
             break
           case "fruta":
             frutaVal = inputUser.toString().replace(/\,/g, '.');
             frutaTotal = frutaVal*multips[12];
-            $(this).next('.resultadoItem').show().find('span').text(frutaTotal);
+            $(element).next('.resultadoItem').show().find('span').text(frutaTotal);
             break
           case "raiz":
             raizVal = inputUser.toString().replace(/\,/g, '.');
             raizTotal = raizVal*multips[13];
-            $(this).next('.resultadoItem').show().find('span').text(raizTotal);
+            $(element).next('.resultadoItem').show().find('span').text(raizTotal);
             break
           case "cafe":
             cafeVal = inputUser;
             cafeTotal = cafeVal*multips[14];
-            $(this).next('.resultadoItem').show().find('span').text(cafeTotal);
+            $(element).next('.resultadoItem').show().find('span').text(cafeTotal);
             break
           case "cha":
             chaVal = inputUser;
             chaTotal = chaVal*multips[15];
-            $(this).next('.resultadoItem').show().find('span').text(chaTotal);
+            $(element).next('.resultadoItem').show().find('span').text(chaTotal);
             break
           default:
             console.log("fudeu");
@@ -186,6 +171,39 @@ angular.module('starter.controllers')
         $('.resultadoCategoria#totalLimpeza').show().find('span').text(totalLimpeza);
         $('.resultadoCategoria#totalAlimento').show().find('span').text(totalAlimento);
         $('.resultadoTotal').find('span').text(totalPegadaPessoal);
+    }
+
+
+// ******************************************** CHANGE WATER FOOTPRINT ********************************************************************
+
+  $scope.changeWaterFootprint = function(){
+
+        // calcWaterFootprint(this);
+        console.log($scope.selected);
+
+  };
+
+// ******************************************** ENTER VIEW ********************************************************************
+
+  $scope.$on('$ionicView.enter', function(){
+
+    // evitar inserir texto no input
+    $('.resposta').keypress(function(event) {
+      if(event.which < 44
+      || event.which > 59) {
+          event.preventDefault();
+      } // prevent if not number/coma
+
+      if(event.which == 44
+      && $(this).val().indexOf(',') != -1) {
+          event.preventDefault();
+      } // prevent if already coma
+    });
+    //
+
+      // onchange get id and value from input
+      $('input.resposta').change(function(){
+          calcWaterFootprint(this);
       });
 
 
