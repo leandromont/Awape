@@ -1,3 +1,5 @@
+var lista;
+
 // ==================== Controller List ==================================
 angular.module('starter.controllers')
 .controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
@@ -15,8 +17,11 @@ angular.module('starter.controllers')
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
           $scope.userList = data;
+          lista = $scope.userList
         });
       });
+
+
 
       // buscar itens da lista
       Auth.get.listItens().then(function(resposta) {
@@ -212,10 +217,10 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 
       if(checked){
         
+        $scope.listTotal += retorno;
 
       }
 
-      $scope.listTotal += retorno;
 
     }
     
@@ -259,7 +264,34 @@ $scope.getUnit = function(productId){
 $scope.checkboxClick = function(checked, productId){
       
       if(checked){
-        console.log("checked");
+
+        var result = $.grep($scope.listItens || [], function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+
+          console.log("não achei");
+
+        } else if (result.length > 0) {
+
+          var checkArray = result[0];
+
+        }
+
+        var userList = firebase.database().ref('/users/' + $scope.userId + '/minhaLista');
+
+        userList.once('value').then(function(snapshot) {
+
+
+           if( snapshot.val() === null ) {
+                /* does not exist */
+            } else {
+                // snapshot.ref().update({"postID": postID});
+            }
+        });
+
         retorno = checked;
 
       } else {

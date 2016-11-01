@@ -1,15 +1,14 @@
 angular.module('starter.controllers')
 
-// ==================== Controller Home ==================================
 .controller('HomeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
 
-  
+
+
+// ******************************************** GET DATA ********************************************************************
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
 
-        // User is signed in and currentUser will no longer return null.
-
-         // buscar ID do usuário
+        // buscar ID do usuário
         $scope.userId = Auth.get.user.id();
 
         // $scope.sendName = Auth.send.user.name($scope.userId,'Seygi');
@@ -23,13 +22,19 @@ angular.module('starter.controllers')
 
         // buscar minha Lista
         Auth.get.user.list($scope.userId).then(function(data) {
-          $scope.userList = data;
+          $scope.$apply(function() {
+            $scope.userList = data;
+          });
         });
 
         // buscar itens da lista
         Auth.get.listItens().then(function(resposta) {
-          $scope.listItens = resposta;
-      });
+          $scope.$apply(function() {
+            $scope.listItens = resposta;
+          });
+
+          // alert("carregou");
+        });
 
       } else {
         // No user is signed in.
@@ -37,16 +42,65 @@ angular.module('starter.controllers')
       }
   });
 
-  $scope.$on('$ionicView.enter', function(){
-         
-  });
 
-  $scope.$on('$ionicView.loaded', function(){
+// ======================= get waterFootprint =======================================
 
-  });
+$scope.waterFootprint = function(productId,quantidade,checked){
 
-  $scope.$on('$ionicView.leave', function(){
+    var result = $.grep($scope.listItens || [], function(e){ 
+      return e.id == productId  ; 
+    });
+
+    var retorno='';
+
     
-  });
+
+    if (result.length == 0) {
+      retorno = 'nao achei';
+    } else if (result.length > 0) {
+
+      var conteudo = result[0].conteudo;
+      var pegada = result[0].pegada;
+
+
+      retorno = quantidade * conteudo * pegada;
+
+      if(checked){
+        
+        $scope.listTotal += retorno;
+
+      }
+
+
+    }
+    
+    return retorno;
+}
+
+// ======================= get waterFootprint Total =======================================
+
+$scope.getListTotal = function(){
+
+    retorno = $scope.listTotal;
+
+    $scope.listTotal = 0;
+    
+    return retorno;
+}
+
+// ******************************************** ENTER VIEW ********************************************************************
+$scope.$on('$ionicView.enter', function(){
+       
+});
+
+// ******************************************** LOADED VIEW ********************************************************************
+$scope.$on('$ionicView.loaded', function(){
+
+});
+
+// ******************************************** LEAVE VIEW ********************************************************************
+$scope.$on('$ionicView.leave', function(){
+  
+});
 
 })

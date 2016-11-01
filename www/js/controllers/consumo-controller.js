@@ -1,10 +1,24 @@
 angular.module('starter.controllers')
 
-// ==================== Controller Consumo (Pegada Hídrica Pessoal) ==================================
 .controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
 
+// ******************************************** GET DATA ********************************************************************
 
+ firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+
+        // buscar ID do usuário
+        $scope.userId = Auth.get.user.id();
+
+      } else {
+        // No user is signed in.
+        $location.path("/login");
+      }
+  });
+
+
+// ******************************************** ENTER VIEW ********************************************************************
 
   $scope.$on('$ionicView.enter', function(){
 
@@ -226,6 +240,8 @@ angular.module('starter.controllers')
     };
     //
 
+
+// ******************************************** LEAVE VIEW ********************************************************************
   $scope.$on('$ionicView.leave', function(){
 
     // voltar a altura para 0 para fazer a animação toda vez que entrar

@@ -8,18 +8,20 @@
 		<div class="nome">Olá, <span id="nomeUsuario">{{getName}}</span>
 		</div>
 	</div>
-	<!-- <div ng-repeat="item in userList">
-		<div class="teste">
-			{{item.quantidade}}
-		</div>
-	</div> -->
-	<div class="titulo" id="tituloTotais">Totais do mês</div>
+
+	<li ng-repeat="item in userList" class="display-none">
+      <ul>
+          <li ><span ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
+      </ul>
+    </li>
+
+    <div class="titulo" id="tituloTotais">Totais do mês</div>
 	<div class="totais box">
 		<ul class="total" id="totalLista">
 			<li class="icon"></li>
 			<li class="dados">
 				<div class="titulo">Água virtual de suas compras:</div>
-				<div class="valor"><span id="litros">1200</span> litros</div>
+				<div class="valor"><span ng-bind="getListTotal()"></span> litros</div>
 			</li>
 		</ul>
 		<ul class="total" id="totalPHP">
