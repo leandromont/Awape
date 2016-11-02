@@ -15,7 +15,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="banho" placeholder="Ex: 2 banhos de 15min = 30" ng-change="changeWaterFootprint()" ng-model="userWaterFootprint.banho">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('banho')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -24,7 +24,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="dente" ng-model="userWaterFootprint.dentes">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('dente')}}</span>litros/ano</div>
 					</form>
 				</div>
 				
@@ -46,7 +46,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="roupa" ng-model="userWaterFootprint.roupa">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('roupa')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -55,7 +55,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="louca" ng-model="userWaterFootprint.louca">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('louca')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -64,7 +64,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="carro" ng-model="userWaterFootprint.carro">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('carro')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -73,7 +73,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="jardim" ng-model="userWaterFootprint.jardim">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('jardim')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -82,7 +82,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="calcada" ng-model="userWaterFootprint.calcada">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('calcada')}}</span>litros/ano</div>
 					</form>
 				</div>
 
@@ -105,7 +105,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="cereal" placeholder="Ex: Um quilo e meio = 1,5" ng-model="userWaterFootprint.cereal">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('cereal')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -114,7 +114,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="carne" placeholder="Ex: Meio quilo = 0,5" ng-model="userWaterFootprint.carne">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('carne')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -123,7 +123,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="laticineo" placeholder="Ex: Um quilo e meio = 1,5" ng-model="userWaterFootprint.laticineos">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('laticineo')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -132,7 +132,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="ovo" ng-model="userWaterFootprint.ovos">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('ovo')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -141,7 +141,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="vegetais" placeholder="Ex: Meio quilo = 0,5" ng-model="userWaterFootprint.vegetais">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('vegetais')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -150,7 +150,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="fruta" placeholder="Ex: Um quilo e meio = 1,5" ng-model="userWaterFootprint.frutas">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('fruta')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -159,7 +159,7 @@
 					</div>
 					<form action="">
 						<input type="text" class="resposta" name="resposta[]" id="raiz" placeholder="Ex: Meio quilo = 0,5" ng-model="userWaterFootprint.raizes">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('raiz')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -168,7 +168,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="cafe" ng-model="userWaterFootprint.cafe">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('cafe')}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
@@ -177,7 +177,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="cha" ng-model="userWaterFootprint.cha">
-						<div class="resultadoItem"><span id="litrosItem">50000</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{changeWaterFootprint('cha')}}</span>litros/ano</div>
 					</form>
 				</div>
 

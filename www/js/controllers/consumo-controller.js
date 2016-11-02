@@ -177,10 +177,12 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
 
 // ******************************************** CHANGE WATER FOOTPRINT ********************************************************************
 
-  $scope.changeWaterFootprint = function(){
+  $scope.changeWaterFootprint = function(id){
 
-        // calcWaterFootprint(this);
-        console.log($scope.selected);
+        var element = $('#'+id);
+        // console.log(element)
+
+        calcWaterFootprint(element);
 
   };
 
@@ -286,17 +288,17 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
 
   $scope.$on('$ionicView.loaded', function(){
       
-      setTimeout(function(){
-        $('input.resposta').each(function(){
+    //   setTimeout(function(){
+    //     $('input.resposta').each(function(){
         
-          console.log('liberado');
-          var inputUser = $(this).val();
+    //       console.log('liberado');
+    //       var inputUser = $(this).val();
           
-          if (inputUser > 0){
-            $(this).next('.resultadoItem').show();
-          }
-        });
-    }, 3000);
+    //       if (inputUser > 0){
+    //         $(this).next('.resultadoItem').show();
+    //       }
+    //     });
+    // }, 3000);
 
   })
 
