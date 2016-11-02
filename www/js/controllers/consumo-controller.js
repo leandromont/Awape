@@ -175,16 +175,32 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
     }
 
 
-// ******************************************** CHANGE WATER FOOTPRINT ********************************************************************
+// ******************************************** TRIGGER CALC WATER FOOTPRINT ********************************************************************
 
-  $scope.changeWaterFootprint = function(id){
+  $scope.triggerCalcWaterFootprint = function(id){
 
         var element = $('#'+id);
-        // console.log(element)
 
         calcWaterFootprint(element);
 
   };
+
+// ******************************************** CHANGE WATER FOOTPRINT ********************************************************************
+
+$scope.changeWaterFootprint = function(key,value){
+
+      console.log(value)
+
+      var tratedValue = value;
+
+      var newData = {
+        [key]:Number(tratedValue)
+      }
+      
+      firebase.database().ref('/users/' + $scope.userId + '/minhaPegada/')
+      .update(newData);
+
+};
 
 // ******************************************** ENTER VIEW ********************************************************************
 
@@ -264,7 +280,6 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
     // mostrar o total da pegada hídrica e redirecionar para a home
     $scope.submitAll = function() {
 
-      console.log("submit");
       $('.resultadoTotalWrapper').show(150).delay(2500).queue(function() {
            $state.go('tab.home');
         });
