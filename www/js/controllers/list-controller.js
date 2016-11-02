@@ -281,6 +281,8 @@ $scope.getUnit = function(productId){
 // ======================= Click checkbox =======================================
 
 $scope.checkboxClick = function(checked, productId){
+
+      var date = moment().format('L');
       
       if(checked){
 
@@ -300,7 +302,11 @@ $scope.checkboxClick = function(checked, productId){
           for(var index in $scope.userList){
                if($scope.userList[index].idProduto == objRetornado.idProduto){
 
-                 firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"checked": true});
+                firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
+                .update({
+                  "checked": true,
+                  "data": date
+                });
 
                }
           }
@@ -329,7 +335,11 @@ $scope.checkboxClick = function(checked, productId){
 
                 console.log("gogo")
                  
-                  firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"checked": false});
+                  firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
+                  .update({
+                    "checked": false,
+                    "data": "01/01/01"
+                  });
 
                }
           }
@@ -338,6 +348,39 @@ $scope.checkboxClick = function(checked, productId){
 
         retorno = checked;
       }
+    
+    return retorno;
+}
+
+// ======================= Change Amount =======================================
+
+$scope.changeAmount = function(amount, productId){
+      
+    var result = $.grep($scope.userList || [], function(e){ 
+      return e.idProduto == productId  ; 
+    });
+
+    var retorno='';
+    if (result.length == 0) {
+
+      console.log("não achei");
+
+    } else if (result.length > 0) {
+
+      var objRetornado = result[0];
+
+      for(var index in $scope.userList){
+           if($scope.userList[index].idProduto == objRetornado.idProduto){
+
+             firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"quantidade": amount});
+
+           }
+      }
+
+    }  
+
+    retorno = amount;
+
     
     return retorno;
 }

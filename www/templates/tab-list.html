@@ -37,32 +37,15 @@
           <li class="nomeProduto" ng-bind="productName(item.idProduto)"></li>
           <li class="qntdWrapper">
             <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" ng-model="item.quantidade">
+              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto)">
             </form>
           </li>
           <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
         <a class="produtoLink" ng-click="setProductDetailId(item.idProduto)">
-          <li class="gastoProduto"><span id="litrosTotalProduto"ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
+          <li class="gastoProduto"><span id="litrosTotalProduto" ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
         </a>
       </ul>
     </li>
-  	
-    <!--    <li class="produto">
-  		<ul class="pecasLista">
-  			<li class="checkWrapper">
-  				<input type="checkbox" class="check"/>
-  				<label></label>
-  			</li>
-        <a href="#/tab/product-detail" class="produtoLink">
-    			<li class="nomeProduto">Cerveja 600mlas dasdas dasdaas das sd</li>
-    			<li class="qntdWrapper">
-    				<span class="qntd">6</span>
-    			</li>
-    			<li class="unid"><span id="unidPadrao">un</span></li>
-          <li class="gastoProduto">1200 lts</li>
-        </a>
-  		</ul>
-  	</li> -->
  
   </ul>
 
