@@ -27,14 +27,7 @@ angular.module('starter.controllers')
           });
         });
 
-        // buscar itens da lista
-        Auth.get.listItens().then(function(resposta) {
-          $scope.$apply(function() {
-            $scope.listItens = resposta;
-          });
-
-          // alert("carregou");
-        });
+        
 
       } else {
         // No user is signed in.
@@ -79,17 +72,27 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 
 // ======================= get waterFootprint Total =======================================
 
-$scope.getListTotal = function(){
 
-    retorno = $scope.listTotal;
-
-    $scope.listTotal = 0;
-    
-    return retorno;
-}
 
 // ******************************************** ENTER VIEW ********************************************************************
 $scope.$on('$ionicView.enter', function(){
+
+  // buscar itens da lista
+  Auth.get.listItens().then(function(resposta) {
+    $scope.$apply(function() {
+      $scope.listItens = resposta;
+    });
+
+  });
+
+  $scope.getListTotal = function(){
+
+      retorno = $scope.listTotal;
+
+      $scope.listTotal = 0;
+      
+      return retorno;
+  }
        
 });
 
