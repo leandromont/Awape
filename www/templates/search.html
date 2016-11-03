@@ -2,29 +2,30 @@
 <a href="#/tab/list" class="voltarLink"></a>
   <ion-content class="buscaPage">
   	<form action="" class="buscaForm">
-		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?">
+		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?" data-ng-model="search">
 		<div class="iconsWrapper">
       		<div class="icon" id="buscaIcon"></div>
       	</div>
 	</form>
 
-	<ul class="listaBusca listaNotChecked" id="listaBox">
+	<ul class="listaBusca listaNotChecked" id="listaBox" >
 
-       <li class="produtoBusca">
+       <li class="produtoBusca" ng-if="search" ng-repeat="item in listItens | filter:search">
 	      <ul class="pecasLista">
 	        <li class="checkWrapper">
 	          <input type="checkbox" class="check" ng-checked=""/>
 	          <label></label>
 	        </li>
-	          <li class="nomeProduto">Cerveja 600ml</li>
+	          <li class="nomeProduto">{{item.produto}}</li>
 	          <li class="qntdWrapper">
 	            <form action="">
-	              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="7">
+	              <!-- como capturar a informação desde campo e como passar como parâmetro para calcular a pegada hídrica? -->
+	              <input type="text" class="qntdInput" name="qntdInput[]" data-ng-model="addAmount" maxlength="4" value="1">
 	            </form>
 	          </li>
-	          <li class="unid"><span id="unidPadrao">un</span></li>
+	          <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
 	        <a href="#/tab/product-detail" class="produtoLink" ng-click="">
-	          <li class="gastoProduto"><span>2322345</span> lts</li>
+	          <li class="gastoProduto"><span ng-bind="waterFootprint(item.id,addAmount)"></span> lts</li>
 	        </a>
 	      </ul>
 	    </li>

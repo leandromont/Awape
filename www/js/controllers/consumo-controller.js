@@ -2,10 +2,6 @@ angular.module('starter.controllers')
 
 .controller('ConsumoCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
-console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
-
-
-
 // ******************************************** GET DATA ********************************************************************
 
  firebase.auth().onAuthStateChanged(function(user) {
@@ -70,9 +66,11 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
     var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84000, 404000, 52000, 540, 13000, 34000, 20000, 41000, 9000];
 
 
-    function calcWaterFootprint(element){
+    function calcWaterFootprint(element,value){
         var inputUser = $(element).val();
         var idElem = $(element).attr('id');
+
+        
 
         //check the id and than add the results
         switch (idElem) {
@@ -172,16 +170,30 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
         $('.resultadoCategoria#totalLimpeza').show().find('span').text(totalLimpeza);
         $('.resultadoCategoria#totalAlimento').show().find('span').text(totalAlimento);
         $('.resultadoTotal').find('span').text(totalPegadaPessoal);
+
+        //  apagar resultado se vir vazio ou for 0
+        var elementVal = element.val();
+
+        if (elementVal == ""){
+          element.next('.resultadoItem').hide();
+        }
+
+        //  apagar resultado se for 0
+        if (value == 0){
+          element.val("");
+          element.next('.resultadoItem').hide();
+        }
+
     }
 
 
 // ******************************************** TRIGGER CALC WATER FOOTPRINT ********************************************************************
 
-  $scope.triggerCalcWaterFootprint = function(id){
+  $scope.triggerCalcWaterFootprint = function(id,value){
 
         var element = $('#'+id);
 
-        calcWaterFootprint(element);
+        calcWaterFootprint(element,value);
 
   };
 
@@ -189,14 +201,12 @@ console.log("TIRAR O SETTIMEOUT PARA APARECER O BLOCK COM O RESULTADO")
 
 $scope.changeWaterFootprint = function(key,value){
 
-      console.log(value)
-
       var tratedValue = value;
 
       var newData = {
         [key]:Number(tratedValue)
       }
-      
+
       firebase.database().ref('/users/' + $scope.userId + '/minhaPegada/')
       .update(newData);
 
@@ -219,11 +229,6 @@ $scope.changeWaterFootprint = function(key,value){
       } // prevent if already coma
     });
     //
-
-      // onchange get id and value from input
-      $('input.resposta').change(function(){
-          calcWaterFootprint(this);
-      });
 
 
     });
@@ -302,18 +307,6 @@ $scope.changeWaterFootprint = function(key,value){
 // ******************************************** LOADED VIEW ********************************************************************
 
   $scope.$on('$ionicView.loaded', function(){
-      
-    //   setTimeout(function(){
-    //     $('input.resposta').each(function(){
-        
-    //       console.log('liberado');
-    //       var inputUser = $(this).val();
-          
-    //       if (inputUser > 0){
-    //         $(this).next('.resultadoItem').show();
-    //       }
-    //     });
-    // }, 3000);
 
   })
 

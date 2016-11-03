@@ -63,6 +63,27 @@
         "cafe":0,
         "cha":0
       },
+      "meuHistorico":{
+         "2016":{
+            "11":{
+                "total": 166234,
+                "17":{
+                    "antigoProduto": 2,
+                    "novoProduto": 1
+                }
+            },
+            "10":{
+                "total": 150234,
+                "13":{
+                    "antigoProduto": 1,
+                    "novoProduto": 2
+                }
+            },
+            "09":{
+                "total": 150234
+            }
+         }
+      },
       "username" : "Leandro"
     },
     "itens" : [ 

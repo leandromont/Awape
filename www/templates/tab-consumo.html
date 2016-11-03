@@ -15,7 +15,7 @@
 					</div>
 					<form action="">
 						<input type="number" class="resposta" name="resposta[]" id="banho" placeholder="Ex: 2 banhos de 15min = 30" ng-model="userWaterFootprint.banho" ng-change="changeWaterFootprint('banho', userWaterFootprint.banho)">
-						<div class="resultadoItem"><span id="litrosItem">{{triggerCalcWaterFootprint('banho')}}</span>litros/ano</div>
+						<div class="resultadoItem"><span id="litrosItem">{{triggerCalcWaterFootprint('banho',userWaterFootprint.banho)}}</span>litros/ano</div>
 					</form>
 				</div>
 				<div class="perguntaWrapper">
