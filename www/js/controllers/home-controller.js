@@ -50,10 +50,11 @@ angular.module('starter.controllers')
               var totalAlimento = userWF.cereal*multips[7] + userWF.carne*multips[8] + userWF.laticineos*multips[9] + userWF.ovos*multips[10] + userWF.vegetais*multips[11] + userWF.frutas*multips[12] + userWF.raizes*multips[13] + userWF.cafe*multips[14] + userWF.cha*multips[15];
 
               // Total geral 
-              var totalPegadaPessoal = totalHigiene + totalAlimento + totalAlimento;
+              var totalPegadaPessoal = totalHigiene + totalLimpeza + totalAlimento;
 
-
-              return totalPegadaPessoal;
+              var pegadaZerado = totalPegadaPessoal.toFixed(0);
+              var pegadaNumeroZerado = parseInt(pegadaZerado);
+              return pegadaNumeroZerado;
 
 
             };
@@ -88,9 +89,10 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 
       var conteudo = result[0].conteudo;
       var pegada = result[0].pegada;
-
-
-      retorno = quantidade * conteudo * pegada;
+      var totalGasto = quantidade * conteudo * pegada;
+      var totalZerado = totalGasto.toFixed(0);
+      var totalNumeroZerado = parseInt(totalZerado);
+      retorno = totalNumeroZerado;
 
       if(checked){
         

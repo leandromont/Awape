@@ -99,11 +99,11 @@ angular.module('starter.controllers')
               var checks = $("input:checkbox", this);
               checks.click(function() {
                 if (checks.is(':checked')){ 
-                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show(200);
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show();
                     $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 } else {
-                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('produtoChecked').show(200);
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('produtoChecked').show();
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 }
                 // Esconder listaChecked se não tiver item nela a cada clique
@@ -131,6 +131,17 @@ angular.module('starter.controllers')
                 event.preventDefault();
             } // prevent if already coma
           });
+
+          // animacao para avermelhar se ficar acima de 4 itens
+          $('.qntdInput').keypress(function(){
+            if ($('.qntdInput').val().length === 4){
+              $(this).addClass('fullLength').delay(750).queue(function(){
+                $(this).removeClass('fullLength');
+                $(this).dequeue();
+              })
+          }
+          });
+          //
 
           // flip no ícone de editar
           $('input.qntdInput').focusin(function() {
@@ -173,6 +184,48 @@ angular.module('starter.controllers')
           $('.totalLista').animate({opacity: 1},200);
           $('.linkSmall').removeClass('Active');
           $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+        });
+        //
+
+        // click and hold to delete product + animation
+        $('.listaNotChecked .produto').each(function(){
+          var timeoutId = 0;
+          var produtoThis = $(this);
+          var itemNome = $('.nomeProduto', this);
+          var labelThis = $('label', this);
+          var qntdThis = $('.qntdInput', this)
+          var unidThis = $('.unid', this);
+          var gastoThis = $('.gastoProduto', this);
+
+          itemNome.mousedown(function() {
+              timeoutId = setTimeout(deleteItem, 350);
+          }).bind('mouseup mouseleave', function() {
+              clearTimeout(timeoutId);
+              labelThis.removeClass('holding');
+              produtoThis.removeClass('holding');
+              itemNome.removeClass('holding');
+              qntdThis.removeClass('holding');
+              unidThis.removeClass('holding');
+              gastoThis.removeClass('holding');
+          });
+
+          function deleteItem() {
+            labelThis.addClass('holding');
+            produtoThis.addClass('holding');
+            qntdThis.addClass('holding');
+              unidThis.addClass('holding');
+              gastoThis.addClass('holding');
+            itemNome.addClass('holding').delay(1000).queue(function(){
+              $('.deletaProdutoWrapper').show(100);
+              $(this).dequeue();
+            });
+            
+            
+          };
+
+          $('.deletaProduto .botao').click(function(){
+          $('.deletaProdutoWrapper').stop(false,true).hide(50);
+          });
         });
         //
 
@@ -332,8 +385,6 @@ $scope.checkboxClick = function(checked, productId){
 
           for(var index in $scope.userList){
                if($scope.userList[index].idProduto == objRetornado.idProduto){
-
-                console.log("gogo")
                  
                   firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
                   .update({

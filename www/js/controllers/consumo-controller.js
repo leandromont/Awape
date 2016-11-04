@@ -78,84 +78,116 @@ angular.module('starter.controllers')
           case "banho":
             banhoVal = inputUser;
             banhoTotal = banhoVal*multips[0];
-            $(element).next('.resultadoItem').show().find('span').text(banhoTotal);
+            var totalZerado = banhoTotal.toFixed(0);
+            var totalBanhoZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalBanhoZerado);
             break
           case "dente":
             denteVal = inputUser;
             denteTotal = denteVal*multips[1];
-            $(element).next('.resultadoItem').show().find('span').text(denteTotal);
+            var totalZerado = denteTotal.toFixed(0);
+            var totalDenteZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalDenteZerado);
             break
           // limpeza
           case "roupa":
             roupaVal = inputUser;
             roupaTotal = roupaVal*multips[2];
-            $(element).next('.resultadoItem').show().find('span').text(roupaTotal);
+            var totalZerado = roupaTotal.toFixed(0);
+            var totalRoupaZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalRoupaZerado);
             break
           case "louca":
             loucaVal = inputUser;
             loucaTotal = loucaVal*multips[3];
-            $(element).next('.resultadoItem').show().find('span').text(loucaTotal);
+            var totalZerado = loucaTotal.toFixed(0);
+            var totalLoucaZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalLoucaZerado);
             break
           case "carro":
             carroVal = inputUser;
             carroTotal = carroVal*multips[4];
-            $(element).next('.resultadoItem').show().find('span').text(carroTotal);
+            var totalZerado = carroTotal.toFixed(0);
+            var totalCarroZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalCarroZerado);
             break
           case "jardim":
             jardimVal = inputUser;
             jardimTotal = jardimVal*multips[5];
-            $(element).next('.resultadoItem').show().find('span').text(jardimTotal);
+            var totalZerado = jardimTotal.toFixed(0);
+            var totalJardimZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalJardimZerado);
             break
           case "calcada":
             calcadaVal = inputUser;
             calcadaTotal = calcadaVal*multips[6];
-            $(element).next('.resultadoItem').show().find('span').text(calcadaTotal);
+            var totalZerado = calcadaTotal.toFixed(0);
+            var totalCalcadaZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalCalcadaZerado);
             break
           // alimentos
           case "cereal":
             cerealVal = inputUser.toString().replace(/\,/g, '.');
             cerealTotal = cerealVal*multips[7];
-            $(element).next('.resultadoItem').show().find('span').text(cerealTotal);
+            var totalZerado = cerealTotal.toFixed(0);
+            var totalCerealZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalCerealZerado);
             break
           case "carne":
             carneVal = inputUser.toString().replace(/\,/g, '.');
             carneTotal = carneVal*multips[8];
-            $(element).next('.resultadoItem').show().find('span').text(carneTotal);
+            var totalZerado = carneTotal.toFixed(0);
+            var totalCarneZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalCarneZerado);
             break
           case "laticineo":
             laticineoVal = inputUser.toString().replace(/\,/g, '.');
             laticineoTotal = laticineoVal*multips[9];
-            $(element).next('.resultadoItem').show().find('span').text(laticineoTotal);
+            var totalZerado = laticineoTotal.toFixed(0);
+            var totalLaticineoZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalLaticineoZerado);
             break
           case "ovo":
             ovoVal = inputUser;
             ovoTotal = ovoVal*multips[10];
-            $(element).next('.resultadoItem').show().find('span').text(ovoTotal);
+            var totalZerado = ovoTotal.toFixed(0);
+            var totalOvoZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalOvoZerado);
             break
           case "vegetais":
             vegetaisVal = inputUser.toString().replace(/\,/g, '.');
             vegetaisTotal = vegetaisVal*multips[11];
-            $(element).next('.resultadoItem').show().find('span').text(vegetaisTotal);
+            var totalZerado = vegetaisTotal.toFixed(0);
+            var totalVegetaisZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalVegetaisZerado);
             break
           case "fruta":
             frutaVal = inputUser.toString().replace(/\,/g, '.');
             frutaTotal = frutaVal*multips[12];
-            $(element).next('.resultadoItem').show().find('span').text(frutaTotal);
+            var totalZerado = frutaTotal.toFixed(0);
+            var totalFrutaZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalFrutaZerado);
             break
           case "raiz":
             raizVal = inputUser.toString().replace(/\,/g, '.');
             raizTotal = raizVal*multips[13];
-            $(element).next('.resultadoItem').show().find('span').text(raizTotal);
+            var totalZerado = raizTotal.toFixed(0);
+            var totalRaizZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalRaizZerado);
             break
           case "cafe":
             cafeVal = inputUser;
             cafeTotal = cafeVal*multips[14];
-            $(element).next('.resultadoItem').show().find('span').text(cafeTotal);
+            var totalZerado = cafeTotal.toFixed(0);
+            var totalCafeZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalCafeZerado);
             break
           case "cha":
             chaVal = inputUser;
             chaTotal = chaVal*multips[15];
-            $(element).next('.resultadoItem').show().find('span').text(chaTotal);
+            var totalZerado = chaTotal.toFixed(0);
+            var totalChaZerado = parseInt(totalZerado);
+            $(element).next('.resultadoItem').show().find('span').text(totalChaZerado);
             break
           default:
             console.log("fudeu");
@@ -165,10 +197,18 @@ angular.module('starter.controllers')
         var totalHigiene = banhoTotal+denteTotal;
         var totalLimpeza = roupaTotal+loucaTotal+carroTotal+jardimTotal+calcadaTotal;
         var totalAlimento = cerealTotal+carneTotal+laticineoTotal+ovoTotal+vegetaisTotal+frutaTotal+raizTotal+cafeTotal+chaTotal;
-        var totalPegadaPessoal = totalHigiene + totalAlimento + totalAlimento;
+        // zerar as casas decimais
+        var higieneTotalZerado = totalHigiene.toFixed(0);
+        var higieneTotalZeradoNum = parseInt(higieneTotalZerado);
+        var limpezaTotalZerado = totalLimpeza.toFixed(0);
+        var limpezaTotalZeradoNum = parseInt(limpezaTotalZerado);
+        var alimentoTotalZerado = totalAlimento.toFixed(0);
+        var alimentoTotalZeradoNum = parseInt(alimentoTotalZerado);
+        var totalPegadaPessoal = higieneTotalZeradoNum + limpezaTotalZeradoNum + alimentoTotalZeradoNum;
+        
         $('.resultadoCategoria#totalHigiene').show().find('span').text(totalHigiene);
         $('.resultadoCategoria#totalLimpeza').show().find('span').text(totalLimpeza);
-        $('.resultadoCategoria#totalAlimento').show().find('span').text(totalAlimento);
+        $('.resultadoCategoria#totalAlimento').show().find('span').text(alimentoTotalZeradoNum);
         $('.resultadoTotal').find('span').text(totalPegadaPessoal);
 
         //  apagar resultado se vir vazio ou for 0
