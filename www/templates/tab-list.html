@@ -1,5 +1,5 @@
 
-<ion-view hide-nav-bar="true" view-title="Lista">
+<ion-view hide-nav-bar="true" view-title="Lista" cache-view="false">
 	<div class="iconsWrapper">
     <div class="iconsHolder">
       <div class="icon" id="addItem">
@@ -31,13 +31,13 @@
     <li class="produto" ng-repeat="item in userList" on-last-repeat>
       <ul class="pecasLista">
         <li class="checkWrapper">
-          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto)"/>
+          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,$index)"/>
           <label></label>
         </li>
           <li class="nomeProduto" ng-bind="productName(item.idProduto)"></li>
           <li class="qntdWrapper">
             <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto)">
+              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,$index)">
             </form>
           </li>
           <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>

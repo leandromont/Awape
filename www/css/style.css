@@ -492,7 +492,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper input.qntdInput:focus{ color: #307f8c; border-color: #307f8c; font-weight: 600;}
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10px; *//* border-radius: 20px 20px 5px 20px; *//* border: 1px solid #39acbf; *//* color: #39acbf; */}
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista li.unid{/* margin: 0 0 0 -2px; */color: #39acbf;}
-.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto{/* margin: 1px 0 0 0; *//* text-align: right; */}
+.buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto{float:right;}
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
 .buscaPage .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 

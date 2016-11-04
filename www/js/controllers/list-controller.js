@@ -13,6 +13,8 @@ angular.module('starter.controllers')
       // buscar ID do usuário
       $scope.userId = Auth.get.user.id();
 
+      console.log($scope.userId)
+
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
@@ -333,7 +335,8 @@ $scope.getUnit = function(productId){
 
 // ======================= Click checkbox =======================================
 
-$scope.checkboxClick = function(checked, productId){
+$scope.checkboxClick = function(checked, productId, index){
+
 
       var date = moment().format('L');
       
@@ -352,17 +355,11 @@ $scope.checkboxClick = function(checked, productId){
 
           var objRetornado = result[0];
 
-          for(var index in $scope.userList){
-               if($scope.userList[index].idProduto == objRetornado.idProduto){
-
-                firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
-                .update({
-                  "checked": true,
-                  "data": date
-                });
-
-               }
-          }
+          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
+          .update({
+            "checked": true,
+            "data": date
+          });
 
         }  
 
@@ -405,7 +402,7 @@ $scope.checkboxClick = function(checked, productId){
 
 // ======================= Change Amount =======================================
 
-$scope.changeAmount = function(amount, productId){
+$scope.changeAmount = function(amount, productId, index){
       
     var result = $.grep($scope.userList || [], function(e){ 
       return e.idProduto == productId  ; 
@@ -420,13 +417,7 @@ $scope.changeAmount = function(amount, productId){
 
       var objRetornado = result[0];
 
-      for(var index in $scope.userList){
-           if($scope.userList[index].idProduto == objRetornado.idProduto){
-
-             firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"quantidade": amount});
-
-           }
-      }
+      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"quantidade": amount});
 
     }  
 
