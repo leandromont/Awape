@@ -325,15 +325,15 @@ ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; colo
 .totalLista .litrosTotal{display: table-cell; vertical-align: middle; font-size: 1.4em; color: white; font-weight: 300; text-align: right; padding-right: 6%;}
 .totalLista .litrosTotal span#litrosTotal{font-size: 1.2em; font-weight: 400;}
 
-.paginaLista .deletaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: 0;left: 0;z-index: 99999;}
-.paginaLista .deletaProdutoWrapper .deletaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 35%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .titulo{padding: 0 0 10px;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .texto{font-size: 1.2em;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .texto span{font-weight: 600;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .botoes{width: 100%;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
-.paginaLista .deletaProdutoWrapper .deletaProduto .botoes .botao#sim{
+.deletaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.3);position:fixed !important;top: 0;left: 0;z-index: 99999;}
+.deletaProdutoWrapper .deletaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 35%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
+.deletaProdutoWrapper .deletaProduto .titulo{padding: 0 0 10px;}
+.deletaProdutoWrapper .deletaProduto .texto{font-size: 1.2em;}
+.deletaProdutoWrapper .deletaProduto .texto span{font-weight: 600;}
+.deletaProdutoWrapper .deletaProduto .botoes{width: 100%;}
+.deletaProdutoWrapper .deletaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
+.deletaProdutoWrapper .deletaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
+.deletaProdutoWrapper .deletaProduto .botoes .botao#sim{
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(93,214,216,1)), color-stop(51%, rgba(92,232,209,1)), color-stop(100%, rgba(85,233,189,1)));
   background: -webkit-linear-gradient(-45deg, rgba(93,214,216,1) 0%, rgba(92,232,209,1) 51%, rgba(85,233,189,1) 100%);
   -webkit-box-shadow: 2px 2px 3px 0px rgba(93,202,220,1);
@@ -420,7 +420,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .produtoPage .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
 .produtoPage .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
 .produtoPage .infosProduto .gastoProduto span#litrosGastos{}
-.produtoPage .infosProduto .tiposAgua{margin: 25px auto;}
+.produtoPage .infosProduto .tiposAgua{margin: 25px auto; display: none;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual{display: inline-block;width: 29.5%;margin-right: 3%;position: relative;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual:last-child{margin-right: 0}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual .icon{background: url(../img/produtos/aguaIcon.png) no-repeat;background-size: contain;height: 70px;width: 70px;display: inline-block;margin: 0 17%;z-index: 9999;position: relative;}
@@ -430,7 +430,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .produtoPage .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
-.produtoPage .recomendacao{width: 90%; margin: 0 auto; padding: 5px 0 0 0; border-top: 1px solid #d2d2d2;}
+.produtoPage .recomendacao{width: 90%;margin: 25px auto;padding: 5px 0 0 0;border-top: 1px solid #d2d2d2;}
 .produtoPage .recomendacao .titulo{text-align: center;padding: 5px 0 0;margin-bottom: 10vh;}
 .produtoPage .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 3vh;}
 .produtoPage .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}

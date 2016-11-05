@@ -155,13 +155,17 @@ angular.module('starter.controllers')
           });
           //
 
-          // flip no ícone de editar
+          // flip no ícone de editar e esconder
           $('input.qntdInput').focusin(function() {
             $('.iconsHolder').addClass('flipped');
             $('.iconSmallHolder').hide();
+            $('.totalLista').hide();
+            $('.tabs-striped .tabs').hide();
           });
           $('input.qntdInput').focusout(function() {
             $('.iconsHolder').removeClass('flipped');
+            $('.totalLista').show();
+            $('.tabs-striped .tabs').show();
           });
         //
 
@@ -199,6 +203,8 @@ angular.module('starter.controllers')
         });
         //
 
+        
+
         // click and hold to delete product + animation
         $('.listaNotChecked .produto').each(function(){
           var timeoutId = 0;
@@ -209,25 +215,40 @@ angular.module('starter.controllers')
           var unidThis = $('.unid', this);
           var gastoThis = $('.gastoProduto', this);
 
+          
+
           itemNome.mousedown(function() {
               timeoutId = setTimeout(deleteItem, 350);
           }).bind('mouseup mouseleave', function() {
-              clearTimeout(timeoutId);
+              
               labelThis.removeClass('holding');
               produtoThis.removeClass('holding');
               itemNome.removeClass('holding');
               qntdThis.removeClass('holding');
               unidThis.removeClass('holding');
               gastoThis.removeClass('holding');
+              clearTimeout(timeoutId);
           });
 
           function deleteItem() {
+            $scope.selectedItem = produtoThis;
             labelThis.addClass('holding');
             produtoThis.addClass('holding');
             qntdThis.addClass('holding');
-              unidThis.addClass('holding');
-              gastoThis.addClass('holding');
-            itemNome.addClass('holding')
+            unidThis.addClass('holding');
+            gastoThis.addClass('holding');
+            itemNome.addClass('holding').delay(1000).queue(function(){
+              // remove classes after 1 second
+              labelThis.removeClass('holding');
+              produtoThis.removeClass('holding');
+              itemNome.removeClass('holding');
+              qntdThis.removeClass('holding');
+              unidThis.removeClass('holding');
+              gastoThis.removeClass('holding');
+              clearTimeout(timeoutId);
+              $(this).dequeue();
+              //
+            });
             
             
           };
@@ -437,6 +458,8 @@ $scope.itemOnLongPress = function(nome,id,index) {
   $scope.deleteItemIndex = index;
 
   $('.deletaProdutoWrapper').show(100);
+
+
   
 }
 // ======================= Delete Item =======================================
@@ -457,6 +480,8 @@ $scope.deleteItem = function(productId, index){
       var objRetornado = result[0];
 
       firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).remove();
+
+      $scope.selectedItem.hide();
 
     }  
 

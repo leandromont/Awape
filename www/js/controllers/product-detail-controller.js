@@ -10,8 +10,6 @@ angular.module('starter.controllers')
 
   $scope.$on('$ionicView.enter', function(){
 
-    console.log("BRUNO ARRUMA O CARALHO DAS INFORMAÇÕES DOS TIPOS DE ÁGUA (AZUL, VERDE E CINZA)");
-
     // pegar ID do produto 
     $scope.productId = Auth.get.productId();
     
@@ -20,14 +18,21 @@ angular.module('starter.controllers')
 
     // esperar para carregar os dados
     setTimeout(function(){ 
-      
+      var totalAgua;
       // animação das gotas de água
       $('.aguaIndividual').each(function(){
         var qntdAgua = $('#porcentagemAgua', this).text();
-        var iconHeight = $('.icon', this).outerHeight();
-        var bgHeight = iconHeight * (qntdAgua/100);
-        $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
+        if (qntdAgua > 0){
+          var iconHeight = $('.icon', this).outerHeight();
+          var bgHeight = iconHeight * (qntdAgua/100);
+          $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
+        }
+        totalAgua =+ qntdAgua;
       });
+
+      if(totalAgua > 0){
+        $('.tiposAgua').show();
+      }
       
     }, 300);
 
@@ -224,6 +229,8 @@ angular.module('starter.controllers')
     // voltar a altura para 0 para fazer a animação toda vez que entrar
     $('.bgIcon').animate({'height': 0},10);
     //
+
+    $('.tiposAgua').hide();
 
     //tirar a imagem do produto ao sair da página
     $('.produtoPage .fotoWrapper .fotoProduto').css("background-image", "");
