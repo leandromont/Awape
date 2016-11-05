@@ -10,7 +10,7 @@
 
 	<ul class="listaBusca listaNotChecked" id="listaBox" >
 
-       <li class="produtoBusca" ng-if="search" ng-repeat="item in listItens | filter:search" on-last-repeat-search>
+       <li class="produtoBusca" ng-if="search" ng-repeat="item in filteredItems = (listItens | filter:search)" on-last-repeat-search>
 	      <ul class="pecasLista">
 	        <li class="checkWrapper">
 	          <input type="checkbox" class="check" ng-click="addItem(item.id,addAmount)"/>
@@ -29,7 +29,9 @@
 	        </a>
 	      </ul>
 	    </li>
+	    <li ng-show='filteredItems.length === 0' > não tem nada carai</li>
  
   </ul>
+	
   </ion-content>
 </ion-view>
