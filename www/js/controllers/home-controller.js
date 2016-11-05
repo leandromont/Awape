@@ -54,6 +54,22 @@ angular.module('starter.controllers')
 
               var pegadaZerado = totalPegadaPessoal.toFixed(0);
               var pegadaNumeroZerado = parseInt(pegadaZerado);
+              // relacao da sua pegada com a media nacional
+              var mediaNacional = 2027000;
+              var mediaPorcent = ((pegadaNumeroZerado*100) / mediaNacional) - 100;
+              var mediaPorcentFixed = mediaPorcent.toFixed(0);
+              var lengthMedia = mediaPorcentFixed.length;
+              if (mediaPorcentFixed < 0){
+                var mediaNegativa = mediaPorcentFixed.substring(1, lengthMedia);
+                $('#totalPHP .diferenca span#porcent').text(mediaNegativa);
+                $('#totalPHP .diferenca span#bomOuRuim').text('abaixo');
+                $('#totalPHP .diferenca').css({'color': '#40ce8d', 'opacity': '1'});
+              } else {
+                $('#totalPHP .diferenca span#porcent').text(mediaPorcentFixed);
+                $('#totalPHP .diferenca span#bomOuRuim').text('acima');
+                $('#totalPHP .diferenca').css({'color': '#f35858', 'opacity': '1'});
+              }
+              //
               return pegadaNumeroZerado;
 
 

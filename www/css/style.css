@@ -145,14 +145,19 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 .saudacao .nome{float: left; font-size: 1.5em; width: 66%; text-align: center; margin-top: 38px;}
 .saudacao .nome span#nomeUsuario{}
 .titulo{font-size: 1.4em; color: #2badca; font-weight: 600; padding: 5px 2% 8px;}
-.box{ width: 98%; margin: 0 auto 15px; background: white; border-bottom: 2px solid #d2d2d2; border-right: 1px solid #d2d2d2; border-radius: 10px; padding: 10px 15px 0;}
+.box{width: 98%;margin: 0 auto 15px;background: white;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;border-radius: 10px;padding: 10px 15px 10px;}
 .totais .total{margin: 10px 0 15px; height: 66px;}
 .totais .total .icon{width: 66px; height: 66px; float: left;}
 .totais .total#totalLista .icon{background: url(../img/sprite_layout.png) no-repeat -135px -57px;}
-.totais .total#totalPHP .icon{background: url(../img/sprite_layout.png) no-repeat -38px -56px;}
+.totais .total#totalPHP .icon{background: url(../img/sprite_layout.png) no-repeat -38px -56px;margin-top: 9px;}
 .totais .total .dados{width: 100%; padding: 8px 0 0 26%;}
 .totais .total .dados .titulo{color: #545454;font-weight: 400;font-size: 1em;padding: 0 0 5px 0;letter-spacing: -0.25px;}
 .totais .total .dados .valor{font-size: 1.8em;}
+.totais .total .dados .diferenca{opacity:0; font-size: 0.8em; margin: 5px 0; margin-left: 1%; font-style: italic;}
+.totais .total .dados .diferenca span{}
+.totais .total .dados .diferenca span#porcent{font-size: 1.2em;}
+.totais .total .dados .diferenca span#bomOuRuim{font-weight: 600;}
+
 .dicasWrapper{padding-top: 5px;}
 .dicasWrapper .dica{margin: 10px 0;}
 .dicasWrapper .dica .dicaTexto{font-size: 1em;text-align: center;margin: 0 0 10px 0;}
