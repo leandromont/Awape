@@ -53,6 +53,32 @@ angular.module('starter.controllers')
               var totalPegadaPessoal = totalHigiene + totalLimpeza + totalAlimento;
 
               var pegadaZerado = totalPegadaPessoal.toFixed(0);
+              var pegadaLength = pegadaZerado.length;
+              // milhoes
+              if(pegadaLength > 6){
+                console.log('milhão');
+                var pegadaMilhao = pegadaZerado.substring(0, pegadaLength-6);
+                var pegadaMil = pegadaZerado.substring(pegadaMilhao.length, pegadaLength-5);
+                if (pegadaMil === "0"){
+                  var pegadaEsquema = pegadaMilhao;
+                } else {
+                  var pegadaEsquema = pegadaMilhao + "," + pegadaMil;
+                }
+                if (pegadaMilhao > 1){
+                  $('#totalPHP .valor span').html("<span id='numero'>"+pegadaEsquema+"</span> milhões de litros");
+                } else {
+                  $('#totalPHP .valor span').html("<span id='numero'>"+pegadaEsquema+"</span> milhão de litros");
+                }
+              //
+                console.log(pegadaMilhao);
+                console.log(pegadaMil);
+                console.log(pegadaEsquema);
+              } else if(pegadaLength > 3){
+                console.log('mil');
+              } else {
+                console.log('cem');
+              }
+
               var pegadaNumeroZerado = parseInt(pegadaZerado);
               // relacao da sua pegada com a media nacional
               var mediaNacional = 2027000;

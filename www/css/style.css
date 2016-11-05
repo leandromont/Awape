@@ -153,10 +153,12 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 .totais .total .dados{width: 100%; padding: 8px 0 0 26%;}
 .totais .total .dados .titulo{color: #545454;font-weight: 400;font-size: 1em;padding: 0 0 5px 0;letter-spacing: -0.25px;}
 .totais .total .dados .valor{font-size: 1.8em;}
-.totais .total .dados .diferenca{opacity:0; font-size: 0.8em; margin: 5px 0; margin-left: 1%; font-style: italic;}
-.totais .total .dados .diferenca span{}
-.totais .total .dados .diferenca span#porcent{font-size: 1.2em;}
-.totais .total .dados .diferenca span#bomOuRuim{font-weight: 600;}
+.totais .total#totalPHP .dados .valor span{font-size: 0.75em;}
+.totais .total#totalPHP .dados .valor span#numero{font-size: 1.4em;}
+.totais .total#totalPHP .dados .diferenca{opacity:0; font-size: 0.8em; margin: 5px 0; margin-left: 1%; font-style: italic;}
+.totais .total#totalPHP .dados .diferenca span{}
+.totais .total#totalPHP .dados .diferenca span#porcent{font-size: 1.2em;}
+.totais .total#totalPHP .dados .diferenca span#bomOuRuim{font-weight: 600;}
 
 .dicasWrapper{padding-top: 5px;}
 .dicasWrapper .dica{margin: 10px 0;}
@@ -352,10 +354,12 @@ ul.historyContainer{width: 100%; height: auto;}
 ul.historyContainer li.historyWrapper{width: 96%;margin: 0 0 0 5%;border-left: 4px solid #2badca;padding: 0 0 35px 0;position: relative;}
 ul.historyContainer li.historyWrapper ul.lista{width: 92%;margin-left: 4%;border-radius: 10px;padding: 15px 8px;border-bottom: 3px solid #d2d2d2;margin: 0 auto;}
 ul.historyContainer li.historyWrapper ul.lista li.tituloMes{font-size: 1.2em; color: #2badca;}
-ul.historyContainer li.historyWrapper ul.lista li.dados{padding: 13px 0 5px 3%;}
-ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalCompra{width: 53%;display: inline-block;margin-right: 2%;border-right: 1px solid #e4e4e4;}
-ul.historyContainer li.historyWrapper ul.lista li.dados .titulo{font-size: 0.95em;color: #545454;padding: 0;letter-spacing: -0.3px;}
-ul.historyContainer li.historyWrapper ul.lista li.dados .valor{}
+ul.historyContainer li.historyWrapper ul.lista li.dados{padding: 13px 0 8px 3%;border-bottom: 1px solid #e5e5e5;}
+ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalCompra{width: 100%;display: inline-block;/* margin-right: 2%; *//* border-right: 1px solid #e4e4e4; */}
+ul.historyContainer li.historyWrapper ul.lista li.dados .titulo{font-size: 0.95em;color: #545454;padding: 0;letter-spacing: -0.3px;display: inline-block;}
+ul.historyContainer li.historyWrapper ul.lista li.dados .valor{
+    display: inline-block;
+}
 ul.historyContainer li.historyWrapper ul.lista li.dados .valor span#litros{}
 ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalPegada{width: 43%; display: inline-block;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory{padding: 0 0 0 3%;}
