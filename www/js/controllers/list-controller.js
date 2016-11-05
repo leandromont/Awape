@@ -18,18 +18,28 @@ angular.module('starter.controllers')
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
-          console.log(data);
+          if(data === null){  
 
-          var dataTratada = data.filter(function( obj ) {
-            return obj.field !== null;
-        });
+            $scope.userList = [{
+              "checked" : true,
+              "data" : "",
+              "idProduto" : 0,
+              "index" : 0,
+              "quantidade" : 0
+            }];
 
+          } else {
 
-          console.log(dataTratada);
+            var dataTratada = data.filter(function( obj ) {
+                return obj.field !== null;
+            });
 
+            $scope.userList = dataTratada;
 
-          $scope.userList = dataTratada;
+          }
+
           lista = $scope.userList
+
         });
       });
 

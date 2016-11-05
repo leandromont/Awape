@@ -13,14 +13,14 @@
        <li class="produtoBusca" ng-if="search" ng-repeat="item in filteredItems = (listItens | filter:search)" on-last-repeat-search>
 	      <ul class="pecasLista">
 	        <li class="checkWrapper">
-	          <input type="checkbox" class="check" ng-click="addItem(item.id,addAmount)"/>
+	          <input type="checkbox" class="check" ng-click="addItem(item.id,addAmount, search)"/>
 	          <label></label>
 	        </li>
 	          <li class="nomeProduto">{{item.produto}}</li>
 	          <li class="qntdWrapper">
 	            <form action="">
 	              <!-- como capturar a informação desde campo e como passar como parâmetro para calcular a pegada hídrica? -->
-	              <input type="text" class="qntdInput" name="qntdInput[]" ng-model="addAmount" ng-init="addAmount =1" maxlength="4">
+	              <input type="text" class="qntdInput" name="qntdInput[]" ng-model="addAmount" ng-init="addAmount = 1" maxlength="4">
 	            </form>
 	          </li>
 	          <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
@@ -29,7 +29,7 @@
 	        </a>
 	      </ul>
 	    </li>
-	    <li ng-show='filteredItems.length === 0' > não tem nada carai</li>
+	    <li ng-show='filteredItems.length === 0'> não tem nada carai</li>
  
   </ul>
 	

@@ -80,12 +80,13 @@ angular.module('starter.controllers')
 
   // ======================= Add Item =======================================
 
-    $scope.addItem = function(id,quantidade){
+    $scope.addItem = function(id,quantidade,search){
+
 
      var newItemIndex = $scope.userList.length;
      
 
-     console.log(newItemIndex)
+     console.log(search)
 
       
       firebase.database().ref('/users/' + $scope.userId + '/minhaLista/' + newItemIndex)
