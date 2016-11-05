@@ -82,8 +82,15 @@ angular.module('starter.controllers')
 
     $scope.addItem = function(id,quantidade,search){
 
+     if($scope.userList == null){
 
-     var newItemIndex = $scope.userList.length;
+        var newItemIndex = 0;
+
+     } else {
+
+        var newItemIndex = $scope.userList.length;
+
+     }
      
 
      console.log(search)

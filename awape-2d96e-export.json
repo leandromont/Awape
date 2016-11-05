@@ -2,6 +2,12 @@
   "users" : {
     "JPL32UMjsRR69jjugWZaXRMk08k1" : {
       "minhaLista" : [ {
+        "checked" : true,
+        "data" : "",
+        "idProduto" : 0,
+        "index" : 0,
+        "quantidade" : 0
+      },{
         "checked" : false,
         "data" : "01/01/01",
         "idProduto" : 1,
@@ -763,11 +769,11 @@
         }
       },
       "minhaLista" : [ {
-        "checked" : false,
-        "data" : "01/01/01",
-        "idProduto" : 1,
+        "checked" : true,
+        "data" : "",
+        "idProduto" : 0,
         "index" : 0,
-        "quantidade" : 6
+        "quantidade" : 0
       }, {
         "checked" : false,
         "data" : "01/01/01",
