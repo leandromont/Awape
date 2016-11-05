@@ -93,7 +93,8 @@ angular.module('starter.controllers')
         "checked" : false,
         "data" : "01/01/01",
         "idProduto" : id,
-        "quantidade" : quantidade
+        "quantidade" : quantidade,
+        "index": newItemIndex
       });
 
       // buscar minha Lista

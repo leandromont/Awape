@@ -18,7 +18,17 @@ angular.module('starter.controllers')
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
-          $scope.userList = data;
+          console.log(data);
+
+          var dataTratada = data.filter(function( obj ) {
+            return obj.field !== null;
+        });
+
+
+          console.log(dataTratada);
+
+
+          $scope.userList = dataTratada;
           lista = $scope.userList
         });
       });
@@ -217,10 +227,7 @@ angular.module('starter.controllers')
             qntdThis.addClass('holding');
               unidThis.addClass('holding');
               gastoThis.addClass('holding');
-            itemNome.addClass('holding').delay(1000).queue(function(){
-              $('.deletaProdutoWrapper').show(100);
-              $(this).dequeue();
-            });
+            itemNome.addClass('holding')
             
             
           };
@@ -379,18 +386,12 @@ $scope.checkboxClick = function(checked, productId, index){
         } else if (result.length > 0) {
 
           var objRetornado = result[0];
-
-          for(var index in $scope.userList){
-               if($scope.userList[index].idProduto == objRetornado.idProduto){
-                 
-                  firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
-                  .update({
-                    "checked": false,
-                    "data": "01/01/01"
-                  });
-
-               }
-          }
+ 
+          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
+          .update({
+            "checked": false,
+            "data": "01/01/01"
+          });
 
         }  
 
@@ -427,6 +428,44 @@ $scope.changeAmount = function(amount, productId, index){
     return retorno;
 }
 
+// ======================= Select Item to delet =======================================
+
+$scope.itemOnLongPress = function(nome,id,index) {
+
+  $scope.deleteItemName = nome;
+  $scope.deleteItemId = id;
+  $scope.deleteItemIndex = index;
+
+  $('.deletaProdutoWrapper').show(100);
+  
+}
+// ======================= Delete Item =======================================
+
+$scope.deleteItem = function(productId, index){
+      
+    var result = $.grep($scope.userList || [], function(e){ 
+      return e.idProduto == productId  ; 
+    });
+
+    var retorno='';
+    if (result.length == 0) {
+
+      console.log("não achei");
+
+    } else if (result.length > 0) {
+
+      var objRetornado = result[0];
+
+      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).remove();
+
+    }  
+
+    retorno = index;
+
+    
+    return retorno;
+}
+
 // ======================= get Product ID for detail =======================================
 
 $scope.setProductDetailId = function(productId){
@@ -438,15 +477,46 @@ $scope.setProductDetailId = function(productId){
 
 })
 
+// ==================== When repeat ends =========================
 .directive('onLastRepeat', function() {
     return function(scope, element, attrs) {
         if (scope.$last) setTimeout(function(){
             scope.$emit('onRepeatLast', element, attrs);
         }, 1);
     };
-    
+})
 
+// ===================== On long Press ========================
+.directive('onLongPress', function($timeout) {
+  return {
+    restrict: 'A',
+    link: function($scope, $elm, $attrs) {
+      $elm.bind('touchstart', function(evt) {
+        // Locally scoped variable that will keep track of the long press
+        $scope.longPress = true;
 
+        // We'll set a timeout for 600 ms for a long press
+        $timeout(function() {
+          if ($scope.longPress) {
+            // If the touchend event hasn't fired,
+            // apply the function given in on the element's on-long-press attribute
+            $scope.$apply(function() {
+              $scope.$eval($attrs.onLongPress)
+            });
+          }
+        }, 2000);
+      });
 
-
+      $elm.bind('touchend', function(evt) {
+        // Prevent the onLongPress event from firing
+        $scope.longPress = false;
+        // If there is an on-touch-end function attached to this element, apply it
+        if ($attrs.onTouchEnd) {
+          $scope.$apply(function() {
+            $scope.$eval($attrs.onTouchEnd)
+          });
+        }
+      });
+    }
+  };
 })

@@ -2,15 +2,17 @@
   "users" : {
     "JPL32UMjsRR69jjugWZaXRMk08k1" : {
       "minhaLista" : [ {
-        "checked" : false,
+        "checked" : true,
         "data" : "18/10/2016",
         "idProduto" : 1,
-        "quantidade" : 6
+        "quantidade" : 6,
+        "index":0
       }, {
-        "checked" : false,
+        "checked" : true,
         "data" : "18/10/2016",
         "idProduto" : 2,
-        "quantidade" : 3
+        "quantidade" : 3,
+        "index":1
       } ],
       "minhaPegada":{
         "banho":30,
@@ -38,12 +40,14 @@
         "checked" : true,
         "data" : "18/10/2016",
         "idProduto" : 1,
-        "quantidade" : 6
+        "quantidade" : 6,
+        "index":0
       }, {
         "checked" : true,
         "data" : "18/10/2016",
         "idProduto" : 2,
-        "quantidade" : 3
+        "quantidade" : 3,
+        "index":1
       } ],
       "minhaPegada":{
         "banho":30,

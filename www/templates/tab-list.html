@@ -31,13 +31,13 @@
     <li class="produto" ng-repeat="item in userList" on-last-repeat>
       <ul class="pecasLista">
         <li class="checkWrapper">
-          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,$index)"/>
+          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,item.index)"/>
           <label></label>
         </li>
-          <li class="nomeProduto" ng-bind="productName(item.idProduto)"></li>
+          <li class="nomeProduto" ng-bind="productName(item.idProduto)" on-long-press="itemOnLongPress(productName(item.idProduto),item.idProduto,item.index)"></li>
           <li class="qntdWrapper">
             <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,$index)">
+              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,item.index)">
             </form>
           </li>
           <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
@@ -77,11 +77,11 @@
       <div class="deletaProduto">
         <div class="titulo">Deletar Produto</div>
         <div class="texto">Você deseja deletar  
-          <span id="itemDeletado">café</span> da sua lista?
+          <span id="itemDeletado">{{deleteItemName}}</span> da sua lista?
         </div>
         <div class="botoes">
           <div class="botao" id="nao">Não</div>
-          <div class="botao" id="sim">Sim</div>
+          <div class="botao" id="sim" ng-click='deleteItem(deleteItemId,deleteItemIndex)'>Sim</div>
         </div>
       </div>
     </div>
