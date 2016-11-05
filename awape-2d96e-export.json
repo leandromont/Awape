@@ -1,25 +1,22 @@
 {
   "users" : {
     "JPL32UMjsRR69jjugWZaXRMk08k1" : {
-      "minhaLista" : [ {
-        "checked" : true,
-        "data" : "",
-        "idProduto" : 0,
-        "index" : 0,
-        "quantidade" : 0
-      },{
-        "checked" : false,
-        "data" : "01/01/01",
-        "idProduto" : 1,
-        "index" : 0,
-        "quantidade" : 6
-      }, {
-        "checked" : true,
-        "data" : "11/05/2016",
-        "idProduto" : 2,
-        "index" : 1,
-        "quantidade" : 3
-      } ],
+      "minhaLista" : {
+        "id0":{
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 0,
+          "quantidade" : 6
+        }, 
+        "id1":{
+          "checked" : true,
+          "data" : "11/05/2016",
+          "idProduto" : 2,
+          "index" : 1,
+          "quantidade" : 3
+        } 
+      },
       "minhaPegada" : {
         "banho" : 30,
         "cafe" : 0,
@@ -768,31 +765,22 @@
           }
         }
       },
-      "minhaLista" : [ {
-        "checked" : true,
-        "data" : "",
-        "idProduto" : 0,
-        "index" : 0,
-        "quantidade" : 0
-      }, {
-        "checked" : false,
-        "data" : "01/01/01",
-        "idProduto" : 2,
-        "index" : 1,
-        "quantidade" : 3
-      }, {
-        "checked" : true,
-        "data" : "11/05/2016",
-        "idProduto" : 1,
-        "index" : 2,
-        "quantidade" : "999"
-      }, null, {
-        "checked" : false,
-        "data" : "01/01/01",
-        "idProduto" : 15,
-        "index" : 4,
-        "quantidade" : 1
-      } ],
+      "minhaLista" : {
+        "id0":{
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 0,
+          "quantidade" : 6
+        }, 
+        "id1":{
+          "checked" : true,
+          "data" : "11/05/2016",
+          "idProduto" : 2,
+          "index" : 1,
+          "quantidade" : 3
+        } 
+      },
       "minhaPegada" : {
         "banho" : 30,
         "cafe" : 0,

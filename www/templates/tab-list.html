@@ -27,7 +27,7 @@
   
   <ul class="lista listaNotChecked" id="listaBox">
   
-    <li class="produto" ng-repeat="item in userList" on-last-repeat>
+    <li class="produto" ng-repeat="item in userList" nf-if="userList" on-last-repeat>
       <ul class="pecasLista">
         <li class="checkWrapper">
           <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,item.index)"/>

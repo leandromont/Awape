@@ -154,11 +154,6 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
           name:function(userId, name){
             firebase.database().ref('users/' + userId).set({
               username: name
-              // amigos : [
-              //   { nome: "Leandro", idade: 21 },
-              //   { nome: "Shiroma", idade: 30 },
-              //   { nome: "Érika", idade: 30 }
-              // ]
             });
           }
         }      
@@ -167,7 +162,6 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
     set:{
       productId: function(id){
         Auth.productDetail.id = id;
-        // $location.path("/tabs/product-detail");
         $state.go('tab.product-detail');
       } 
     }

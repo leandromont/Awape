@@ -25,7 +25,6 @@ angular.module('starter.controllers')
             $scope.userList = data;
             lista = $scope.userList
 
-            console.log($scope.userList)
           });
         });
 
@@ -82,21 +81,17 @@ angular.module('starter.controllers')
 
     $scope.addItem = function(id,quantidade,search){
 
-     if($scope.userList == null){
+      var newItemIndex;
 
-        var newItemIndex = 0;
 
-     } else {
-
-        var newItemIndex = $scope.userList.length;
-
-     }
-     
-
-     console.log(search)
-
+      var S4 = function() {
+         return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+      };
       
-      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/' + newItemIndex)
+      newItemIndex = (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+
+    
+      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
       .update({
         "checked" : false,
         "data" : "01/01/01",
@@ -112,6 +107,8 @@ angular.module('starter.controllers')
           lista = $scope.userList
         });
       });
+
+      $state.reload();
 
     };
 

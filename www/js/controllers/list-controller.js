@@ -18,26 +18,12 @@ angular.module('starter.controllers')
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
-          if(data === null){  
 
-            $scope.userList = [{
-              "checked" : true,
-              "data" : "",
-              "idProduto" : 0,
-              "index" : 0,
-              "quantidade" : 0
-            }];
 
-          } else {
+            $scope.userList = data;
 
-            var dataTratada = data.filter(function( obj ) {
-                return obj.field !== null;
-            });
 
-            $scope.userList = dataTratada;
-
-          }
-
+        
           lista = $scope.userList
 
         });
@@ -87,6 +73,50 @@ angular.module('starter.controllers')
 
     });
 
+
+
+
+
+
+
+
+
+
+// aparecer os subIcones ao clicar no +
+$('.icon#addItem').click(function(){
+  // somente se não tiver a classe flipped no iconsHolder
+  if($('.iconsHolder').hasClass('flipped')){
+  }else{
+    $('.iconSmallHolder').show();
+    $('.linkSmall').toggleClass('Active');
+    // animacoes ao clicar - ativo
+    if($('.linkSmall').hasClass('Active')){
+      $('.paginaLista .scroll').animate({opacity: 0.25},200);
+      $('.totalLista').animate({opacity: 0.25},200);
+      $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
+    //
+    }else{
+      // animacoes ao clicar - desativo
+      $('.paginaLista .scroll').animate({opacity: 1},200);
+      $('.totalLista').animate({opacity: 1},200);
+      $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+      //
+    }
+  }
+  //
+});
+//
+
+// desaparecer os subIcones ao clicar fora
+$('.paginaLista').click(function(){
+  $('.paginaLista .scroll').animate({opacity: 1},200);
+  $('.totalLista').animate({opacity: 1},200);
+  $('.linkSmall').removeClass('Active');
+  $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+});
+//
+
+        
 
 // ******************************************** LAST REPEAT ************************************************************************
 
@@ -177,43 +207,7 @@ angular.module('starter.controllers')
             $('.totalLista').show();
             $('.tabs-striped .tabs').show();
           });
-        //
-
-        // aparecer os subIcones ao clicar no +
-        $('.icon#addItem').click(function(){
-          // somente se não tiver a classe flipped no iconsHolder
-          if($('.iconsHolder').hasClass('flipped')){
-          }else{
-            $('.iconSmallHolder').show();
-            $('.linkSmall').toggleClass('Active');
-            // animacoes ao clicar - ativo
-            if($('.linkSmall').hasClass('Active')){
-              $('.paginaLista .scroll').animate({opacity: 0.25},200);
-              $('.totalLista').animate({opacity: 0.25},200);
-              $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
-            //
-            }else{
-              // animacoes ao clicar - desativo
-              $('.paginaLista .scroll').animate({opacity: 1},200);
-              $('.totalLista').animate({opacity: 1},200);
-              $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
-              //
-            }
-          }
-          //
-        });
-        //
-
-        // desaparecer os subIcones ao clicar fora
-        $('.paginaLista').click(function(){
-          $('.paginaLista .scroll').animate({opacity: 1},200);
-          $('.totalLista').animate({opacity: 1},200);
-          $('.linkSmall').removeClass('Active');
-          $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
-        });
-        //
-
-        
+        //     
 
         // click and hold to delete product + animation
         $('.listaNotChecked .produto').each(function(){
@@ -380,51 +374,21 @@ $scope.checkboxClick = function(checked, productId, index){
       
       if(checked){
 
-        var result = $.grep($scope.userList || [], function(e){ 
-          return e.idProduto == productId  ; 
+        firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index)
+        .update({
+          "checked": true,
+          "data": date
         });
-
-        var retorno='';
-        if (result.length == 0) {
-
-          console.log("não achei");
-
-        } else if (result.length > 0) {
-
-          var objRetornado = result[0];
-
-          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
-          .update({
-            "checked": true,
-            "data": date
-          });
-
-        }  
 
         retorno = checked;
 
       } else {
 
-        var result = $.grep($scope.userList || [], function(e){ 
-          return e.idProduto == productId  ; 
-        });
-
-        var retorno='';
-        if (result.length == 0) {
-
-          console.log("não achei");
-
-        } else if (result.length > 0) {
-
-          var objRetornado = result[0];
- 
-          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index)
+          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index)
           .update({
             "checked": false,
             "data": "01/01/01"
           });
-
-        }  
 
         retorno = checked;
       }
@@ -436,22 +400,7 @@ $scope.checkboxClick = function(checked, productId, index){
 
 $scope.changeAmount = function(amount, productId, index){
       
-    var result = $.grep($scope.userList || [], function(e){ 
-      return e.idProduto == productId  ; 
-    });
-
-    var retorno='';
-    if (result.length == 0) {
-
-      console.log("não achei");
-
-    } else if (result.length > 0) {
-
-      var objRetornado = result[0];
-
-      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).update({"quantidade": amount});
-
-    }  
+    firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index).update({"quantidade": amount});
 
     retorno = amount;
 
@@ -476,24 +425,11 @@ $scope.itemOnLongPress = function(nome,id,index) {
 
 $scope.deleteItem = function(productId, index){
       
-    var result = $.grep($scope.userList || [], function(e){ 
-      return e.idProduto == productId  ; 
-    });
 
-    var retorno='';
-    if (result.length == 0) {
+    firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index).remove();
 
-      console.log("não achei");
+    $scope.selectedItem.hide();
 
-    } else if (result.length > 0) {
-
-      var objRetornado = result[0];
-
-      firebase.database().ref('/users/' + $scope.userId + '/minhaLista/'+ index).remove();
-
-      $scope.selectedItem.hide();
-
-    }  
 
     retorno = index;
 
