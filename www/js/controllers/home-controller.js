@@ -52,11 +52,13 @@ angular.module('starter.controllers')
               // Total geral 
               var totalPegadaPessoal = totalHigiene + totalLimpeza + totalAlimento;
 
+
+
+              // arrumar leitura dos números
               var pegadaZerado = totalPegadaPessoal.toFixed(0);
               var pegadaLength = pegadaZerado.length;
               // milhoes
               if(pegadaLength > 6){
-                console.log('milhão');
                 var pegadaMilhao = pegadaZerado.substring(0, pegadaLength-6);
                 var pegadaMil = pegadaZerado.substring(pegadaMilhao.length, pegadaLength-5);
                 if (pegadaMil === "0"){
@@ -69,18 +71,28 @@ angular.module('starter.controllers')
                 } else {
                   $('#totalPHP .valor span').html("<span id='numero'>"+pegadaEsquema+"</span> milhão de litros");
                 }
-              //
-                console.log(pegadaMilhao);
-                console.log(pegadaMil);
-                console.log(pegadaEsquema);
-              } else if(pegadaLength > 3){
-                console.log('mil');
-              } else {
-                console.log('cem');
-              }
 
-              var pegadaNumeroZerado = parseInt(pegadaZerado);
+              // mil
+              } else if(pegadaLength > 3){
+                var pegadaMil = pegadaZerado.substring(0, pegadaLength-3);
+                var pegadaCem = pegadaZerado.substring(pegadaMil.length, pegadaLength-2);
+
+                if (pegadaCem === "0"){
+                  var pegadaEsquema = pegadaMil;
+                } else {
+                  var pegadaEsquema = pegadaMil + "," + pegadaCem;
+                }
+                $('#totalPHP .valor span').html("<span id='numero'>"+pegadaEsquema+"</span> mil litros");
+
+              // cem
+              } else {
+                var pegadaEsquema = pegadaZerado;
+                $('#totalPHP .valor span').html("<span id='numero'>"+pegadaEsquema+"</span> litros");
+              }
+              //
+              
               // relacao da sua pegada com a media nacional
+              var pegadaNumeroZerado = parseInt(pegadaZerado);
               var mediaNacional = 2027000;
               var mediaPorcent = ((pegadaNumeroZerado*100) / mediaNacional) - 100;
               var mediaPorcentFixed = mediaPorcent.toFixed(0);
@@ -134,6 +146,7 @@ $scope.waterFootprint = function(productId,quantidade,checked){
       var totalGasto = quantidade * conteudo * pegada;
       var totalZerado = totalGasto.toFixed(0);
       var totalNumeroZerado = parseInt(totalZerado);
+
       retorno = totalNumeroZerado;
 
       if(checked){
@@ -165,7 +178,44 @@ $scope.$on('$ionicView.enter', function(){
 
   $scope.getListTotal = function(){
 
-      retorno = $scope.listTotal;
+      // arrumar leitura dos números
+      var textoTotal = $scope.listTotal.toString();
+      var totalLength = textoTotal.length;
+      // milhoes
+      if(totalLength > 6){
+        var totalMilhao = textoTotal.substring(0, totalLength-6);
+        var totalMil = textoTotal.substring(totalMilhao.length, totalLength-5);
+        if (totalMil === "0"){
+          var totalEsquema = totalMilhao;
+        } else {
+          var totalEsquema = totalMilhao + "," + totalMil;
+        }
+        if (totalMilhao > 1){
+          var totalAparecer = totalEsquema+" milhões de litros";
+        } else {
+          var totalAparecer = totalEsquema+" milhão de litros";
+        }
+
+      // mil
+      } else if(totalLength > 3){
+        var totalMil = textoTotal.substring(0, totalLength-3);
+        var totalCem = textoTotal.substring(totalMil.length, totalLength-2);
+
+        if (totalCem === "0"){
+          var totalEsquema = totalMil;
+        } else {
+          var totalEsquema = totalMil + "," + totalCem;
+        }
+        var totalAparecer = totalEsquema+" mil litros";
+
+      // cem
+      } else {
+        var totalEsquema = textoTotal;
+        var totalAparecer = totalEsquema+" litros";
+      }
+      //
+
+      retorno = totalAparecer;
 
       $scope.listTotal = 0;
       
@@ -176,6 +226,7 @@ $scope.$on('$ionicView.enter', function(){
 
 // ******************************************** LOADED VIEW ********************************************************************
 $scope.$on('$ionicView.loaded', function(){
+
 
 });
 

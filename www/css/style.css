@@ -153,8 +153,12 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 .totais .total .dados{width: 100%; padding: 8px 0 0 26%;}
 .totais .total .dados .titulo{color: #545454;font-weight: 400;font-size: 1em;padding: 0 0 5px 0;letter-spacing: -0.25px;}
 .totais .total .dados .valor{font-size: 1.8em;}
-.totais .total#totalPHP .dados .valor span{font-size: 0.75em;}
-.totais .total#totalPHP .dados .valor span#numero{font-size: 1.4em;}
+.totais .total#totalPHP .dados .valor span{font-size: 0.9em;}
+.totais .total#totalPHP .dados .valor span#numero{font-size: 1em;}
+
+.totais .total#totalLista .dados .valor span{font-size: 0.9em;}
+.totais .total#totalLista .dados .valor span#numero{font-size: 1.4em;}
+
 .totais .total#totalPHP .dados .diferenca{opacity:0; font-size: 0.8em; margin: 5px 0; margin-left: 1%; font-style: italic;}
 .totais .total#totalPHP .dados .diferenca span{}
 .totais .total#totalPHP .dados .diferenca span#porcent{font-size: 1.2em;}
@@ -505,7 +509,9 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage ul.listaBusca li.produtoBusca ul.pecasLista  li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
 .buscaPage .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
 
-
+.buscaPage li.ops{font-style: italic; text-align: center; color: #a5a5a5; padding: 15px 0;}
+.buscaPage li.ops .textoOps{}
+.buscaPage li.ops .textoOps span{display: block; font-size: 2em; margin-bottom: 10px; font-weight: 100;}
 
 
 

@@ -2,7 +2,7 @@
 <a href="#/tab/list" class="voltarLink"></a>
   <ion-content class="buscaPage">
   	<form action="" class="buscaForm">
-		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?" ng-model="search">
+		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?" ng-model="search" autofocus>
 		<div class="iconsWrapper">
       		<div class="icon" id="buscaIcon"></div>
       	</div>
@@ -29,7 +29,9 @@
 	        </a>
 	      </ul>
 	    </li>
-	    <li ng-show='filteredItems.length === 0'> não tem nada carai</li>
+	    <li class="ops" ng-show='filteredItems.length === 0'>
+		    <div class="textoOps"><span>Ops...</span>Não encontrei esse produto.<br/>Busque outro, por favor</div>
+	    </li>
  
   </ul>
 	
