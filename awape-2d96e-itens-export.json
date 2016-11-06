@@ -487,7 +487,7 @@
   "descricao" : "",
   "embalagem" : [ "", "" ],
   "id" : 33,
-  "imagem" : "../img/produtos/macarrao.jpg",
+  "imagem" : "../img/produtos/macarrao-espaguete.jpg",
   "parceiro" : false,
   "pegada" : 1849,
   "produto" : "Macarrão (500g)",
