@@ -1,5 +1,3 @@
-var lista;
-
 // ==================== Controller List ==================================
 angular.module('starter.controllers')
 .controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
@@ -19,12 +17,7 @@ angular.module('starter.controllers')
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
 
-
             $scope.userList = data;
-
-
-        
-          lista = $scope.userList
 
         });
       });
