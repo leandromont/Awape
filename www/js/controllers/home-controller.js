@@ -168,6 +168,19 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 // ******************************************** ENTER VIEW ********************************************************************
 $scope.$on('$ionicView.enter', function(){
 
+  // foto do usuario padrao
+  var userDiv = $(".fotoUsuario")
+  var userPic = $(".fotoUsuario").css("background-image");
+  userPic = userPic.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+  var patt=/\"|\'|\)/g;
+  var userPicName = userPic.split('/').pop().replace(patt,'');
+
+  if (userPicName === "usuario.png"){
+    $(userDiv).css({'border-radius': '100px 0 0 100px', 'background-size': 'contain'});
+    $('.saudacao .fotoWrapper').css('margin-top', '9px');
+  }
+  //
+
   // buscar itens da lista
   Auth.get.listItens().then(function(resposta) {
     $scope.$apply(function() {
@@ -177,7 +190,8 @@ $scope.$on('$ionicView.enter', function(){
   });
 
   $scope.getListTotal = function(){
-
+    
+    if($scope.listTotal != null || $scope.listTotal != undefined){
       // arrumar leitura dos números
       var textoTotal = $scope.listTotal.toString();
       var totalLength = textoTotal.length;
@@ -209,7 +223,10 @@ $scope.$on('$ionicView.enter', function(){
         var totalAparecer = totalEsquema+" mil litros";
 
       // cem
-      } else {
+      } else if($scope.listTotal === null || $scope.listTotal === undefined) {
+        console.log('0litros');
+
+      } else{
         var totalEsquema = textoTotal;
         var totalAparecer = totalEsquema+" litros";
       }
@@ -220,8 +237,10 @@ $scope.$on('$ionicView.enter', function(){
       $scope.listTotal = 0;
       
       return retorno;
+  } else {
+  $('#totalLista .dados .valor span').text('0 litros');
   }
-       
+}
 });
 
 // ******************************************** LOADED VIEW ********************************************************************

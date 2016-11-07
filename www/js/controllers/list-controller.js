@@ -3,6 +3,65 @@ angular.module('starter.controllers')
 .controller('ListCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $cordovaBarcodeScanner) {
   
 
+   function deleteAnimation(){  
+
+   console.log("gogo")     
+      // click and hold to delete product + animation
+      $('.listaNotChecked .produto').each(function(){
+        var timeoutId = 0;
+        var produtoThis = $(this);
+        var itemNome = $('.nomeProduto', this);
+        var labelThis = $('label', this);
+        var qntdThis = $('.qntdInput', this)
+        var unidThis = $('.unid', this);
+        var gastoThis = $('.gastoProduto', this);
+
+        
+
+        itemNome.mousedown(function() {
+            timeoutId = setTimeout(deleteItem, 350);
+        }).bind('mouseup mouseleave', function() {
+            
+            labelThis.removeClass('holding');
+            produtoThis.removeClass('holding');
+            itemNome.removeClass('holding');
+            qntdThis.removeClass('holding');
+            unidThis.removeClass('holding');
+            gastoThis.removeClass('holding');
+            clearTimeout(timeoutId);
+        });
+
+        function deleteItem() {
+          $scope.selectedItem = produtoThis;
+          labelThis.addClass('holding');
+          produtoThis.addClass('holding');
+          qntdThis.addClass('holding');
+          unidThis.addClass('holding');
+          gastoThis.addClass('holding');
+          itemNome.addClass('holding').delay(1000).queue(function(){
+            // remove classes after 1 second
+            labelThis.removeClass('holding');
+            produtoThis.removeClass('holding');
+            itemNome.removeClass('holding');
+            qntdThis.removeClass('holding');
+            unidThis.removeClass('holding');
+            gastoThis.removeClass('holding');
+            clearTimeout(timeoutId);
+            $(this).dequeue();
+            //
+          });
+          
+          
+        };
+
+        $('.deletaProduto .botao').click(function(){
+        $('.deletaProdutoWrapper').stop(false,true).hide(50);
+        });
+      });
+      //
+    };
+
+
 // ******************************************** LOAD DATA *************************************************************************
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -159,6 +218,7 @@ $('.paginaLista').click(function(){
                   $('.paginaLista .listaChecked').show();
                   $('.paginaLista .listaNotChecked').css({"margin-bottom": "0px", "border-bottom": "0", "border-radius": "10px 10px 0 0"});
                 }
+                deleteAnimation();
                 //
               });
             });
@@ -202,59 +262,8 @@ $('.paginaLista').click(function(){
           });
         //     
 
-        // click and hold to delete product + animation
-        $('.listaNotChecked .produto').each(function(){
-          var timeoutId = 0;
-          var produtoThis = $(this);
-          var itemNome = $('.nomeProduto', this);
-          var labelThis = $('label', this);
-          var qntdThis = $('.qntdInput', this)
-          var unidThis = $('.unid', this);
-          var gastoThis = $('.gastoProduto', this);
-
-          
-
-          itemNome.mousedown(function() {
-              timeoutId = setTimeout(deleteItem, 350);
-          }).bind('mouseup mouseleave', function() {
-              
-              labelThis.removeClass('holding');
-              produtoThis.removeClass('holding');
-              itemNome.removeClass('holding');
-              qntdThis.removeClass('holding');
-              unidThis.removeClass('holding');
-              gastoThis.removeClass('holding');
-              clearTimeout(timeoutId);
-          });
-
-          function deleteItem() {
-            $scope.selectedItem = produtoThis;
-            labelThis.addClass('holding');
-            produtoThis.addClass('holding');
-            qntdThis.addClass('holding');
-            unidThis.addClass('holding');
-            gastoThis.addClass('holding');
-            itemNome.addClass('holding').delay(1000).queue(function(){
-              // remove classes after 1 second
-              labelThis.removeClass('holding');
-              produtoThis.removeClass('holding');
-              itemNome.removeClass('holding');
-              qntdThis.removeClass('holding');
-              unidThis.removeClass('holding');
-              gastoThis.removeClass('holding');
-              clearTimeout(timeoutId);
-              $(this).dequeue();
-              //
-            });
-            
-            
-          };
-
-          $('.deletaProduto .botao').click(function(){
-          $('.deletaProdutoWrapper').stop(false,true).hide(50);
-          });
-        });
-        //
+       
+        deleteAnimation();
 
       });
 
@@ -329,12 +338,53 @@ $scope.waterFootprint = function(productId,quantidade,checked){
 // ======================= get waterFootprint Total =======================================
 
 $scope.getListTotal = function(){
+  if($scope.listTotal != null || $scope.listTotal != undefined){
 
-    retorno = $scope.listTotal;
+    // arrumar leitura dos números
+      var textoTotal = $scope.listTotal.toString();
+      var totalLength = textoTotal.length;
+      // milhoes
+      if(totalLength > 6){
+        var totalMilhao = textoTotal.substring(0, totalLength-6);
+        var totalMil = textoTotal.substring(totalMilhao.length, totalLength-5);
+        if (totalMil === "0"){
+          var totalEsquema = totalMilhao;
+        } else {
+          var totalEsquema = totalMilhao + "," + totalMil;
+        }
+        if (totalMilhao > 1){
+          var totalAparecer = totalEsquema+" milhões de lts";
+        } else {
+          var totalAparecer = totalEsquema+" milhão de lts";
+        }
+
+      // mil
+      } else if(totalLength > 3){
+        var totalMil = textoTotal.substring(0, totalLength-3);
+        var totalCem = textoTotal.substring(totalMil.length, totalLength-2);
+
+        if (totalCem === "0"){
+          var totalEsquema = totalMil;
+        } else {
+          var totalEsquema = totalMil + "," + totalCem;
+        }
+        var totalAparecer = totalEsquema+" mil litros";
+
+      // cem
+      } else {
+        var totalEsquema = textoTotal;
+        var totalAparecer = totalEsquema+" litros";
+      }
+      //
+
+      retorno = totalAparecer;
 
     $scope.listTotal = 0;
     
     return retorno;
+} else {
+  $('.totalLista .litrosTotal span#litrosTotal').text('0 litros');
+}
 }
 
 // ======================= get Unit =======================================

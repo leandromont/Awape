@@ -209,7 +209,9 @@ angular.module('starter.controllers')
         });
         //
 
-
+        $('.produtoPage').click(function(){
+          // $('.infoAgua').hide();
+        })
 
         // aparecer e desaparecer a troca de produto
         $('.produtoRecom').click(function(){
@@ -229,7 +231,7 @@ angular.module('starter.controllers')
     // voltar a altura para 0 para fazer a animação toda vez que entrar
     $('.bgIcon').animate({'height': 0},10);
     //
-
+    $('.infoAgua').hide();
     $('.tiposAgua').hide();
 
     //tirar a imagem do produto ao sair da página

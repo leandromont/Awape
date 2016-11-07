@@ -43,7 +43,7 @@ background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50
 
 .tutorial .slider{height: 100%}
 .tutorial .slideBoxes{background: linear-gradient(135deg, rgba(94,202,219,0.5) 0%, rgba(92,231,210,0.5) 50%, rgba(64,206,142,0.5) 100%); background-repeat: no-repeat;width: 100%;height: 100%;background-size: contain;background-position: center;}
-
+.tutorial .slidebox0 .pular{opacity:0; color: white; letter-spacing: 1px; font-style: italic; margin: 10px 0;}
 .tutorial .slideBoxes .phoneImage{opacity: 0;width: 100%;height: 100%;background-size: contain;background-position: center;}
 
 .tutorial .slidebox1 .phoneImage{background-image: url('../img/tutorial/pegada-hidrica.png');}
@@ -89,7 +89,7 @@ background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50
 .tutorial .slidebox0 .tutorialWrapper .textoHolder{font-size: 1.1em;font-weight: 100;padding: 5vh 0;border-top: 1px solid rgba(255, 255, 255, 0.5);background: transparent;border: 0;box-shadow: none;color: white;position: relative;bottom: initial;left: initial;width: 100%;}
 .tutorial .tutorialWrapper .textoHolder p{opacity:0;margin: 0 0 5px;}
 .tutorial .tutorialWrapper .textoHolder p span{font-weight: 600; font-style: italic; font-size: 0.95em;}
-.tutorial .slidebox0 .tutorialWrapper .textoHolder .botao{opacity:0;width: 65%;margin: 10vh 17.5% 0;padding: 10px;border: 1px solid white;border-radius: 50px;background: rgba(255, 255, 255, 0.1);position: relative;color: white;}
+.tutorial .slidebox0 .tutorialWrapper .textoHolder .botao{opacity:0;width: 65%;margin: 9vh 17.5% 3vh;padding: 10px;border: 1px solid white;border-radius: 50px;background: rgba(255, 255, 255, 0.1);position: relative;color: white;}
 .tutorial .slidebox4 .tutorialWrapper .botao{width: 50%;margin: 0vh -25% 0;padding: 10px;border: 1px solid white;border-radius: 50px;background: rgba(255, 255, 255, 0.1);/* position: relative; */color: white;bottom: 15%;}
 .tutorial .tutorialWrapper .botao{width: 50%;margin: 10vh -25% 0;padding: 7px;border: 2px solid #21a48c;border-radius: 50px;background: #41d1b7;position: absolute;bottom: 8%;color: white;font-size: 1.2em;}
 .tutorial .slidebox1 .tutorialWrapper .textoHolder p:last-child{font-size: 1.4em;}
@@ -140,8 +140,8 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 /* --------    Home    -------- */
 
 .saudacao{background: white; width: 98%; height: 101px; margin: 2% auto 6%; border-radius: 50px; border-bottom: 3px solid #d2d2d2;}
-.saudacao .fotoWrapper{width: 98px;height: 98px;float: left;/* background: white; */border-radius: 50px;margin-top: 9px;}
-.saudacao .fotoWrapper .fotoUsuario{background: url(../img/usuario.png) no-repeat;background-size: contain;width: 100%;height: 100%;border-radius: 100px 0 0 100px;}
+.saudacao .fotoWrapper{width: 98px;height: 98px;float: left;/* background: white; */border-radius: 50px;margin-top: 1px;}
+.saudacao .fotoWrapper .fotoUsuario{background: url(../img/usuario.png) no-repeat;background-size: cover;width: 100%;height: 100%;border-radius: 100px;}
 .saudacao .nome{float: left; font-size: 1.5em; width: 66%; text-align: center; margin-top: 38px;}
 .saudacao .nome span#nomeUsuario{}
 .titulo{font-size: 1.4em; color: #2badca; font-weight: 600; padding: 5px 2% 8px;}
@@ -332,9 +332,9 @@ ul.listaChecked li.produto ul.pecasLista li.qntdWrapper span.qntd{border-color: 
 ul.listaChecked li.produto ul.pecasLista li.unid{color: #bdbdbd;}
 ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; color: #b1b1b1;}
 .totalLista{width: 90%;position: fixed;bottom: 0;height: 50px;background: #5dcadc;display: table;margin: 0 5%;margin-bottom: 67px;border-radius: 56px;}
-.totalLista .titulo{display: table-cell; vertical-align: middle; color: white; font-weight: 300; padding: 0 0 0 6%;}
+.totalLista .titulo{display: table-cell;vertical-align: middle;color: white;font-weight: 300;padding: 0 0 0 6%;font-size: 1.25em;}
 .totalLista .litrosTotal{display: table-cell; vertical-align: middle; font-size: 1.4em; color: white; font-weight: 300; text-align: right; padding-right: 6%;}
-.totalLista .litrosTotal span#litrosTotal{font-size: 1.2em; font-weight: 400;}
+.totalLista .litrosTotal span#litrosTotal{font-size: 1em;font-weight: 400;}
 
 .deletaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.3);position:fixed !important;top: 0;left: 0;z-index: 99999;}
 .deletaProdutoWrapper .deletaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 35%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
@@ -368,7 +368,7 @@ ul.historyContainer li.historyWrapper ul.lista li.dados .valor span#litros{}
 ul.historyContainer li.historyWrapper ul.lista li.dados ul.dadosTotalPegada{width: 43%; display: inline-block;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory{padding: 0 0 0 3%;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao{padding-top: 13px;}
-ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.icon{width: 27px;height: 27px;display: inline-block;}
+ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.icon{width: 28px;height: 28px;display: inline-block;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li#iconPositivo{background: url('../img/sprite_layout.png') no-repeat -154px -197px;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li#iconNegativo{background: url('../img/sprite_layout.png') no-repeat -206px -198px;}
 ul.historyContainer li.historyWrapper ul.lista li.itemHistory ul.informacao li.infoTexto{display: inline-block;width: 80%;line-height: 16px;font-style: italic;margin-left: 2%;}
@@ -454,11 +454,11 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .produtoPage .recomendacao .produtoRecom .infosProduto .diferencaProds{color: #40ce8d;font-size: 1.1em;font-weight: 600;margin: 2px 0;}
 .produtoPage .recomendacao .produtoRecom .infosProduto .diferencaProds span#litrosDiferenca{}
 .produtoPage .recomendacao .produtoRecom .infosProduto .nomeProduto{font-size: 1.2em;margin: 5px 0 0;}
-.produtoPage .infoAgua{display: none;width:90%;left:5%;position: absolute;top: 5%;padding: 15px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
-.produtoPage .infoAgua .titulo{padding: 0 0 10px;}
-.produtoPage .infoAgua#infoVerde .titulo{color:#40ce8d;}
-.produtoPage .infoAgua#infoCinza .titulo{color:#727272;}
-.produtoPage .infoAgua .texto{}
+.infoAgua{display: none;width:90%;left:5%;position: absolute;top: 18%;padding: 15px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;}
+.infoAgua .titulo{padding: 0 0 10px;}
+.infoAgua#infoVerde .titulo{color:#40ce8d;}
+.infoAgua#infoCinza .titulo{color:#727272;}
+.infoAgua .texto{}
 
 .produtoPage .trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: 0;left: 0;z-index: 99999;}
 .produtoPage .trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 105%;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
@@ -517,15 +517,16 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 
 /* --------    Settings    -------- */
 
-.logOutPage h1{color: #545454;font-size: 1.7em;padding: 8% 0 0 5%;margin: 0 0 30%;}
+.logOutPage h1{color: #545454;font-size: 1.7em;padding: 8% 0 0 5%;margin: 0 0 20%;}
 .logOutPage button.botao.logOut{background: transparent;border: 1px solid #4dacbb;color: #4dacbb;width: 80%;margin: 10px 10%;font-weight: 600;border-radius: 10px;padding: 10px;}
 .toggle-small .track{background: #d5d5d5; border: 1px solid #cccccc;}
 .toggle-small input:checked + .track{background: #4adba7; border: 1px solid #4fd09f;}
 .toggle-small input:checked + .track .handle{background: #38c891;}
 .logOutPage .item{border:0;margin: 10% auto;background: transparent;border-bottom: 1px solid #53aebc;width: 80%;}
 .logOutPage .item div span{color: #545454;}
-
-
+.logOutPage .tutorial{text-align: center;width: 54%;margin: 0 24% 4vh;padding: 10px 0;color: #48d9a1;border-bottom: 2px solid #48d9a1;}
+.logOutPage .tutorial:after{content:'>';margin-left: 10px;font-weight: 800;}
+.logOutPage a{text-decoration: none;}
 
 
 

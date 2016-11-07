@@ -100,7 +100,9 @@ angular.module('starter.controllers')
     $('.tutorial .slidebox0 .titulo span').addClass('animated fadeInUp').delay(1000).queue(function() {
       $('.tutorial .slidebox0 .titulo p').addClass('animated fadeInUp').delay(1000).queue(function() {
         $('.tutorial .slidebox0 .textoHolder p').addClass('animated fadeIn').delay(1000).queue(function() {
-          $('.tutorial .slidebox0 .textoHolder .botao').addClass('animated zoomIn').css("opacity", "1");
+          $('.tutorial .slidebox0 .textoHolder .botao').addClass('animated zoomIn').css("opacity", "1").delay(1000).queue(function() {
+            $('.tutorial .slidebox0 .textoHolder .pular').addClass('animated zoomIn').css("opacity", "0.7");
+            });
           });
         });
     });
