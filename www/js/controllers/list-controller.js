@@ -442,7 +442,9 @@ $scope.changeAmount = function(amount, productId, index){
       
     firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index).update({"quantidade": amount});
 
-    retorno = amount;
+
+
+    retorno = amount+"2";
 
     
     return retorno;
