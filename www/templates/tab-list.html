@@ -21,63 +21,60 @@
 
   <ion-content class="paginaLista">
   
-  <div class="topo fixed">
-  	<h1>Lista de compras</h1>
-  </div>
-  
-  <ul class="lista listaNotChecked" id="listaBox">
-  
-    <li class="produto" ng-repeat="item in userList" nf-if="userList" on-last-repeat>
-      <ul class="pecasLista">
-        <li class="checkWrapper">
-          <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,item.index)"/>
-          <label></label>
-        </li>
-          <li class="nomeProduto" ng-bind="productName(item.idProduto)" on-long-press="itemOnLongPress(productName(item.idProduto),item.idProduto,item.index)"></li>
-          <li class="qntdWrapper">
-            <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,item.index)">
-            </form>
+    <div class="topo fixed">
+    	<h1>Lista de compras</h1>
+    </div>
+    
+    <ul class="lista listaNotChecked" id="listaBox">
+    
+      <li class="produto" ng-repeat="item in userList" nf-if="userList" on-last-repeat>
+        <ul class="pecasLista">
+          <li class="checkWrapper">
+            <input type="checkbox" class="check" ng-model="item.checked" ng-change="checkboxClick(item.checked,item.idProduto,item.index)"/>
+            <label></label>
           </li>
-          <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
-        <a class="produtoLink" ng-click="setProductDetailId(item.idProduto)">
-          <li class="gastoProduto"><span id="litrosTotalProduto" ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
-        </a>
-      </ul>
-    </li>
- 
-  </ul>
+            <li class="nomeProduto" ng-bind="productName(item.idProduto)" on-long-press="itemOnLongPress(productName(item.idProduto),item.idProduto,item.index)"></li>
+            <li class="qntdWrapper">
+              <form action="">
+                <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,item.index)">
+              </form>
+            </li>
+            <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
+          <a class="produtoLink" ng-click="setProductDetailId(item.idProduto)">
+            <li class="gastoProduto"><span id="litrosTotalProduto" ng-bind="waterFootprint(item.idProduto,item.quantidade,item.checked)"></span> lts</li>
+          </a>
+        </ul>
+      </li>
+   
+    </ul>
 
-  <ul class="lista listaChecked">
+    <ul class="lista listaChecked">
 
-   <!--  <li class="produto">
-      <ul class="pecasLista">
-        <li class="checkWrapper">
-          <input type="checkbox" class="check" checked="checked"/>
-          <label></label>
-        </li>
-          <li class="nomeProduto">Não está no Banco</li>
-          <li class="qntdWrapper">
-            <form action="">
-              <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="6">
-            </form>
-            <span class="qntd"></span>
+     <!--  <li class="produto">
+        <ul class="pecasLista">
+          <li class="checkWrapper">
+            <input type="checkbox" class="check" checked="checked"/>
+            <label></label>
           </li>
-          <li class="unid"><span id="unidPadrao">un</span></li>
-        <a href="#/tab/product-detail" class="produtoLink">
-          <li class="gastoProduto">1200 lts</li>
-        </a>
-      </ul>
-    </li> -->
+            <li class="nomeProduto">Não está no Banco</li>
+            <li class="qntdWrapper">
+              <form action="">
+                <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="6">
+              </form>
+              <span class="qntd"></span>
+            </li>
+            <li class="unid"><span id="unidPadrao">un</span></li>
+          <a href="#/tab/product-detail" class="produtoLink">
+            <li class="gastoProduto">1200 lts</li>
+          </a>
+        </ul>
+      </li> -->
 
-  </ul>
-
-  
-
+    </ul>
   </ion-content>
   <div class="deletaProdutoWrapper">
       <div class="deletaProduto">
-        <div class="titulo">Deletar Produto</div>
+        <div class="titulo">Deletar Produto?</div>
         <div class="texto">Você deseja deletar  
           <span id="itemDeletado">{{deleteItemName}}</span> da sua lista?
         </div>
@@ -86,7 +83,10 @@
           <div class="botao" id="sim" ng-click='deleteItem(deleteItemId,deleteItemIndex)'>Sim</div>
         </div>
       </div>
-    </div>
+  </div>
+  <div class="deletaProdutoConfirmation">
+    <div class="texto">Item deletado com sucesso :)</div>
+  </div>
   <div class="totalLista">
   	<div class="titulo">Total da Lista:</div>
   	<div class="litrosTotal">

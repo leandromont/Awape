@@ -5,7 +5,6 @@ angular.module('starter.controllers')
 
    function deleteAnimation(){  
 
-   console.log("gogo")     
       // click and hold to delete product + animation
       $('.listaNotChecked .produto').each(function(){
         var timeoutId = 0;
@@ -16,10 +15,8 @@ angular.module('starter.controllers')
         var unidThis = $('.unid', this);
         var gastoThis = $('.gastoProduto', this);
 
-        
-
         itemNome.mousedown(function() {
-            timeoutId = setTimeout(deleteItem, 350);
+            timeoutId = setTimeout(deleteItem, 10);
         }).bind('mouseup mouseleave', function() {
             
             labelThis.removeClass('holding');
@@ -38,8 +35,8 @@ angular.module('starter.controllers')
           qntdThis.addClass('holding');
           unidThis.addClass('holding');
           gastoThis.addClass('holding');
-          itemNome.addClass('holding').delay(1000).queue(function(){
-            // remove classes after 1 second
+          itemNome.addClass('holding').delay(1500).queue(function(){
+            // remove classes after 1.5 seconds
             labelThis.removeClass('holding');
             produtoThis.removeClass('holding');
             itemNome.removeClass('holding');
@@ -202,12 +199,12 @@ $('.paginaLista').click(function(){
             $(".paginaLista .produto").each(function(){
               var checks = $("input:checkbox", this);
               checks.click(function() {
-                if (checks.is(':checked')){ 
-                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').addClass('produtoChecked').show();
+                if (checks.is(':checked')){
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').removeClass('fadeInRight').addClass('produtoChecked animatedFast fadeInLeft').show();
                     $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 } else {
-                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('produtoChecked').show();
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('fadeInLeft produtoChecked').addClass('animatedFast fadeInRight').show();
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
                 }
                 // Esconder listaChecked se não tiver item nela a cada clique
@@ -471,8 +468,15 @@ $scope.deleteItem = function(productId, index){
 
     firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ index).remove();
 
-    $scope.selectedItem.hide();
 
+    $scope.selectedItem.hide();
+    $('.deletaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1000).queue(function(){
+      $('.deletaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
+        $(this).dequeue().delay(350).queue(function(){
+          $('.deletaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});
+          $(this).dequeue();
+        });
+      });
 
     retorno = index;
 
@@ -518,7 +522,7 @@ $scope.setProductDetailId = function(productId){
               $scope.$eval($attrs.onLongPress)
             });
           }
-        }, 2000);
+        }, 1500);
       });
 
       $elm.bind('touchend', function(evt) {

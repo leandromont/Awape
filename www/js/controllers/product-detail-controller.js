@@ -119,8 +119,44 @@ angular.module('starter.controllers')
         } else if (result.length > 0) {
 
           var pegada = result[0].pegada;
+          // arrumar leitura dos números
+          var textoTotal = pegada.toString();
+          var totalLength = textoTotal.length;
+          // milhoes
+          if(totalLength > 6){
+            var totalMilhao = textoTotal.substring(0, totalLength-6);
+            var totalMil = textoTotal.substring(totalMilhao.length, totalLength-5);
+            if (totalMil === "0"){
+              var totalEsquema = totalMilhao;
+            } else {
+              var totalEsquema = totalMilhao + "," + totalMil;
+            }
+            if (totalMilhao > 1){
+              var totalAparecer = totalEsquema+" milhões de lts";
+            } else {
+              var totalAparecer = totalEsquema+" milhão de lts";
+            }
 
-          retorno = pegada;
+          // mil
+          } else if(totalLength > 3){
+            var totalMil = textoTotal.substring(0, totalLength-3);
+            var totalCem = textoTotal.substring(totalMil.length, totalLength-2);
+
+            if (totalCem === "0"){
+              var totalEsquema = totalMil;
+            } else {
+              var totalEsquema = totalMil + "," + totalCem;
+            }
+            var totalAparecer = totalEsquema+" mil litros";
+
+          // cem
+          } else {
+            var totalEsquema = textoTotal;
+            var totalAparecer = totalEsquema+" litros";
+          }
+          //
+
+          retorno = pegada; // <----- inserir totalAparecer aqui
         }
         
         return retorno;

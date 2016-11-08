@@ -10,7 +10,7 @@ body{font-family: "Open Sans" !important;}
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: "Open Sans" !important;}
 input{font-family: "Open Sans";}
 button{font-family: "Open Sans";}
-
+.animatedFast {-webkit-animation-duration: 0.5s; animation-duration: 0.5s; -webkit-animation-fill-mode: both; animation-fill-mode: both;}
 
 
 
@@ -141,7 +141,7 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active, ion-
 
 .saudacao{background: white; width: 98%; height: 101px; margin: 2% auto 6%; border-radius: 50px; border-bottom: 3px solid #d2d2d2;}
 .saudacao .fotoWrapper{width: 98px;height: 98px;float: left;/* background: white; */border-radius: 50px;margin-top: 1px;}
-.saudacao .fotoWrapper .fotoUsuario{background: url(../img/usuario.png) no-repeat;background-size: cover;width: 100%;height: 100%;border-radius: 100px;}
+.saudacao .fotoWrapper .fotoUsuario{opacity:0;background: url(../img/usuario.png) no-repeat;background-size: cover;width: 100%;height: 100%;border-radius: 100px;}
 .saudacao .nome{float: left; font-size: 1.5em; width: 66%; text-align: center; margin-top: 38px;}
 .saudacao .nome span#nomeUsuario{}
 .titulo{font-size: 1.4em; color: #2badca; font-weight: 600; padding: 5px 2% 8px;}
@@ -349,6 +349,8 @@ ul.listaChecked li.produto ul.pecasLista  li.gastoProduto{font-weight: 500; colo
   background: -webkit-linear-gradient(-45deg, rgba(93,214,216,1) 0%, rgba(92,232,209,1) 51%, rgba(85,233,189,1) 100%);
   -webkit-box-shadow: 2px 2px 3px 0px rgba(93,202,220,1);
 }
+.deletaProdutoConfirmation{display:none; opacity:0;width: 80%; margin: 30vh 10%; z-index: 9999999999; position: fixed; text-align: center; padding: 20px 0; background: white; border-radius: 15px; border: 2px solid #52e7b6; font-style: italic;}
+.deletaProdutoConfirmation .texto{}
 
 
 /* --------    Histórico    -------- */
@@ -418,7 +420,7 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 .slidebox1 .pageWrapper .tituloCategoria{color:#5ceacf; border-bottom: 2px solid #5ceacf;}
 .slidebox1 .pageWrapper .perguntaWrapper .pergunta span.produto{color: #5ceacf;}
 .minhaPegada .slidebox1 .ion-navicon.next:before{background: #5ceacf;}
-
+.goToHome{display: none;}
 
 
 /* --------    Produto    -------- */
@@ -513,6 +515,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage li.ops .textoOps{}
 .buscaPage li.ops .textoOps span{display: block; font-size: 2em; margin-bottom: 10px; font-weight: 100;}
 
+.adicionaProdutoConfirmation{display:none; opacity:0;width: 80%; margin: 30vh 10%; z-index: 9999999999; position: fixed; text-align: center; padding: 20px 0; background: white; border-radius: 15px; border: 2px solid #52e7b6; font-style: italic;}
 
 
 /* --------    Settings    -------- */

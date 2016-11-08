@@ -325,8 +325,9 @@ $scope.changeWaterFootprint = function(key,value){
     // mostrar o total da pegada hídrica e redirecionar para a home
     $scope.submitAll = function() {
 
-      $('.resultadoTotalWrapper').show(150).delay(2500).queue(function() {
-           $state.go('tab.home');
+      $('.resultadoTotalWrapper').show(150).delay(500).queue(function() {
+           $('.goToHome').show().addClass('animated zoomIn');
+           $(this).dequeue();
         });
       
     };
@@ -336,8 +337,9 @@ $scope.changeWaterFootprint = function(key,value){
 // ******************************************** LEAVE VIEW ********************************************************************
   $scope.$on('$ionicView.leave', function(){
 
-    // voltar a altura para 0 para fazer a animação toda vez que entrar
+    // apagar o total e tal
     $('.resultadoTotalWrapper').hide();
+    $('.goToHome').hide()
     //
 
   });

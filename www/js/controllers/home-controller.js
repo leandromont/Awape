@@ -189,8 +189,10 @@ $scope.$on('$ionicView.enter', function(){
   var userPicName = userPic.split('/').pop().replace(patt,'');
 
   if (userPicName === "usuario.png"){
-    $(userDiv).css({'border-radius': '100px 0 0 100px', 'background-size': 'contain'});
+    $(userDiv).css({'border-radius': '100px 0 0 100px', 'background-size': 'contain', 'opacity': '1'});
     $('.saudacao .fotoWrapper').css('margin-top', '9px');
+  } else {
+    $(userDiv).css({'opacity': '1'});
   }
   //
 
