@@ -103,6 +103,16 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
             });
         },
 
+        image: function(userId){
+           return firebase.database().ref('/users/' + userId).once('value')
+           .then(function(snapshot) {
+              return snapshot.val().userimage;
+            })
+           .catch(function(error) {
+              $log.log(error);
+            });
+        },
+
         list:function(userId){
            return firebase.database().ref('/users/' + userId + '/minhaLista').once('value')
            .then(function(snapshot) {

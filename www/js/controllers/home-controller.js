@@ -18,6 +18,19 @@ angular.module('starter.controllers')
           });
         });
 
+        // buscar imagem do usuário
+        Auth.get.user.image($scope.userId).then(function(imagemUsuario) {
+          $scope.$apply(function() {
+
+            if(imagemUsuario){
+              $scope.getImage = imagemUsuario;
+            } else {
+              $scope.getImage = '../img/usuario.png';
+            }
+
+          });
+        });
+
         // buscar minha Lista
         Auth.get.user.list($scope.userId).then(function(data) {
           $scope.$apply(function() {
