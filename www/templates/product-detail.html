@@ -9,7 +9,7 @@
 		<div class="infosProduto">
 			<div class="nomeProduto">{{getProductName(productId)}}</div>
 			<div class="gastoProduto">
-				<span id="litrosGastos">{{getProductFootprint(productId)}}</span>
+				<span id="litrosGastos">{{getProductFootprint(productId)}} lts por {{getProductUnity(productId)}}</span>
 			</div>
 			<div class="tiposAgua">
 				<div class="aguaIndividual" id="aguaAzul">
@@ -41,49 +41,22 @@
 		</div>
 
 		<div class="recomendacao">
-			<div class="titulo">Minhas Recomendações</div>
-			<div class="produtoRecom">
-				<div class="fotoWrapper">
-					<div class="fotoProduto"></div>
-				</div>
-				<div class="infosProduto">
-					<div class="nomeProduto">Hamburguer</div>
-					<div class="gastoProduto">
-						<span id="litrosGastos">2000</span>
-						 litros/ano
+			<div class="titulo">Recomendações</div>
+			<div>Temos algumas recomendações para ajudá-lo a diminuir sua pegada hídrica: </div>
+			<div class="produtoRecom" ng-repeat="item in productRecomentations">
+				<div ng-click="changeProductBox(item)">	
+					<div class="fotoWrapper">
+						<div class="fotoProduto" style="background-image:url({{getProductImage(item)}});"></div>
 					</div>
-					<div class="diferencaProds">menos 
-						<span id="litrosDiferenca">800</span> litros
-					</div>
-				</div>
-			</div>
-			<div class="produtoRecom">
-				<div class="fotoWrapper">
-					<div class="fotoProduto"></div>
-				</div>
-				<div class="infosProduto">
-					<div class="nomeProduto">Frango</div>
-					<div class="gastoProduto">
-						<span id="litrosGastos">1500</span>
-						 litros/ano
-					</div>
-					<div class="diferencaProds">menos 
-						<span id="litrosDiferenca">800</span> litros
-					</div>
-				</div>
-			</div>
-			<div class="produtoRecom">
-				<div class="fotoWrapper">
-					<div class="fotoProduto"></div>
-				</div>
-				<div class="infosProduto">
-					<div class="nomeProduto">Frango</div>
-					<div class="gastoProduto">
-						<span id="litrosGastos">1500</span>
-						 litros/ano
-					</div>
-					<div class="diferencaProds">menos 
-						<span id="litrosDiferenca">800</span> litros
+					<div class="infosProduto">
+						<div class="nomeProduto">{{getProductName(item)}}</div>
+						<div class="gastoProduto">
+							<span id="litrosGastos">{{getProductFootprint(item)}}</span>
+							 litros
+						</div>
+						<div class="diferencaProds">menos 
+							<span id="litrosDiferenca">{{calcDifference(getProductFootprint(productId),getProductFootprint(item))}}</span> litros
+						</div>
 					</div>
 				</div>
 			</div>
@@ -93,16 +66,20 @@
 			<div class="trocaProduto">
 				<div class="titulo">Trocar Produto?</div>
 				<div class="texto">Você deseja trocar 
-					<span id="itemTrocado">café</span>
+					<span id="itemTrocado">{{getProductName(productId)}}</span>
 					 por 
-					<span id="itemRecomendado">chá</span>?
+					<span id="itemRecomendado">{{getNewName()}}</span>?
 				</div>
 				<div class="botoes">
 					<div class="botao" id="nao">Não</div>
-					<div class="botao" id="sim">Sim</div>
+					<div class="botao" id="sim" ng-click="changeProduct()">Sim</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="adicionaProdutoConfirmation">
+	    	<div class="texto">Item trocado com sucesso :)</div>
+	    </div>
 	</div>
   </ion-content>
   <div class="infoAgua" id="infoAzul">

@@ -46,11 +46,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "" ],
       "id" : 1,
-      "imagem" : "../img/produtos/cafe.jpg",
+      "imagem" : "img/produtos/cafe.jpg",
       "parceiro" : false,
       "pegada" : 1056,
       "produto" : "Café (500g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ 2,4],
       "unidade" : "un"
     }, {
       "aguaAzul" : 10,
@@ -61,11 +61,11 @@
       "descricao" : "",
       "embalagem" : [ "papelão", "" ],
       "id" : 2,
-      "imagem" : "../img/produtos/cha.jpg",
+      "imagem" : "img/produtos/cha.jpg",
       "parceiro" : false,
       "pegada" : 115,
       "produto" : "Chá (Caixa/10 un)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -76,11 +76,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 3,
-      "imagem" : "../img/produtos/leite-em-po.jpg",
+      "imagem" : "img/produtos/leite-em-po.jpg",
       "parceiro" : false,
       "pegada" : 4745,
       "produto" : "Leite em pó (400g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [4],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -91,11 +91,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 4,
-      "imagem" : "../img/produtos/leite-longa-vida.jpg",
+      "imagem" : "img/produtos/leite-longa-vida.jpg",
       "parceiro" : false,
       "pegada" : 1020,
       "produto" : "Leite longa vida",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "lt"
     }, {
       "aguaAzul" : 0,
@@ -106,11 +106,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 5,
-      "imagem" : "../img/produtos/refrigerante.jpg",
+      "imagem" : "img/produtos/refrigerante.jpg",
       "parceiro" : false,
       "pegada" : 500,
       "produto" : "Refrigerante (2ltrs)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 6,
@@ -121,11 +121,11 @@
       "descricao" : "",
       "embalagem" : [ "aluminio", "0.2" ],
       "id" : 6,
-      "imagem" : "../img/produtos/cerveja-de-lata.jpg",
+      "imagem" : "img/produtos/cerveja-de-lata.jpg",
       "parceiro" : false,
       "pegada" : 298,
       "produto" : "Cerveja Lata (350ml)",
-      "tags" : [ "bebidas", "bebida", "gelada", "alcool" ],
+      "tags" : [],
       "unidade" : "un"
     }, {
       "aguaAzul" : 6,
@@ -136,11 +136,11 @@
       "descricao" : "",
       "embalagem" : [ "vidro", "10.5" ],
       "id" : 7,
-      "imagem" : "../img/produtos/cerveja-de-garrafa.jpg",
+      "imagem" : "img/produtos/cerveja-de-garrafa.jpg",
       "parceiro" : false,
       "pegada" : 308.5,
       "produto" : "Cerveja 600ml",
-      "tags" : [ "bebidas", "bebida", "gelada", "alcool" ],
+      "tags" : [ 6 ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 16,
@@ -151,11 +151,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 8,
-      "imagem" : "../img/produtos/vinho.jpg",
+      "imagem" : "img/produtos/vinho.jpg",
       "parceiro" : false,
       "pegada" : 870,
       "produto" : "Vinho (750ml)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ 6 , 7],
       "unidade" : "un"
     }, {
       "aguaAzul" : 4,
@@ -166,11 +166,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "5" ],
       "id" : 9,
-      "imagem" : "../img/produtos/carne-de-vaca.jpg",
+      "imagem" : "img/produtos/carne-de-vaca.jpg",
       "parceiro" : false,
       "pegada" : 15415,
       "produto" : "Carne de Vaca",
-      "tags" : [ "", "", "" ],
+      "tags" : [11,12,10],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 8,
@@ -181,11 +181,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "5" ],
       "id" : 10,
-      "imagem" : "../img/produtos/carne-suina.jpg",
+      "imagem" : "img/produtos/carne-suina.jpg",
       "parceiro" : false,
       "pegada" : 6000,
       "produto" : "Carne Suína",
-      "tags" : [ "", "", "" ],
+      "tags" : [11, 12],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 7,
@@ -196,11 +196,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "5" ],
       "id" : 11,
-      "imagem" : "../img/produtos/carne-de-frango.jpg",
+      "imagem" : "img/produtos/carne-de-frango.jpg",
       "parceiro" : false,
       "pegada" : 4325,
       "produto" : "Frango",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 6,
@@ -211,11 +211,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "5" ],
       "id" : 12,
-      "imagem" : "../img/produtos/carne-de-cabra.jpg",
+      "imagem" : "img/produtos/carne-de-cabra.jpg",
       "parceiro" : false,
       "pegada" : 5521,
       "produto" : "Carne de Cabra",
-      "tags" : [ "", "", "" ],
+      "tags" : [ 11],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 1,
@@ -226,11 +226,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "" ],
       "id" : 13,
-      "imagem" : "../img/produtos/chocolate-barra.jpg",
+      "imagem" : "img/produtos/chocolate-barra.jpg",
       "parceiro" : false,
       "pegada" : 17196,
       "produto" : "Chocolate em barra (170g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -241,11 +241,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "" ],
       "id" : 14,
-      "imagem" : "../img/produtos/farinha-de-trigo.jpg",
+      "imagem" : "img/produtos/farinha-de-trigo.jpg",
       "parceiro" : false,
       "pegada" : 200,
       "produto" : "Farinha de Trigo (1kg)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -256,11 +256,11 @@
       "descricao" : "",
       "embalagem" : [ "plástico", "" ],
       "id" : 15,
-      "imagem" : "../img/produtos/mussarela.jpg",
+      "imagem" : "img/produtos/mussarela.jpg",
       "parceiro" : false,
       "pegada" : 3178,
       "produto" : "Queijo Mussarela",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 12,
@@ -271,11 +271,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 16,
-      "imagem" : "../img/produtos/banana.jpg",
+      "imagem" : "img/produtos/banana.jpg",
       "parceiro" : false,
       "pegada" : 790,
       "produto" : "Banana",
-      "tags" : [ "", "", "" ],
+      "tags" : [20],
       "unidade" : "un"
     }, {
       "aguaAzul" : 20,
@@ -286,11 +286,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 17,
-      "imagem" : "../img/produtos/laranja.jpg",
+      "imagem" : "img/produtos/laranja.jpg",
       "parceiro" : false,
       "pegada" : 560,
       "produto" : "Laranja",
-      "tags" : [ "", "", "" ],
+      "tags" : [21],
       "unidade" : "un"
     }, {
       "aguaAzul" : 16,
@@ -301,11 +301,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 18,
-      "imagem" : "../img/produtos/maca.jpg",
+      "imagem" : "img/produtos/maca.jpg",
       "parceiro" : false,
       "pegada" : 822,
       "produto" : "Maçã",
-      "tags" : [ "", "", "" ],
+      "tags" : [24],
       "unidade" : "un"
     }, {
       "aguaAzul" : 30,
@@ -316,11 +316,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 19,
-      "imagem" : "../img/produtos/tomate.jpg",
+      "imagem" : "img/produtos/tomate.jpg",
       "parceiro" : false,
       "pegada" : 214,
       "produto" : "Tomate",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -331,11 +331,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 20,
-      "imagem" : "../img/produtos/abacate.jpg",
+      "imagem" : "img/produtos/abacate.jpg",
       "parceiro" : false,
       "pegada" : 161,
       "produto" : "Abacate",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -346,11 +346,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 21,
-      "imagem" : "../img/produtos/abacaxi.jpg",
+      "imagem" : "img/produtos/abacaxi.jpg",
       "parceiro" : false,
       "pegada" : 130,
       "produto" : "Abacaxi",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -361,11 +361,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 22,
-      "imagem" : "../img/produtos/limao.jpg",
+      "imagem" : "img/produtos/limao.jpg",
       "parceiro" : false,
       "pegada" : 18,
       "produto" : "Limão",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 20,
@@ -376,11 +376,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 23,
-      "imagem" : "../img/produtos/.jpg",
+      "imagem" : "img/produtos/.jpg",
       "parceiro" : false,
       "pegada" : 1800,
       "produto" : "Manga",
-      "tags" : [ "", "", "" ],
+      "tags" : [21,24],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -391,11 +391,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 24,
-      "imagem" : "../img/produtos/melancia.jpg",
+      "imagem" : "img/produtos/melancia.jpg",
       "parceiro" : false,
       "pegada" : 235,
       "produto" : "Melancia",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 21,
@@ -406,11 +406,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 25,
-      "imagem" : "../img/produtos/pessego.jpg",
+      "imagem" : "img/produtos/pessego.jpg",
       "parceiro" : false,
       "pegada" : 910,
       "produto" : "Pêssego",
-      "tags" : [ "", "", "" ],
+      "tags" : [24],
       "unidade" : "un"
     }, {
       "aguaAzul" : 20,
@@ -421,11 +421,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 26,
-      "imagem" : "../img/produtos/arroz.jpg",
+      "imagem" : "img/produtos/arroz.jpg",
       "parceiro" : false,
       "pegada" : 2500,
       "produto" : "Arroz (5,5kg)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -436,11 +436,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 27,
-      "imagem" : "../img/produtos/feijao.jpg",
+      "imagem" : "img/produtos/feijao.jpg",
       "parceiro" : false,
       "pegada" : 340,
       "produto" : "Feijão (1kg)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 5,
@@ -451,11 +451,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 28,
-      "imagem" : "../img/produtos/amendoim.jpg",
+      "imagem" : "img/produtos/amendoim.jpg",
       "parceiro" : false,
       "pegada" : 2782,
       "produto" : "Amendoin (500g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -466,11 +466,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 29,
-      "imagem" : "../img/produtos/iogurte.jpg",
+      "imagem" : "img/produtos/iogurte.jpg",
       "parceiro" : false,
       "pegada" : 234,
       "produto" : "Iogurte (Garrafa de 850ml)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -481,11 +481,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 30,
-      "imagem" : "../img/produtos/margarina.jpg",
+      "imagem" : "img/produtos/margarina.jpg",
       "parceiro" : false,
       "pegada" : 5553,
       "produto" : "Margarina (500g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -496,11 +496,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 31,
-      "imagem" : "../img/produtos/manteiga.jpg",
+      "imagem" : "img/produtos/manteiga.jpg",
       "parceiro" : false,
       "pegada" : 5553,
       "produto" : "Manteiga",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 14,
@@ -511,11 +511,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 32,
-      "imagem" : "../img/produtos/pizza.jpg",
+      "imagem" : "img/produtos/pizza.jpg",
       "parceiro" : false,
       "pegada" : 1260,
       "produto" : "Pizza",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 19,
@@ -526,11 +526,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 33,
-      "imagem" : "../img/produtos/macarrao.jpg",
+      "imagem" : "img/produtos/macarrao.jpg",
       "parceiro" : false,
       "pegada" : 1849,
       "produto" : "Macarrão (500g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -541,11 +541,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 34,
-      "imagem" : "../img/produtos/extrato-de-tomate.jpg",
+      "imagem" : "img/produtos/extrato-de-tomate.jpg",
       "parceiro" : false,
       "pegada" : 214,
       "produto" : "Extrato de Tomate (350g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -556,11 +556,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 35,
-      "imagem" : "../img/produtos/ketchup.jpg",
+      "imagem" : "img/produtos/ketchup.jpg",
       "parceiro" : false,
       "pegada" : 530,
       "produto" : "Ketchup",
-      "tags" : [ "", "", "" ],
+      "tags" : [34],
       "unidade" : "un"
     }, {
       "aguaAzul" : 7,
@@ -571,11 +571,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 36,
-      "imagem" : "../img/produtos/ovo.jpg",
+      "imagem" : "img/produtos/ovo.jpg",
       "parceiro" : false,
       "pegada" : 3200,
       "produto" : "Ovo",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -586,11 +586,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 37,
-      "imagem" : "../img/produtos/pao-frances.jpg",
+      "imagem" : "img/produtos/pao-frances.jpg",
       "parceiro" : false,
       "pegada" : 1608,
       "produto" : "Pão Francês",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -601,11 +601,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 38,
-      "imagem" : "../img/produtos/acucar.jpg",
+      "imagem" : "img/produtos/acucar.jpg",
       "parceiro" : false,
       "pegada" : 920,
       "produto" : "Açúcar (1kg)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 12,
@@ -616,11 +616,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 39,
-      "imagem" : "../img/produtos/alface.jpg",
+      "imagem" : "img/produtos/alface.jpg",
       "parceiro" : false,
       "pegada" : 237,
       "produto" : "Pé de Alface",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 11,
@@ -631,11 +631,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 40,
-      "imagem" : "../img/produtos/batata.jpg",
+      "imagem" : "img/produtos/batata.jpg",
       "parceiro" : false,
       "pegada" : 287,
       "produto" : "Batata",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -646,11 +646,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 41,
-      "imagem" : "../img/produtos/cebola.jpg",
+      "imagem" : "img/produtos/cebola.jpg",
       "parceiro" : false,
       "pegada" : 402,
       "produto" : "Cebola",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 12,
@@ -661,11 +661,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 42,
-      "imagem" : "../img/produtos/repolho.jpg",
+      "imagem" : "img/produtos/repolho.jpg",
       "parceiro" : false,
       "pegada" : 237,
       "produto" : "Repolho",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -676,11 +676,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 43,
-      "imagem" : "../img/produtos/abobora.jpg",
+      "imagem" : "img/produtos/abobora.jpg",
       "parceiro" : false,
       "pegada" : 353,
       "produto" : "Abóbora",
-      "tags" : [ "", "", "" ],
+      "tags" : [40],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -691,11 +691,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 44,
-      "imagem" : "../img/produtos/azeitona.jpg",
+      "imagem" : "img/produtos/azeitona.jpg",
       "parceiro" : false,
       "pegada" : 3015,
       "produto" : "Azeitona (500g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -706,11 +706,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 45,
-      "imagem" : "../img/produtos/batata-frita.jpg",
+      "imagem" : "img/produtos/batata-frita.jpg",
       "parceiro" : false,
       "pegada" : 1040,
       "produto" : "Batata Frita (400g)",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     }, {
       "aguaAzul" : 7,
@@ -721,11 +721,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 46,
-      "imagem" : "../img/produtos/milho.jpg",
+      "imagem" : "img/produtos/milho.jpg",
       "parceiro" : false,
       "pegada" : 1222,
       "produto" : "Milho",
-      "tags" : [ "", "", "" ],
+      "tags" : [40,47],
       "unidade" : "un"
     }, {
       "aguaAzul" : 12,
@@ -736,11 +736,11 @@
       "descricao" : "",
       "embalagem" : [ "", "" ],
       "id" : 47,
-      "imagem" : "../img/produtos/pepino.jpg",
+      "imagem" : "img/produtos/pepino.jpg",
       "parceiro" : false,
       "pegada" : 353,
       "produto" : "Pepino",
-      "tags" : [ "", "", "" ],
+      "tags" : [ ],
       "unidade" : "un"
     } ],
     "r5N6mneY1khE4f9ubUTdWLf9fuL2" : {

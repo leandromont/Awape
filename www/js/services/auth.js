@@ -144,8 +144,13 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
         });
       },
 
+
       productId: function(){
         return Auth.productDetail.id;
+      },
+
+      productIndex: function(){
+        return Auth.productDetail.index;
       },
 
       data: function(){
@@ -170,8 +175,10 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
     },
 
     set:{
-      productId: function(id){
+      productId: function(id,index){
         Auth.productDetail.id = id;
+        Auth.productDetail.index = index;
+
         $state.go('tab.product-detail');
       } 
     }

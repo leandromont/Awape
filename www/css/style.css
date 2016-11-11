@@ -434,7 +434,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .produtoPage .fotoWrapper{width: 100%;height: 180px;}
 .produtoPage .fotoWrapper .fotoProduto{/* background: url(../img/produtos/pizza.jpg) no-repeat; */background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
 .produtoPage .infosProduto{}
-.produtoPage .infosProduto .nomeProduto{text-align: center; font-size: 2em; margin: 10px 0;}
+.produtoPage .infosProduto .nomeProduto{text-align: center;font-size: 2em;margin: 25px 0 10px;}
 .produtoPage .infosProduto .gastoProduto{ text-align: center; font-style: italic; font-size: 1.1em;}
 .produtoPage .infosProduto .gastoProduto span#litrosGastos{}
 .produtoPage .infosProduto .tiposAgua{margin: 25px auto; display: none;}
@@ -447,9 +447,9 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .produtoPage .infosProduto .tiposAgua .aguaIndividual#aguaCinza .bgIcon{background-color:#d4d4d4;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual .valor{text-align: center;}
 .produtoPage .infosProduto .tiposAgua .aguaIndividual .valor span#porcentagemAgua{font-size: 1.5em;}
-.produtoPage .recomendacao{width: 90%;margin: 25px auto;padding: 5px 0 0 0;border-top: 1px solid #d2d2d2;}
-.produtoPage .recomendacao .titulo{text-align: center;padding: 5px 0 0;margin-bottom: 10vh;}
-.produtoPage .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 3vh;}
+.produtoPage .recomendacao{width: 90%;margin: 25px auto;padding: 5px 0 0 0;border-top: 1px solid #d2d2d2;display: none;}
+.produtoPage .recomendacao .titulo{text-align: center;padding: 5px 0 0;margin-bottom: 10px;margin-top: 25px;}
+.produtoPage .recomendacao .produtoRecom{width: 49%;display: inline-block;margin-top: 30px;/* margin-bottom: 5px; */}
 .produtoPage .recomendacao .produtoRecom .fotoWrapper{height: 100px; width: 100px; margin: 0 auto;}
 .produtoPage .recomendacao .produtoRecom .fotoWrapper .fotoProduto{border-radius: 30px; opacity: 0.9;}
 .produtoPage .recomendacao .produtoRecom .infosProduto{text-align: center;}

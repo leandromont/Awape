@@ -112,7 +112,7 @@ angular.module('starter.controllers')
         });
       });
 
-      $('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1000).queue(function(){
+      $('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
         $('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
         $(this).dequeue().delay(350).queue(function(){
           $('.adicionaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});

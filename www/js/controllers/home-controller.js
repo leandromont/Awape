@@ -28,7 +28,7 @@ angular.module('starter.controllers')
             if(imagemUsuario){
               $scope.getImage = imagemUsuario;
             } else {
-              $scope.getImage = '../img/usuario.png';
+              $scope.getImage = 'img/usuario.png';
               $('.saudacao .fotoWrapper').addClass('usuarioPadrao');
               $('.saudacao .fotoWrapper .fotoUsuario').addClass('usuarioPadrao');
             }

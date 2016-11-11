@@ -488,9 +488,9 @@ $scope.deleteItem = function(productId, index){
 
 // ======================= get Product ID for detail =======================================
 
-$scope.setProductDetailId = function(productId){
+$scope.setProductDetailId = function(productId, index){
 
-  Auth.set.productId(productId)
+  Auth.set.productId(productId , index)
 
 }
 

@@ -12,6 +12,14 @@ angular.module('starter.controllers')
 
     // pegar ID do produto 
     $scope.productId = Auth.get.productId();
+
+    // pegar Index do produto 
+    $scope.productIndex = Auth.get.productIndex();
+
+    console.log($scope.productIndex);
+
+    // get recomendations
+    $scope.getProductRecomentations($scope.productId);
     
     // scroll to top on enter
     $ionicScrollDelegate.scrollTop();
@@ -83,6 +91,155 @@ angular.module('starter.controllers')
         
         return retorno;
     }
+
+     // ============== Pegar recomendações do produto =========================
+
+    $scope.getProductRecomentations = function(productId){
+
+        var result = $.grep($scope.listItens || [], function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+
+          retorno = '';
+
+        } else if (result.length > 0) {
+
+         
+
+          var recomendations = result[0].tags;
+
+          $scope.productRecomentations = recomendations;
+
+          $('.recomendacao').show();
+
+          retorno = recomendations;
+        }
+        
+        return retorno;
+    }
+
+     // ============== calcular as diferenças entre recomendação e produto =========================
+
+    $scope.calcDifference = function(pegadaProduto,pegadaRecomendacao){
+
+        return pegadaProduto - pegadaRecomendacao;
+    }
+
+    // ============== abrir box de troca =========================
+
+    $scope.changeProductBox = function(itemClicado){
+
+        $('.trocaProdutoWrapper').stop(false,true).show(50);
+
+        $scope.itemClicado = itemClicado;
+
+    }
+
+    // ============== Pegar nome do produto =========================
+
+    $scope.getNewName = function(){
+
+        var result = $.grep($scope.listItens || [], function(e){ 
+          return e.id == $scope.itemClicado  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = '';
+        } else if (result.length > 0) {
+
+          var nome = result[0].produto;
+
+          retorno = nome;
+        }
+        
+        return retorno;
+    }
+
+    // ============== trocar item =========================
+
+    $scope.changeProduct = function(){
+
+        var newItemIndex;
+
+
+        var S4 = function() {
+           return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+        };
+        
+        newItemIndex = (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+
+      
+        firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
+        .update({
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : $scope.itemClicado,
+          "quantidade" : 1,
+          "index": newItemIndex
+        }).then(function(){
+            firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ $scope.productIndex).remove().then(function(){
+
+                $scope.productId = $scope.itemClicado;
+
+                $scope.productIndex = "id"+newItemIndex;
+
+                $state.reload();
+  
+
+            });
+        });
+
+        // buscar minha Lista
+        Auth.get.user.list($scope.userId).then(function(data) {
+          $scope.$apply(function() {
+            $scope.userList = data;
+            lista = $scope.userList
+          });
+        });
+
+       
+
+    }
+
+     // ============== Pegar unidade do produto =========================
+
+    $scope.getProductUnity = function(productId){
+
+        var result = $.grep($scope.listItens || [], function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = '';
+        } else if (result.length > 0) {
+
+          var unidade = result[0].unidade;
+
+          switch (unidade){
+          case "un":
+            retorno = "unidade";
+            break
+          case "kg":
+            retorno = "kilo";
+            break
+          case "lt":
+            retorno = "litro";
+            break
+            
+          default:
+            retorno = unidade;
+        };
+
+          
+        }
+        
+        return retorno;
+    }
   
     // ============== Pegar nome do produto =========================
 
@@ -118,7 +275,13 @@ angular.module('starter.controllers')
           retorno = '';
         } else if (result.length > 0) {
 
+          var conteudo = result[0].conteudo;
           var pegada = result[0].pegada;
+          var totalGasto = conteudo * pegada;
+          var totalZerado = totalGasto.toFixed(0);
+          var totalNumeroZerado = parseInt(totalZerado);
+
+          var pegada = totalNumeroZerado;
           // arrumar leitura dos números
           var textoTotal = pegada.toString();
           var totalLength = textoTotal.length;
@@ -251,6 +414,7 @@ angular.module('starter.controllers')
 
         // aparecer e desaparecer a troca de produto
         $('.produtoRecom').click(function(){
+          console.log("click");
           $('.trocaProdutoWrapper').stop(false,true).show(50);
         });
          $('.trocaProduto .botao').click(function(){
@@ -269,6 +433,8 @@ angular.module('starter.controllers')
     //
     $('.infoAgua').hide();
     $('.tiposAgua').hide();
+
+    $('.recomendacao').hide();
 
     //tirar a imagem do produto ao sair da página
     $('.produtoPage .fotoWrapper .fotoProduto').css("background-image", "");

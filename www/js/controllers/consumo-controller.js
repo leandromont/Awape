@@ -214,6 +214,8 @@ angular.module('starter.controllers')
         //  apagar resultado se vir vazio ou for 0
         var elementVal = element.val();
 
+
+
         if (elementVal == ""){
           element.next('.resultadoItem').hide();
         }
