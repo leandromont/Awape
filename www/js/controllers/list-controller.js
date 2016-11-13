@@ -67,8 +67,6 @@ angular.module('starter.controllers')
       // buscar ID do usuário
       $scope.userId = Auth.get.user.id();
 
-      console.log($scope.userId)
-
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
@@ -289,7 +287,7 @@ $scope.productName = function(productId){
 
     var retorno='';
     if (result.length == 0) {
-      retorno = 'nao achei';
+      retorno = '';
     } else if (result.length > 0) {
       retorno = result[0].produto;
     }
@@ -310,7 +308,7 @@ $scope.waterFootprint = function(productId,quantidade,checked){
     
 
     if (result.length == 0) {
-      retorno = 'nao achei';
+      retorno = '';
     } else if (result.length > 0) {
 
       var conteudo = result[0].conteudo;
@@ -394,7 +392,7 @@ $scope.getUnit = function(productId){
 
     var retorno='';
     if (result.length == 0) {
-      retorno = 'nao achei';
+      retorno = '';
     } else if (result.length > 0) {
 
       var unidade = result[0].unidade;

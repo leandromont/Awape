@@ -1,10 +1,10 @@
-<ion-view hide-nav-bar="true" hide-back-button="true" view-title="product-detail">
+<ion-view hide-nav-bar="true" hide-back-button="true" view-title="product-detail" cache-view="false">
 <a href="#/tab/list" class="voltarLink"></a>
   <ion-content class="produtoPage">  	
 
 	<div class="produtoWrapper">
 		<div class="fotoWrapper">
-			<div class="fotoProduto" style="background-image:url({{getProductImage(productId)}});"></div>
+			<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(productId) +')'}" style="background-image:url({{getProductImage(productId)}});"></div>
 		</div>
 		<div class="infosProduto">
 			<div class="nomeProduto">{{getProductName(productId)}}</div>
@@ -40,13 +40,13 @@
 			</div>
 		</div>
 
-		<div class="recomendacao">
+		<div class="recomendacao" ng-if="productRecomentations">
 			<div class="titulo">Recomendações</div>
 			<div>Temos algumas recomendações para ajudá-lo a diminuir sua pegada hídrica: </div>
 			<div class="produtoRecom" ng-repeat="item in productRecomentations">
 				<div ng-click="changeProductBox(item)">	
 					<div class="fotoWrapper">
-						<div class="fotoProduto" style="background-image:url({{getProductImage(item)}});"></div>
+						<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(item) +')'}" style="background-image:url({{getProductImage(item)}});"></div>
 					</div>
 					<div class="infosProduto">
 						<div class="nomeProduto">{{getProductName(item)}}</div>

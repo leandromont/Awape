@@ -10,39 +10,35 @@ angular.module('starter.controllers')
 
   $scope.$on('$ionicView.enter', function(){
 
+
+
     // pegar ID do produto 
     $scope.productId = Auth.get.productId();
 
     // pegar Index do produto 
     $scope.productIndex = Auth.get.productIndex();
 
-    console.log($scope.productIndex);
 
-    // get recomendations
-    $scope.getProductRecomentations($scope.productId);
+      // buscar itens da lista
+      Auth.get.listItens().then(function(resposta) {
+        $scope.$apply(function() {
+          $scope.listItens = resposta;
+
+          
+
+            // get recomendations
+            $scope.getProductRecomentations($scope.productId);
+        });
+
+      });
+      
+
+
+    
     
     // scroll to top on enter
     $ionicScrollDelegate.scrollTop();
 
-    // esperar para carregar os dados
-    setTimeout(function(){ 
-      var totalAgua;
-      // animação das gotas de água
-      $('.aguaIndividual').each(function(){
-        var qntdAgua = $('#porcentagemAgua', this).text();
-        if (qntdAgua > 0){
-          var iconHeight = $('.icon', this).outerHeight();
-          var bgHeight = iconHeight * (qntdAgua/100);
-          $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
-        }
-        totalAgua =+ qntdAgua;
-      });
-
-      if(totalAgua > 0){
-        $('.tiposAgua').show();
-      }
-      
-    }, 300);
 
   });
 
@@ -57,13 +53,6 @@ angular.module('starter.controllers')
               // buscar ID do usuário
               $scope.userId = Auth.get.user.id();
 
-              // buscar itens da lista
-              Auth.get.listItens().then(function(resposta) {
-                $scope.$apply(function() {
-                  $scope.listItens = resposta;
-                });
-
-              });
 
             } else {
               // No user is signed in.
@@ -107,13 +96,9 @@ angular.module('starter.controllers')
 
         } else if (result.length > 0) {
 
-         
-
           var recomendations = result[0].tags;
 
           $scope.productRecomentations = recomendations;
-
-          $('.recomendacao').show();
 
           retorno = recomendations;
         }
@@ -183,12 +168,7 @@ angular.module('starter.controllers')
         }).then(function(){
             firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ $scope.productIndex).remove().then(function(){
 
-                $scope.productId = $scope.itemClicado;
-
-                $scope.productIndex = "id"+newItemIndex;
-
-                $state.reload();
-  
+                Auth.set.productId($scope.itemClicado , "id"+newItemIndex);
 
             });
         });
@@ -386,6 +366,20 @@ angular.module('starter.controllers')
         }
 
 
+        // pegar águas
+       var totalAgua;
+        // animação das gotas de água
+        $('.aguaIndividual').each(function(){
+          var qntdAgua = $('#porcentagemAgua', this).text();
+          if (qntdAgua > 0){
+            $('.tiposAgua').show();
+            var iconHeight = $('.icon', this).outerHeight();
+            var bgHeight = iconHeight * (qntdAgua/100);
+            $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
+          }
+          totalAgua =+ qntdAgua;
+        });
+
         
         return retorno;
     }
@@ -414,7 +408,6 @@ angular.module('starter.controllers')
 
         // aparecer e desaparecer a troca de produto
         $('.produtoRecom').click(function(){
-          console.log("click");
           $('.trocaProdutoWrapper').stop(false,true).show(50);
         });
          $('.trocaProduto .botao').click(function(){
@@ -430,16 +423,7 @@ angular.module('starter.controllers')
 
     // voltar a altura para 0 para fazer a animação toda vez que entrar
     $('.bgIcon').animate({'height': 0},10);
-    //
-    $('.infoAgua').hide();
-    $('.tiposAgua').hide();
 
-    $('.recomendacao').hide();
-
-    //tirar a imagem do produto ao sair da página
-    $('.produtoPage .fotoWrapper .fotoProduto').css("background-image", "");
-    //
-    
   });
 
   
