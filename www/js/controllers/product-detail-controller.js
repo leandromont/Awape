@@ -290,16 +290,16 @@ angular.module('starter.controllers')
             } else {
               var totalEsquema = totalMil + "," + totalCem;
             }
-            var totalAparecer = totalEsquema+" mil litros";
+            var totalAparecer = totalEsquema+" mil lts";
 
           // cem
           } else {
             var totalEsquema = textoTotal;
-            var totalAparecer = totalEsquema+" litros";
+            var totalAparecer = totalEsquema+" lts";
           }
           //
 
-          retorno = pegada; // <----- inserir totalAparecer aqui
+          retorno = totalAparecer ; // <----- inserir totalAparecer aqui
         }
         
         return retorno;

@@ -101,7 +101,7 @@ angular.module('starter.controllers')
       "tutorial": true
     });
 
-      document.location.href = '/#/tab/home';
+      $state.go('tab.home');
       
     };
 

@@ -429,9 +429,11 @@ ul.historyContainer li.historyWrapper .bolinhaHistory{width: 13px;height: 13px;p
 /* --------    Produto    -------- */
 
 a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: url('../img/sprite_layout.png') no-repeat -55px -504px;width: 50px;height: 50px;z-index: 9;bottom: 12%;left: 43%;}
-.produtoPage{}
+.produtoPage{
+    /* margin-bottom: 60px; */
+}
 .produtoPage a.voltarLink .voltarLista{width: 100%;background: #e4e4e4;padding: 7px 3%;text-align: center;}
-.produtoPage .produtoWrapper{width: 95%;margin: 20px auto;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
+.produtoPage .produtoWrapper{width: 95%;margin: 20px auto;margin-bottom: 80px;border-radius: 12px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;background: white;padding: 0 0 10px 0;}
 .produtoPage .fotoWrapper{width: 100%;height: 180px;}
 .produtoPage .fotoWrapper .fotoProduto{/* background: url(../img/produtos/pizza.jpg) no-repeat; */background-size: cover;width: 100%;height: 100%;background-position: center center;border-radius: 10px 10px 0 0;opacity: 0.6;}
 .produtoPage .infosProduto{}
@@ -482,7 +484,9 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 
 /* --------    Busca    -------- */
 
-.buscaPage{}
+.buscaPage{
+    /* padding-bottom: 60px; */
+}
 .buscaPage form.buscaForm{width: 92%;display: block;margin: 10px 4% 20px;background: white;border: 1px solid #cccccc;padding: 17px 25px;border-radius: 50px;}
 .buscaPage form input.buscaField{width: 80%;}
 .buscaPage form .iconsWrapper{top: -0.9%;right: 3%;}
@@ -494,7 +498,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .buscaPage ul.listaBusca [type="checkbox"]:not(:checked):focus + label:before {border:0;}
 
 .buscaPage ul.listaNotChecked{border-radius: 10px; border-bottom: 2px solid #d2d2d2;}
-.buscaPage ul.listaBusca{width: 95%;margin: 10px auto 0;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px;padding: 0 10px;}
+.buscaPage ul.listaBusca{width: 95%;margin: 10px auto 80px;background: white;border-right: 1px solid #d2d2d2;border-radius: 10px;padding: 0 10px;}
 
 .buscaPage ul.listaBusca li.produtoBusca{font-size: 1em;padding: 16px 0;background: rgba(255, 255, 255, 0.7);border-bottom: 1px solid #efefef;}
 .buscaPage ul.listaBusca li.produtoBusca:last-child{border-bottom:0;}
