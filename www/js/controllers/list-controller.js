@@ -273,9 +273,49 @@ $('.paginaLista').click(function(){
 
   $scope.scanBarcode = function() {
     $cordovaBarcodeScanner.scan().then(function(imageData) {
-      alert(imageData.text);
-      console.log("Barcode Format -> " + imageData.format);
-      console.log("Cancelled -> " + imageData.cancelled);
+
+      var result = $.grep($scope.listItens || [], function(e){ 
+        return e.id == 9; //<---- mudar para imageData.text para pegar o código de barras e usá-lo como ID;
+      });
+
+      var retorno='';
+      if (result.length == 0) {
+
+        retorno = '';
+
+      } else if (result.length > 0) {
+
+          var newItemIndex = moment().valueOf();
+        
+          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
+          .update({
+            "checked" : false,
+            "data" : "01/01/01",
+            "idProduto" : 9, // <---- mudar para imageData.text para pegar o código de barras e usá-lo como ID;
+            "quantidade" : 1,
+            "index": imageData.text // <----- mudar para newItemIndex para criar ID novo;
+          });
+
+          // buscar minha Lista
+          Auth.get.user.list($scope.userId).then(function(data) {
+            $scope.$apply(function() {
+              $scope.userList = data;
+              lista = $scope.userList
+            });
+          });
+
+          $('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
+            $('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
+            $(this).dequeue().delay(350).queue(function(){
+              $('.adicionaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});
+              $state.reload();
+              $(this).dequeue();
+            });
+          });
+
+      }
+
+
     }, function(error) {
       alert("An error happened -> " + error);
     });
