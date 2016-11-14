@@ -203,9 +203,12 @@ $('.paginaLista').click(function(){
               var checks = $("input:checkbox", this);
               checks.click(function() {
                 if (checks.is(':checked')){
-                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').removeClass('fadeInRight').addClass('produtoChecked animatedFast fadeInLeft').show();
+                    $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaChecked').removeClass('fadeInRight').addClass('produtoChecked animatedFast fadeInLeft').show()
                     $('.paginaLista .listaChecked .qntdInput').attr('disabled', 'disabled');
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
+                    setTimeout(function(){ 
+                      $('.produto').removeClass('fadeInLeft');
+                    }, 300);
                 } else {
                     $(this).closest('.produto').detach().hide().prependTo('.paginaLista .listaNotChecked').removeClass('fadeInLeft produtoChecked').addClass('animatedFast fadeInRight').show();
                     $('.paginaLista .listaNotChecked .qntdInput').removeAttr('disabled');
