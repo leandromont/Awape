@@ -71,7 +71,12 @@ angular.module('starter.controllers')
       Auth.get.user.list($scope.userId).then(function(data) {
         $scope.$apply(function() {
 
-            $scope.userList = data;
+
+          var array = $.map(data, function(value, index) {
+            return [value];
+        });
+
+            $scope.userList = array.reverse();
 
         });
       });
@@ -260,6 +265,8 @@ $('.paginaLista').click(function(){
        
         deleteAnimation();
 
+        $('.loader-app').hide();
+
       });
 
 // ******************************************** CÓDIGO DE BARRAS ********************************************************************
@@ -398,6 +405,41 @@ $scope.getUnit = function(productId){
       var unidade = result[0].unidade;
 
       retorno = unidade;
+    }
+    
+    return retorno;
+}
+
+// ======================= get Unit =======================================
+
+$scope.recomendationsLength = function(productId){
+
+    var result = $.grep($scope.listItens || [], function(e){ 
+      return e.id == productId  ; 
+    });
+
+    var retorno='';
+    if (result.length == 0) {
+      retorno = '';
+    } else if (result.length > 0) {
+
+      var recomendations;
+
+      if(result[0].tags){
+          recomendations = result[0].tags.length;
+      }
+
+      if (recomendations > 0){
+
+        retorno = {"recomendation": true};
+
+      } else {
+
+        retorno = {"recomendation": false};
+
+      }
+
+      
     }
     
     return retorno;

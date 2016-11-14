@@ -62,26 +62,40 @@
 			</div>
 		</div>
 
-		<div class="trocaProdutoWrapper">
-			<div class="trocaProduto">
-				<div class="titulo">Trocar Produto?</div>
-				<div class="texto">Você deseja trocar 
-					<span id="itemTrocado">{{getProductName(productId)}}</span>
-					 por 
-					<span id="itemRecomendado">{{getNewName()}}</span>?
-				</div>
-				<div class="botoes">
-					<div class="botao" id="nao">Não</div>
-					<div class="botao" id="sim" ng-click="changeProduct()">Sim</div>
-				</div>
-			</div>
-		</div>
+		
 
 		<div class="adicionaProdutoConfirmation">
 	    	<div class="texto">Item trocado com sucesso :)</div>
 	    </div>
 	</div>
   </ion-content>
+  <div class="trocaProdutoWrapper">
+		<div class="trocaProduto">
+			<div class="titulo">Trocar Produto?</div>
+			<div class="texto">Você deseja trocar 
+				<span id="itemTrocado">{{getProductName(productId)}}</span>
+				 por 
+				<span id="itemRecomendado">{{getNewName()}}</span>?
+			</div>
+			<div class="botoes">
+				<div class="botao" id="nao">Não</div>
+				<div class="botao" id="sim" ng-click="changeProduct()">Sim</div>
+			</div>
+		</div>
+  </div>
+
+  <div class="adicionaProdutoConfirmation">
+    <div class="texto">Item trocado com sucesso :)</div>
+  </div>
+
+  <div class="loader-app">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <div class="loading-text">Carregando</div>
+    </div>
+  </div>
+
   <div class="infoAgua" id="infoAzul">
 	<div class="titulo">Água Azul</div>
 	<div class="texto">Esse número indica o quanto dessa água refere-se ao uso consuntivo das águas superficiais e subterrâneas.</div>

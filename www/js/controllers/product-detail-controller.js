@@ -148,14 +148,7 @@ angular.module('starter.controllers')
 
     $scope.changeProduct = function(){
 
-        var newItemIndex;
-
-
-        var S4 = function() {
-           return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-        };
-        
-        newItemIndex = (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+        var newItemIndex = moment().valueOf();
 
       
         firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
@@ -168,7 +161,14 @@ angular.module('starter.controllers')
         }).then(function(){
             firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ $scope.productIndex).remove().then(function(){
 
-                Auth.set.productId($scope.itemClicado , "id"+newItemIndex);
+                $('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
+                  $('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
+                  $(this).dequeue().delay(350).queue(function(){
+                    $('.adicionaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});
+                    $state.go('tab.list');
+                    $(this).dequeue();
+                  });
+                });
 
             });
         });
@@ -380,6 +380,7 @@ angular.module('starter.controllers')
           totalAgua =+ qntdAgua;
         });
 
+        $('.loader-app').hide();
         
         return retorno;
     }

@@ -3,15 +3,17 @@ angular.module('starter.controllers')
 // ==================== Controller List edit mode ===========================
 .controller('ListEditModeCtrl', function ($scope, $state,$cordovaOauth, $localStorage, $log, $location,$http,$ionicPopup, $firebaseObject, $firebaseAuth, Auth, FURL, Utils, $ionicSlideBoxDelegate,$ionicScrollDelegate) {
 
-  // $scope.scanBarcode = function() {
-  //   $cordovaBarcodeScanner.scan().then(function(imageData) {
-  //     alert(imageData.text);
-  //     console.log("Barcode Format -> " + imageData.format);
-  //     console.log("Cancelled -> " + imageData.cancelled);
-  //   }, function(error) {
-  //     alert("An error happened -> " + error);
-  //   });
-  // };
+  firebase.auth().onAuthStateChanged(function(user) {
+
+      if (user) {
+
+       // buscar ID do usuário
+        $scope.userId = Auth.get.user.id();
+
+      }
+
+  });
+ 
 
   $scope.slideChanged = function(index) {
       $scope.slideIndex = index;
@@ -93,7 +95,14 @@ angular.module('starter.controllers')
     };
 
     $scope.goToHome = function() {
+
+     firebase.database().ref('/users/' + $scope.userId)
+    .update({
+      "tutorial": true
+    });
+
       document.location.href = '/#/tab/home';
+      
     };
 
   $scope.$on('$ionicView.loaded', function(){

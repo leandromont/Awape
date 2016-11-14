@@ -11,6 +11,9 @@ angular.module('starter.controllers')
         // buscar ID do usuário
         $scope.userId = Auth.get.user.id();
 
+
+
+
         // buscar nome do usuário
         Auth.get.user.name($scope.userId).then(function(nomeUsuario) {
           $scope.$apply(function() {
@@ -21,8 +24,6 @@ angular.module('starter.controllers')
         // buscar imagem do usuário
         Auth.get.user.image($scope.userId).then(function(imagemUsuario) {
           $scope.$apply(function() {
-
-
 
 
             if(imagemUsuario){
@@ -125,6 +126,9 @@ angular.module('starter.controllers')
                 $('#totalPHP .diferenca').css({'color': '#f35858', 'opacity': '1'});
               }
               //
+
+              $('.loader-app').hide();
+
               return pegadaNumeroZerado;
 
 

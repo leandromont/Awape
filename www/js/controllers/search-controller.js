@@ -85,15 +85,7 @@ angular.module('starter.controllers')
 
     $scope.addItem = function(id,quantidade,search){
 
-      var newItemIndex;
-
-
-      var S4 = function() {
-         return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-      };
-      
-      newItemIndex = (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-
+      var newItemIndex = moment().valueOf();
     
       firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
       .update({

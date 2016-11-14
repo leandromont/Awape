@@ -103,6 +103,16 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
             });
         },
 
+        tutorial: function(userId){
+           return firebase.database().ref('/users/' + userId).once('value')
+           .then(function(snapshot) {
+              return snapshot.val().tutorial;
+            })
+           .catch(function(error) {
+              $log.log(error);
+            });
+        },
+
         image: function(userId){
            return firebase.database().ref('/users/' + userId).once('value')
            .then(function(snapshot) {
@@ -169,6 +179,11 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
           name:function(userId, name){
             firebase.database().ref('users/' + userId).set({
               username: name
+            });
+          },
+          tutorial:function(userId){
+            firebase.database().ref('users/' + userId).set({
+              tutorial: true
             });
           }
         }      

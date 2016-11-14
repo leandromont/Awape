@@ -308,6 +308,7 @@ ul.lista li.produto ul.pecasLista li.qntdWrapper span{/* padding: 1px 9px 3px 10
 ul.lista li.produto ul.pecasLista li.unid{opacity:1;/* margin: 0 0 0 -2px; */color: #39acbf; transition: 1s all;}
 ul.lista li.produto ul.pecasLista li.unid.holding{opacity:0;}
 ul.lista li.produto ul.pecasLista li.gastoProduto{opacity:1; transition: 1s all;}
+ul.lista li.produto ul.pecasLista li.gastoProduto.recomendation{color: #33a069;font-weight: bold;}
 ul.lista li.produto ul.pecasLista li.gastoProduto.holding{opacity:0;}
 ul.lista li.produto ul.pecasLista li.gastoProduto::after{/* content: ">"; *//* color:#5dcadc; *//* font-size: 1.2em; *//* margin: 0 0 0 3px; */}
 .ui-state-highlight{height: 3em !important; background:rgba(245, 245, 245, 0.72) !important; width: 107%; margin: 0 0 0 -3.5%; border-radius: 10px; border: 2px solid #e8e8e8 !important; border-color:#e8e8e8; }
@@ -464,15 +465,15 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .infoAgua#infoCinza .titulo{color:#727272;}
 .infoAgua .texto{}
 
-.produtoPage .trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: -21px;left: 0;bottom: 0;z-index: 999999999999999999999999999999999;}
-.produtoPage .trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 0;bottom: 0;height: 165px;margin: auto;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .titulo{padding: 0 0 10px;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .texto{font-size: 1.2em;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .texto span{font-weight: 600;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .botoes{width: 100%;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
-.produtoPage .trocaProdutoWrapper .trocaProduto .botoes .botao#sim{
+.trocaProdutoWrapper{display:none;width:100%;height: 2000%;background: rgba(0, 0, 0, 0.21);position:fixed !important;top: -21px;left: 0;bottom: 0;z-index: 999999999999999999999999999999999;}
+.trocaProdutoWrapper .trocaProduto{display: block;width:90%;left:5%;position: fixed !important;top: 0;bottom: 0;height: 165px;margin: auto;padding: 16px 25px;background: white;border-radius: 10px;border-bottom: 2px solid #d2d2d2;border-right: 1px solid #d2d2d2;z-index: 9999;text-align: center;}
+.trocaProdutoWrapper .trocaProduto .titulo{padding: 0 0 10px;}
+.trocaProdutoWrapper .trocaProduto .texto{font-size: 1.2em;}
+.trocaProdutoWrapper .trocaProduto .texto span{font-weight: 600;}
+.trocaProdutoWrapper .trocaProduto .botoes{width: 100%;}
+.trocaProdutoWrapper .trocaProduto .botoes .botao{width: 41%;padding: 7px 0;border-radius: 15px;display: inline-block;margin: 20px 4% 0;color: white;font-size: 1.2em;}
+.trocaProdutoWrapper .trocaProduto .botoes .botao#nao{/* background: #717171; */border: 1px solid #717171;color: grey;}
+.trocaProdutoWrapper .trocaProduto .botoes .botao#sim{
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(93,214,216,1)), color-stop(51%, rgba(92,232,209,1)), color-stop(100%, rgba(85,233,189,1)));
   background: -webkit-linear-gradient(-45deg, rgba(93,214,216,1) 0%, rgba(92,232,209,1) 51%, rgba(85,233,189,1) 100%);
   -webkit-box-shadow: 2px 2px 3px 0px rgba(93,202,220,1);
@@ -529,7 +530,7 @@ a.voltarLink{color: #585858;text-decoration: none;position: fixed;background: ur
 .toggle-small input:checked + .track .handle{background: #38c891;}
 .logOutPage .item{border:0;margin: 10% auto;background: transparent;border-bottom: 1px solid #53aebc;width: 80%;}
 .logOutPage .item div span{color: #545454;}
-.logOutPage .tutorial{text-align: center;width: 54%;margin: 0 24% 4vh;padding: 10px 0;color: #48d9a1;border-bottom: 2px solid #48d9a1;}
+.logOutPage .tutorial{text-align: center;width: 54%;margin: 0 24% 4vh;padding: 10px 0;color: #48d9a1;height: auto !important;border-bottom: 2px solid #48d9a1;}
 .logOutPage .tutorial:after{content:'>';margin-left: 10px;font-weight: 800;}
 .logOutPage a{text-decoration: none;}
 
@@ -555,3 +556,72 @@ label.item.valid-lr {border-left: 2px solid green;border-right: 2px solid green;
 .form-errors {margin: 5px 0}
 .form-error {padding: 2px 0 2px 16px; color: red;}
  #profile-image {display: block;border-radius: 100px;border: 1px solid #fff;width: 128px;height: 128px;margin: 30px auto 0;box-shadow: 0px 0px 4px rgba(0,0,0,0.7);}
+
+ .spinner {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  position: relative;
+  margin: auto;
+  height: 100%;
+  display: table-cell;
+}
+
+.double-bounce1, .double-bounce2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: -moz-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(94,202,219,1)), color-stop(50%, rgba(92,231,210,1)), color-stop(100%, rgba(64,206,142,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /* margin-top: 0; */
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.loader-app .spinner{background: -webkit-linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);background: -o-linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);background: linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);display: table;width: 100%;height: 100vh;margin-top: -20px;}
+
+.loading-text{
+      position: absolute;
+      top: 138px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 300px;
+      height: 30px;
+      text-align: center;
+      /* margin-top: 80px; */
+      font-size: 20px;
+      display: none;
+}

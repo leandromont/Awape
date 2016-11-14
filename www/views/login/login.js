@@ -15,10 +15,18 @@ angular.module('starter').controller('loginController', function ($scope, $state
     Auth.login(user)
       .then(function(authData) {
       
-      $log.log("id del usuario:" + authData);
       Utils.hide();
-      $state.go('tab.home');
-      $log.log("Starter page","Home");
+
+      // buscar saber se o usuário já viu o tutorial
+      Auth.get.user.tutorial(authData.uid).then(function(tutorialUsuario) {
+        
+        if(!tutorialUsuario){
+          $state.go('tab.list-edit-mode');
+        } else {
+          $state.go('tab.home');
+        }
+      });
+      
 
       }, function(err) {
         Utils.hide();
@@ -31,7 +39,7 @@ angular.module('starter').controller('loginController', function ($scope, $state
     $log.log("Enviado");
     Utils.show();
     auth.$signInAnonymously().then(function(firebaseUser) {
-     console.log("Signed in as:", firebaseUser.uid);
+
      Utils.hide();
      $location.path("/tabs/tab-home.html");
     }).catch(function(error) {
