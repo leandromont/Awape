@@ -305,6 +305,33 @@ angular.module('starter.controllers')
         return retorno;
     }
 
+     // ============== Pegar valor de pegada hídrica =========================
+
+    $scope.getProductFootprintNumber = function(productId){
+
+        var result = $.grep($scope.listItens || [], function(e){ 
+          return e.id == productId  ; 
+        });
+
+        var retorno='';
+        if (result.length == 0) {
+          retorno = '';
+        } else if (result.length > 0) {
+
+          var conteudo = result[0].conteudo;
+          var pegada = result[0].pegada;
+          var totalGasto = conteudo * pegada;
+          var totalZerado = totalGasto.toFixed(0);
+          var totalNumeroZerado = parseInt(totalZerado);
+
+          var pegada = totalNumeroZerado;        
+
+          retorno = pegada ;
+        }
+        
+        return retorno;
+    }
+
     // ============== Pegar Água azul =========================
 
     $scope.getBlueWater = function(productId){
