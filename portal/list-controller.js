@@ -1,6 +1,6 @@
 // ==================== Controller List ==================================
 angular.module('starter.controllers')
-.controller('ListCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, FURL, Utils) {
+.controller('ListCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
   
 
    function deleteAnimation(){  
@@ -102,21 +102,8 @@ $j('.icon#addItem').click(function(){
   // somente se não tiver a classe flipped no iconsHolder
   if($j('.iconsHolder').hasClass('flipped')){
   }else{
-    $j('.iconSmallHolder').show();
-    $j('.linkSmall').toggleClass('Active');
-    // animacoes ao clicar - ativo
-    if($j('.linkSmall').hasClass('Active')){
-      $j('.paginaLista .scroll').animate({opacity: 0.25},200);
-      $j('.totalLista').animate({opacity: 0.25},200);
-      $j('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').addClass('rotated');
-    //
-    }else{
-      // animacoes ao clicar - desativo
-      $j('.paginaLista .scroll').animate({opacity: 1},200);
-      $j('.totalLista').animate({opacity: 1},200);
-      $j('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
-      //
-    }
+    $j('.paginaLista').hide();
+    $j('.buscaPage').show();
   }
   //
 });
@@ -453,8 +440,6 @@ $scope.changeAmount = function(amount, productId, index){
 
 $scope.itemOnLongPress = function(nome,id,index) {
 
-  alert('long press');
-
   $scope.deleteItemName = nome;
   $scope.deleteItemId = id;
   $scope.deleteItemIndex = index;
@@ -492,9 +477,9 @@ $scope.deleteItem = function(productId, index){
 
 $scope.setProductDetailId = function(productId, index){
 
-  console.log('set product id');
+  Auth.set.productId(productId , index);
 
-  Auth.set.productId(productId , index)
+
 
 }
 
@@ -515,9 +500,8 @@ $scope.setProductDetailId = function(productId, index){
   return {
     restrict: 'A',
     link: function($scope, $elm, $attrs) {
-      $elm.bind('click', function(evt) {
+      $elm.bind('mousedown', function(evt) {
 
-        console.log("press");
         // Locally scoped variable that will keep track of the long press
         $scope.longPress = true;
 
@@ -527,7 +511,6 @@ $scope.setProductDetailId = function(productId, index){
             // If the touchend event hasn't fired,
             // apply the function given in on the element's on-long-press attribute
             $scope.$apply(function() {
-              console.log("long")
               $scope.$eval($attrs.onLongPress)
             });
           }

@@ -70,12 +70,5 @@ angular.module('starter', ['ngStorage', 'starter.controllers', 'starter.services
 
 // ========== firebase app
 
-}).constant('FURL', {
-    apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
-    authDomain: "awape-2d96e.firebaseapp.com",
-    databaseURL: "https://awape-2d96e.firebaseio.com",
-    storageBucket: "awape-2d96e.appspot.com",
-    messagingSenderId: "923520319461"
-  })
-;
+});
 

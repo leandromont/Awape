@@ -375,6 +375,8 @@
 			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 			do_action( 'template_notices' ); ?>
 			<?php
+
+				echo "<script src='https://www.gstatic.com/firebasejs/3.4.0/firebase.js'></script>";
                           
 			   echo "<script>";
 
@@ -390,7 +392,7 @@
 				   echo "var userImage =  '$userImg';";
 
 
-				   // echo "var pass = document.getElementById('signup_password').value;";
+				   
 
 				   echo ' var config = {
 						    apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
@@ -405,6 +407,7 @@
 						    firebase.database().ref("users/" + user.uid ).set({
 						      username: userName,
 						      userimage:userImage,
+						      tutorial:false,
 						      minhaPegada : {
 						        "banho" : "",
 						        "cafe" : "",
@@ -437,7 +440,7 @@
 						          "idProduto" : 4,
 						          "index" : 1,
 						          "quantidade" : 12
-						        }
+						        },
 						        "id2":{
 						          "checked" : false,
 						          "data" : "",
@@ -564,8 +567,7 @@
 						          "index" : 19,
 						          "quantidade" : 1
 						        }
-						      },
-						      tutorial:false;
+						      }						      
 
 						    });    
 						});';

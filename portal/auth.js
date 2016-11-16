@@ -1,8 +1,8 @@
-angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, $state, Utils, $location, $q) {
+angular.module('starter').factory('Auth', function( $log, $firebaseAuth, $firebaseArray, $firebaseObject, $translate, $state, Utils, $location, $q) {
 
 	//var ref = new Firebase(FURL);
 
-  firebase.initializeApp(FURL);
+  // firebase.initializeApp(FURL);
 	//var auth = $firebaseAuth(ref);
   var ref = firebase.database().ref();
   //var auth = $firebaseObject(ref);
@@ -133,16 +133,6 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
             });
         },
 
-        history:function(userId){
-            return firebase.database().ref('/users/' + userId + '/meuHistorico').once('value')
-           .then(function(snapshot) {
-              return snapshot.val();
-            })
-           .catch(function(error) {
-              $log.log(error);
-            });
-        },
-
         waterFootprint:function(userId){
           return firebase.database().ref('/users/' + userId + '/minhaPegada').once('value')
           .then(function(snapshot) {
@@ -203,8 +193,11 @@ angular.module('starter').factory('Auth', function( FURL, $log, $firebaseAuth, $
       productId: function(id,index){
         Auth.productDetail.id = id;
         Auth.productDetail.index = index;
+        
+        $scope.$apply();
 
-        $state.go('tab.product-detail');
+        $j('.paginaLista').hide();
+        $j('.produtoPage').show();
       } 
     }
 

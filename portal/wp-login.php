@@ -160,6 +160,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	 */
 	do_action( 'login_header' );
 	?>
+        <div class="bg-animate"></div>
 	<div id="login">
 		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
 	<?php
@@ -968,63 +969,73 @@ default:
 
 
 <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+
 <script type="text/javascript">
 
-var object = document.getElementById("wp-submit");
-var logEmail = document.getElementById("user_login");
-var logPassword = document.getElementById("user_pass");
+	
 
-function wp_attempt_focus(){
-setTimeout( function(){ try{
-<?php if ( $user_login ) { ?>
-d = document.getElementById('user_pass');
-d.value = '';
-<?php } else { ?>
-d = document.getElementById('user_login');
-<?php if ( 'invalid_username' == $errors->get_error_code() ) { ?>
-if( d.value != '' )
-d.value = '';
-<?php
-}
-}?>
-d.focus();
-d.select();
-} catch(e){}
-}, 200);
-}
-
-<?php if ( !$error ) { ?>
-wp_attempt_focus();
-<?php } ?>
-if(typeof wpOnload=='function')wpOnload();
-<?php if ( $interim_login ) { ?>
-(function(){
-try {
-	var i, links = document.getElementsByTagName('a');
-	for ( i in links ) {
-		if ( links[i].href )
-			links[i].target = '_blank';
+	function wp_attempt_focus(){
+	setTimeout( function(){ try{
+	<?php if ( $user_login ) { ?>
+	d = document.getElementById('user_pass');
+	d.value = '';
+	<?php } else { ?>
+	d = document.getElementById('user_login');
+	<?php if ( 'invalid_username' == $errors->get_error_code() ) { ?>
+	if( d.value != '' )
+	d.value = '';
+	<?php
 	}
-} catch(e){}
-}());
-<?php } ?>
+	}?>
+	d.focus();
+	d.select();
+	} catch(e){}
+	}, 200);
+	}
 
+	<?php if ( !$error ) { ?>
+	wp_attempt_focus();
+	<?php } ?>
+	if(typeof wpOnload=='function')wpOnload();
+	<?php if ( $interim_login ) { ?>
+	(function(){
+	try {
+		var i, links = document.getElementsByTagName('a');
+		for ( i in links ) {
+			if ( links[i].href )
+				links[i].target = '_blank';
+		}
+	} catch(e){}
+	}());
+	<?php } ?>
 
+	
 
-object.addEventListener("click", function(){
-	firebase.auth().signInWithEmailAndPassword(logEmail.value, logPassword.value).catch(function(error) {
-	  // Handle Errors here.
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  // ...
+	
+
+	var object = document.getElementById("wp-submit");
+
+	object.addEventListener("click", function(){
+
+		
+		var logEmail = document.getElementById("user_login");
+		var logPassword = document.getElementById("user_pass");
+
+		firebase.auth().signInWithEmailAndPassword(logEmail.value, logPassword.value).catch(function(error) {
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  // ...
+		});
+
+		var user = firebase.auth().currentUser;
+
 	});
-
-	var user = firebase.auth().currentUser;
-
-});
 </script>
 
 <?php
 login_footer();
 break;
 } // end action switch
+
+
