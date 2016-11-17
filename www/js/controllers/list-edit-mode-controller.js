@@ -69,14 +69,12 @@ angular.module('starter.controllers')
       if(index === 5){
         $('.tutorial .slidebox5 .phoneImage').addClass('animated fadeInUp').delay(1500).queue(function() {
           $('.tutorial .slidebox5 .tutorialWrapper').addClass('animated zoomIn').css("opacity", "1").delay(1000).queue(function() {
-            $('.tutorial .slidebox5 .textoHolder  p:nth-child(1)').addClass('animated fadeIn').show(150).delay(1500).queue(function() {
-              $('.tutorial .slidebox5 .textoHolder  p:nth-child(2)').addClass('animated fadeIn').show(150).delay(1500).queue(function(){
-                $('.tutorial .slidebox5 .textoHolder  p:nth-child(3)').addClass('animated fadeIn').show(150).delay(850).queue(function(){
+            $('.tutorial .slidebox5 .textoHolder p:nth-child(1)').addClass('animated fadeIn').show(150).delay(1500).queue(function() {
+              $('.tutorial .slidebox5 .textoHolder p:nth-child(2)').addClass('animated fadeIn').show(150).delay(850).queue(function(){
                   // aparecer o pager no último slidebox
-                  $ionicSlideBoxDelegate.enableSlide(true);
-                  $('.tutorial .slider-pager').show(800).delay(850).queue(function(){
-                    $('.tutorial .slidebox5 button.botao').addClass('animated zoomIn').css("opacity", "1");
-                  });
+                $ionicSlideBoxDelegate.enableSlide(true);
+                $('.tutorial .slider-pager').show(800).delay(850).queue(function(){
+                  $('.tutorial .slidebox5 button.botao').addClass('animated zoomIn').css("opacity", "1");
                 });
               });
             });

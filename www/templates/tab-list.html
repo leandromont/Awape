@@ -36,7 +36,7 @@
             <li class="nomeProduto" ng-bind="productName(item.idProduto)" on-long-press="itemOnLongPress(productName(item.idProduto),item.idProduto,item.index)"></li>
             <li class="qntdWrapper">
               <form action="">
-                <input type="text" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,item.index)">
+                <input type="tel" class="qntdInput" name="qntdInput[]" maxlength="4" ng-model="item.quantidade" ng-change="changeAmount(item.quantidade,item.idProduto,item.index)">
               </form>
             </li>
             <li class="unid"><span id="unidPadrao" ng-bind="getUnit(item.idProduto)"></span></li>
@@ -61,7 +61,7 @@
             <li class="nomeProduto">Não está no Banco</li>
             <li class="qntdWrapper">
               <form action="">
-                <input type="text" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="6">
+                <input type="tel" class="qntdInput" name="qntdInput[]" id="" placeholder="" maxlength="4" value="6">
               </form>
               <span class="qntd"></span>
             </li>

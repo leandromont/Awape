@@ -119,18 +119,6 @@ angular.module('starter.controllers')
 
   // ******************************************** LAST REPEAT ************************************************************************
     $scope.$on('onRepeatLastSearch', function(){
-  
-      // evitar inserir texto no input
-      $('.check').keypress(function(event) {
-        if(event.which < 44 || event.which > 59) {
-            event.preventDefault();
-        } // prevent if not number/coma
-
-        if(event.which == 44
-        && $(this).val().indexOf(',') != -1) {
-            event.preventDefault();
-        } // prevent if already coma
-      });
 
       // id dos checkbox
         var produtosLista = $('.buscaPage .produtoBusca').length;
@@ -141,9 +129,48 @@ angular.module('starter.controllers')
           $("label", this).attr('for', 'checkBusca'+i);
           i++;
         });
+        //
 
-    })
+        // evitar inserir texto no input
+        $('.listaBusca .qntdInput').keypress(function(event) {
+          console.log('porra mermão');
+          if(event.which < 44
+          || event.which > 59) {
+              event.preventDefault();
+          } // prevent if not number/coma
 
+          if(event.which == 44
+          && $(this).val().indexOf(',') != -1) {
+              event.preventDefault();
+          } // prevent if already coma
+
+          // animacao para avermelhar se ficar acima de 4 itens
+          if ($(this).val().length === 4){
+            console.log('porra mermão');
+            $(this).addClass('fullLength').delay(750).queue(function(){
+              $(this).removeClass('fullLength');
+              $(this).dequeue();
+            })
+          }
+          //
+        });
+        //
+
+        // esconder menu no focus
+        $('.buscaPage form input.buscaField').focusin(function() {
+            $('.tabs-striped .tabs').hide();
+          });
+          $('.buscaPage form input.buscaField').focusout(function() {
+            $('.tabs-striped .tabs').show();
+          });
+        //
+
+      })
+      
+
+
+
+      
 
 })
 

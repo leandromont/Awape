@@ -242,7 +242,8 @@ $('.paginaLista').click(function(){
 
           // animacao para avermelhar se ficar acima de 4 itens
           $('.qntdInput').keypress(function(){
-            if ($('.qntdInput').val().length === 4){
+            if ($(this).val().length === 4){
+              console.log('porra mermão');
               $(this).addClass('fullLength').delay(750).queue(function(){
                 $(this).removeClass('fullLength');
                 $(this).dequeue();

@@ -20,11 +20,11 @@
 	          <li class="qntdWrapper">
 	            <form action="">
 	              <!-- como capturar a informação desde campo e como passar como parâmetro para calcular a pegada hídrica? -->
-	              <input type="text" class="qntdInput" name="qntdInput[]" ng-model="addAmount" ng-init="addAmount = 1" maxlength="4">
+	              <input type="tel" class="qntdInput" name="qntdInput[]" ng-model="addAmount" ng-init="addAmount = 1" maxlength="4">
 	            </form>
 	          </li>
 	          <li class="unid"><span id="unidPadrao">{{item.unidade}}</span></li>
-	        <a href="#/tab/product-detail" class="produtoLink" ng-click="">
+	        <a href="" class="produtoLink" ng-click="">
 	          <li class="gastoProduto"><span ng-bind="waterFootprint(item.id,addAmount)"></span> lts</li>
 	        </a>
 	      </ul>

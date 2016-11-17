@@ -9,6 +9,15 @@ angular.module('starter').controller('loginController', function ($scope, $state
   $('.loginPage .scroll').slideDown(400).show(800);
   //
 
+  // bloco branco no input:focus
+  $('form .list input').focusin(function() {
+    $('.loginPage .scroll').height('110%');
+  });
+  $('form .list input').focusout(function() {
+    $('.loginPage .scroll').height('90%');
+  });
+  //
+
   $scope.signIn = function (user) {
     if(angular.isDefined(user)){
     Utils.show();

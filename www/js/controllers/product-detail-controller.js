@@ -110,7 +110,48 @@ angular.module('starter.controllers')
 
     $scope.calcDifference = function(pegadaProduto,pegadaRecomendacao){
 
-        return pegadaProduto - pegadaRecomendacao;
+      function zeraNumero (numeroBruto){
+      // arrumar leitura dos números
+      var pegadaZerado = numeroBruto.toFixed(0);
+      var pegadaLength = pegadaZerado.length;
+      // milhoes
+      if(pegadaLength > 6){
+        var pegadaMilhao = pegadaZerado.substring(0, pegadaLength-6);
+        var pegadaMil = pegadaZerado.substring(pegadaMilhao.length, pegadaLength-5);
+        if (pegadaMil === "0"){
+          pegadaEsquema = pegadaMilhao;
+        } else {
+          pegadaEsquema = pegadaMilhao + "," + pegadaMil;
+        }
+        if (pegadaMilhao > 1){
+          pegadaEsquema = pegadaEsquema+' milhões de';
+        } else {
+          pegadaEsquema = pegadaEsquema+' milhão de';
+        }
+
+      // mil
+      } else if(pegadaLength > 3){
+        var pegadaMil = pegadaZerado.substring(0, pegadaLength-3);
+        var pegadaCem = pegadaZerado.substring(pegadaMil.length, pegadaLength-2);
+
+        if (pegadaCem === "0"){
+          pegadaEsquema = pegadaMil;
+        } else {
+          pegadaEsquema = pegadaMil + "," + pegadaCem;
+        }
+        pegadaEsquema = pegadaEsquema+' mil';
+
+      // cem
+      } else {
+        pegadaEsquema = pegadaZerado;
+      }
+      //
+    };
+
+      var diff = pegadaProduto - pegadaRecomendacao;
+      zeraNumero(diff);
+
+        return pegadaEsquema;
     }
 
     // ============== abrir box de troca =========================
@@ -400,7 +441,7 @@ angular.module('starter.controllers')
           var qntdAgua = $('#porcentagemAgua', this).text();
           if (qntdAgua > 0){
             $('.tiposAgua').show();
-            var iconHeight = $('.icon', this).outerHeight();
+            var iconHeight = $('.icon', this).outerHeight() - 6;
             var bgHeight = iconHeight * (qntdAgua/100);
             $('.bgIcon', this).animate({'height': bgHeight},700,'swing');
           }

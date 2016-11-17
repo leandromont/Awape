@@ -65,6 +65,46 @@ angular.module('starter.controllers')
     // conta e exibição do total a partir dos inputs do usuário
     var multips = [4400, 7000, 7000, 44000, 8000, 11000, 525, 84000, 404000, 52000, 540, 13000, 34000, 20000, 41000, 9000];
 
+    var pegadaEsquema = 0;
+
+    function zeraNumero (numeroBruto){
+      // arrumar leitura dos números
+      var pegadaZerado = numeroBruto.toFixed(0);
+      var pegadaLength = pegadaZerado.length;
+      // milhoes
+      if(pegadaLength > 6){
+        var pegadaMilhao = pegadaZerado.substring(0, pegadaLength-6);
+        var pegadaMil = pegadaZerado.substring(pegadaMilhao.length, pegadaLength-5);
+        if (pegadaMil === "0"){
+          pegadaEsquema = pegadaMilhao;
+        } else {
+          pegadaEsquema = pegadaMilhao + "," + pegadaMil;
+        }
+        if (pegadaMilhao > 1){
+          pegadaEsquema = pegadaEsquema+' milhões de';
+        } else {
+          pegadaEsquema = pegadaEsquema+' milhão de';
+        }
+
+      // mil
+      } else if(pegadaLength > 3){
+        var pegadaMil = pegadaZerado.substring(0, pegadaLength-3);
+        var pegadaCem = pegadaZerado.substring(pegadaMil.length, pegadaLength-2);
+
+        if (pegadaCem === "0"){
+          pegadaEsquema = pegadaMil;
+        } else {
+          pegadaEsquema = pegadaMil + "," + pegadaCem;
+        }
+        pegadaEsquema = pegadaEsquema+' mil';
+
+      // cem
+      } else {
+        pegadaEsquema = pegadaZerado;
+      }
+      //
+    };
+
 
     function calcWaterFootprint(element,value){
         var inputUser = $(element).val();
@@ -80,14 +120,16 @@ angular.module('starter.controllers')
             banhoTotal = banhoVal*multips[0];
             var totalZerado = banhoTotal.toFixed(0);
             var totalBanhoZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalBanhoZerado);
+            zeraNumero(totalBanhoZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "dente":
             denteVal = inputUser;
             denteTotal = denteVal*multips[1];
             var totalZerado = denteTotal.toFixed(0);
             var totalDenteZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalDenteZerado);
+            zeraNumero(totalDenteZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           // limpeza
           case "roupa":
@@ -95,35 +137,40 @@ angular.module('starter.controllers')
             roupaTotal = roupaVal*multips[2];
             var totalZerado = roupaTotal.toFixed(0);
             var totalRoupaZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalRoupaZerado);
+            zeraNumero(totalRoupaZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "louca":
             loucaVal = inputUser;
             loucaTotal = loucaVal*multips[3];
             var totalZerado = loucaTotal.toFixed(0);
             var totalLoucaZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalLoucaZerado);
+            zeraNumero(totalLoucaZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "carro":
             carroVal = inputUser;
             carroTotal = carroVal*multips[4];
             var totalZerado = carroTotal.toFixed(0);
             var totalCarroZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalCarroZerado);
+            zeraNumero(totalCarroZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "jardim":
             jardimVal = inputUser;
             jardimTotal = jardimVal*multips[5];
             var totalZerado = jardimTotal.toFixed(0);
             var totalJardimZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalJardimZerado);
+            zeraNumero(totalJardimZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "calcada":
             calcadaVal = inputUser;
             calcadaTotal = calcadaVal*multips[6];
             var totalZerado = calcadaTotal.toFixed(0);
             var totalCalcadaZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalCalcadaZerado);
+            zeraNumero(totalCalcadaZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           // alimentos
           case "cereal":
@@ -131,70 +178,81 @@ angular.module('starter.controllers')
             cerealTotal = cerealVal*multips[7];
             var totalZerado = cerealTotal.toFixed(0);
             var totalCerealZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalCerealZerado);
+            zeraNumero(totalCerealZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "carne":
             carneVal = inputUser.toString().replace(/\,/g, '.');
             carneTotal = carneVal*multips[8];
             var totalZerado = carneTotal.toFixed(0);
             var totalCarneZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalCarneZerado);
+            zeraNumero(totalCarneZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "laticineo":
             laticineoVal = inputUser.toString().replace(/\,/g, '.');
             laticineoTotal = laticineoVal*multips[9];
             var totalZerado = laticineoTotal.toFixed(0);
             var totalLaticineoZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalLaticineoZerado);
+            zeraNumero(totalLaticineoZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "ovo":
             ovoVal = inputUser;
             ovoTotal = ovoVal*multips[10];
             var totalZerado = ovoTotal.toFixed(0);
             var totalOvoZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalOvoZerado);
+            zeraNumero(totalOvoZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "vegetais":
             vegetaisVal = inputUser.toString().replace(/\,/g, '.');
             vegetaisTotal = vegetaisVal*multips[11];
             var totalZerado = vegetaisTotal.toFixed(0);
             var totalVegetaisZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalVegetaisZerado);
+            zeraNumero(totalVegetaisZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "fruta":
             frutaVal = inputUser.toString().replace(/\,/g, '.');
             frutaTotal = frutaVal*multips[12];
             var totalZerado = frutaTotal.toFixed(0);
             var totalFrutaZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalFrutaZerado);
+            zeraNumero(totalFrutaZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "raiz":
             raizVal = inputUser.toString().replace(/\,/g, '.');
             raizTotal = raizVal*multips[13];
             var totalZerado = raizTotal.toFixed(0);
             var totalRaizZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalRaizZerado);
+            zeraNumero(totalRaizZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "cafe":
             cafeVal = inputUser;
             cafeTotal = cafeVal*multips[14];
             var totalZerado = cafeTotal.toFixed(0);
             var totalCafeZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalCafeZerado);
+            zeraNumero(totalCafeZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           case "cha":
             chaVal = inputUser;
             chaTotal = chaVal*multips[15];
             var totalZerado = chaTotal.toFixed(0);
             var totalChaZerado = parseInt(totalZerado);
-            $(element).next('.resultadoItem').show().find('span').text(totalChaZerado);
+            zeraNumero(totalChaZerado);
+            $(element).next('.resultadoItem').show().find('span').text(pegadaEsquema);
             break
           default:
             console.log("fudeu");
         };
 
         // add totals and than show them
+
         var totalHigiene = banhoTotal+denteTotal;
+        
         var totalLimpeza = roupaTotal+loucaTotal+carroTotal+jardimTotal+calcadaTotal;
         var totalAlimento = cerealTotal+carneTotal+laticineoTotal+ovoTotal+vegetaisTotal+frutaTotal+raizTotal+cafeTotal+chaTotal;
         // zerar as casas decimais
@@ -205,11 +263,27 @@ angular.module('starter.controllers')
         var alimentoTotalZerado = totalAlimento.toFixed(0);
         var alimentoTotalZeradoNum = parseInt(alimentoTotalZerado);
         var totalPegadaPessoal = higieneTotalZeradoNum + limpezaTotalZeradoNum + alimentoTotalZeradoNum;
+
+        $(function(){
+          zeraNumero(totalHigiene);
+          $('.resultadoCategoria#totalHigiene').show().find('span').text(pegadaEsquema);
+        });
         
-        $('.resultadoCategoria#totalHigiene').show().find('span').text(totalHigiene);
-        $('.resultadoCategoria#totalLimpeza').show().find('span').text(totalLimpeza);
-        $('.resultadoCategoria#totalAlimento').show().find('span').text(alimentoTotalZeradoNum);
-        $('.resultadoTotal').find('span').text(totalPegadaPessoal);
+        $(function(){
+          zeraNumero(totalLimpeza);
+          $('.resultadoCategoria#totalLimpeza').show().find('span').text(pegadaEsquema);
+        });
+
+        $(function(){
+          zeraNumero(totalAlimento);
+          $('.resultadoCategoria#totalAlimento').show().find('span').text(pegadaEsquema);
+        });
+        
+        $(function(){
+          zeraNumero(totalPegadaPessoal);
+          $('.resultadoTotal').find('span').text(pegadaEsquema);
+        });
+        
 
         //  apagar resultado se vir vazio ou for 0
         var elementVal = element.val();
@@ -272,6 +346,25 @@ $scope.changeWaterFootprint = function(key,value){
     });
     //
 
+     // esconder menu no focus
+      $('input.resposta').focusin(function() {
+        $('.tabs-striped .tabs').hide();
+      });
+      $('input.resposta').focusout(function() {
+        $('.tabs-striped .tabs').show();
+      });
+    //
+
+    // entrar no primeiro slide-box toda vez
+    $ionicSlideBoxDelegate.slide(0);
+    $(function(){
+      $(this).delay(200).queue(function(){
+        $('.minhaPegada .slide-0').height(650);
+        $(this).dequeue();
+      });
+    });
+    //
+
 
     });
 
@@ -322,6 +415,8 @@ $scope.changeWaterFootprint = function(key,value){
       }
     };
     //
+
+      
 
     // finish slide-box --- SUBMIT ALL FORMS
     // mostrar o total da pegada hídrica e redirecionar para a home
