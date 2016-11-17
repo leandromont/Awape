@@ -64,9 +64,7 @@ angular.module('starter', ['ngStorage', 'starter.controllers', 'starter.services
         controller: 'ConsumoCtrl'
       }
     }
-  })
-
-    ;
+  });
 
 // ========== firebase app
 

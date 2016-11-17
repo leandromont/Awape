@@ -38,7 +38,7 @@ angular.module('starter.controllers')
 
       } else {
         // No user is signed in.
-        $location.path("/login");
+        // $location.path("/login");
       }
     });
 

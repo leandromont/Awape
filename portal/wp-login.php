@@ -639,6 +639,7 @@ case 'rp' :
 ?>
 <form name="resetpassform" id="resetpassform" action="<?php echo esc_url( network_site_url( 'wp-login.php?action=resetpass', 'login_post' ) ); ?>" method="post" autocomplete="off">
 	<input type="hidden" id="user_login" value="<?php echo esc_attr( $rp_login ); ?>" autocomplete="off" />
+	
 
 	<div class="user-pass1-wrap">
 		<p>
@@ -913,6 +914,7 @@ default:
 	<p>
 		<label for="user_login"><?php _e('Username or Email') ?><br />
 		<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" /></label>
+		<div class="invalid-email" style="display: none;">E-mail inválido</div>
 	</p>
 	<p>
 		<label for="user_pass"><?php _e('Password') ?><br />
@@ -969,6 +971,8 @@ default:
 
 
 <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 
 <script type="text/javascript">
 
@@ -1031,6 +1035,26 @@ default:
 		var user = firebase.auth().currentUser;
 
 	});
+
+
+	$('#user_login').focusout(function(){
+
+		var $email = $('#user_login'); //change form to id or containment selector
+		var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+		if ($email.val() == '' || !re.test($email.val()))
+		{
+		    $('#wp-submit').prop('disabled', true);
+		    $('.invalid-email').show();
+		    return false;
+		} else {
+			$('#wp-submit').prop('disabled', false);
+			$('.invalid-email').hide();
+		    return true;
+		}
+
+	});
+
+
 </script>
 
 <?php

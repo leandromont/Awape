@@ -38,7 +38,7 @@ $scope.productIndex = Auth.get.productIndex();
 
           } else {
             // No user is signed in.
-            $location.path("/login");
+            // $location.path("/login");
           }
     });
      

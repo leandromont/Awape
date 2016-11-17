@@ -706,11 +706,26 @@
 		  	
 		});
 
+
+
 		jQuery('#tutviet-signup-avatar img').waitUntilExists(function(){
 
 			var userImage =  jQuery('#tutviet-signup-avatar img').attr('src');
 
 			jQuery('#imageSrc').val(userImage);
+			
+		});
+
+
+		jQuery('#signup_email').focusout(function(){
+
+			var userName = jQuery('#signup_username');
+
+			var userNameValue = jQuery('#signup_email').val();
+
+			var newUserNameValue = userNameValue.split('.').join('-').split('@').join('_');
+
+			userName.val(newUserNameValue);
 			
 		});
 
