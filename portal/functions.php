@@ -2752,6 +2752,8 @@ function wpb_adding_scripts() {
 	// adicionar firebase
 	wp_register_script('firebaseAPP', 'https://www.gstatic.com/firebasejs/3.4.1/firebase.js', false, '3.4.1');
 	wp_enqueue_script('firebaseAPP');
+	wp_register_script('momentJS', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js', false, '3.4.1');
+	wp_enqueue_script('momentJS');
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 

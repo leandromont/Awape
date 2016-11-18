@@ -7,7 +7,7 @@ function closeBusca(){
 angular.module('starter.controllers')
 
 // ==================== Controller Search ==================================
-.controller('SearchCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
+.controller('SearchCtrl', function ($scope,$rootScope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
 
 
 
@@ -29,11 +29,15 @@ angular.module('starter.controllers')
 
         // buscar minha Lista
         Auth.get.user.list($scope.userId).then(function(data) {
-          $scope.$apply(function() {
-            $scope.userList = data;
-            lista = $scope.userList
 
+          $rootScope.$apply(function() {
+             var array = $j.map(data, function(value, index) {
+                return [value];
+            });
+
+            $rootScope.userList = array;
           });
+
         });
 
       } else {
@@ -82,17 +86,26 @@ angular.module('starter.controllers')
         "idProduto" : id,
         "quantidade" : quantidade,
         "index": newItemIndex
-      });
+      }).then(function(){
 
-      // buscar minha Lista
-      Auth.get.user.list($scope.userId).then(function(data) {
-        $scope.$apply(function() {
-          $scope.userList = data;
-          lista = $scope.userList
+        // buscar minha Lista
+        Auth.get.user.list($scope.userId).then(function(data) {
+          $rootScope.$apply(function() {
+
+            var array = $j.map(data, function(value, index) {
+                return [value];
+            });
+
+            $rootScope.userList = array;
+
+            $scope.search = "";
+          });
         });
-      });
 
-      $route.reload();
+
+
+      });
+      
 
       $j('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
         $j('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');

@@ -1,7 +1,10 @@
 // ==================== Controller List ==================================
 angular.module('starter.controllers')
-.controller('ListCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
+.controller('ListCtrl', function ($scope, $rootScope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
   
+  $rootScope.userList = [];
+  $rootScope.productId;
+  $rootScope.productIndex;
 
    function deleteAnimation(){  
 
@@ -69,13 +72,13 @@ angular.module('starter.controllers')
 
       // buscar minha Lista
       Auth.get.user.list($scope.userId).then(function(data) {
-        $scope.$apply(function() {
+        $rootScope.$apply(function() {
 
           var array = $j.map(data, function(value, index) {
               return [value];
           });
 
-            $scope.userList = array.reverse();
+          $rootScope.userList = array;
 
         });
       });
@@ -479,12 +482,22 @@ $scope.setProductDetailId = function(productId, index){
 
   Auth.set.productId(productId , index);
 
+  $rootScope.productId = productId;
+  $rootScope.productIndex = index;
 
+      console.log("list");
+      console.log($rootScope.productId);
+
+        
 
 }
 
+ 
+
 
 })
+
+
 
 // ==================== When repeat ends =========================
 .directive('onLastRepeat', function() {
