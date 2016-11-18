@@ -5,7 +5,7 @@
   	</div>
 
   	<ul class="historyContainer">
-  		<li class="historyWrapper" ng-repeater="item in history">
+  		<!-- <li class="historyWrapper" ng-repeater="item in history">
   			<div class="gambs"></div>
   			<ul class="lista">
   				<li class="tituloMes">{{monthName(item)}}</li>
@@ -37,11 +37,11 @@
   				</li>
   			</ul>
   			<div class="bolinhaHistory"></div>
-  		</li>
-  		<!-- <li class="historyWrapper">
+  		</li> -->
+  		<li class="historyWrapper">
   			<div class="gambs"></div>
   			<ul class="lista">
-  				<li class="tituloMes">Outubro</li>
+  				<li class="tituloMes">Novembro</li>
   				<li class="dados">
   					<ul class="dadosTotalCompra">
 						<div class="titulo">Total de suas compras:</div>
@@ -50,9 +50,9 @@
 				</li>
   				<li class="itemHistory">
   					<ul class="informacao">
-  						<li class="icon" id="iconNegativo"></li>
+  						<li class="icon" id="iconPositivo"></li>
   						<li class="infoTexto">
-  							<span id="mudancaNegativa">Aumentou</span>
+  							<span id="mudancaPositiva">Diminuiu</span>
   							 o total de compras em 
   							<span id="litros">1000</span>
   							litros
@@ -61,7 +61,37 @@
   				</li>
   			</ul>
   			<div class="bolinhaHistory"></div>
-  		</li> -->
+  		</li>
+
+      <li class="historyWrapper">
+        <div class="gambs"></div>
+        <ul class="lista">
+          <li class="tituloMes">Outubro</li>
+          <li class="dados">
+            <ul class="dadosTotalCompra">
+            <div class="titulo">Total de suas compras:</div>
+            <div class="valor"><span id="litros">1200</span> litros</div>
+          </ul>
+        </li>
+          <li class="itemHistory">
+            <ul class="informacao">
+              <li class="icon" id="iconNegativo"></li>
+              <li class="infoTexto">
+                <span id="mudancaNegativa">Aumentou</span>
+                 o total de compras em 
+                <span id="litros">1000</span>
+                litros
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bolinhaHistory"></div>
+      </li>
+
   	</ul>
+    <div class="embreve">
+        <img src="img/time-left.png">
+        <span>Em breve, histórico de sua pegada hídrica!</span>
+    </div>
   </ion-content>
 </ion-view>

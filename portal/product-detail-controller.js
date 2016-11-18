@@ -7,14 +7,14 @@ function closeDetalhe(){
 angular.module('starter.controllers')
 
 // ==================== Controller Product detail ==================================
-.controller('ProductDetailCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
+.controller('ProductDetailCtrl', function ($scope, $state,$rootScope, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
 
 
 // pegar ID do produto 
-$scope.productId = Auth.get.productId();
+$rootScope.productId = Auth.get.productId();
 
 // pegar Index do produto 
-$scope.productIndex = Auth.get.productIndex();
+$rootScope.productIndex = Auth.get.productIndex();
 
 
   // buscar itens da lista
@@ -22,8 +22,7 @@ $scope.productIndex = Auth.get.productIndex();
     $scope.$apply(function() {
       $scope.listItens = resposta;
 
-        // get recomendations
-        $scope.getProductRecomentations($scope.productId);
+        
     });
 
   });
@@ -56,7 +55,7 @@ $scope.productIndex = Auth.get.productIndex();
           retorno = '';
         } else if (result.length > 0) {
 
-          var image = result[0].imagem;
+          var image = 'http://awape.com.br/' + result[0].imagem;
 
           retorno = image;
         }
@@ -142,13 +141,13 @@ $scope.productIndex = Auth.get.productIndex();
           "quantidade" : 1,
           "index": newItemIndex
         }).then(function(){
-            firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ $scope.productIndex).remove().then(function(){
+            firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id'+ $rootScope.productIndex).remove().then(function(){
 
                 $j('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
                   $j('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
                   $j(this).dequeue().delay(350).queue(function(){
                     $j('.adicionaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});
-                    $state.go('tab.list');
+                    closeDetalhe();
                     $j(this).dequeue();
                   });
                 });
@@ -158,9 +157,14 @@ $scope.productIndex = Auth.get.productIndex();
 
         // buscar minha Lista
         Auth.get.user.list($scope.userId).then(function(data) {
-          $scope.$apply(function() {
-            $scope.userList = data;
-            lista = $scope.userList
+          $rootScope.$apply(function() {
+
+            var array = $j.map(data, function(value, index) {
+                return [value];
+            });
+
+            $rootScope.userList = array;
+
           });
         });
 
@@ -258,9 +262,9 @@ $scope.productIndex = Auth.get.productIndex();
               var totalEsquema = totalMilhao + "," + totalMil;
             }
             if (totalMilhao > 1){
-              var totalAparecer = totalEsquema+" milhões de lts";
+              var totalAparecer = totalEsquema+" milhões de";
             } else {
-              var totalAparecer = totalEsquema+" milhão de lts";
+              var totalAparecer = totalEsquema+" milhão de";
             }
 
           // mil
@@ -273,12 +277,12 @@ $scope.productIndex = Auth.get.productIndex();
             } else {
               var totalEsquema = totalMil + "," + totalCem;
             }
-            var totalAparecer = totalEsquema+" mil lts";
+            var totalAparecer = totalEsquema+" mil";
 
           // cem
           } else {
             var totalEsquema = textoTotal;
-            var totalAparecer = totalEsquema+" lts";
+            var totalAparecer = totalEsquema;
           }
           //
 
@@ -310,6 +314,8 @@ $scope.productIndex = Auth.get.productIndex();
           var pegada = totalNumeroZerado;        
 
           retorno = pegada ;
+
+          console.log(retorno);
         }
         
         return retorno;
@@ -391,6 +397,8 @@ $scope.productIndex = Auth.get.productIndex();
         });
 
         $j('.loader-app').hide();
+        // get recomendations
+        $scope.getProductRecomentations($rootScope.productId);
         
         return retorno;
     }
