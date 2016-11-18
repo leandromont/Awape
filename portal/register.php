@@ -723,7 +723,7 @@
 
 			var userNameValue = jQuery('#signup_email').val();
 
-			var newUserNameValue = userNameValue.split('.').join('-').split('@').join('_');
+			var newUserNameValue = userNameValue.split('.').join('-');
 
 			userName.val(newUserNameValue);
 			

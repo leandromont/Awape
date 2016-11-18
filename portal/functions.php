@@ -2894,7 +2894,7 @@ function buddyblog_martin_custom_fields( $settings ) {
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 30;
+    return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -3041,4 +3041,9 @@ function mycredpro_render_bp_notification( $action, $item_id, $secondary_item_id
 	return $return;
 
 }
+
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
