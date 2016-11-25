@@ -13,7 +13,7 @@ angular.module('starter.controllers')
         // 
         Auth.get.user.waterFootprint($scope.userId).then(function(data) {
           $scope.$apply(function() {
-            
+
             $scope.userWaterFootprint = data;
             
           });
@@ -107,10 +107,15 @@ angular.module('starter.controllers')
 
 
     function calcWaterFootprint(element,value){
-        var inputUser = $(element).val();
+      
+        var inputUser = parseFloat($(element).val().replace(',','.'));
         var idElem = $(element).attr('id');
 
-        
+
+        if (isNaN(inputUser)){
+          inputUser = 0;
+        }
+
 
         //check the id and than add the results
         switch (idElem) {
@@ -317,7 +322,7 @@ angular.module('starter.controllers')
 
 $scope.changeWaterFootprint = function(key,value){
 
-      var tratedValue = value;
+      var tratedValue = parseFloat(value.replace(',','.'));
 
       var newData = {
         [key]:Number(tratedValue)
