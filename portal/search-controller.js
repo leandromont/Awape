@@ -73,6 +73,22 @@ angular.module('starter.controllers')
       return retorno;
   };
 
+   // =============================== input magic ======================================
+  $scope.inputMagic = function(){
+    
+        // id dos checkbox
+        var produtosLista = $j('.buscaPage .produtoBusca').length;
+        var produto = $j('.buscaPage .produtoBusca');
+        var i = 1;
+        produto.each(function(){
+          $j('.check', this).attr('id', 'checkBusca'+i);
+          $j("label", this).attr('for', 'checkBusca'+i);
+          i++;
+        });
+        //
+
+  };
+
   // ======================= Add Item =======================================
 
     $scope.addItem = function(id,quantidade,search){

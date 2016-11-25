@@ -85,6 +85,8 @@ angular.module('starter.controllers')
 
     $scope.getProductRecomentations = function(productId){
 
+
+
         var result = $.grep($scope.listItens || [], function(e){ 
           return e.id == productId  ; 
         });
@@ -93,14 +95,19 @@ angular.module('starter.controllers')
         if (result.length == 0) {
 
           retorno = '';
+          $('.loader-app').hide();
 
         } else if (result.length > 0) {
+
+
 
           var recomendations = result[0].tags;
 
           $scope.productRecomentations = recomendations;
 
           retorno = recomendations;
+
+          $('.loader-app').hide();
         }
         
         return retorno;
@@ -150,6 +157,8 @@ angular.module('starter.controllers')
 
       var diff = pegadaProduto - pegadaRecomendacao;
       zeraNumero(diff);
+
+      $('.loader-app').hide();
 
         return pegadaEsquema;
     }
@@ -217,8 +226,11 @@ angular.module('starter.controllers')
         // buscar minha Lista
         Auth.get.user.list($scope.userId).then(function(data) {
           $scope.$apply(function() {
-            $scope.userList = data;
-            lista = $scope.userList
+            var array = $.map(data, function(value, index) {
+                return [value];
+            });
+
+            $scope.userList = array.reverse();
           });
         });
 
@@ -246,7 +258,7 @@ angular.module('starter.controllers')
             retorno = "unidade";
             break
           case "kg":
-            retorno = "kilo";
+            retorno = "quilo";
             break
           case "lt":
             retorno = "litro";
@@ -447,8 +459,6 @@ angular.module('starter.controllers')
           }
           totalAgua =+ qntdAgua;
         });
-
-        $('.loader-app').hide();
         
         return retorno;
     }

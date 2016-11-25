@@ -1,7 +1,15 @@
-<ion-view view-title="" hide-nav-bar="true">
+<ion-view view-title="" hide-nav-bar="true" >
   <ion-nav-bar class="bar-positive" align-title="center"></ion-nav-bar>
   <ion-content>
-      <iframe src="http://awape.com.br/register/" width="100%" height="100%"></iframe>
-      <a href="#/login" class="voltarLink"></a>
+      <iframe src="http://awape.com.br/logout-redirect/" width="100%" height="100%" onload="onMyFrameLoad(this)"></iframe>
+      <a href="#/login" class="voltarLink register-close"></a>
   </ion-content>
+
+  <div class="loader-app">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <div class="loading-text register">Aguarde um pouquinho. Estou te enviando para a página de cadastro ;)</div>
+    </div>
+  </div>
 </ion-view>

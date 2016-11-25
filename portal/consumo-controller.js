@@ -1,6 +1,18 @@
+
+function nextCarousel(){
+  $j('.owl-carousel').trigger('next.owl.carousel');
+};
+function prevCarousel(){
+  $j('.owl-carousel').trigger('prev.owl.carousel');
+};
+
+
+
 angular.module('starter.controllers')
 
 .controller('ConsumoCtrl', function ($scope, $state, $localStorage, $log, $location,$http, $firebaseObject, $firebaseAuth, Auth, Utils) {
+
+
 
 // ******************************************** GET DATA ********************************************************************
 

@@ -1,42 +1,539 @@
 {
   "users" : {
-    "JPL32UMjsRR69jjugWZaXRMk08k1" : {
+    "5D1da4KmGzQ7qfnqyg5sr56RfGu1" : {
       "minhaLista" : {
         "id0" : {
+          "checked" : true,
+          "data" : "11/20/2016",
+          "idProduto" : 1,
+          "index" : 0,
+          "quantidade" : 1
+        },
+        "id1" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 4,
+          "index" : 1,
+          "quantidade" : 12
+        },
+        "id10" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 27,
+          "index" : 10,
+          "quantidade" : 1
+        },
+        "id11" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 30,
+          "index" : 11,
+          "quantidade" : 1
+        },
+        "id12" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 33,
+          "index" : 12,
+          "quantidade" : 1
+        },
+        "id13" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 34,
+          "index" : 13,
+          "quantidade" : 1
+        },
+        "id14" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 36,
+          "index" : 14,
+          "quantidade" : 12
+        },
+        "id1479661065031" : {
           "checked" : false,
           "data" : "01/01/01",
           "idProduto" : 1,
-          "index" : 0,
-          "quantidade" : 6
+          "index" : 1479661065031,
+          "quantidade" : 1
         },
-        "id1" : {
+        "id1479661277116" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 16,
+          "index" : 1479661277116,
+          "quantidade" : 1
+        },
+        "id1479663968767" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 1479663968767,
+          "quantidade" : 1
+        },
+        "id15" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 38,
+          "index" : 15,
+          "quantidade" : 5
+        },
+        "id16" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 39,
+          "index" : 16,
+          "quantidade" : 1
+        },
+        "id17" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 40,
+          "index" : 17,
+          "quantidade" : 5
+        },
+        "id18" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 41,
+          "index" : 18,
+          "quantidade" : 4
+        },
+        "id19" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 11,
+          "index" : 19,
+          "quantidade" : 1
+        },
+        "id2" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 9,
+          "index" : 2,
+          "quantidade" : 2
+        },
+        "id3" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 13,
+          "index" : 3,
+          "quantidade" : "1111"
+        },
+        "id4" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 14,
+          "index" : 4,
+          "quantidade" : "1111"
+        },
+        "id5" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 15,
+          "index" : 5,
+          "quantidade" : 0.25
+        },
+        "id6" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 16,
+          "index" : 6,
+          "quantidade" : "1"
+        },
+        "id7" : {
           "checked" : true,
-          "data" : "11/05/2016",
-          "idProduto" : 2,
-          "index" : 1,
-          "quantidade" : 3
+          "data" : "11/20/2016",
+          "idProduto" : 17,
+          "index" : 7,
+          "quantidade" : "1011"
+        },
+        "id8" : {
+          "checked" : true,
+          "data" : "11/20/2016",
+          "idProduto" : 19,
+          "index" : 8,
+          "quantidade" : "1622"
+        },
+        "id9" : {
+          "checked" : true,
+          "data" : "11/20/2016",
+          "idProduto" : 26,
+          "index" : 9,
+          "quantidade" : 5.5
         }
       },
       "minhaPegada" : {
-        "banho" : 30,
-        "cafe" : 0,
-        "calcada" : 1,
-        "carne" : 2.5,
-        "carro" : 1,
-        "cereal" : 1.5,
-        "cha" : 0,
-        "dentes" : 3,
-        "frutas" : 0.5,
-        "jardim" : 5,
-        "laticineos" : 0.5,
-        "louca" : 3,
-        "ovos" : 3,
-        "raizes" : 0.3,
-        "roupa" : 3,
-        "vegetais" : 1
+        "banho" : 1111,
+        "cafe" : "",
+        "calcada" : "",
+        "carne" : "",
+        "carro" : "",
+        "cereal" : "",
+        "cha" : "",
+        "dentes" : 0,
+        "frutas" : "",
+        "jardim" : "",
+        "laticineos" : "",
+        "louca" : "",
+        "ovos" : "",
+        "raizes" : "",
+        "roupa" : "",
+        "vegetais" : ""
       },
       "tutorial" : false,
+      "userimage" : "",
+      "username" : "brbr brbrbr rrr"
+    },
+    "67ceKHVh4KajIVeo8U4RfrHfeNf1" : {
+      "minhaLista" : {
+        "id1479661065031" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 1479661065031,
+          "quantidade" : 1
+        },
+        "id1479661277116" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 16,
+          "index" : 1479661277116,
+          "quantidade" : 1
+        },
+        "id1479663968767" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 1479663968767,
+          "quantidade" : 1
+        }
+      },
+      "minhaPegada" : {
+        "banho" : "",
+        "cafe" : "",
+        "calcada" : "",
+        "carne" : "",
+        "carro" : "",
+        "cereal" : "",
+        "cha" : "",
+        "dentes" : "",
+        "frutas" : "",
+        "jardim" : "",
+        "laticineos" : "",
+        "louca" : "",
+        "ovos" : "",
+        "raizes" : "",
+        "roupa" : "",
+        "vegetais" : ""
+      },
+      "tutorial" : false,
+      "userimage" : "",
+      "username" : "Lenna Lima"
+    },
+    "JPL32UMjsRR69jjugWZaXRMk08k1" : {
+      "minhaLista" : {
+        "id1" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 2,
+          "index" : 1,
+          "quantidade" : 3
+        },
+        "id1479130966242" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 4,
+          "index" : 1479130966242,
+          "quantidade" : "8"
+        },
+        "id1479158151101" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 11,
+          "index" : 1479158151101,
+          "quantidade" : "3"
+        },
+        "id1479393390417" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 1,
+          "index" : 1479393390417,
+          "quantidade" : "1"
+        },
+        "id1479393650003" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 5,
+          "index" : 1479393650003,
+          "quantidade" : "1"
+        },
+        "id1479393652099" : {
+          "checked" : true,
+          "data" : "11/17/2016",
+          "idProduto" : 15,
+          "index" : 1479393652099,
+          "quantidade" : 1
+        },
+        "id1479393701298" : {
+          "checked" : true,
+          "data" : "11/17/2016",
+          "idProduto" : 15,
+          "index" : 1479393701298,
+          "quantidade" : "1.5"
+        },
+        "id1479393781912" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 12,
+          "index" : 1479393781912,
+          "quantidade" : 1
+        },
+        "id1479417831555" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 1,
+          "index" : 1479417831555,
+          "quantidade" : "111"
+        },
+        "id1479421066740" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 1,
+          "index" : 1479421066740,
+          "quantidade" : "12"
+        },
+        "id1479486144903" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 1,
+          "index" : 1479486144903,
+          "quantidade" : "1.66"
+        },
+        "id1479494976074" : {
+          "checked" : true,
+          "data" : "11/20/2016",
+          "idProduto" : 1,
+          "index" : 1479494976074,
+          "quantidade" : 1
+        },
+        "id1479657087591" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 12,
+          "index" : 1479657087591,
+          "quantidade" : 1
+        }
+      },
+      "minhaPegada" : {
+        "banho" : 0,
+        "cafe" : 6,
+        "calcada" : 0,
+        "carne" : 4,
+        "carro" : 1,
+        "cereal" : 0,
+        "cha" : 1,
+        "dentes" : 0,
+        "frutas" : 2,
+        "jardim" : 0,
+        "laticineos" : 0,
+        "louca" : 5,
+        "ovos" : 2,
+        "raizes" : 2,
+        "roupa" : 0,
+        "vegetais" : 1
+      },
+      "tutorial" : true,
       "username" : "Brunones"
+    },
+    "TS0dyw28iuej7rsCIwe5klXuw5F2" : {
+      "minhaPegada" : {
+        "banho" : 0,
+        "cafe" : "",
+        "calcada" : "",
+        "carne" : "",
+        "carro" : "",
+        "cereal" : "",
+        "cha" : "",
+        "dentes" : "",
+        "frutas" : "",
+        "jardim" : "",
+        "laticineos" : "",
+        "louca" : "",
+        "ovos" : "",
+        "raizes" : "",
+        "roupa" : "",
+        "vegetais" : ""
+      },
+      "tutorial" : true,
+      "userimage" : "http://awape.com.br/wp-content/uploads/avatars/113/5831e21725bb5-bpfull.jpg",
+      "username" : "Angry Baby"
+    },
+    "c3rzhCjivTRnNZVkoXFwsK6NTsJ2" : {
+      "minhaLista" : {
+        "id0" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 1,
+          "index" : 0,
+          "quantidade" : 1
+        },
+        "id1" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 4,
+          "index" : 1,
+          "quantidade" : 12
+        },
+        "id10" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 27,
+          "index" : 10,
+          "quantidade" : 1
+        },
+        "id11" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 30,
+          "index" : 11,
+          "quantidade" : 1
+        },
+        "id12" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 33,
+          "index" : 12,
+          "quantidade" : 1
+        },
+        "id13" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 34,
+          "index" : 13,
+          "quantidade" : 1
+        },
+        "id14" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 36,
+          "index" : 14,
+          "quantidade" : 12
+        },
+        "id15" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 38,
+          "index" : 15,
+          "quantidade" : 5
+        },
+        "id16" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 39,
+          "index" : 16,
+          "quantidade" : 1
+        },
+        "id17" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 40,
+          "index" : 17,
+          "quantidade" : 5
+        },
+        "id18" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 41,
+          "index" : 18,
+          "quantidade" : 4
+        },
+        "id19" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 11,
+          "index" : 19,
+          "quantidade" : 1
+        },
+        "id2" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 9,
+          "index" : 2,
+          "quantidade" : 2
+        },
+        "id3" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 13,
+          "index" : 3,
+          "quantidade" : 1
+        },
+        "id4" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 14,
+          "index" : 4,
+          "quantidade" : 1
+        },
+        "id5" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 15,
+          "index" : 5,
+          "quantidade" : 0.25
+        },
+        "id6" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 16,
+          "index" : 6,
+          "quantidade" : 6
+        },
+        "id7" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 17,
+          "index" : 7,
+          "quantidade" : 10
+        },
+        "id8" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 19,
+          "index" : 8,
+          "quantidade" : 10
+        },
+        "id9" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 26,
+          "index" : 9,
+          "quantidade" : 5.5
+        }
+      },
+      "minhaPegada" : {
+        "banho" : "",
+        "cafe" : "",
+        "calcada" : "",
+        "carne" : "",
+        "carro" : "",
+        "cereal" : "",
+        "cha" : "",
+        "dentes" : "",
+        "frutas" : "",
+        "jardim" : "",
+        "laticineos" : "",
+        "louca" : "",
+        "ovos" : "",
+        "raizes" : "",
+        "roupa" : "",
+        "vegetais" : ""
+      },
+      "tutorial" : false,
+      "userimage" : "http://awape.com.br/wp-content/uploads/avatars/111/5831ce97919d5-bpfull.jpg",
+      "username" : "Leandro Monteiro"
     },
     "itens" : [ {
       "aguaAzul" : 1,
@@ -52,6 +549,7 @@
       "pegada" : 1056,
       "produto" : "Café (500g)",
       "tags" : [ 2, 4 ],
+      "codebars":["7896089012019","7896089011470","7896005800010","7898373582505","7891021006125","8480017335043"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 10,
@@ -66,6 +564,7 @@
       "parceiro" : false,
       "pegada" : 115,
       "produto" : "Chá (Caixa/10 un)",
+      "codebars":["7891098002044","7891048036020","7891098010483","7891098000040","7891098038395","7891048036204"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -81,6 +580,7 @@
       "pegada" : 4745,
       "produto" : "Leite em pó (400g)",
       "tags" : [ 4 ],
+      "codebars":["7891000106099","7891000003404","7896183210038","7896051130291","7891000142202"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -95,6 +595,7 @@
       "parceiro" : false,
       "pegada" : 1020,
       "produto" : "Leite longa vida",
+      "codebars":["7898080640932","7896283800221","7891025105640","7891025101581","7891000066560"],
       "unidade" : "lt"
     }, {
       "aguaAzul" : 0,
@@ -109,6 +610,7 @@
       "parceiro" : false,
       "pegada" : 500,
       "produto" : "Refrigerante (2ltrs)",
+      "codebars":["7894900011715","7894900921519","7891991001373","7894900011517","7894900911510","7896052600090","7894900051515"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 6,
@@ -123,6 +625,7 @@
       "parceiro" : false,
       "pegada" : 298,
       "produto" : "Cerveja Lata (350ml)",
+      "codebars":["7896045504831","7891149200504","7891149010509","7897395020101","7891991006088","7891991010481"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 6,
@@ -138,6 +641,7 @@
       "pegada" : 308.5,
       "produto" : "Cerveja 600ml",
       "tags" : [ 6 ],
+      "codebars":["78905351","78905498"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 16,
@@ -153,6 +657,7 @@
       "pegada" : 870,
       "produto" : "Vinho (750ml)",
       "tags" : [ 6, 7 ],
+      "codebars":["7896266100416","7891141019135","7896023081545","7804600770133"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 4,
@@ -183,6 +688,7 @@
       "pegada" : 6000,
       "produto" : "Carne Suína",
       "tags" : [ 11, 12 ],
+      "codebars":["7893000650138","7897053000506"],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 7,
@@ -197,6 +703,7 @@
       "parceiro" : false,
       "pegada" : 4325,
       "produto" : "Frango",
+      "codebars":["7894904727476","7893000518025","7895000333608"],
       "unidade" : "kg"
     }, {
       "aguaAzul" : 6,
@@ -226,6 +733,7 @@
       "parceiro" : false,
       "pegada" : 17196,
       "produto" : "Chocolate em barra (170g)",
+      "codebars":["7898292887798","7898292887675","7891008153248","7891000111736","7891008153262","7891000111796","7891000111734"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -240,6 +748,7 @@
       "parceiro" : false,
       "pegada" : 200,
       "produto" : "Farinha de Trigo (1kg)",
+      "codebars":["7895000319015","7895000321254","7895000321247","7896005202074","7891080000119"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 8,
@@ -299,6 +808,7 @@
       "pegada" : 822,
       "produto" : "Maçã",
       "tags" : [ 22, 17 ],
+      "codebars":["7897974400997"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 30,
@@ -416,6 +926,7 @@
       "parceiro" : false,
       "pegada" : 2500,
       "produto" : "Arroz (5,5kg)",
+      "codebars":["7893500020158","7896079431158","7895000318612","7895000408900","7896089011357"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -430,6 +941,7 @@
       "parceiro" : false,
       "pegada" : 340,
       "produto" : "Feijão (1kg)",
+      "codebars":["7896200115346","7896116900647","7896200115353","7896000744115"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 5,
@@ -457,7 +969,8 @@
       "imagem" : "img/produtos/iogurte.jpg",
       "parceiro" : false,
       "pegada" : 234,
-      "produto" : "Iogurte (Garrafa de 850ml)",
+      "produto" : "Iogurte (Garrafa de 850g)",
+      "codebars":["7895000361038","7891999351050","7891999143372","7891025105855","7891025320692","7891025103684"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -500,6 +1013,7 @@
       "parceiro" : false,
       "pegada" : 1260,
       "produto" : "Pizza",
+      "codebars":["7894904326068","7895000374564","7895000374557"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 19,
@@ -528,6 +1042,7 @@
       "parceiro" : false,
       "pegada" : 214,
       "produto" : "Extrato de Tomate (350g)",
+      "codebars":["7896102592993","7891300908676","7896292303003","7896102509410","7897517206086"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -557,6 +1072,7 @@
       "parceiro" : false,
       "pegada" : 3200,
       "produto" : "Ovo",
+      "codebars":["7895000320578"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 0,
@@ -585,6 +1101,7 @@
       "parceiro" : false,
       "pegada" : 920,
       "produto" : "Açúcar (1kg)",
+      "codebars":["7896032501010","7896894900013","7891210000197"],
       "unidade" : "un"
     }, {
       "aguaAzul" : 12,
@@ -715,7 +1232,264 @@
       "pegada" : 353,
       "produto" : "Pepino",
       "unidade" : "un"
-    } ],
+    }, {
+      "aguaAzul" : 0,
+      "aguaCinza" : 0,
+      "aguaVerde" : 0,
+      "categoria" : "Laticíneo",
+      "conteudo" : 0.18,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 48,
+      "imagem" : "img/produtos/iogurte.jpg",
+      "parceiro" : false,
+      "pegada" : 234,
+      "produto" : "Iogurte (Garrafinha de 180g)",
+      "codebars":["7891025126775","7891025109433","7891000014448","7895000360970","7891999010582","7891999143389","7891000103876"],
+      "unidade" : "un"
+    }, {
+      "aguaAzul" : 0,
+      "aguaCinza" : 0,
+      "aguaVerde" : 0,
+      "categoria" : "Laticíneo",
+      "conteudo" : 0.16,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 49,
+      "imagem" : "img/produtos/iogurte.jpg",
+      "parceiro" : false,
+      "pegada" : 234,
+      "produto" : "Iogurte (Copinho de 160g)",
+      "codebars":["7891000072950","7895000333769","7891000072998","7891000072974","7891025102540","7891999420206"],
+      "unidade" : "un"
+    },{
+      "aguaAzul" : 7,
+      "aguaCinza" : 16,
+      "aguaVerde" : 77,
+      "categoria" : "Vegetal",
+      "conteudo" : 0.20,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 50,
+      "imagem" : "img/produtos/milho.jpg",
+      "parceiro" : false,
+      "pegada" : 1222,
+      "produto" : "Milho Lata (200g)",
+      "tags" : [ 40, 47 ],
+      "codebars":["7895000318483","7896102501155"],
+      "unidade" : "un"
+    },{
+      "aguaAzul" : 0,
+      "aguaCinza" : 0,
+      "aguaVerde" : 0,
+      "categoria" : "Bebida",
+      "conteudo" : 1.5,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 51,
+      "imagem" : "img/produtos/refrigerante.jpg",
+      "parceiro" : false,
+      "pegada" : 500,
+      "produto" : "Refrigerante (1,5 ltr)",
+      "codebars":["7894900321753","7894900011593","7892840800000","7891991008761"],
+      "unidade" : "un"
+    }, {
+      "aguaAzul" : 0,
+      "aguaCinza" : 0,
+      "aguaVerde" : 0,
+      "categoria" : "Bebida",
+      "conteudo" : 1.5,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 52,
+      "imagem" : "img/produtos/garrafa-agua.jpg",
+      "parceiro" : false,
+      "pegada" : 4.5,
+      "produto" : "garrafa de água (1,5 ltr)",
+      "codebars":["78949005330032","7891025102120"],
+      "unidade" : "un"
+    },{
+      "aguaAzul" : 0,
+      "aguaCinza" : 0,
+      "aguaVerde" : 0,
+      "categoria" : "Bebida",
+      "conteudo" : 0.50,
+      "descricao" : "",
+      "embalagem" : [ "", "" ],
+      "id" : 53,
+      "imagem" : "img/produtos/garrafinha-agua.jpg",
+      "parceiro" : false,
+      "pegada" : 4.5,
+      "produto" : "garrafinha de água (500 ml)",
+      "codebars":["7898907378321","7891025102113"],
+      "unidade" : "un"
+    }
+  ],
+    "kKCUCluukBUSgifTuApony7sVVa2" : {
+      "minhaLista" : {
+        "id0" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 1,
+          "index" : 0,
+          "quantidade" : 1
+        },
+        "id1" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 4,
+          "index" : 1,
+          "quantidade" : 12
+        },
+        "id10" : {
+          "checked" : true,
+          "data" : "11/17/2016",
+          "idProduto" : 27,
+          "index" : 10,
+          "quantidade" : 1
+        },
+        "id11" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 30,
+          "index" : 11,
+          "quantidade" : 1
+        },
+        "id12" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 33,
+          "index" : 12,
+          "quantidade" : 1
+        },
+        "id13" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 34,
+          "index" : 13,
+          "quantidade" : 1
+        },
+        "id14" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 36,
+          "index" : 14,
+          "quantidade" : 12
+        },
+        "id15" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 38,
+          "index" : 15,
+          "quantidade" : 5
+        },
+        "id16" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 39,
+          "index" : 16,
+          "quantidade" : 1
+        },
+        "id17" : {
+          "checked" : false,
+          "data" : "01/01/01",
+          "idProduto" : 40,
+          "index" : 17,
+          "quantidade" : 5
+        },
+        "id18" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 41,
+          "index" : 18,
+          "quantidade" : 4
+        },
+        "id19" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 11,
+          "index" : 19,
+          "quantidade" : 1
+        },
+        "id2" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 9,
+          "index" : 2,
+          "quantidade" : 2
+        },
+        "id3" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 13,
+          "index" : 3,
+          "quantidade" : 1
+        },
+        "id4" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 14,
+          "index" : 4,
+          "quantidade" : 1
+        },
+        "id5" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 15,
+          "index" : 5,
+          "quantidade" : 0.25
+        },
+        "id6" : {
+          "checked" : false,
+          "data" : "",
+          "idProduto" : 16,
+          "index" : 6,
+          "quantidade" : 6
+        },
+        "id7" : {
+          "checked" : true,
+          "data" : "11/17/2016",
+          "idProduto" : 17,
+          "index" : 7,
+          "quantidade" : 10
+        },
+        "id8" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 19,
+          "index" : 8,
+          "quantidade" : 10
+        },
+        "id9" : {
+          "checked" : true,
+          "data" : "11/15/2016",
+          "idProduto" : 26,
+          "index" : 9,
+          "quantidade" : 5.5
+        }
+      },
+      "minhaPegada" : {
+        "banho" : 40,
+        "cafe" : "",
+        "calcada" : "",
+        "carne" : "",
+        "carro" : "",
+        "cereal" : "",
+        "cha" : "",
+        "dentes" : "",
+        "frutas" : "",
+        "jardim" : "",
+        "laticineos" : "",
+        "louca" : "",
+        "ovos" : "",
+        "raizes" : "",
+        "roupa" : "",
+        "vegetais" : ""
+      },
+      "tutorial" : true,
+      "userimage" : "http://awape.com.br/wp-content/uploads/avatars/2/57fc1ca9e9e45-bpfull.jpg",
+      "username" : "Isabella"
+    },
     "r5N6mneY1khE4f9ubUTdWLf9fuL2" : {
       "meuHistorico" : {
         "2016" : {
@@ -739,171 +1513,150 @@
         }
       },
       "minhaLista" : {
-        "id0fb2c3d7-5f1c-af19-af34-fc045fc2ac45" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 18,
-          "index" : "0fb2c3d7-5f1c-af19-af34-fc045fc2ac45",
+        "id1479095827082" : {
+          "checked" : true,
+          "data" : "11/14/2016",
+          "idProduto" : 3,
+          "index" : 1479095827082,
           "quantidade" : 1
         },
-        "id10a04990-4466-82a3-e248-55ac1faffc55" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 20,
-          "index" : "10a04990-4466-82a3-e248-55ac1faffc55",
+        "id1479095885115" : {
+          "checked" : true,
+          "data" : "11/14/2016",
+          "idProduto" : 10,
+          "index" : 1479095885115,
+          "quantidade" : "10"
+        },
+        "id1479096958829" : {
+          "checked" : true,
+          "data" : "11/14/2016",
+          "idProduto" : 11,
+          "index" : 1479096958829,
           "quantidade" : 1
         },
-        "id1764bdf9-f65c-b43b-de7f-95cf45841a90" : {
+        "id1479127749947" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 24,
+          "index" : 1479127749947,
+          "quantidade" : "2"
+        },
+        "id1479141953481" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 1,
+          "index" : 1479141953481,
+          "quantidade" : "8"
+        },
+        "id1479146142173" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 1,
+          "index" : 1479146142173,
+          "quantidade" : 1
+        },
+        "id1479146148010" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 26,
+          "index" : 1479146148010,
+          "quantidade" : "5"
+        },
+        "id1479154669940" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 12,
+          "index" : 1479154669940,
+          "quantidade" : 1
+        },
+        "id1479154689725" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 10,
+          "index" : 1479154689725,
+          "quantidade" : 1
+        },
+        "id1479154714085" : {
+          "checked" : true,
+          "data" : "14/11/2016",
+          "idProduto" : 11,
+          "index" : 1479154714085,
+          "quantidade" : 1
+        },
+        "id1479416802201" : {
+          "checked" : true,
+          "data" : "11/18/2016",
+          "idProduto" : 24,
+          "index" : 1479416802201,
+          "quantidade" : 1
+        },
+        "id1479419038610" : {
           "checked" : false,
           "data" : "01/01/01",
           "idProduto" : 17,
-          "index" : "1764bdf9-f65c-b43b-de7f-95cf45841a90",
-          "quantidade" : 1
+          "index" : 1479419038610,
+          "quantidade" : "12"
         },
-        "id24541c84-337a-8aa8-4379-49b638623dd2" : {
+        "id1479484976282" : {
           "checked" : false,
           "data" : "01/01/01",
-          "idProduto" : 12,
-          "index" : "24541c84-337a-8aa8-4379-49b638623dd2",
+          "idProduto" : 11,
+          "index" : 1479484976282,
           "quantidade" : 1
         },
-        "id50e78d6d-0acf-d33a-f71d-ff35ed8c46f8" : {
+        "id1479495389301" : {
           "checked" : false,
           "data" : "01/01/01",
-          "idProduto" : 7,
-          "index" : "50e78d6d-0acf-d33a-f71d-ff35ed8c46f8",
+          "idProduto" : 19,
+          "index" : 1479495389301,
           "quantidade" : 1
         },
-        "id5e6a3b03-0f58-647a-452a-8160e5f27ef0" : {
+        "id1479505384321" : {
           "checked" : false,
           "data" : "01/01/01",
-          "idProduto" : 16,
-          "index" : "5e6a3b03-0f58-647a-452a-8160e5f27ef0",
+          "idProduto" : 2,
+          "index" : 1479505384321,
           "quantidade" : 1
         },
-        "id63dedd8d-113b-86de-a631-347f834bc769" : {
+        "id1479509876010" : {
           "checked" : false,
           "data" : "01/01/01",
           "idProduto" : 1,
-          "index" : "63dedd8d-113b-86de-a631-347f834bc769",
+          "index" : 1479509876010,
           "quantidade" : 1
         },
-        "id6a36800b-67ab-b5ce-cbae-70ed03884604" : {
+        "id1479510835238" : {
           "checked" : false,
           "data" : "01/01/01",
-          "idProduto" : 25,
-          "index" : "6a36800b-67ab-b5ce-cbae-70ed03884604",
+          "idProduto" : 1,
+          "index" : 1479510835238,
           "quantidade" : 1
         },
-        "id7b539f4f-9fb7-c7c8-80fd-931d54f8b5eb" : {
+        "id1479596084104" : {
           "checked" : false,
           "data" : "01/01/01",
-          "idProduto" : 21,
-          "index" : "7b539f4f-9fb7-c7c8-80fd-931d54f8b5eb",
-          "quantidade" : 1
-        },
-        "ida21895c6-1ed2-3107-f37b-8f448a9571c9" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 43,
-          "index" : "a21895c6-1ed2-3107-f37b-8f448a9571c9",
-          "quantidade" : 1
-        },
-        "idb34dfd80-87c6-25c2-7f1d-4adcc372e4dc" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 3,
-          "index" : "b34dfd80-87c6-25c2-7f1d-4adcc372e4dc",
-          "quantidade" : 1
-        },
-        "idb5b2b436-a014-f18f-94e9-1fbe00028fb6" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 35,
-          "index" : "b5b2b436-a014-f18f-94e9-1fbe00028fb6",
-          "quantidade" : 1
-        },
-        "idbaa824b3-aa41-476b-5d36-5e5fc91f051c" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 23,
-          "index" : "baa824b3-aa41-476b-5d36-5e5fc91f051c",
-          "quantidade" : 1
-        },
-        "idbd8463e3-8bf6-df72-b2c2-04df320f0699" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 24,
-          "index" : "bd8463e3-8bf6-df72-b2c2-04df320f0699",
-          "quantidade" : 1
-        },
-        "idbe31196a-64e3-7f4d-1ac2-7f22e41be762" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 22,
-          "index" : "be31196a-64e3-7f4d-1ac2-7f22e41be762",
-          "quantidade" : 1
-        },
-        "idc21928c4-33bb-21ab-8efc-b807f3d953a8" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 46,
-          "index" : "c21928c4-33bb-21ab-8efc-b807f3d953a8",
-          "quantidade" : 1
-        },
-        "idce6dcc0a-cb71-1ef8-7f4b-9175185db2a9" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 23,
-          "index" : "ce6dcc0a-cb71-1ef8-7f4b-9175185db2a9",
-          "quantidade" : 1
-        },
-        "ide1044b87-4481-0271-565d-8b5a2c726488" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 8,
-          "index" : "e1044b87-4481-0271-565d-8b5a2c726488",
-          "quantidade" : 1
-        },
-        "ide769f076-f548-7a62-b139-b1453a7c5001" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 9,
-          "index" : "e769f076-f548-7a62-b139-b1453a7c5001",
-          "quantidade" : 1
-        },
-        "ide822fd3c-2862-57f7-89f3-cf60b40e8931" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 16,
-          "index" : "e822fd3c-2862-57f7-89f3-cf60b40e8931",
-          "quantidade" : 1
-        },
-        "idff7981fa-d682-6a07-fc84-f06c7055e8e8" : {
-          "checked" : false,
-          "data" : "01/01/01",
-          "idProduto" : 10,
-          "index" : "ff7981fa-d682-6a07-fc84-f06c7055e8e8",
-          "quantidade" : 1
+          "idProduto" : 6,
+          "index" : 1479596084104,
+          "quantidade" : "12"
         }
       },
       "minhaPegada" : {
-        "banho" : "",
-        "cafe" : "",
-        "calcada" : "",
-        "carne" : "",
-        "carro" : "",
-        "cereal" : "",
+        "banho" : 7,
+        "cafe" : 0,
+        "calcada" : 10,
+        "carne" : 2,
+        "carro" : 2,
+        "cereal" : 4,
         "cha" : "",
-        "dentes" : "",
-        "frutas" : "",
-        "jardim" : "",
-        "laticineos" : "",
-        "louca" : "",
-        "ovos" : "",
-        "raizes" : "",
-        "roupa" : "",
-        "vegetais" : ""
+        "dentes" : 45,
+        "frutas" : 2,
+        "jardim" : 5,
+        "laticineos" : 2,
+        "louca" : 4,
+        "ovos" : 2,
+        "raizes" : 8,
+        "roupa" : 3,
+        "vegetais" : 0.5
       },
       "tutorial" : true,
       "username" : "Leandro"

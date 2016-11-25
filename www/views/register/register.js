@@ -19,3 +19,7 @@ angular.module('starter').controller('registerController', function ($scope, $st
 
 }
 );
+
+function onMyFrameLoad() {
+  $('.loader-app').hide();
+};

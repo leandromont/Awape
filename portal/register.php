@@ -60,7 +60,7 @@
 			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 			do_action( 'template_notices' ); ?>
 
-			<p><?php _e( 'Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
+			<p><?php echo("Registre-se inserindo suas informações abaixo.") ?></p>
 
 			<?php
 
@@ -193,7 +193,7 @@
 								</p>
 
 								<div class="field-visibility-settings" id="field-visibility-settings-<?php bp_the_profile_field_id() ?>">
-									<fieldset>
+									<fieldset style="display: none;">
 										<legend><?php _e( 'Who can see this field?', 'buddypress' ) ?></legend>
 
 										<?php bp_profile_visibility_radio_buttons() ?>
@@ -376,202 +376,8 @@
 			do_action( 'template_notices' ); ?>
 			<?php
 
-				echo "<script src='https://www.gstatic.com/firebasejs/3.4.0/firebase.js'></script>";
-                          
-			   echo "<script>";
+			// ================================ AQUI IA A PORRA DO FIREBASE!!!!!!!!!! ===============================
 
-      				$email = $_REQUEST['signup_email'];
-      				$pass = $_REQUEST['signup_password'];
-      				$name = $_REQUEST['field_1'];
-      				$userImg = $_REQUEST['imageSrc'];
-
-
-				   echo "var email =  '$email';";  
-				   echo "var pass =  '$pass';";
-				   echo "var userName =  '$name';";
-				   echo "var userImage =  '$userImg';";
-
-
-				   
-
-				   echo ' var config = {
-						    apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
-						    authDomain: "awape-2d96e.firebaseapp.com",
-						    databaseURL: "https://awape-2d96e.firebaseio.com",
-						    storageBucket: "awape-2d96e.appspot.com",
-						    messagingSenderId: "923520319461"
-						  };';
-				   echo 'firebase.initializeApp(config);';
-
-				   echo 'firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(user) {
-						    firebase.database().ref("users/" + user.uid ).set({
-						      username: userName,
-						      userimage:userImage,
-						      tutorial:false,
-						      minhaPegada : {
-						        "banho" : "",
-						        "cafe" : "",
-						        "calcada" : "",
-						        "carne" : "",
-						        "carro" : "",
-						        "cereal" : "",
-						        "cha" : "",
-						        "dentes" : "",
-						        "frutas" : "",
-						        "jardim" : "",
-						        "laticineos" : "",
-						        "louca" : "",
-						        "ovos" : "",
-						        "raizes" : "",
-						        "roupa" : "",
-						        "vegetais" : ""
-						      },
-						      minhaLista : {
-						        "id0":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 1,
-						          "index" : 0,
-						          "quantidade" : 1
-						        }, 
-						        "id1":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 4,
-						          "index" : 1,
-						          "quantidade" : 12
-						        },
-						        "id2":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 9,
-						          "index" : 2,
-						          "quantidade" : 2
-						        },
-						        "id3":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 13,
-						          "index" : 3,
-						          "quantidade" : 1
-						        }, 
-						        "id4":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 14,
-						          "index" : 4,
-						          "quantidade" : 1
-						        }, 
-						        "id5":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 15,
-						          "index" : 5,
-						          "quantidade" : 0.25
-						        }, 
-						        "id6":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 16,
-						          "index" : 6,
-						          "quantidade" : 6
-						        }, 
-						        "id7":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 17,
-						          "index" : 7,
-						          "quantidade" : 10
-						        }, 
-						        "id8":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 19,
-						          "index" : 8,
-						          "quantidade" : 10
-						        }, 
-						        "id9":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 26,
-						          "index" : 9,
-						          "quantidade" : 5.5
-						        }, 
-						        "id10":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 27,
-						          "index" : 10,
-						          "quantidade" : 1
-						        }, 
-						        "id11":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 30,
-						          "index" : 11,
-						          "quantidade" : 1
-						        }, 
-						        "id12":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 33,
-						          "index" : 12,
-						          "quantidade" : 1
-						        }, 
-						        "id13":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 34,
-						          "index" : 13,
-						          "quantidade" : 1
-						        }, 
-						        "id14":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 36,
-						          "index" : 14,
-						          "quantidade" : 12
-						        }, 
-						        "id15":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 38,
-						          "index" : 15,
-						          "quantidade" : 5
-						        }, 
-						        "id16":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 39,
-						          "index" : 16,
-						          "quantidade" : 1
-						        }, 
-						        "id17":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 40,
-						          "index" : 17,
-						          "quantidade" : 5
-						        }, 
-						        "id18":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 41,
-						          "index" : 18,
-						          "quantidade" : 4
-						        }, 
-						        "id19":{
-						          "checked" : false,
-						          "data" : "",
-						          "idProduto" : 11,
-						          "index" : 19,
-						          "quantidade" : 1
-						        }
-						      }						      
-
-						    });    
-						});';
-			   echo "</script>";
 			/**
 			 * Fires before the display of the registration confirmed messages.
 			 *
@@ -582,7 +388,7 @@
 			<?php if ( bp_registration_needs_activation() ) : ?>
 				<p><?php _e( 'You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address.', 'buddypress' ); ?></p>
 			<?php else : ?>
-				<div class="register-confirmation"><?php _e( 'Você criou seu usuário com sucesso. Por favor faça o login.', 'buddypress' ); ?></div>
+				<div class="register-confirmation"><p class="texto_confirmacao">Sua conta foi ativada com sucesso! <a href="http://awape.com.br/">Clique aqui para acessar</a></p></div>
 			<?php endif; ?>
 
 			<?php
@@ -723,7 +529,7 @@
 
 			var userNameValue = jQuery('#signup_email').val();
 
-			var newUserNameValue = userNameValue.split('.').join('-');
+			var newUserNameValue = userNameValue.split('.').join('-').split('@').join('-').split('_').join('-');
 
 			userName.val(newUserNameValue);
 			
@@ -741,25 +547,19 @@
 
 <style type="text/css">
 
-@media screen and (max-width: 800px) {
-
-.container_inner.default_template_holder.clearfix.page_container_inner {
-    margin: 0 auto !important;
-    width: 90%;
-    overflow: auto;
+#back_to_top {
+display: none;
 }
 
-.registro {
-    margin: 15% auto 0;
-    padding: 0 !important;
+.container-photo-uploader {
+background-color: #eeeeee;
+border-radius: 10px;
+width: 103%;
 }
 
-div#buddypress {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-
+.content {
+margin-top: 0 !important;
+padding: 0 !important;
 }
 
 .jcrop-holder {
@@ -777,6 +577,14 @@ div#buddypress {
     padding-right: 25% !important;
     overflow: hidden;
 }
+
+.content, .content .container, .full_width {
+    background-color: #52be9f !important;
+    -webkit-animation: colorchange 15s infinite;
+    height: 100%;
+    padding-bottom: 5%;
+}
+
 
 h2 {
     display: none;
@@ -808,12 +616,7 @@ input {
     width: 100% !important;
 }
 
-.content, .content .container, .full_width {
-    background-color: #f6f6f6;
-    -webkit-animation: colorchange 15s infinite;
-    height: 100%;
-    padding-bottom: 5%;
-}
+
 
 div#register-page {
     padding: 10%;
@@ -887,6 +690,7 @@ i.fa.fa-key {
 
 .container-photo-uploader {
     position: relative;
+    display: none;
 }
 
 div#tutviet-avatar-wrapper {
@@ -981,6 +785,76 @@ a#tv-featured_image-pickfiles {
 i.fa.fa-camera {
     margin-right: 7px;
 }
+
+
+@media screen and (max-width: 800px) {
+
+.logo-container {
+    background-size: contain !important;
+    width: 100% !important;
+    margin-bottom:0;
+}
+
+form p {
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+h3.pass-lenght {
+    margin-left: 50%;
+    margin-top: -9px;
+    font-size: 0.9em;
+    width: 50%;
+    text-align: right;
+    font-style: italic;
+}
+
+a#tv-featured_image-pickfiles {
+    width: 70% !important;
+    overflow: hidden !important;
+}
+
+.submit {
+    width: 80% !important;
+    padding: 10px 10px 0 !important;
+}
+
+.field_nome-completo label {
+    padding-left: 33px;
+}
+
+.field_nome-completo input#field_1{
+    border: none !important;
+    border-bottom: 2px solid #5bc4b4 !important;
+    background: none !important;
+    outline: none;
+    font-size: 1.3em !important;
+    color: #818181 !important;
+}
+
+.container_inner.default_template_holder.clearfix.page_container_inner {
+    margin: 0 auto !important;
+    width: 90%;
+    overflow: auto;
+}
+
+
+.registro {
+    margin: 15% auto 0;
+    padding: 0 !important;
+}
+
+div#buddypress {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+
+
+
+}
+
 
 </style>
 

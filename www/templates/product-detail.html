@@ -4,7 +4,7 @@
 
 	<div class="produtoWrapper">
 		<div class="fotoWrapper">
-			<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(productId) +')'}" style="background-image:url({{getProductImage(productId)}});"></div>
+			<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(productId) +')'}"></div>
 		</div>
 		<div class="infosProduto">
 			<div class="nomeProduto">{{getProductName(productId)}}</div>
@@ -46,7 +46,7 @@
 			<div class="produtoRecom" ng-repeat="item in productRecomentations">
 				<div ng-click="changeProductBox(item)">	
 					<div class="fotoWrapper">
-						<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(item) +')'}" style="background-image:url({{getProductImage(item)}});"></div>
+						<div class="fotoProduto" ng-style="{'background-image':'url(' +getProductImage(item) +')'}"></div>
 					</div>
 					<div class="infosProduto">
 						<div class="nomeProduto">{{getProductName(item)}}</div>

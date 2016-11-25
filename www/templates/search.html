@@ -2,7 +2,7 @@
 <a href="#/tab/list" class="voltarLink"></a>
   <ion-content class="buscaPage">
   	<form action="" class="buscaForm">
-		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?" ng-model="search" autofocus>
+		<input type="text" class="buscaField" name="buscaField" placeholder="O que você deseja incluir na lista?" ng-model="search" ng-change="inputMagic()" autofocus>
 		<div class="iconsWrapper">
       		<div class="icon" id="buscaIcon"></div>
       	</div>
@@ -36,7 +36,7 @@
   </ul>
 	
   </ion-content>
-    <div class="adicionaProdutoConfirmation">
+  <div class="adicionaProdutoConfirmation">
     <div class="texto">Item adicionado com sucesso :)</div>
   </div>
 </ion-view>

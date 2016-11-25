@@ -34,13 +34,20 @@ angular.module('starter.controllers')
       }
     });
 
-  // ******************************************** LOADED VIEW *************************************************************************
-    $scope.$on('$ionicView.loaded', function(){
-
-    });
 
   // ******************************************** ENTER VIEW *************************************************************************
     $scope.$on('$ionicView.enter', function(){
+
+      
+
+      // esconder menu no focus
+      $('.buscaPage form input.buscaField').focusin(function() {
+          $('.tabs-striped .tabs').hide();
+        });
+        $('.buscaPage form input.buscaField').focusout(function() {
+          $('.tabs-striped .tabs').show();
+        });
+      //
 
       //autofocus
       $('input.buscaField').focus();
@@ -48,10 +55,22 @@ angular.module('starter.controllers')
 
     });
 
-  // ******************************************** LEAVE VIEW *************************************************************************
-    $scope.$on('$ionicView.leave', function(){
 
-    });  
+  // =============================== input magic ======================================
+  $scope.inputMagic = function(){
+    
+        // id dos checkbox
+        var produtosLista = $('.buscaPage .produtoBusca').length;
+        var produto = $('.buscaPage .produtoBusca');
+        var i = 1;
+        produto.each(function(){
+          $('.check', this).attr('id', 'checkBusca'+i);
+          $("label", this).attr('for', 'checkBusca'+i);
+          i++;
+        });
+        //
+
+  };
 
 
   // ======================= get waterFootprint =======================================
@@ -156,14 +175,7 @@ angular.module('starter.controllers')
         });
         //
 
-        // esconder menu no focus
-        $('.buscaPage form input.buscaField').focusin(function() {
-            $('.tabs-striped .tabs').hide();
-          });
-          $('.buscaPage form input.buscaField').focusout(function() {
-            $('.tabs-striped .tabs').show();
-          });
-        //
+        
 
       })
       

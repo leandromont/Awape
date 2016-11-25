@@ -73,10 +73,14 @@ angular.module('starter.controllers')
 
 
           var array = $.map(data, function(value, index) {
-            return [value];
-        });
+              return [value];
+          });
 
-            $scope.userList = array.reverse();
+          $scope.userList = array.reverse();
+
+          if($scope.userList.length == 0){
+            $('.loader-app').hide();
+         }
 
         });
       });
@@ -269,55 +273,85 @@ $('.paginaLista').click(function(){
        
         deleteAnimation();
 
-        $('.loader-app').hide();
+        $('.loader-app').hide();   
 
-      });
+});
 
 // ******************************************** CÓDIGO DE BARRAS ********************************************************************
 
   $scope.scanBarcode = function() {
     $cordovaBarcodeScanner.scan().then(function(imageData) {
 
-      var result = $.grep($scope.listItens || [], function(e){ 
-        return e.id == 9; //<---- mudar para imageData.text para pegar o código de barras e usá-lo como ID;
-      });
+        var newBarcodeItem;
 
-      var retorno='';
-      if (result.length == 0) {
+        var result = $.grep($scope.listItens || [], function(e){ 
+               return e.codebars;           
+        });
 
-        retorno = '';
-
-      } else if (result.length > 0) {
-
-          var newItemIndex = moment().valueOf();
+        var endFor = 0;
         
-          firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
-          .update({
-            "checked" : false,
-            "data" : "01/01/01",
-            "idProduto" : 9, // <---- mudar para imageData.text para pegar o código de barras e usá-lo como ID;
-            "quantidade" : 1,
-            "index": imageData.text // <----- mudar para newItemIndex para criar ID novo;
-          });
 
-          // buscar minha Lista
-          Auth.get.user.list($scope.userId).then(function(data) {
-            $scope.$apply(function() {
-              $scope.userList = data;
-              lista = $scope.userList
+        function addCodebarItem(itemId){
+
+          if(itemId){
+
+            // hide small Icons if aren't
+            $('.iconSmallHolder').hide();
+            $('.paginaLista .scroll').animate({opacity: 1},200);
+            $('.totalLista').animate({opacity: 1},200);
+            $('.linkSmall').removeClass('Active');
+            $('.iconsWrapper .iconsHolder .icon#addItem .iconAdd').removeClass('rotated');
+
+            var newItemIndex = moment().valueOf();
+
+            firebase.database().ref('/users/' + $scope.userId + '/minhaLista/id' + newItemIndex)
+            .update({
+              "checked" : false,
+              "data" : "01/01/01",
+              "idProduto" : itemId, 
+              "quantidade" : 1,
+              "index": newItemIndex 
             });
-          });
 
-          $('.adicionaProdutoConfirmation').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
-            $('.adicionaProdutoConfirmation').removeClass('zoomIn').addClass('zoomOut');
-            $(this).dequeue().delay(350).queue(function(){
-              $('.adicionaProdutoConfirmation').css({'opacity': '0', 'display': 'none'});
-              $state.reload();
-              $(this).dequeue();
+            // buscar minha Lista
+            Auth.get.user.list($scope.userId).then(function(data) {
+              $scope.$apply(function() {
+                var array = $.map(data, function(value, index) {
+                    return [value];
+                });
+
+                $scope.userList = array.reverse();
+              });
             });
-          });
 
-      }
+            $('.adicionaProdutoConfirmation.lista-alert').removeClass('zoomOut').addClass('animatedFast zoomIn').css({'opacity': '1', 'display': 'block'}).delay(1500).queue(function(){
+              $('.adicionaProdutoConfirmation.lista-alert').removeClass('zoomIn').addClass('zoomOut');
+              $(this).dequeue().delay(350).queue(function(){
+                $('.adicionaProdutoConfirmation.lista-alert').css({'opacity': '0', 'display': 'none'});
+                $(this).dequeue();
+              });
+            });
+          } else {
+            alert("não temos este item :(");
+          }
+        }
+
+        
+
+        for(i = 0; i < result.length; i++){          
+
+            endFor++;
+
+            var selectedItem = result[i].codebars.includes(imageData.text); // <---- mudar para imageData.text para pegar o código de barras e usá-lo como ID;            
+
+            if (selectedItem){
+                newBarcodeItem = result[i].id;
+            } 
+
+            if(endFor == result.length){
+                addCodebarItem(newBarcodeItem);
+            } 
+        }
 
 
     }, function(error) {
@@ -454,7 +488,7 @@ $scope.getUnit = function(productId){
     return retorno;
 }
 
-// ======================= get Unit =======================================
+// ======================= Check if has recomendation =======================================
 
 $scope.recomendationsLength = function(productId){
 

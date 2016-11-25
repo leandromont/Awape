@@ -35,7 +35,48 @@
 	</div>
 
 	<div class="titulo" id="tituloDicas">Minhas Dicas</div>
-	<div class="dicasWrapper box">
+
+	<div class="withoutTips box" style="display: none;">
+		Estou sem dicas para você no momento.
+	</div>
+
+	<div class="tips-container slidedown" id="Slider">
+		<div class="dicasWrapper box" ng-repeat="item in userListTips" ng-show="recomendationsLength(item.idProduto) && item.checked==false" on-last-repeat-home>
+			<ul class="dica">
+				<li class="dicaTexto">
+					<span id="economia">Economize  
+					<span id="litros" ng-bind="calcDifference(getProductFootprintNumber(item.idProduto),getProductFootprintNumber(getProductRecomentation(item.idProduto)))"></span> 
+					litros</span>
+					de água em um ano por cada 
+					<span class="produto" ng-bind="getProductUnity(item.idProduto)"></span>.
+				</li>
+				<li class="imagens clearfix" ng-click="changeProductBox(item.idProduto,item.index,getProductRecomentation(item.idProduto))">
+					<div class="imgDicas" id="img01" ng-style="{'background-image':'url(' +getProductImage(item.idProduto) +')'}">
+					</div>
+					
+					<div class="icon" id="troca"></div>
+					<div class="imgDicas" id="img02" ng-style="{'background-image':'url(' +getProductImage(getProductRecomentation(item.idProduto)) +')'}">
+					</div>
+				</li>
+				<li class="cf">
+					<div class="display-table">
+						<div>
+							<span class="produtoNome" id="itemTrocado" ng-bind="productName(item.idProduto)"></span>
+						</div>
+						<div>
+							<span class="produtoNome" id="itemRecomendado" ng-bind="productName(getProductRecomentation(item.idProduto))"></span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tips-show-button">
+			<!-- <i class="icon ion-ios-arrow-down"></i> -->
+			<i class="icon ion-ios-arrow-down"></i>
+	</div>
+
+	<!-- <div class="dicasWrapper box">
 		<ul class="dica">
 			<li class="dicaTexto">Que tal trocar
 				<span class="produto" id="itemTrocado">café</span>
@@ -50,7 +91,8 @@
 				<div class="imgDicas" id="img02"></div>
 			</li>
 		</ul>
-	</div>
+	</div> -->
+
   </ion-content>
 
   <div class="loader-app">
@@ -59,5 +101,24 @@
 	  <div class="double-bounce2"></div>
 	  <div class="loading-text">Carregando</div>
 	</div>
+  </div>
+
+    <div class="trocaProdutoWrapper">
+		<div class="trocaProduto">
+			<div class="titulo">Trocar Produto?</div>
+			<div class="texto">Você deseja trocar 
+				<span id="itemTrocado" ng-bind="productName(oldItem)"></span>
+				 por 
+				<span id="itemRecomendado" ng-bind="productName(itemClicado)"></span>?
+			</div>
+			<div class="botoes">
+				<div class="botao" id="nao">Não</div>
+				<div class="botao" id="sim" ng-click="changeProduct()">Sim</div>
+			</div>
+		</div>
+  </div>
+
+  <div class="adicionaProdutoConfirmation">
+    <div class="texto">Item trocado com sucesso :)</div>
   </div>
 </ion-view>

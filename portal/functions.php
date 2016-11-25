@@ -2839,6 +2839,15 @@ wp_enqueue_script("authApp", QODE_ROOT."/js/app/services/auth.js",array(),false,
 // serviço utils do app
 wp_enqueue_script("utilsApp", QODE_ROOT."/js/app/services/utils.js",array(),false,true);
 
+// owl carousel
+wp_enqueue_script("owl-carousel-js", QODE_ROOT."/js/app/lib/owl.carousel.min.js",array(),false,true);
+
+// custom scroll
+wp_enqueue_script("custom-scroll-js", QODE_ROOT."/js/app/lib/jquery.mCustomScrollbar.concat.min.js",array(),false,true);
+
+// custom scroll
+wp_enqueue_script("mask-js", QODE_ROOT."/js/jquery.mask.min.js",array(),false,true);
+
 // ================================= Fim dos Scripts do APP ===============================================================
 
 
@@ -2847,7 +2856,7 @@ add_filter('show_admin_bar', '__return_false');
 function word_count() {
     $content = get_post_field( 'post_content', $post->ID );
     $word_count = str_word_count( strip_tags( $content ) );
-    $tempo = $word_count/250;
+    $tempo = $word_count/150;
     if ($tempo < 1) {
      $tempo = 1; 
 }
@@ -2945,13 +2954,7 @@ add_shortcode( 'notificacoes', 'add_notification_to_side' );
 
 
 
-// default editor
 
-add_filter( 'wp_default_editor', 'force_default_editor' );
-function force_default_editor() { 
-	//allowed: tinymce, html, test
-	return 'html';
-}
 
 
 
@@ -3044,6 +3047,86 @@ function mycredpro_render_bp_notification( $action, $item_id, $secondary_item_id
 
 function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+    wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/owl.carousel.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+function my_scroll_stylesheet() {
+    wp_enqueue_style( 'custom-scroll', get_stylesheet_directory_uri() . '/jquery.mCustomScrollbar.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'my_scroll_stylesheet' );
+
+// default editor
+
+add_filter( 'wp_default_editor', 'force_default_editor' );
+function force_default_editor() { 
+	//allowed: tinymce, html, test
+	return 'html';
+}
+
+// logout redirect shortcode
+
+function sair() 
+{
+     wp_destroy_current_session();
+     wp_clear_auth_cookie();
+     wp_redirect( 'http://awape.com.br/register' );
+     exit;
+}
+add_shortcode( 'sair', 'sair' );
+
+
+add_action( 'print_media_templates', 'wpse_75746_print_style_35' );
+
+function wpse_75746_print_style_35()
+{
+    ?>
+    <style>
+        .media-modal-content, .media-sidebar {
+            background: #FFF !important;
+}
+
+       .media-router a:nth-child(2) {
+    display: none !important;
+}
+
+span.screen-reader-text {
+    display: none;
+}
+
+.media-modal.wp-core-ui {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.media-frame-title h1 {
+    display: none;
+}
+
+
+.media-toolbar-secondary {
+    display: none;
+}
+
+button.button.media-button.button-primary.button-large.media-button-select {
+    background-color: #FFF !important;
+    border: 1px solid #1abc9c !important;
+}
+
+.media-toolbar-primary.search-form label {
+    display: none;
+}
+
+input#media-search-input {
+    visibility: hidden;
+}
+
+
+
+
+
+
+    </style>
+    <?php
+}
 

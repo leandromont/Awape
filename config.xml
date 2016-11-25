@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.awape638293" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.awape638293" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Awapé</name>
   <description>
         Awapé, o assistente que ajuda você a diminuir sua pegada hídrica.
@@ -18,6 +18,9 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="orientation" value="portrait"/>
+  <preference name="largeScreens" value="false"/>
+  <preference name="largestWidthLimitDp" value="600"/>
+  <preference name="xlargeScreens" value="false"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>

@@ -976,6 +976,22 @@ default:
 
 <script type="text/javascript">
 
+  var config = {
+    apiKey: "AIzaSyB7481A5OJBVzX3Hs8hTC6i_nUL5k1zDeg",
+    authDomain: "awape-2d96e.firebaseapp.com",
+    databaseURL: "https://awape-2d96e.firebaseio.com",
+    storageBucket: "awape-2d96e.appspot.com",
+    messagingSenderId: "923520319461"
+  };
+  
+firebase.initializeApp(config);
+
+	firebase.auth().signOut().then(function() {
+	    // Sign-out successful.
+	  }, function(error) {
+	    // An error happened.
+	  });
+
 	
 
 	function wp_attempt_focus(){
