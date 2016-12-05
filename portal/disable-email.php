@@ -177,6 +177,8 @@ class BP_Disable_Activation_Reloaded extends WP_Plugin_Base
 		
 		//Hook if you want to do something before the activation
 		echo "<script src='https://www.gstatic.com/firebasejs/3.4.0/firebase.js'></script>";
+		echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
+		
                           
 			   echo "<script>";
 
@@ -209,15 +211,35 @@ class BP_Disable_Activation_Reloaded extends WP_Plugin_Base
 						  };';
 				   echo 'firebase.initializeApp(config);';
 
-				   echo 'firebase.auth().signOut().then(function() {
-						  // Sign-out successful.
-						}, function(error) {
-						  // An error happened.
-						});';
+				  //  echo 'firebase.auth().signOut().then(function() {
+						//   // Sign-out successful.
+				  //  			alert("deslogou");
+						// }, function(error) {
+						//   // An error happened.
+						// });';
 
 				   echo 'firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(user) {
 
-						  firebase.auth().signInWithEmailAndPassword(email, pass).then(function(){
+						   	firebase.auth().onAuthStateChanged(function(user) {
+							      if (user) {
+
+							        var starCountRef = firebase.database().ref("users/" + user.uid);
+
+							        starCountRef.on("value", function(snapshot) {
+							        	$( document ).ready(function() {
+										    $(".spinner").addClass("created-user");
+								          	$(".user-created").show();
+								          	setTimeout(function(){ 
+								          		
+								          	}, 2000);
+										});
+							        });
+
+							      } else {
+
+							      }
+							  });
+
 						    firebase.database().ref("users/" + user.uid ).set({
 						      username: userName,
 						      userimage:userImage,
@@ -382,9 +404,12 @@ class BP_Disable_Activation_Reloaded extends WP_Plugin_Base
 						          "quantidade" : 1
 						        }
 						      }                 
+						    }).catch(function(error) {
+						      console.log("error:", error);
 						    });
-						  }); 
+
 						});';
+
 			   echo "</script>";
 
 		do_action('bp_disable_activation_before_activation');
@@ -417,28 +442,28 @@ class BP_Disable_Activation_Reloaded extends WP_Plugin_Base
 		do_action('bp_disable_activation_before_login');
 
 		
-		if( $options['enable_login'] == 'true' )
-		{
-			//Automatically log the user in	.
-			//Thanks to Justin Klein's  wp-fb-autoconnect plugin for the basic code to login automatically
-			$user_info = get_userdata($user_id);
-			wp_set_auth_cookie($user_id);
+		// if( $options['enable_login'] == 'true' )
+		// {
+		// 	//Automatically log the user in	.
+		// 	//Thanks to Justin Klein's  wp-fb-autoconnect plugin for the basic code to login automatically
+		// 	$user_info = get_userdata($user_id);
+		// 	wp_set_auth_cookie($user_id);
 	
-			do_action('wp_signon', $user_info->user_login);
-		}
+		// 	do_action('wp_signon', $user_info->user_login);
+		// }
 		
 		//Hook if you want to do something after the login
 		do_action('bp_disable_activation_after_login');
 
 
 		
-		$redirection = apply_filters('dar_redirection_url',$options['redirection']);
+		// $redirection = apply_filters('dar_redirection_url',$options['redirection']);
 		
-		if( $redirection != '' )
-		{
-			wp_safe_redirect($redirection);
-			die();
-		}
+		// if( $redirection != '' )
+		// {
+		// 	wp_safe_redirect($redirection);
+		// 	die();
+		// }
 	}
 	
 		

@@ -173,7 +173,20 @@ angular.module('starter', ['ionic','ngStorage', 'ngCordova', 'starter.controller
 
 
   // if none of the above states are matched, use this as the fallback
- $urlRouterProvider.otherwise("/tab/home");
+  $urlRouterProvider.otherwise("/tab/home");
+
+//   $urlRouterProvider.otherwise(function($injector, $location){
+//    var state = $injector.get('$state');
+
+//    if($location.path() == "/register"){
+//      console.log("estou no register!");
+//    }
+//    else {
+//      state.go('home');
+//    }
+
+//    return $location.path();
+// });
 
 // ========== firebase app
 

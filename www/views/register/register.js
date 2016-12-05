@@ -17,8 +17,26 @@ angular.module('starter').controller('registerController', function ($scope, $st
     }
   };
 
-}
-);
+  // $scope.$on('$ionicView.enter', function(){
+  //   console.log($location.path());
+  // });
+
+    
+  // firebase.auth().onAuthStateChanged(function(user) {
+  //     if (user) {
+
+  //       var starCountRef = firebase.database().ref('users/' + user.uid);
+
+  //       starCountRef.on('value', function(snapshot) {
+  //         alert("criou usuário "+ user.uid);
+  //       });
+
+  //     } else {
+
+  //     }
+  // });
+
+});
 
 function onMyFrameLoad() {
   $('.loader-app').hide();

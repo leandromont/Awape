@@ -388,7 +388,19 @@
 			<?php if ( bp_registration_needs_activation() ) : ?>
 				<p><?php _e( 'You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address.', 'buddypress' ); ?></p>
 			<?php else : ?>
-				<div class="register-confirmation"><p class="texto_confirmacao">Sua conta foi ativada com sucesso! <a href="http://awape.com.br/">Clique aqui para acessar</a></p></div>
+				<div class="register-confirmation">
+					<div class="loader-app">
+					    <div class="spinner">
+					      <div class="double-bounce1"></div>
+					      <div class="double-bounce2"></div>
+					      <div class="loading-text register">Criando usuário...</div>
+					      <div class="user-created">
+					      		<img src="/img/success.svg">
+					      		<span>Usuário criado com sucesso!</span>
+					      </div>
+					    </div>
+					  </div>
+				</div>
 			<?php endif; ?>
 
 			<?php
@@ -414,6 +426,7 @@
 		</form>
 
 	</div>
+	 
 
 	<?php
 
@@ -546,6 +559,102 @@
 
 
 <style type="text/css">
+
+.user-created {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 200px;
+    font-size: 1.6em;
+    text-align: center;
+    display: none;
+}
+
+.user-created img{
+	width: 100px;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    
+}
+
+.loader-app{
+  z-index: 99999999999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block !important;
+}
+
+.loader-app .spinner{background: -webkit-linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);background: -o-linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);background: linear-gradient(rgba(255,255,255,0.95) 0%, rgba(246,246,246,0.95) 100%);display: table;width: 100%;height: 100vh;}
+
+.loading-text{position: absolute; top: 125px; left: 0; right: 0; bottom: 0; margin: auto; width: 300px; height: 30px; text-align: center; /* margin-top: 80px; */ font-size: 20px; display: none;}
+
+.loading-text.register{display: block; font-size: 15px; line-height: 23px;}
+
+.spinner {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  position: relative;
+  margin: auto;
+  height: 100%;
+  display: table-cell;
+}
+
+.double-bounce1, .double-bounce2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: -moz-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(94,202,219,1)), color-stop(50%, rgba(92,231,210,1)), color-stop(100%, rgba(64,206,142,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  background: linear-gradient(135deg, rgba(94,202,219,1) 0%, rgba(92,231,210,1) 50%, rgba(64,206,142,1) 100%);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 42vh;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.spinner.created-user .double-bounce1, 
+.spinner.created-user .double-bounce2,
+.spinner.created-user .loading-text {
+	display: none;
+}
 
 #back_to_top {
 display: none;
